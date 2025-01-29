@@ -1,0 +1,7 @@
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px; /* Space between the columns */
+    justify-content: space-between;
+  }
+  

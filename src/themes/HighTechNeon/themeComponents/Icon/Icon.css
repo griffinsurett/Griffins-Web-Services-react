@@ -1,0 +1,23 @@
+/* Icon.css */
+.styled-icon {
+  color: var(--everdark-color1);
+  /* font-size: var(--font-size-h4); */
+  border-radius: 50%;
+  filter: var(--dropshadow1);
+  /* padding: 18px 18px; */
+  background: var(--dynamicIconBG);
+}
+
+.styled-icon:hover {
+  filter: var(--dropshadow2);
+  font-size: 24px;
+  color: var(--everdark-color1);
+}
+
+@media (min-width: 768px) {
+  .icon-observer {
+    display: flex;
+    justify-content: center;
+  }
+}
+

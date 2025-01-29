@@ -1,0 +1,31 @@
+/* header.css */
+@media (min-width: 768px) {
+  :root {
+    --header-height: 11vh;
+  }  
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 7vh;
+  }
+
+  .header {
+    padding: 0 10px;
+  }
+}
+
+.header-observer, .header {
+    position: sticky;
+    top: 0;
+    height: var(--header-height);
+    z-index: 1000;
+  }
+  
+  .nav-left:hover {
+    
+  }
+
+
+  
+ 
