@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import "./accordion.css";
-import IntersectionObserverComponent from "../../ScrollAnimations";
 
 const AccordionItem = ({ title, content }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,18 +26,11 @@ const AccordionItem = ({ title, content }) => {
   );
 };
 
-// Accept items as props
 const Accordion = ({ items }) => {
   return (
-    <div className="accordion">
+    <div className="accordion fade-in">
       {items.map((item, index) => (
-        <IntersectionObserverComponent
-          key={index} // Key applied here
-          inViewClass="fade-in"
-          outViewClass="fade-out"
-        >
-          <AccordionItem title={item.title} content={item.content} />
-        </IntersectionObserverComponent>
+        <AccordionItem key={index} title={item.title} content={item.content} />
       ))}
     </div>
   );

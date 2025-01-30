@@ -2,7 +2,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./fields.css";
-import IntersectionObserverComponent from "../../ScrollAnimations";
 
 const InputField = ({
   label,
@@ -16,16 +15,13 @@ const InputField = ({
   return (
     <>
       {label && <label htmlFor={name}>{label}</label>}
-      <IntersectionObserverComponent
-        tag="input"
+      <input
         type={type}
         name={name}
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className={`${className} dynamic-focus-border-effect`}
-        inViewClass="fade-in"
-        outViewClass="fade-out"
+        className={`${className} dynamic-focus-border-effect fade-in`}
       />
     </>
   );
@@ -38,6 +34,7 @@ InputField.propTypes = {
   value: PropTypes.string,
   onChange: PropTypes.func,
   placeholder: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default InputField;

@@ -16,7 +16,6 @@ const Testimonials = () => {
   return (
     <Section
       className={"testimonials flex justify-center full-height column"}
-      shadowClass={"right-shadow bottom"}
     >
       <ContentTemplate
         className={

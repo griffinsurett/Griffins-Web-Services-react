@@ -17,7 +17,6 @@ const About = () => {
     <Section
       id="about"
       className="about flex item-align-center justify-center full-height column responsive responsive-center responsive-spacing"
-      shadowClass="left-shadow bottom"
     >
       <ContentTemplate
         ifButton={true}

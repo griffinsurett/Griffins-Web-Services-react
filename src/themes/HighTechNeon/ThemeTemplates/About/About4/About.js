@@ -1,3 +1,4 @@
+// About4 - About.js
 import React from "react";
 import { getCollection } from "../../../../../CMS/Utils/GetCollection";
 import ContentTemplate from "../../../themeComponents/ContentTemplate/ContentTemplate";
@@ -6,7 +7,6 @@ import "../../../styled-circle.css";
 import Section from "../../../themeComponents/Section/Section";
 import AboutList from "./AboutList/AboutList";
 import Logo from "../../../themeComponents/Logos/3dLogo/3dLogo";
-import IntersectionObserverComponent from "../../../ScrollAnimations";
 import MenuItem from "../../../themeComponents/MenuItem/MenuItem";
 
 const About = () => {
@@ -24,20 +24,18 @@ const About = () => {
       }
       shadowClass={"left-shadow bottom"}
     >
-      <div className="about-right flex column justify-center item-align-center sticky-section w40">
-        <IntersectionObserverComponent
-          inViewClass="fade-in"
-          delayIn={1000}
-          applyDelayOnce={true}
-        >
-          <Logo
-            ContainerClassName="flex justify-center item-align-center logo logo-drop-shadow-big"
-            width="460px"
-            classname=""
-            responsive={true}
-            everdarkLogo={true}
-          />
-        </IntersectionObserverComponent>
+      {/* Removed IntersectionObserver usage */}
+      <div
+        className="about-right flex column justify-center item-align-center sticky-section w40 fade-in"
+        style={{ transitionDelay: "1000ms" }}
+      >
+        <Logo
+          ContainerClassName="flex justify-center item-align-center logo logo-drop-shadow-big"
+          width="460px"
+          classname=""
+          responsive={true}
+          everdarkLogo={true}
+        />
       </div>
 
       <ContentTemplate
@@ -62,23 +60,6 @@ const About = () => {
         <div className="about-icon-section flex item-align-start smaller-bottom-space">
           <AboutList items={aboutContent.items} />
         </div>
-
-        {/* <div className="about-list-menu flex justify-left item-align-start bottom-space column">
-          {aboutContent.aboutInfo.map((info, index) => (
-            <div key={index} className="about-list-item smaller-top-space">
-              <MenuItem
-                className={"about-menu smaller-top-space"} // Pass the custom class
-                logoOnlyOnHover={false}
-                logoSize="30px"
-                label={`Our ${info.title}`}
-                labelClass="about-menu-label"
-                labelElement="h5"
-                hover={false}
-              />
-              <p className="about-list-p p-xSmall">{info.statement}</p>
-            </div>
-          ))}
-        </div> */}
       </ContentTemplate>
     </Section>
   );

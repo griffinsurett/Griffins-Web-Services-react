@@ -1,8 +1,7 @@
 // MenuItem.js
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import IntersectionObserverComponent from "../../ScrollAnimations";
-import ListBulletLogo from "../ListBulletImage/ListBulletLogo"; // Import ListBulletLogo
+import ListBulletLogo from "../ListBulletImage/ListBulletLogo";
 import "./menu-item.css";
 
 const MenuItem = ({
@@ -14,51 +13,39 @@ const MenuItem = ({
   logoOnlyOnHover,
   logoSize = "25px",
   labelClass,
-  labelElement: LabelElement = "span", // New prop with default element
-  hover = true, // New prop to control hover behavior
+  labelElement: LabelElement = "span",
+  hover = true,
 }) => {
   const [hovered, setHovered] = useState(false);
 
   const handleClick = (e) => {
-    e.preventDefault(); // Prevent default anchor behavior
-    const element = href ? document.querySelector(href) : null; // Find the target element by `id`
+    e.preventDefault();
+    const element = href ? document.querySelector(href) : null;
     if (element) {
-      element.scrollIntoView({
-        behavior: "smooth", // Smooth scrolling
-        block: "start", // Align the top of the section
-      });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-    if (toggleMenu) toggleMenu(); // Close the menu if toggleMenu is provided
+    if (toggleMenu) toggleMenu();
   };
 
-  const hoverClass = hover ? "menu-item-hover" : ""; // Add a hover-disable class conditionally
+  const hoverClass = hover ? "menu-item-hover" : "";
 
   return (
-    <IntersectionObserverComponent
-      inViewClass="fade-in"
-      outViewClass="fade-out"
-      staggeredAnimation={true}
-      index={index}
-      delayBase={100}
+    <li
+      className={`menu-item fade-in ${href ? "text-shadow-for-dark-hover" : ""} ${hoverClass} ${className}`}
+      onMouseEnter={() => hover && setHovered(true)}
+      onMouseLeave={() => hover && setHovered(false)}
     >
-      <li
-        className={`menu-item ${href ? "text-shadow-for-dark-hover" : ""} ${hoverClass} ${className}`}
-        onMouseEnter={() => hover && setHovered(true)} // Hover logic only if hover is true
-        onMouseLeave={() => hover && setHovered(false)} // Hover logic only if hover is true
-      >
-        <div className="menu-item-content flex item-align-center">
-          {/* Conditionally show logo based on hover or always */}
-          {(logoOnlyOnHover ? hovered : true) && <ListBulletLogo size={logoSize} />}
-          {href ? (
-            <a href={href} className="menu-link" onClick={handleClick}>
-              <LabelElement className={labelClass}>{label}</LabelElement>
-            </a>
-          ) : (
-            <LabelElement className={`${labelClass} menu-text`}>{label}</LabelElement>
-          )}
-        </div>
-      </li>
-    </IntersectionObserverComponent>
+      <div className="menu-item-content flex item-align-center">
+        {(logoOnlyOnHover ? hovered : true) && <ListBulletLogo size={logoSize} />}
+        {href ? (
+          <a href={href} className="menu-link" onClick={handleClick}>
+            <LabelElement className={labelClass}>{label}</LabelElement>
+          </a>
+        ) : (
+          <LabelElement className={`${labelClass} menu-text`}>{label}</LabelElement>
+        )}
+      </div>
+    </li>
   );
 };
 
@@ -68,21 +55,21 @@ MenuItem.propTypes = {
   index: PropTypes.number.isRequired,
   toggleMenu: PropTypes.func,
   className: PropTypes.string,
-  logoOnlyOnHover: PropTypes.bool, // New prop
-  logoSize: PropTypes.string, // Size for the logo
-  labelClass: PropTypes.string, // Custom class for the label
-  labelElement: PropTypes.string, // Element type for the label (e.g., h4, p, span)
-  hover: PropTypes.bool, // New prop to enable or disable hover
+  logoOnlyOnHover: PropTypes.bool,
+  logoSize: PropTypes.string,
+  labelClass: PropTypes.string,
+  labelElement: PropTypes.string,
+  hover: PropTypes.bool,
 };
 
 MenuItem.defaultProps = {
   className: "",
   href: null,
   toggleMenu: null,
-  logoOnlyOnHover: false, // Default to show logo always
+  logoOnlyOnHover: false,
   labelClass: "",
-  labelElement: "span", // Default label element
-  hover: true, // Default to enable hover
+  labelElement: "span",
+  hover: true,
 };
 
 export default MenuItem;

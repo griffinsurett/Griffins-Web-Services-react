@@ -4,8 +4,9 @@ import PropTypes from "prop-types";
 import "./content-template.css";
 import Button from "../Buttons/Button";
 import Typewriter from "../TextEffects/Typewriter/SimpleTypewriter/SimpleTypewriter";
-import IntersectionObserverComponent from "../../ScrollAnimations";
 import ScaleUpTypewriter from "../TextEffects/Typewriter/ScaleUpTypewriter/ScaleUpTypewriter";
+
+// IntersectionObserver completely removed!
 
 const ContentTemplate = ({
   title,
@@ -38,111 +39,83 @@ const ContentTemplate = ({
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Update `isMobile` based on screen width
     const handleResize = () => setIsMobile(window.innerWidth < 1024);
-    handleResize(); // Set initial value
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Show paragraphs & button on the side if specified
   const showSideContentContainer =
     paragraphSide || (buttonSide && ifButton && !buttonBottom);
 
   return (
     <div className={`content-template ${className} flex column`}>
       <div className={`content-top-section flex ${contentWrapClass}`}>
+        {/* Title & Heading Container */}
         <div className={`title-heading-container column ${textSectionClass}`}>
           {title && (
-            <IntersectionObserverComponent
-              inViewClass="fade-in-down"
-              outViewClass="fade-out"
-            >
-              <h5
-                className={`content-title smaller-bottom-space ${titleClass}`}
-              >
+            <div className="fade-in-down">
+              <h5 className={`content-title smaller-bottom-space ${titleClass}`}>
                 {title}
               </h5>
-            </IntersectionObserverComponent>
+            </div>
           )}
-          {heading &&
-            (isHero ? (
-              <IntersectionObserverComponent
-                inViewClass="fade-in-up"
-                outViewClass="fade-out"
-              >
+
+          {heading && (
+            isHero ? (
+              // Hero <h1>
+              <div className="fade-in-up">
                 <h1 className={`bold ${headingClass} text-shadow-for-dark`}>
-                  {/* <ScaleUpTypewriter text={heading} speed={100} className="content-title smaller-bottom-space" /> */}
+                  {/* <ScaleUpTypewriter text={heading} speed={100} /> */}
                   {heading}
                 </h1>
-              </IntersectionObserverComponent>
+              </div>
             ) : (
-              <IntersectionObserverComponent
-                inViewClass="fade-in-up"
-                outViewClass="fade-out"
-              >
+              // Normal <h2>
+              <div className="fade-in-up">
                 <h2 className={`bold ${headingClass} text-shadow-for-dark`}>
                   {heading}
                 </h2>
-              </IntersectionObserverComponent>
-            ))}
+              </div>
+            )
+          )}
+
+          {/* Paragraphs if not on the side */}
           {ifParagraph && !paragraphSide && (
-            <div className={`content-template-paragraphs ${paragraphClass}`}>
-              <IntersectionObserverComponent
-                inViewClass="fade-in-down"
-                outViewClass="fade-out"
-              >
-                {paragraph1 && <p className={paragraph1Class}>{paragraph1}</p>}
-                {paragraph2 && <p className={paragraph2Class}>{paragraph2}</p>}
-              </IntersectionObserverComponent>
+            <div className={`content-template-paragraphs ${paragraphClass} fade-in-down`}>
+              {paragraph1 && <p className={paragraph1Class}>{paragraph1}</p>}
+              {paragraph2 && <p className={paragraph2Class}>{paragraph2}</p>}
             </div>
           )}
         </div>
 
-        {/* Side Content for Paragraph and Button */}
+        {/* Paragraph & Button on the side */}
         {showSideContentContainer && (
           <div className="side-content-container flex column justify-center">
+            {/* Paragraphs if on the side */}
             {paragraphSide && ifParagraph && (
-              <IntersectionObserverComponent
-                inViewClass="fade-in-down"
-                delayIn={300}
-                outViewClass="fade-out"
-              >
-                <div
-                  className={`content-template-paragraphs-side ${paragraphClass}`}
-                >
-                  {paragraph1 && (
-                    <p className={paragraph1Class}>{paragraph1}</p>
-                  )}
-                  {paragraph2 && (
-                    <p className={paragraph2Class}>{paragraph2}</p>
-                  )}
-                </div>
-              </IntersectionObserverComponent>
+              <div className={`content-template-paragraphs-side ${paragraphClass} fade-in-down`} style={{ transitionDelay: "300ms" }}>
+                {paragraph1 && <p className={paragraph1Class}>{paragraph1}</p>}
+                {paragraph2 && <p className={paragraph2Class}>{paragraph2}</p>}
+              </div>
             )}
 
-            {/* Side Button Content - hides on mobile if buttonBottomMobile is true */}
-            {buttonSide &&
-              ifButton &&
-              !buttonBottom &&
-              (!isMobile || !buttonBottomMobile) && (
-                <div
-                  className={`${buttonSecClass} content-template-btn responsive-spacing flex item-align-center`}
-                >
-                  <IntersectionObserverComponent
-                    inViewClass="fade-in-right"
-                    delayIn={400}
-                    outViewClass="fade-out"
-                  >
-                    <Button
-                      text={buttonText}
-                      buttonLink={buttonLink}
-                      className={`p-small ${buttonClass}`}
-                      buttonId={buttonId}
-                      onClick={onClick}
-                    />
-                  </IntersectionObserverComponent>
-                </div>
-              )}
+            {/* Side Button (hidden on mobile if buttonBottomMobile) */}
+            {buttonSide && ifButton && !buttonBottom && (!isMobile || !buttonBottomMobile) && (
+              <div
+                className={`${buttonSecClass} content-template-btn responsive-spacing flex item-align-center fade-in-right`}
+                style={{ transitionDelay: "400ms" }}
+              >
+                <Button
+                  text={buttonText}
+                  buttonLink={buttonLink}
+                  className={`p-small ${buttonClass}`}
+                  buttonId={buttonId}
+                  onClick={onClick}
+                />
+              </div>
+            )}
           </div>
         )}
       </div>
@@ -150,24 +123,19 @@ const ContentTemplate = ({
       {/* Children Content */}
       {children && <div className="content-template-children">{children}</div>}
 
-      {/* Bottom Button - appears on mobile if buttonBottomMobile is true */}
+      {/* Bottom Button - mobile only if buttonBottomMobile */}
       {(buttonBottom || (buttonBottomMobile && isMobile)) && ifButton && (
         <div
-          className={`content-template-btn-bottom flex top-space ${buttonSecClass}`}
+          className={`content-template-btn-bottom flex top-space ${buttonSecClass} fade-in-up`}
+          style={{ transitionDelay: "400ms" }}
         >
-          <IntersectionObserverComponent
-            inViewClass="fade-in-up"
-            delayIn={400}
-            outViewClass="fade-out"
-          >
-            <Button
-              text={buttonText}
-              buttonLink={buttonLink}
-              className={`p-small ${buttonClass}`}
-              buttonId={buttonId}
-              onClick={onClick}
-            />
-          </IntersectionObserverComponent>
+          <Button
+            text={buttonText}
+            buttonLink={buttonLink}
+            className={`p-small ${buttonClass}`}
+            buttonId={buttonId}
+            onClick={onClick}
+          />
         </div>
       )}
     </div>
@@ -193,7 +161,7 @@ ContentTemplate.propTypes = {
   ifParagraph: PropTypes.bool,
   buttonClass: PropTypes.string,
   buttonBottom: PropTypes.bool,
-  buttonBottomMobile: PropTypes.bool, // New prop
+  buttonBottomMobile: PropTypes.bool, 
   children: PropTypes.node,
   isHero: PropTypes.bool,
   paragraphSide: PropTypes.bool,

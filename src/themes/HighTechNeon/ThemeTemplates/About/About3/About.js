@@ -1,4 +1,4 @@
-// About.js
+// About.js (About3)
 import React from "react";
 import { getCollection } from "../../../../../CMS/Utils/GetCollection";
 import ContentTemplate from "../../../themeComponents/ContentTemplate/ContentTemplate";
@@ -7,7 +7,6 @@ import "../../../styled-circle.css";
 import Section from "../../../themeComponents/Section/Section";
 import AboutList from "./AboutList/AboutList";
 import Logo from "../../../themeComponents/Logos/3dLogo/3dLogo";
-import IntersectionObserverComponent from "../../../ScrollAnimations";
 
 const About = () => {
   const aboutContent = getCollection("about");
@@ -24,16 +23,18 @@ const About = () => {
       }
       shadowClass={"left-shadow bottom"}
     >
-      <div className="about-right flex column justify-center item-align-center sticky-section w30">
-        <IntersectionObserverComponent inViewClass="fade-in" delayIn={1000} applyDelayOnce={true}>
-          <Logo
-            ContainerClassName="flex justify-center item-align-center logo logo-drop-shadow-big"
-            width="460px"
-            classname=""
-            responsive={true}
-            everdarkLogo={true}
-          />
-        </IntersectionObserverComponent>
+      {/* Instead of IntersectionObserver, just a div with fade-in */}
+      <div
+        className="about-right flex column justify-center item-align-center sticky-section w30 fade-in"
+        style={{ transitionDelay: "1000ms" }}
+      >
+        <Logo
+          ContainerClassName="flex justify-center item-align-center logo logo-drop-shadow-big"
+          width="460px"
+          classname=""
+          responsive={true}
+          everdarkLogo={true}
+        />
       </div>
 
       <ContentTemplate

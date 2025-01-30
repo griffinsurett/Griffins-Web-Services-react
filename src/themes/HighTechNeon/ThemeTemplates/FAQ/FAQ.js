@@ -16,7 +16,6 @@ function FAQ() {
   return (
     <Section
       className="flex justify-center full-height column"
-      shadowClass="left-shadow bottom"
     >
       <ContentTemplate
         className="flex justify-center text-center column bottom-space"

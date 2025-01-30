@@ -1,18 +1,20 @@
 // projectItem2.js
 import React from "react";
 import PropTypes from "prop-types";
-import "./project-item2.css"; // Assuming you have some CSS for styling
+import "./project-item2.css";
 import Button from "../../../../themeComponents/Buttons/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import IntersectionObserverComponent from "../../../../ScrollAnimations";
+
+// IntersectionObserver removed
 
 const ProjectItem = ({ project, index }) => {
   const animationClass = index % 2 === 0 ? "left" : "right";
 
   return (
     <div className="project-item flex column justify-center responsive-center">
-      <IntersectionObserverComponent inViewClass={`fade-in-${animationClass}`} outViewClass={`fade-out-${animationClass}`}>
+      {/* Use a plain div with fade-in-<left/right> */}
+      <div className={`fade-in-${animationClass}`}>
         <a
           href={project.link}
           target="_blank"
@@ -33,7 +35,7 @@ const ProjectItem = ({ project, index }) => {
             <FontAwesomeIcon className="arrow" size="xl" icon={faArrowRight} />
           </div>
         </a>
-      </IntersectionObserverComponent>
+      </div>
     </div>
   );
 };

@@ -5,10 +5,8 @@ import Button from "../../../themeComponents/Buttons/Button";
 import Logo from "../../../themeComponents/Logos/3dLogo/3dLogo";
 import ContentTemplate from "../../../themeComponents/ContentTemplate/ContentTemplate";
 import { getSiteSettings } from "../../../../../CMS/Utils/GetSettings";
-import IntersectionObserverComponent from "../../../ScrollAnimations";
 
 const Hero1 = () => {
-  // Retrieve the site settings dynamically
   const siteSettings = getSiteSettings();
 
   if (!siteSettings) {
@@ -21,14 +19,13 @@ const Hero1 = () => {
       className="flex item-align-center responsive hero-height section-gap"
     >
       <div className="hero-left w50 text-left">
-        {/* Use ContentTemplate for the hero section content */}
         <ContentTemplate
-          isHero={true} // Ensure h1 is used for hero
+          isHero={true}
           ifParagraph={true}
           contentWrapClass="column"
-          title={siteSettings.siteTitle} // Use site title dynamically
-          heading={siteSettings.siteTagline} // Use site tagline dynamically
-          paragraph1={siteSettings.siteDescription} // Use site description dynamically
+          title={siteSettings.siteTitle}
+          heading={siteSettings.siteTagline}
+          paragraph1={siteSettings.siteDescription}
           ifButton={true}
           buttonBottom={true}
           buttonText="Get Started"
@@ -41,12 +38,8 @@ const Hero1 = () => {
           titleClass="section-title"
         />
       </div>
-      <IntersectionObserverComponent className="hero-right w40 flex column justify-center item-align-center">
-        <IntersectionObserverComponent
-          inViewClass="fade-in"
-          delayIn={1000}
-          applyDelayOnce={true}
-        >
+      <div className="hero-right w40 flex column justify-center item-align-center fade-in">
+        <div className="fade-in" style={{ transitionDelay: "1000ms" }}>
           <Logo
             ContainerClassName="flex justify-center item-align-center logo logo-drop-shadow-big sticky-section"
             width="460px"
@@ -54,8 +47,8 @@ const Hero1 = () => {
             responsive={true}
             everdarkLogo={true}
           />
-        </IntersectionObserverComponent>
-      </IntersectionObserverComponent>
+        </div>
+      </div>
     </section>
   );
 };

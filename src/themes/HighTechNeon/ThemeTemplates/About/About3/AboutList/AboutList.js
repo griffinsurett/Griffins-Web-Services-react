@@ -2,20 +2,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ListItem from "../../../../themeComponents/ListItem/ListItem";
-import IntersectionObserverComponent from "../../../../ScrollAnimations";
 
 const AboutList = ({ items }) => {
   return (
     <div className="about-icon-list flex justify-center item-align-start wrap">
       {items.map((item, index) => (
-        <IntersectionObserverComponent 
-          key={index} 
-          inViewClass="fade-in" 
-          outViewClass="fade-out" 
-          staggeredAnimation={true}
-          delayIn={200}
-          className={"w50 bottom-space"}
-        >
+        <div key={index} className="w50 bottom-space fade-in">
           <ListItem
             hasIcon={true}
             icon={item.icon} // Use the provided icon or fallback to faCode
@@ -25,7 +17,7 @@ const AboutList = ({ items }) => {
             description={item.description}
             className="custom-icon-list-item-class text-left"
           />
-        </IntersectionObserverComponent>
+        </div>
       ))}
     </div>
   );

@@ -16,7 +16,6 @@ const Projects = () => {
   return (
     <Section
       className={"justify-center full-height column"}
-      shadowClass={"left-shadow bottom"}
     >
       <ContentTemplate
         className="column bottom-space responsive-center justify-between-section item-align-center"
