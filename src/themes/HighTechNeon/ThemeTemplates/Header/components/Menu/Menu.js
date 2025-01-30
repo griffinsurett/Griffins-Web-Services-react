@@ -2,6 +2,7 @@
 import React from "react";
 import "./menu.css";
 import MenuItem from "../../../../themeComponents/MenuItem/MenuItem"; // Import the reusable MenuItem component
+import Footer from "../../../Footer/footer1/Footer";
 
 const Menu = ({ isOpen, toggleMenu }) => {
   const menuItems = [
@@ -23,14 +24,14 @@ const Menu = ({ isOpen, toggleMenu }) => {
               key={index}
               label={item.label}
               href={item.href}
-              index={index}
               toggleMenu={toggleMenu}
-              className={"navMenu menu-fontSize"} // Pass the custom class
-              logoOnlyOnHover={true} 
+              className="navMenu menu-fontSize"
+              logoOnlyOnHover
             />
           ))}
         </ul>
       </nav>
+      <Footer className={"sticky-footer"}/>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-// Index.js
+// Index.js (simplified)
 import React, { useEffect, useState } from "react";
 import { ThemeProvider } from "./themeControls/ThemeContext"; 
 import "./styles.css";
@@ -11,75 +11,46 @@ import About1 from "./ThemeTemplates/About/About1/About";
 import FAQ from "./ThemeTemplates/FAQ/FAQ";
 import Testimonials from "./ThemeTemplates/Testimonials/Testimonials";
 import ContactUs3 from "./ThemeTemplates/Contact/Contact3/ContactUs";
-// import ContactUs4 from "./ThemeTemplates/Contact/Contact4/ContactUs";
-import Menu from "./ThemeTemplates/Header/components/Menu/Menu";
 import Projects from "./ThemeTemplates/Projects/Projects";
-// import Process from "./ThemeTemplates/Process/Process";
-// import Subscribe from "./ThemeTemplates/Subscribe/Subscribe";
-// import PricingTable from "./ThemeTemplates/Pricing/Pricing";
+// import Preloader from "./Preloader"; // if you have one
 
-// Main App Component to render the entire theme
+// Main App Component
 const Theme = () => {
   const [loading, setLoading] = useState(true);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to control menu visibility
-
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
 
   useEffect(() => {
     // Simulate an API call or loading process
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3500); // 3.5 seconds to match the preloader
+    }, 3500);
 
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    // Prevent body scroll when menu is open
-    document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [isMenuOpen]);
-
   return (
     <ThemeProvider>
       <div className="App">
-        {/* {loading ? (
-          <Preloader />
-        ) : ( */}
+        {/* {loading ? <Preloader /> : ( ... ) } */}
         <>
-          <Header toggleMenu={toggleMenu} />
+          {/* 1) We NO LONGER pass any isMenuOpen or toggleMenu props */}
+          <Header />
+
+          {/* Rest of page */}
           <div className="flex column item-align-center">
             <div className="content container">
-              {/* <Cursor /> */}
               <Hero1 />
-              {/* <Hero2 /> */}
-              {/* <Hero3 /> */}
               <Services />
-              {/* <About3 /> */}
               <About1 />
-              {/* <WhyChooseUs /> */}
-              {/* <About2 /> */}
-              {/* <About4 /> */}
-              {/* <Process /> */}
               <Projects />
               <Testimonials />
-              {/* <PricingTable /> */}
               <FAQ />
-              {/* <ContactUs /> */}
-              {/* <ContactUs2 /> */}
               <ContactUs3 />
-              {/* <ContactUs4 /> */}
-              {/* <Subscribe /> */}
             </div>
           </div>
-          <Menu isOpen={isMenuOpen} toggleMenu={toggleMenu} />
-          <Footer className={isMenuOpen ? "sticky-footer" : "relative-footer"} />
+
+          {/* 2) We also do NOT manually render Menu here anymore */}
+          <Footer className="relative-footer" />
         </>
-        {/* )} */}
       </div>
     </ThemeProvider>
   );

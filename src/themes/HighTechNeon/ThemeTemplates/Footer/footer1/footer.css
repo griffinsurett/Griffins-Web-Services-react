@@ -1,7 +1,7 @@
 /* footer.css */
 .footer {
   position: relative; /* Default positioning */
-  z-index: 1000; /* Ensure it's above content */
+  z-index: 2000; /* Ensure it's above content */
   text-align: center; /* Center text */
 }
 

@@ -21,6 +21,7 @@
   left: 0;
   transition: transform 0.3s ease;
   transform: translateY(-100%); /* Hide initially */
+  z-index: 1000;
 }
 
 .menu-container.show {
