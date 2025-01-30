@@ -31,7 +31,7 @@ const Menu = ({ isOpen, toggleMenu }) => {
           ))}
         </ul>
       </nav>
-      <Footer className={"sticky-footer"}/>
+      <Footer className={"sticky-footer menu-footer-animate"}/>
     </div>
   );
 };

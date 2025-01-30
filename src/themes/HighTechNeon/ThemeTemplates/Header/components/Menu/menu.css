@@ -49,8 +49,25 @@
   align-items: start;
 }
 
+.menu-footer-animate {
+  /* Start hidden */
+  opacity: 0;
+  transform: translateY(20px); /* optional small downward shift */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  /* Note: no transition-delay here yet, we’ll add it conditionally */
+}
+
+/* Once the menu-container has .show, we want the footer to appear 
+   but only AFTER the menu’s slide-in finishes */
+.menu-container.show .menu-footer-animate {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s; /* Matches or slightly more than the overlay’s transition */
+}
+
 @media (min-width: 768px) {
 .header-menu-list {
   padding-left: 30px;
 }
 }
+
