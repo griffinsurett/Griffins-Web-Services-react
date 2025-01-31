@@ -24,9 +24,8 @@ const Header = () => {
   return (
     <>
       {/* The visual container for the header */}
-      <div className="header-observer fade-in-down">
-        <header className="header flex justify-center item-align-center">
-          <div className="header-foot-container flex justify-between item-align-center">
+      <header className="header fade-in-down">
+          <div className="header-foot-container header-container flex justify-between item-align-center">
             {/* Left: Logo */}
             <div className="nav-left logo fif-container flex justify-center item-align-center fade-in">
               <a href="/">
@@ -50,8 +49,7 @@ const Header = () => {
               />
             </div>
           </div>
-        </header>
-      </div>
+      </header>
 
       {/* 4) The Menu overlay is rendered below the header, but inside the same parent component */}
       <Menu isOpen={isMenuOpen} toggleMenu={toggleMenu} />
