@@ -2,14 +2,12 @@
 .footer {
   /* position: relative; Default positioning */
   z-index: 9000; /* Ensure it's above content */
-  text-align: center; /* Center text */
 }
 
 .sticky-footer {
   position: fixed; /* Make it sticky */
   bottom: 0; /* Stick to the bottom of the viewport */
   left: 0; /* Align to the left */
-  width: 100%; /* Full width */
 }
 
 .relative-footer {

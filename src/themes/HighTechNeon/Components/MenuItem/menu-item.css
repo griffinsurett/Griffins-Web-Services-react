@@ -42,10 +42,10 @@
   transition: transform 0.5s ease;
 } */
 
-.menu-item-hover:hover .menu-bullet-logo {
+/* .menu-item-hover:hover .menu-bullet-logo {
   transform: scale(1.2);
   transition: transform 0.3s ease;
-}
+} */
 
 /* Disable hover styles */
 .menu-item:not(.menu-item-hover) .menu-item-content {

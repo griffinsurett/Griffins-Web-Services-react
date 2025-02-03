@@ -1,23 +1,18 @@
-// src/themes/Pronto/ItemsTemplate.js
+// src/themes/HighTechNeon/Components/ItemsTemplate/ItemsTemplate.js
 import React from "react";
 import PropTypes from "prop-types";
+import "./items-template.css";
 
-/**
- * ItemsTemplate Component
- *
- * Renders a list of items using a specified ItemComponent.
- * It first normalizes the `items` prop to always be an array so that we can safely call .map().
- */
 const ItemsTemplate = ({
   items,
   ItemComponent,
-  containerClass = "",
-  layout = "flex flex-col",
+  className = "flex",
   emptyComponent = null,
+  maxColumns = null, // If null, no column classes are applied
+  gap = "20px",
   ...rest
 }) => {
-  // Normalize items: if items is an array, use it;
-  // if it’s an object (or has a nested array on .data), use that; otherwise, wrap in an array.
+  // 1. Normalize the items to an array
   let itemsArray = [];
   if (!items) {
     itemsArray = [];
@@ -26,27 +21,44 @@ const ItemsTemplate = ({
   } else if (items.data && Array.isArray(items.data)) {
     itemsArray = items.data;
   } else if (typeof items === "object") {
-    // Wrap a single object in an array
     itemsArray = [items];
   }
 
+  // 2. If there are no items, return the fallback component or a default <p>
   if (itemsArray.length === 0) {
     return emptyComponent ? (
-      <div className={containerClass} {...rest} role="alert">
+      <div className={className} {...rest} role="alert">
         {emptyComponent}
       </div>
     ) : (
-      <div className={containerClass} {...rest} role="alert">
+      <div className={className} {...rest} role="alert">
         <p>No items available at this time.</p>
       </div>
     );
   }
 
+  // 3. Render the items in a container (with optional gap)
   return (
-    <div className={`items-template-container ${layout} ${containerClass}`} {...rest}>
-      {itemsArray.map((item, index) => (
-        <ItemComponent key={index} {...item} itemIndex={index} {...rest} />
-      ))}
+    <div
+      className={`items-template-container flex wrap ${className}`}
+      style={{ gap }} // apply the gap inline
+      {...rest}
+    >
+      {itemsArray.map((item, index) => {
+        // If maxColumns is a valid number (1-4), wrap each item in a div.colmax{maxColumns}.
+        // If maxColumns is null, 0, or otherwise not in [1,2,3,4], don’t wrap with the column div.
+        if ([1, 2, 3, 4].includes(maxColumns)) {
+          return (
+            <div key={index} className={`colmax${maxColumns}`}>
+              <ItemComponent {...item} itemIndex={index} />
+            </div>
+          );
+        }
+        // Otherwise, just render the item without the extra wrapper
+        return (
+          <ItemComponent key={index} {...item} itemIndex={index} />
+        );
+      })}
     </div>
   );
 };
@@ -54,18 +66,16 @@ const ItemsTemplate = ({
 ItemsTemplate.propTypes = {
   items: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.object),
-    PropTypes.object,
+    PropTypes.object
   ]).isRequired,
-  ItemComponent: PropTypes.elementType.isRequired,
-  containerClass: PropTypes.string,
-  layout: PropTypes.string,
+  ItemComponent: PropTypes.elementType.isRequired, // A component that renders each item
+  className: PropTypes.string,
   emptyComponent: PropTypes.node,
-};
-
-ItemsTemplate.defaultProps = {
-  containerClass: "",
-  layout: "flex flex-col",
-  emptyComponent: null,
+  maxColumns: PropTypes.oneOfType([
+    PropTypes.oneOf([1, 2, 3, 4]),
+    PropTypes.oneOf([null]) // null means no columns
+  ]),
+  gap: PropTypes.string
 };
 
 export default ItemsTemplate;
