@@ -6,30 +6,23 @@ import Footer from "./Sections/Footer/footer1/Footer";
 import Preloader from "./themeControls/Preloader/Preloader";
 import "./styles.css";
 import "./animations.css";
-// Import your ThemeProvider from your theme's context folder
 import { ThemeProvider } from "./themeControls/ThemeContext";
 
-// Lazy-load your hero sections separately
+// 1) Import our new or existing MenuManager:
+import MenuManager from "./Components/MenuManager"; 
+
+// Lazy-load sections...
 const Hero1 = lazy(() => import("./Sections/HeroSections/Hero1/Hero"));
 const Hero2 = lazy(() => import("./Sections/HeroSections/Hero2/Hero"));
 
-/**
- * 1) Add all your "missing" sections to this object.
- * 2) Make sure these imports correspond to the actual file paths for your components.
- */
 const sectionComponents = {
-    about: lazy(() => import("./Sections/About/About1/About")),
-    // You can uncomment or add additional sections as needed:
-    // process: lazy(() => import("./ThemeTemplates/Process/Process1/Process")),
-    // benefits: lazy(() => import("./ThemeTemplates/Benefits/Benefits1/Benefits")),
-    // whyChooseUs: lazy(() => import("./ThemeTemplates/WhyChooseUs/WhyChooseUs1/WhyChooseUs")),
-    services: lazy(() => import("./Sections/Services/Services")),
-    projects: lazy(() => import("./Sections/Projects/Projects")),
-    // testimonials: lazy(() => import("./ThemeTemplates/Testimonials/Testimonials")),
-    contact: lazy(() => import("./Sections/Contact/Contact3/ContactUs")),
-    faq: lazy(() => import("./Sections/FAQ/FAQ")),
-  };
-  
+  about: lazy(() => import("./Sections/About/About1/About")),
+  services: lazy(() => import("./Sections/Services/Services")),
+  projects: lazy(() => import("./Sections/Projects/Projects")),
+  contact: lazy(() => import("./Sections/Contact/Contact3/ContactUs")),
+  faq: lazy(() => import("./Sections/FAQ/FAQ")),
+  // ...
+};
 
 const CMSDisplayTheme = memo(() => {
   const { loading, pageStructure, siteSettings, pageId, isInitialLoad } = useCMSContext();
@@ -42,26 +35,32 @@ const CMSDisplayTheme = memo(() => {
     return <div>Error: No page structure found.</div>;
   }
 
-  const { title, description, sections } = pageStructure;
+// 2) Create a menuManager from siteSettings (which has queries):
+const menuManager = new MenuManager(siteSettings);
 
-  // Wrap your entire theme with your ThemeProvider from the theme itself.
+  const { title, description, heading, sections } = pageStructure;
+
   return (
     <ThemeProvider>
-      <Header />
+     {/*
++       3) Pass menuManager & siteSettings to Header and Footer:
++       This ensures they can pull menu items from the CMS queries, 
++       just like in Pronto.
++     */}
+      <Header menuManager={menuManager} siteSettings={siteSettings} />
       <div className="flex column item-align-center">
-      <main className="flex-grow content container" role="main">
-      {pageId === "home" ? (
+        <main className="flex-grow content container" role="main">
+          {pageId === "home" ? (
             <Suspense fallback={<div>Loading Hero...</div>}>
               <Hero1 data={siteSettings} />
             </Suspense>
           ) : (
             <Suspense fallback={<div>Loading Hero...</div>}>
-              <Hero2 data={{ title, description }} />
+              <Hero2 data={{ title, heading, description }} />
             </Suspense>
           )}
 
           {sections
-            // We already loaded hero at the top, so skip it here
             .filter(({ key }) => key !== "hero")
             .map(({ key, data }) => {
               const SectionComponent = sectionComponents[key];
@@ -75,8 +74,8 @@ const CMSDisplayTheme = memo(() => {
             })}
         </main>
 
-        <Footer siteSettings={siteSettings} />
       </div>
+      <Footer menuManager={menuManager} siteSettings={siteSettings} />
     </ThemeProvider>
   );
 });

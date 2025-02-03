@@ -34,3 +34,7 @@
 #footer-copyright {
   /* color: var(--transparentFade-bg2); */
 }
+
+.social-icons {
+  list-style: none;
+}
