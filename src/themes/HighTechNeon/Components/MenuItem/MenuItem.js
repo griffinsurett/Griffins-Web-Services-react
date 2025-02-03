@@ -19,14 +19,23 @@ const MenuItem = ({
   const [hovered, setHovered] = useState(false);
 
   const handleClick = (e) => {
-    e.preventDefault();
-    const element = href ? document.querySelector(href) : null;
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    let element = null;
+    try {
+      element = href ? document.querySelector(href) : null;
+    } catch (error) {
+      // If the href is not a valid selector (e.g. "/process"), an error will be thrown.
+      element = null;
     }
-    if (toggleMenu) toggleMenu();
+  
+    // If a valid element exists, perform smooth scrolling
+    if (element) {
+      e.preventDefault();
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (toggleMenu) toggleMenu();
+    }
+    // Otherwise, let the click event proceed naturally to trigger route navigation
   };
-
+  
   const hoverClass = hover ? "menu-item-hover" : "";
 
   return (
