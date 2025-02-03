@@ -1,5 +1,4 @@
 // ProcessBox2.js
-
 import React from "react";
 import PropTypes from "prop-types";
 import Box from "../../../../../Components/Box/Box"; // Adjust the path as necessary
@@ -13,7 +12,6 @@ const ProcessBox = ({ stepNumber, title, description }) => {
       delayIn={400}
       inViewClass="fade-in-up"
       outViewClass="fade-in-down"
-      maxColumns={1}
     >
       <h4 className="flex justify-center item-align-center w10 text-shadow-for-dark">
         {`0${stepNumber}.`}

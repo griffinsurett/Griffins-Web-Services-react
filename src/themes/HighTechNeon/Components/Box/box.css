@@ -17,25 +17,8 @@
   padding: 50px;
   background: var(--boxGradient);
   overflow: hidden; /* Prevent content from overflowing */
-  min-height: 275px;
+  min-height: 320px;
   /* border: var(--borderBeforeHover); */
-}
-
-/* Column-based layout */
-.colmax1 {
-  flex: 1 1 calc(100% - 20px); /* 1 column */
-}
-
-.colmax2 {
-  flex: 1 1 calc(50% - 20px); /* 2 columns */
-}
-
-.colmax3 {
-  flex: 1 1 calc(33.33% - 20px); /* 3 columns */
-}
-
-.colmax4 {
-  flex: 1 1 calc(25% - 20px); /* 4 columns */
 }
 
 /* Link-specific styles */

@@ -47,7 +47,6 @@ Box.propTypes = {
   staggeredAnimation: PropTypes.bool,
   index: PropTypes.number,
   delayBase: PropTypes.number,
-  maxColumns: PropTypes.oneOf([1, 2, 3, 4]),
 };
 
 export default Box;

@@ -265,6 +265,18 @@ const collections = [
       data: [
         {
           icon: getIcon("fa", "LaptopCode"),
+          title: "Web Development",
+          slug: "/web-development",
+          description:
+            "Custom websites and applications that engage and convert.",
+          sections: ["hero", "services", "projects", "testimonials", "faq"],
+          relations: [
+            { collection: "projects", value: "/marketing-site-redesign" },
+            { collection: "faq", value: 2 },
+          ],
+        },
+        {
+          icon: getIcon("fa", "LaptopCode"),
           title: "Web Design",
           slug: "/web-design",
           description:

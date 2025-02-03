@@ -13,7 +13,6 @@ const ServiceBox = ({ icon, title, description, link, index }) => {
       staggeredAnimation={true}
       index={index}
       delayBase={index * 50}
-      maxColumns = {3}
     >
       <Icon
         icon={icon}

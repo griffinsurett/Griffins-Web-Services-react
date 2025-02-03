@@ -8,7 +8,7 @@ import Logo from "../../../../../themeComponents/Logos/2dLogo/2dLogo";
 
 const ProcessBox = ({ stepNumber, title, description }) => {
   return (
-    <Box className="process-box grow flex justify-between item-align-center responsive responsive-center" delayIn={400} inViewClass="fade-in-up" outViewClass="fade-in-down" maxColumns={1}>
+    <Box className="process-box grow flex justify-between item-align-center responsive responsive-center" delayIn={400} inViewClass="fade-in-up" outViewClass="fade-in-down">
       <h4 className="flex justify-center item-align-center w10 text-shadow-for-dark">
         {`0${stepNumber}.`}
       </h4>

@@ -1,32 +1,5 @@
 /* services.css */
 
-.services-section {
-  /* overflow-x: hidden; */
+.services-box {
+  min-height: 320px;
 }
-
-
-
-/* Responsive Styles */
-/* @media (min-width: 1200px) {
-  .services-boxes {
-    gap: 30px; 
-  }
-}
-
-@media (max-width: 1200px) {
-  .services-boxes {
-    gap: 30px; 
-  }
-}
-
-@media (min-width: 768px) {
-  .services-boxes {
-    justify-content: space-between;
-  }
-}
-
-@media (max-width: 768px) {
-  .services-boxes {
-    margin: 0 auto;
-  }
-} */

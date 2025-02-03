@@ -49,8 +49,8 @@ const CMSDisplayTheme = memo(() => {
     <ThemeProvider>
       <Header />
       <div className="flex column item-align-center">
-        <div className="content container">
-          {pageId === "home" ? (
+      <main className="flex-grow content container" role="main">
+      {pageId === "home" ? (
             <Suspense fallback={<div>Loading Hero...</div>}>
               <Hero1 data={siteSettings} />
             </Suspense>
@@ -59,9 +59,7 @@ const CMSDisplayTheme = memo(() => {
               <Hero3 data={{ title, description }} />
             </Suspense>
           )}
-        </div>
 
-        <main className="flex-grow" role="main">
           {sections
             // We already loaded hero at the top, so skip it here
             .filter(({ key }) => key !== "hero")

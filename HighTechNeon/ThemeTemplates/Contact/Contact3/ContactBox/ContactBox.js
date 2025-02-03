@@ -14,7 +14,6 @@ const ContactBox = ({ icon, label, value, href, index }) => {
       staggeredAnimation={true}
       index={index}
       delayBase={index * 50}
-      maxColumns={2} // Max 2 columns for the layout
     >
       <div className="contact-box-content flex column item-align-center">
         {icon && (

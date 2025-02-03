@@ -1,29 +1,19 @@
-// src/themes/HighTechNeon/themeComponents/ItemsTemplate.js
+// src/themes/HighTechNeon/Components/ItemsTemplate.js
 import React from "react";
 import PropTypes from "prop-types";
+import "./items-template.css"; // We'll create a small stylesheet
 
-/**
- * A reusable component that renders a list of items using a user-supplied "ItemComponent".
- * It's effectively the same pattern from the Pronto theme, but for HighTechNeon.
- *
- * Usage:
- *   <ItemsTemplate
- *     items={someCMSData.items} 
- *     ItemComponent={YourItemComponent}
- *     containerClass="..."
- *     layout="..."
- *     emptyComponent={<p>No items found</p>}
- *   />
- */
 const ItemsTemplate = ({
   items,
   ItemComponent,
   className = "flex",
   emptyComponent = null,
+  maxColumns = 3,   // <--- new prop
   ...rest
 }) => {
-  // Step 1: Normalize the items to always be an array
   let itemsArray = [];
+
+  // 1) Normalize
   if (!items) {
     itemsArray = [];
   } else if (Array.isArray(items)) {
@@ -31,11 +21,10 @@ const ItemsTemplate = ({
   } else if (items.data && Array.isArray(items.data)) {
     itemsArray = items.data;
   } else if (typeof items === "object") {
-    // e.g. if "items" is a single object
     itemsArray = [items];
   }
 
-  // Step 2: If empty, render the fallback
+  // 2) If no items
   if (itemsArray.length === 0) {
     return emptyComponent ? (
       <div className={className} {...rest} role="alert">
@@ -48,14 +37,14 @@ const ItemsTemplate = ({
     );
   }
 
-  // Step 3: Render each item with ItemComponent
+  // 3) Render each item in a flex container, 
+  // wrapping each with a <div> that sets .colmax{maxColumns}
   return (
-    <div
-      className={`items-template-container $className}`}
-      {...rest}
-    >
+    <div className={`items-template-container flex wrap gap-4 ${className}`} {...rest}>
       {itemsArray.map((item, index) => (
-        <ItemComponent key={index} {...item} itemIndex={index} />
+        <div key={index} className={`colmax${maxColumns}`}>
+          <ItemComponent {...item} itemIndex={index} />
+        </div>
       ))}
     </div>
   );
@@ -66,16 +55,10 @@ ItemsTemplate.propTypes = {
     PropTypes.arrayOf(PropTypes.object),
     PropTypes.object,
   ]).isRequired,
-  ItemComponent: PropTypes.elementType.isRequired, // A component that renders each item
-  containerClass: PropTypes.string,
-  layout: PropTypes.string,
+  ItemComponent: PropTypes.elementType.isRequired,
+  className: PropTypes.string,
   emptyComponent: PropTypes.node,
-};
-
-ItemsTemplate.defaultProps = {
-  containerClass: "",
-  layout: "flex flex-col",
-  emptyComponent: null,
+  maxColumns: PropTypes.oneOf([1,2,3,4]) // Or more if needed
 };
 
 export default ItemsTemplate;

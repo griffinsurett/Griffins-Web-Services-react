@@ -18,7 +18,6 @@ const ContactBox = ({ icon, title, description, href, index }) => {
       staggeredAnimation={true}
       index={index}
       delayBase={index * 50}
-      maxColumns={2}
     />
   );
 };
