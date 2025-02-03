@@ -44,7 +44,7 @@ const Projects = ({ data }) => {
             title,
             description,
             image,
-            link,
+            slug,
             itemIndex,
           }) => (
             <ProjectItem
@@ -52,7 +52,7 @@ const Projects = ({ data }) => {
                 id,
                 name: title,
                 description,
-                link: link || "#",
+                slug: slug || "#",
                 image,
               }}
               index={itemIndex}

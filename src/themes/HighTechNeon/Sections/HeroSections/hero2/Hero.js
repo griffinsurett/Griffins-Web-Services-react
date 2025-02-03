@@ -1,12 +1,15 @@
-// hero2.js
+// Hero1.js
 import React from "react";
 import "./hero.css";
-import Button from "../../../themeComponents/Buttons/Button";
-import Logo from "../../../themeComponents/Logos/3dLogo/3dLogo";
-import Typewriter from "../../../themeComponents/TextEffects/Typewriter/SimpleTypewriter/SimpleTypewriter";
-import ContentTemplate from "../../../themeComponents/ContentTemplate/ContentTemplate";
+import ContentTemplate from "../../../Components/ContentTemplate/ContentTemplate";
 
-const Hero1 = () => {
+const Hero2 = ({ data }) => {
+  console.log(data);
+  // If you want to do a fallback if data isn't provided:
+  if (!data) {
+    return <div>Error: No site data found for Hero1</div>;
+  }
+
   return (
     <section
       id="hero-section"
@@ -14,24 +17,24 @@ const Hero1 = () => {
     >
           {/* Use ContentTemplate for the hero section content */}
           <ContentTemplate
-            isHero={true} // Ensure h1 is used for hero
-            ifParagraph={true}
-            title="Griffin’s Web Services"
-            heading="Websites and All Things Digital."
-            paragraph1="Your premier one-stop shop for website design and development, expert social media and digital marketing, and creative graphic design services."
-            ifButton={true}
-            buttonBottom={true}
-            buttonText="Get Started"
-            buttonLink="#"
-            className="hero-content column text-center margin-center w70"
-            headingClass="text-shadow-for-dark"
-            paragraphClass="p-small smaller-top-space bottom-space"
-            buttonClass="p-small"
-            buttonSecClass="hero-btn-container smaller-top-space smaller-bottom-space justify-center"
-            titleClass="section-title"
-          />
+                 isHero
+                 ifParagraph
+                 contentWrapClass="column"
+                 title={data.title}
+                 heading={data.heading}
+                 paragraph1={data.description}
+                 ifButton={false}
+                 buttonText="Get Started"
+                 buttonLink="#"
+                 className="hero-content"
+                 headingClass="text-shadow-for-dark"
+                 paragraphClass="p-small bottom-space"
+                 buttonClass="p-small"
+                 buttonSecClass="hero-btn-container smaller-top-space smaller-bottom-space flex justify-left"
+                 titleClass="section-title"
+               />
     </section>
   );
 };
 
-export default Hero1;
+export default Hero2;

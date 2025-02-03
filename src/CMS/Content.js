@@ -249,9 +249,9 @@ const collections = [
       },
     ],
     items: {
-      isHeirarchical: false,
+      isHeirarchical: true,
       itemsHasPage: true,
-      includeCollectionSlug: false,
+      includeCollectionSlug: true,
       itemSections: ["hero", "projects", "services", "testimonials", "faq"],
       onlyParentItemsHasPage: false,
       description:
@@ -266,6 +266,7 @@ const collections = [
         {
           icon: getIcon("fa", "LaptopCode"),
           title: "Web Development",
+          heading: "Web Development Services",
           slug: "/web-development",
           description:
             "Custom websites and applications that engage and convert.",
@@ -278,6 +279,7 @@ const collections = [
         {
           icon: getIcon("fa", "LaptopCode"),
           title: "Web Design",
+          heading: "Web Design Services",
           slug: "/web-design",
           description:
             "Modern, responsive websites that captivate your audience.",
@@ -290,6 +292,7 @@ const collections = [
         {
           icon: getIcon("fa", "Search"),
           title: "SEO",
+          heading: "Search Engine Optimization",
           slug: "/seo",
           description:
             "Improve your rankings and get found by more potential customers.",
@@ -307,6 +310,7 @@ const collections = [
         {
           icon: getIcon("fa", "Envelope"),
           title: "Email Marketing",
+          heading: "Email Marketing Services",
           slug: "/email-marketing",
           parentItem: "/web-design",
           description:
@@ -315,6 +319,7 @@ const collections = [
         {
           icon: getIcon("fa", "Cloud"),
           title: "Hosting & Maintenance",
+          heading: "Hosting & Maintenance Services",
           slug: "/hosting-maintenance",
           parentItem: "/seo",
           description:

@@ -10,8 +10,8 @@ import "./animations.css";
 import { ThemeProvider } from "./themeControls/ThemeContext";
 
 // Lazy-load your hero sections separately
-const Hero1 = lazy(() => import("./Sections/HeroSections/Hero1/hero"));
-const Hero3 = lazy(() => import("./Sections/HeroSections/Hero3/hero"));
+const Hero1 = lazy(() => import("./Sections/HeroSections/Hero1/Hero"));
+const Hero2 = lazy(() => import("./Sections/HeroSections/Hero2/Hero"));
 
 /**
  * 1) Add all your "missing" sections to this object.
@@ -56,7 +56,7 @@ const CMSDisplayTheme = memo(() => {
             </Suspense>
           ) : (
             <Suspense fallback={<div>Loading Hero...</div>}>
-              <Hero3 data={{ title, description }} />
+              <Hero2 data={{ title, description }} />
             </Suspense>
           )}
 

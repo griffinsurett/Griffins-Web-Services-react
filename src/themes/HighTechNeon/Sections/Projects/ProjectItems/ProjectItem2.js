@@ -10,13 +10,13 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const ProjectItem = ({ project, index }) => {
   const animationClass = index % 2 === 0 ? "left" : "right";
-
+  console.log(project);
   return (
     <div className="project-item flex column justify-center responsive-center">
       {/* Use a plain div with fade-in-<left/right> */}
       <div className={`fade-in-${animationClass}`}>
         <a
-          href={project.link}
+          href={project.slug}
           target="_blank"
           rel="noopener noreferrer"
           className="project-link"
