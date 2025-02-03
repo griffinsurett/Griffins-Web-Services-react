@@ -30,7 +30,7 @@ const Accordion = ({ items }) => {
   return (
     <div className="accordion fade-in">
       {items.map((item, index) => (
-        <AccordionItem key={index} title={item.title} content={item.content} />
+        <AccordionItem key={index} title={item.title} content={item.description} />
       ))}
     </div>
   );

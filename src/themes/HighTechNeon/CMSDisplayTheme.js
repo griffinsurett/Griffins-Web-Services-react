@@ -27,7 +27,7 @@ const sectionComponents = {
     projects: lazy(() => import("./Sections/Projects/Projects")),
     // testimonials: lazy(() => import("./ThemeTemplates/Testimonials/Testimonials")),
     contact: lazy(() => import("./Sections/Contact/Contact3/ContactUs")),
-    // faq: lazy(() => import("./ThemeTemplates/FAQ/FAQ")),
+    faq: lazy(() => import("./Sections/FAQ/FAQ")),
   };
   
 

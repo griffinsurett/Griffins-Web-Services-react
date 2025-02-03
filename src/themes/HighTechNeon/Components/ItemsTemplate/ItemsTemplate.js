@@ -1,19 +1,19 @@
-// src/themes/HighTechNeon/Components/ItemsTemplate.js
+// src/themes/HighTechNeon/Components/ItemsTemplate/ItemsTemplate.js
 import React from "react";
 import PropTypes from "prop-types";
-import "./items-template.css"; // We'll create a small stylesheet
+import "./items-template.css"; // We'll use this file for our column and gap styles
 
 const ItemsTemplate = ({
   items,
   ItemComponent,
   className = "flex",
   emptyComponent = null,
-  maxColumns = 3,   // <--- new prop
+  maxColumns = 3,   // already added for columns
+  gap = "20px",     // new gap prop with a default value of 20px
   ...rest
 }) => {
+  // Step 1: Normalize the items to an array
   let itemsArray = [];
-
-  // 1) Normalize
   if (!items) {
     itemsArray = [];
   } else if (Array.isArray(items)) {
@@ -24,7 +24,7 @@ const ItemsTemplate = ({
     itemsArray = [items];
   }
 
-  // 2) If no items
+  // Step 2: If there are no items, return the fallback component
   if (itemsArray.length === 0) {
     return emptyComponent ? (
       <div className={className} {...rest} role="alert">
@@ -37,10 +37,14 @@ const ItemsTemplate = ({
     );
   }
 
-  // 3) Render each item in a flex container, 
-  // wrapping each with a <div> that sets .colmax{maxColumns}
+  // Step 3: Render each item within a wrapper that sets the column class.
+  // We also add an inline style to the container to set the gap.
   return (
-    <div className={`items-template-container flex wrap gap-4 ${className}`} {...rest}>
+    <div
+      className={`items-template-container flex wrap ${className}`}
+      style={{ gap }}  // The gap is applied here
+      {...rest}
+    >
       {itemsArray.map((item, index) => (
         <div key={index} className={`colmax${maxColumns}`}>
           <ItemComponent {...item} itemIndex={index} />
@@ -55,10 +59,11 @@ ItemsTemplate.propTypes = {
     PropTypes.arrayOf(PropTypes.object),
     PropTypes.object,
   ]).isRequired,
-  ItemComponent: PropTypes.elementType.isRequired,
+  ItemComponent: PropTypes.elementType.isRequired, // A component that renders each item
   className: PropTypes.string,
   emptyComponent: PropTypes.node,
-  maxColumns: PropTypes.oneOf([1,2,3,4]) // Or more if needed
+  maxColumns: PropTypes.oneOf([1, 2, 3, 4]),
+  gap: PropTypes.string, // The gap between individual items (e.g., "20px", "1rem", etc.)
 };
 
 export default ItemsTemplate;
