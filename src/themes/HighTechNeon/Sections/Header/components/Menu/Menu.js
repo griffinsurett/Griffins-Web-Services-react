@@ -4,7 +4,7 @@ import "./menu.css";
 import MenuItem from "../../../../Components/MenuItem/MenuItem";
 import Footer from "../../../Footer/footer1/Footer";
 
-const Menu = ({ isOpen, toggleMenu, menuManager }) => {
+const Menu = ({ isOpen, toggleMenu, siteSettings, menuManager }) => {
 
 const menuItems = menuManager.getHierarchicalMenu("Primary") || [];
 
@@ -38,7 +38,7 @@ const menuItems = menuManager.getHierarchicalMenu("Primary") || [];
         but pass it the same 'menuManager' so that 
         if we want, it can fetch the same or a different menu 
       */}
-      <Footer className={"sticky-footer menu-footer-animate"} menuManager={menuManager} />
+      <Footer className={"sticky-footer menu-footer-animate"} menuManager={menuManager} siteSettings={siteSettings} />
     </div>
   );
 };

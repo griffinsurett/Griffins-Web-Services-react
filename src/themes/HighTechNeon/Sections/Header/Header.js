@@ -52,6 +52,7 @@ const Header = ({ menuManager, siteSettings }) => {
         isOpen={isMenuOpen} 
         toggleMenu={toggleMenu} 
         menuManager={menuManager} 
+        siteSettings={siteSettings}
       />
     </>
   );

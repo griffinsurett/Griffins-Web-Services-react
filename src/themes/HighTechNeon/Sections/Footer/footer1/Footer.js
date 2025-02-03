@@ -13,7 +13,7 @@ const Footer = ({ className, menuManager, siteSettings }) => {
   const socialMenu = menuManager.getFlatMenu("Social Media") || [];
 
   return (
-    <footer className={`footer ${className} flex justify-center`}>
+    <footer className={`footer ${className} flex justify-center item-align-center`}>
       <div className="header-foot-container flex justify-between item-align-center responsive">
         
           <ul className="footer-menu flex justify-between p-small">
