@@ -1,7 +1,6 @@
 // Preloader.js
 import React, { useEffect, useState } from "react";
-import "./preloader.css"; // Import your CSS for styling the preloader
-import Logo from "../../themeComponents/Logos/2dLogo/2dLogo"; // Import your Logo component
+import Logo from "../../Components/Logos/2dLogo/2dLogo"; // Import your Logo component
 
 // Preloader Component
 const Preloader = () => {

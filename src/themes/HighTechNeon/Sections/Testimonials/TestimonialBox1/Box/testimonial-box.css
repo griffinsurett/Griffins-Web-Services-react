@@ -1,0 +1,35 @@
+/* testimonial-box.css */
+#testimonialSlider {
+  margin: 10px;
+}
+
+.testimonial-box {
+  margin: 24px;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  }
+  
+  .quote {
+    font-style: italic;
+    margin-bottom: 15px;
+    color: var(--maintext-color);
+  }
+  
+  .name {
+    font-weight: 400;
+    margin-top: 10px;
+  }
+  
+  .position {
+    /* font-style: italic; */
+    color: var(--maintext-color);
+  }
+
+  /* @media (max-width: 1024px) {
+    .testimonial-box {
+      min-height: 400px;
+    }
+  } */

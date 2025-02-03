@@ -1,0 +1,50 @@
+/* flipText.css */
+.flip-container {
+    perspective: 1000px; /* Creates a 3D perspective */
+    display: inline-block; /* Ensures proper sizing */
+}
+
+/* Reusable flip class for any element */
+.flip {
+    display: inline-block; /* Ensure the text container behaves like a block */
+    transition: transform 1s ease; /* Duration of the flip */
+    transform-style: preserve-3d; /* Allow children to be rendered in 3D */
+    position: relative; /* Positioning for the front and back */
+}
+
+/* Flip the element when hovered */
+.flip-container:hover .flip {
+    transform: rotateY(180deg); /* 3D flip effect */
+}
+
+/* Front and back styles for text */
+.front,
+.back {
+    position: absolute;
+    width: 100%; /* Full width of the parent */
+    height: 100%; /* Full height of the parent */
+    backface-visibility: hidden; /* Hide the back face when not facing the viewer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem; /* Adjust font size as needed */
+    color: white; /* Text color */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5), /* Add shadow for depth */
+                 -1px -1px 5px rgba(0, 0, 0, 0.5),
+                 1px -1px 5px rgba(0, 0, 0, 0.5),
+                 -1px 1px 5px rgba(0, 0, 0, 0.5),
+                 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Styles for the front */
+.front {
+    transform: rotateY(0deg); /* Front face stays as is */
+}
+
+/* Styles for the back */
+.back {
+    transform: rotateY(180deg); /* Start rotated */
+    background-color: #28a745; /* Background for the back side */
+    border-radius: 5px; /* Ensure the back has the same rounding */
+    color: white; /* Text color */
+}

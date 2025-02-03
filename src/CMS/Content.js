@@ -1,468 +1,568 @@
 // Content.js
-// Import all required icons
-import {
-  faFacebook,
-  faTwitter,
-  faInstagram,
-  faLinkedin,
-  faXTwitter,
-} from "@fortawesome/free-brands-svg-icons";
-import {
-  faPhone,
-  faEnvelope,
-  faLaptop,
-  faCogs,
-  faChartBar,
-  faComments,
-  faChartLine,
-  faWandMagicSparkles,
-  faPaintBrush,
-  faRobot,
-  faGlobe,
-  faCode,
-  faTools,
-  faX,
-} from "@fortawesome/free-solid-svg-icons";
+import processDynamicContent from "./Utils/DynamicContent/DynamicContentUtils";
+import defaultPages from "./DefaultPages";
+import { processHomepage } from "./Utils/StaticPages/HomepageUtils";
+import { setLogo } from "./Utils/SEO/SetLogo";
+import { generateQueries } from "./Queries"; // Import menu generation logic
+import { getIcon } from "./Utils/Icons/IconImporter";
 
-// Define site settings separately
+const Logo = `${process.env.PUBLIC_URL}/gwservices-logo.png`; 
+const TestImage = `${process.env.PUBLIC_URL}/gwservices-default-image.png`;
+
+/**
+ * -----------------------------------------------------------------------------
+ * Site Settings
+ * -----------------------------------------------------------------------------
+ */
 const siteSettings = {
-  siteTitle: "Griffin's Web Services",
-  siteTagline: "Websites and All Things Digital",
+  siteTitle: "Griffins Web Services",
+  siteTagline: "Empowering Your Digital Presence",
   siteDescription:
-    "Your Jersey Shore-based digital powerhouse for stunning, custom websites and dynamic online solutions that engage audiences and deliver results.",
-  siteAuthor: "Griffin's Web Services",
-  BusinessName: "Griffin's Web Services LLC",
+    "At Griffins Web Services, we create stunning websites and provide top-notch digital marketing solutions to help your business flourish online.",
+  siteLogo: Logo,
+  siteCompany: "Griffins Web Services",
+  businessOwner: "Jane Griffin",
+  ownerDateOfBirth: "1990-01-01",
+  BusinessName: "Griffins Web Services LLC",
+  CTAButton: "Start Project",
+  CTALink: "/contact-us",
+
   get Copyright() {
-    const currentYear = new Date().getFullYear(); // Get the current year dynamically
+    const currentYear = new Date().getFullYear();
     return `Copyright © ${currentYear} ${this.BusinessName}`;
   },
+  get ownerAge() {
+    const today = new Date();
+    const birthDate = new Date(this.ownerDateOfBirth);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDifference = today.getMonth() - birthDate.getMonth();
+    const dayDifference = today.getDate() - birthDate.getDate();
+    if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
+      age--;
+    }
+    return age;
+  },
+  keywords: [
+    "web design",
+    "digital marketing",
+    "SEO services",
+    "website development",
+    "Griffins Web Services",
+    "responsive web design",
+    "ecommerce solutions",
+    "social media marketing",
+    "email marketing",
+    "online branding",
+  ],
 };
 
-const pages = [
-  {
-    id: "homepage",
-    sections: [
-      "hero",
-      "services",
-      "about",
-      "projects",
-      "testimonials",
-      "faq",
-      "contact",
-    ],
-    link: "/", // Ensure the homepage link is set to "/"
-  },
-];
-
-// Define collections separately
+/**
+ * -----------------------------------------------------------------------------
+ * Collections
+ * -----------------------------------------------------------------------------
+ */
 const collections = [
+  /**
+   * ------------------------------
+   * About
+   * ------------------------------
+   */
   {
     id: 1,
     collection: "about",
-    heading: "Who We Are",
+    heading: "Meet Griffins Web Services",
     title: "About Us",
+    featuredImage: TestImage,
+    addToQuery: [
+      { name: "Primary", parentQueryItem: null, queryItemText: "title" },
+    ],
     hasPage: true,
-    link: "/about-us",
-    sections: ["hero", "about"],
+    slug: "/about-us",
+    sections: ["hero", "purpose", "whyChooseUs", "aboutInfo", "benefits"],
     redirectFrom: ["/about"],
-    paragraphs: [
-      "Your Jersey Shore-based Digital Powerhouse for Website Creation, Digital Marketing, Branding, IT Consulting, and more.",
-      `Since 2019, the founder of ${siteSettings.siteTitle} has served as the Chief Technology Officer of i-75 CPA Review, providing expert web design, development, hosting, management, branding, and IT consulting. Through innovative strategies and tailored solutions, these efforts have helped the business grow by over 100x, establishing i-75 as a leader in its industry, and I am very much excited to do the same for your business.`,
+    description:
+      "Discover how Griffins Web Services combines creativity, technology, and marketing expertise to bring your online vision to life.",
+    purpose: {
+      makeObjectSection: true,
+      title: "Our Purpose",
+      heading: "Mission and Vision",
+      description: "Helping businesses scale with digital solutions that work.",
+      items: [
+        {
+          title: "Mission",
+          description: "Create impactful online experiences for every client.",
+        },
+        {
+          title: "Vision",
+          description: "Become the go-to partner for all things digital.",
+        },
+      ],
+    },
+    whyChooseUs: {
+      title: "Why Choose Us?",
+      heading: `Why Choose ${siteSettings.siteTitle}?`,
+      makeObjectSection: true,
+      items: [
+        {
+          title: "Results-Driven",
+          icon: getIcon("fa", "ChartLine"),
+          description:
+            "We focus on delivering measurable growth for your business.",
+        },
+        {
+          title: "Personalized Approach",
+          icon: getIcon("fa", "HandsHelping"),
+          description:
+            "We tailor solutions to your unique goals, audience, and budget.",
+        },
+      ],
+    },
+    keywords: [
+      "about Griffins Web Services",
+      "digital agency",
+      "web design expertise",
+      "marketing consultants",
+      "trustworthy digital services",
     ],
-    button: { text: "Learn More", link: "#" },
-    aboutInfo: [
-      {
-        title: "Mission",
-        statement:
-          "Our mission is to empower businesses at the Jersey Shore and beyond by providing innovative digital solutions that drive exponential growth and sustainable success.",
-      },
-      {
-        title: "Vision",
-        statement:
-          "We envision a future where every business, regardless of size, thrives in the digital age with tailored strategies, cutting-edge technology, and impactful design.",
-      },
-    ],
-    items: [
-      {
-        title: "Effective Communication",
-        description:
-          "We ensure every step of the process is clear, collaborative, and focused on your goals.",
-        icon: faComments, // Represents communication and collaboration
-      },
-      {
-        title: "Custom Solutions",
-        description:
-          "Our services are tailored to meet your unique challenges and business objectives.",
-        icon: faCogs, // Represents customization and innovative solutions
-      },
-      {
-        title: "Measurable Results",
-        description:
-          "We deliver proven strategies that drive real growth and success for your business.",
-        icon: faChartBar, // Symbolizes measurable performance and results
-      },
-    ],
+    benefits: {
+      makeObjectSection: true,
+      title: "Benefits",
+      heading: "What We Offer",
+      items: [
+        {
+          title: "Transparent Pricing",
+          icon: getIcon("fa", "DollarSign"),
+          description: "No hidden fees—clear and fair pricing from the start.",
+        },
+        {
+          title: "Dedicated Support",
+          icon: getIcon("fa", "Headset"),
+          description: "We’re here to answer questions and provide assistance.",
+        },
+      ],
+    },
+    aboutInfo: {
+      makeObjectSection: true,
+      title: "About Griffins Web Services in Detail",
+      heading: "Who We Are",
+      items: [
+        {
+          title: "Our Background",
+          heading: "Founded by passionate marketers and developers...",
+          description:
+            "Griffins Web Services emerged in 2020 to provide clients with cutting-edge digital solutions and unparalleled customer care.",
+        },
+        {
+          title: "What We Do",
+          description:
+            "From full-stack development to SEO, we provide end-to-end services that help you thrive online.",
+        },
+      ],
+    },
   },
+
+  /**
+   * ------------------------------
+   * Contact
+   * ------------------------------
+   */
   {
-    id: 2,
+    id: 10,
     collection: "contact",
-    heading: "Contact Us.",
-    paragraph: `Discover answers to common questions about ${siteSettings.siteTitle}.`,
+    heading: "Let’s Work Together",
+    title: "Contact Us",
+    featuredImage: TestImage,
+    description: `Have questions about ${siteSettings.siteTitle}? We’re here to help.`,
     hasPage: true,
-    link: "/contact-us",
+    slug: "/contact-us",
+    addToQuery: [{ name: "Primary", parentQueryItem: null }],
     sections: ["hero", "contact"],
     redirectFrom: ["/contact"],
     contactInfo: [
       {
-        icon: faPhone,
+        icon: getIcon("fa", "Phone"),
         label: "Phone",
         value: "(732) 939-1309",
-        href: "tel:7329391309",
+        get href() {
+          return `tel:${this.value.replace(/\D/g, "")}`;
+        },
       },
       {
-        icon: faEnvelope,
+        icon: getIcon("fa", "Envelope"),
         label: "Email",
         value: "griffin@griffinswebservices.com",
-        href: "mailto:griffin@griffinswebservices.com",
+        get href() {
+          return `mailto:${this.value}`;
+        },
       },
     ],
     socialMedia: [
       {
         platform: "Facebook",
         href: "https://facebook.com/griffinswebservices",
-        icon: faFacebook,
+        icon: getIcon("fab", "Facebook"),
       },
       {
         platform: "X",
         href: "https://twitter.com/griffinswebservices",
-        icon: faXTwitter,
+        icon: getIcon("fab", "XTwitter"),
       },
       {
         platform: "LinkedIn",
         href: "https://linkedin.com/company/griffins-web-services",
-        icon: faLinkedin,
+        icon: getIcon("fab", "Linkedin"),
       },
       {
         platform: "Instagram",
         href: "https://instagram.com/griffinswebservices",
-        icon: faInstagram,
+        icon: getIcon("fab", "Instagram"),
       },
     ],
-    formFields: [
-      { name: "firstName", placeholder: "First Name" },
-      { name: "lastName", placeholder: "Last Name" },
-      { name: "email", placeholder: "Email" },
-      { name: "phone", placeholder: "Phone Number" },
-      { name: "subject", placeholder: "Subject" },
-      { name: "message", placeholder: "Message" },
-    ],
-    button: { text: "Submit", link: "#" },
   },
+
+  /**
+   * ------------------------------
+   * Services
+   * ------------------------------
+   */
   {
     id: 3,
     collection: "services",
-    heading: "What We Offer",
-    title: "Our Services",
+    heading: "How We Help",
+    title: "Services",
+    description:
+      "Explore our wide range of services designed to enhance your online presence and drive business growth.",
+    featuredImage: TestImage,
     hasPage: true,
-    itemsHasPage: true, // Indicates that individual items also have pages
-    link: "/services",
-    sections: ["hero", "services"],
+    slug: "/services",
+    onlyParentsOnCollection: false,
     redirectFrom: ["/service"],
-    paragraph: "Explore our wide range of services.",
-    button: { text: "Get Started", link: "#" },
-    items: [
+    sections: ["hero", "services", "benefits", "projects", "testimonials"],
+    addToQuery: [
       {
-        icon: faPaintBrush,
-        title: "Web Design and Development",
-        description:
-          "Create visually stunning, user-friendly websites and web-apps that are robust, responsive, and built with cutting-edge technologies to captivate your audience and ensure seamless functionality.",
-        link: "/services/web-creation", // Link for the item
-        sections: ["hero", "about", "faq"], // Sections specific to this item
-      },
-      {
-        icon: faGlobe,
-        title: "Web Hosting and Management",
-        description:
-          "Provide secure and reliable web hosting alongside comprehensive site management to ensure your website stays online, updated, and performing at its best.",
-        link: "/services/web-hosting", // Link for the item
-        sections: ["hero", "pricing", "testimonials"], // Sections specific to this item
-      },
-      {
-        icon: faWandMagicSparkles,
-        title: "Brand Design and Strategy",
-        description:
-          "Your website is your brand's home. To connect and convert, your branding must be on point, with exceptional logos, visuals, and strategies that make you stand out.",
-        link: "/services/branding", // Link for the item
-        sections: ["hero", "projects", "contact"], // Sections specific to this item
-      },
-      {
-        icon: faChartLine,
-        title: "Digital Marketing",
-        description:
-          "Expand your reach with targeted marketing services, including SEO, social media, email campaigns, and analytics.",
-        link: "/services/digital-marketing", // Link for the item
-        sections: ["hero", "about", "testimonials"], // Sections specific to this item
-      },
-      {
-        icon: faRobot,
-        title: "IT Consulting",
-        description:
-          "We provide expert consulting to guide you through all your tech needs, from IT solutions to leveraging AI, ensuring your business thrives in the digital age.",
-        link: "/services/it-consulting", // Link for the item
-        sections: ["hero", "faq", "contact"], // Sections specific to this item
-      },
-      {
-        icon: faTools, // or a relevant infrastructure/setup icon
-        title: "Infrastructure Setup",
-        description:
-          "Set up the essential infrastructure for your website, including CRM integration, analytics setup, tag management, and other tools to ensure seamless tracking, reporting, and optimization.",
-        link: "/services/infrastructure-setup", // Link for the item
-        sections: ["hero", "projects", "faq"], // Sections specific to this item
+        name: "Primary",
+        parentQueryItem: null,
+        queryItemText: "title",
+        addItemsToQuery: true,
+        setChildrenUnderParents: false,
+        excludeCollection: false,
       },
     ],
-  },   
+    items: {
+      isHeirarchical: false,
+      itemsHasPage: true,
+      includeCollectionSlug: false,
+      itemSections: ["hero", "projects", "services", "testimonials", "faq"],
+      onlyParentItemsHasPage: false,
+      description:
+        "We provide customized digital services to meet your specific goals.",
+      keywords: [
+        "web design services",
+        "digital marketing solutions",
+        "SEO experts",
+        "online branding",
+      ],
+      data: [
+        {
+          icon: getIcon("fa", "LaptopCode"),
+          title: "Web Design",
+          slug: "/web-design",
+          description:
+            "Modern, responsive websites that captivate your audience.",
+          sections: ["hero", "services", "projects", "testimonials", "faq"],
+          relations: [
+            { collection: "projects", value: "/marketing-site-redesign" },
+            { collection: "faq", value: 2 },
+          ],
+        },
+        {
+          icon: getIcon("fa", "Search"),
+          title: "SEO",
+          slug: "/seo",
+          description:
+            "Improve your rankings and get found by more potential customers.",
+          sections: ["hero", "services", "projects", "testimonials", "faq"],
+          relations: [],
+        },
+        {
+          icon: getIcon("fa", "ChartLine"),
+          title: "Digital Marketing",
+          slug: "/digital-marketing",
+          parentItem: "/web-design",
+          description:
+            "Drive targeted traffic and conversions through strategic online campaigns.",
+        },
+        {
+          icon: getIcon("fa", "Envelope"),
+          title: "Email Marketing",
+          slug: "/email-marketing",
+          parentItem: "/web-design",
+          description:
+            "Engage with your audience through personalized email campaigns.",
+        },
+        {
+          icon: getIcon("fa", "Cloud"),
+          title: "Hosting & Maintenance",
+          slug: "/hosting-maintenance",
+          parentItem: "/seo",
+          description:
+            "Keep your site secure, fast, and up to date with our reliable hosting solutions.",
+        },
+      ],
+    },
+  },
+
+  /**
+   * ------------------------------
+   * Projects (Portfolio)
+   * ------------------------------
+   */
   {
     id: 4,
-    collection: "testimonials",
-    heading: "Hear From Our Clients",
-    title: "Our Testimonials",
-    hasPage: true, // Indicates that individual items also have pages
-    link: "/testimonials",
-    sections: ["hero", "testimonials"],
-    redirectFrom: ["/testimonial"],
-    button: { text: "Get Started", link: "#" },
-    items: [
-      {
-        name: "Kenn Faria",
-        quote:
-          "Working with this team brought our vision to life! The website captures our services perfectly and has brought in a steady stream of clients.",
-        position: "Owner, Faria's Demolition",
-      },
-      {
-        name: "Anthony Gonzales",
-        quote:
-          "Highly recommend! Griffin was professional and efficient with a great website that has helped us grow our business exponentially.",
-        position: "Owner, Pronto Junk Removal",
-      },
-      {
-        name: "Darius Clark",
-        quote:
-          "From branding to the e-commerce platform, everything was done with precision and creativity. Griffin has been able to 5x business and I’m beyond satisfied with the results.",
-        position: "CEO of i-75 CPA Review",
-      },
-      {
-        name: "Arold Norelus",
-        quote:
-          "Griffin truly captured my brand’s essence. The website has been a game-changer for my courses and community engagement.",
-        position: "Best-Selling Author",
-      },
-      {
-        name: "Tarun Kumar",
-        quote:
-          "Professional, skilled, and efficient! Our new site is not only beautiful but effectively showcases our client success stories.",
-        position: "Owner, Koi Crest Marketing",
-      },
-      {
-        name: "Richard Faria",
-        quote:
-          "An excellent experience from start to finish. The site has helped position us as a leader in our industry.",
-        position: "Owner, Koi Crest Marketing",
-      },
-    ],
+    collection: "projects",
+    heading: "Our Portfolio",
+    title: "Projects",
+    description:
+      "Check out a few of our recent projects and discover how we’ve helped businesses transform their online presence.",
+    featuredImage: TestImage,
+    hasPage: true,
+    slug: "/projects",
+    sections: ["hero", "projects", "services", "testimonials"],
+    addToQuery: [{ name: "Primary", parentQueryItem: "/about-us" }],
+    items: {
+      itemsHasPage: true,
+      itemSections: ["hero", "projects", "services", "testimonials"],
+      data: [
+        {
+          id: 1,
+          title: "Corporate Marketing Site Redesign",
+          description:
+            "Revamped an existing corporate website to boost conversions and brand credibility.",
+          slug: "/marketing-site-redesign",
+          featuredImage: TestImage,
+          relations: [{ collection: "testimonials", value: 1 }],
+        },
+        {
+          id: 2,
+          title: "Ecommerce Startup Launch",
+          description:
+            "Built a fully responsive ecommerce store for a new startup, integrating a secure payment gateway.",
+          slug: "/ecommerce-startup-launch",
+          featuredImage: TestImage,
+          relations: [{ collection: "testimonials", value: 1 }],
+        },
+      ],
+    },
   },
+
+  /**
+   * ------------------------------
+   * Testimonials
+   * ------------------------------
+   */
   {
     id: 5,
-    collection: "projects",
-    heading: "Our Work",
-    title: "Our Projects",
-    hasPage: true, 
-    link: "/projects",
-    sections: ["hero", "projects"],
-    paragraph:
-      "Discover our recent projects and see how we've helped businesses like yours succeed.",
-    button: { text: "More Projects", link: "#" },
-    items: [
-      {
-        id: 1,
-        name: "i-75 CPA Review",
-        description:
-          "Developed multiple e-commerce sites with landing pages, branding, and digital marketing solutions.",
-        link: "https://i75cpareview.com/",
-        image: "https://picsum.photos/200/300",
-      },
-      {
-        id: 2,
-        name: "Faria's Demolition",
-        description:
-          "Created a comprehensive website showcasing demolition services, including project galleries and contact forms.",
-        link: "https://fariasdemolition.com/",
-        image: "https://picsum.photos/200/300",
-      },
-      {
-        id: 3,
-        name: "Pronto Junk Removal",
-        description:
-          "Built a service-oriented site with booking functionality and optimized for lead generation in junk removal.",
-        link: "https://prontojunkremovalnj.com/",
-        image: "https://picsum.photos/200/300",
-      },
-      {
-        id: 4,
-        name: "Koi Solar",
-        description:
-          "Designed a clean, informative site to promote solar solutions, emphasizing brand trust and environmental impact.",
-        link: "https://koisolarofficial.com/",
-        image: "https://picsum.photos/200/300",
-      },
-      {
-        id: 5,
-        name: "Certified Bag Chasers",
-        description:
-          "Created a personal brand website for a best-selling author and course creator, featuring courses, testimonials, and community-building resources.",
-        link: "https://certifiedbagchasers.com/",
-        image: "https://picsum.photos/200/300",
-      },
-      {
-        id: 6,
-        name: "Koi Crest Marketing",
-        description:
-          "Built a digital marketing agency website with case studies and service offerings, highlighting client success stories.",
-        link: "https://koicrest.com/",
-        image: "https://picsum.photos/200/300",
-      },
-    ],
+    collection: "testimonials",
+    heading: "What Our Clients Say",
+    title: "Testimonials",
+    description:
+      "Read feedback from our clients and learn how Griffins Web Services has helped them succeed online.",
+    hasPage: true,
+    featuredImage: TestImage,
+    addToQuery: [{ name: "Primary", parentQueryItem: "/about-us" }],
+    slug: "/testimonials",
+    sections: ["hero", "testimonials"],
+    items: {
+      data: [
+        {
+          name: "John Doe",
+          quote:
+            "Our new website looks fantastic, and our traffic has nearly doubled. Griffins Web Services is the real deal!",
+          position: "Marketing Manager, TechCorp",
+          featuredImage: TestImage,
+        },
+        {
+          name: "Sarah Lee",
+          quote:
+            "They helped me launch my ecommerce store quickly and efficiently. Couldn’t be happier with the results!",
+          position: "Founder, FreshFashion",
+          featuredImage: TestImage,
+        },
+      ],
+    },
   },
+
+  /**
+   * ------------------------------
+   * FAQ
+   * ------------------------------
+   */
   {
     id: 6,
-    collection: "pricing",
-    heading: "Our Pricing Plans",
-    title: "Choose a Plan",
-    paragraph:
-      "We offer flexible pricing plans for businesses of all sizes. Find the perfect plan for you.",
-    items: [
-      {
-        title: "Basic Plan",
-        description: "For small businesses just getting started.",
-        price: "$19",
-        paymentType: "per month",
-        bulletPoints: ["1 Website", "Basic Support", "Email Hosting"],
-        button: { text: "Choose Plan", link: "#" },
-        isFeatured: false,
-      },
-      {
-        title: "Pro Plan",
-        description: "For growing businesses that need more features.",
-        price: "$49",
-        paymentType: "per month",
-        bulletPoints: ["3 Websites", "Priority Support", "SEO Tools"],
-        button: { text: "Choose Plan", link: "#" },
-        isFeatured: true,
-      },
-      {
-        title: "Enterprise Plan",
-        description: "For large organizations with advanced needs.",
-        price: "$99",
-        paymentType: "per month",
-        bulletPoints: [
-          "Unlimited Websites",
-          "Dedicated Support",
-          "Advanced Analytics",
-        ],
-        button: { text: "Choose Plan", link: "#" },
-        isFeatured: false,
-      },
-    ],
-  },
-  {
-    id: 7,
     collection: "faq",
     heading: "Frequently Asked Questions",
     title: "FAQ",
-    paragraph: `Discover answers to common questions about ${siteSettings.siteTitle}.`,
-    items: [
+    description:
+      "Find quick answers to common queries about Griffins Web Services and our solutions.",
+    hasPage: true,
+    featuredImage: TestImage,
+    addToQuery: [{ name: "Primary", parentQueryItem: "/about-us" }],
+    slug: "/faq",
+    sections: ["hero", "faq"],
+    redirectFrom: ["/questions"],
+    items: {
+      data: [
+        {
+          title: "What services do you offer?",
+          description:
+            "We cover every aspect of digital marketing and web development—from design and SEO to hosting and maintenance.",
+        },
+        {
+          title: "How long have you been operating?",
+          description:
+            "Griffins Web Services has been supporting clients with quality digital solutions since 2020.",
+        },
+        {
+          title: "Do you work with small businesses and startups?",
+          description:
+            "Absolutely! We tailor solutions for businesses of all sizes and stages, ensuring the best fit for your budget and goals.",
+        },
+        {
+          title: "Are your websites mobile-friendly?",
+          description:
+            "Yes. All our websites are fully responsive and tested across multiple devices for a seamless user experience.",
+        },
+        {
+          title: "How can I request a quote?",
+          description:
+            "Simply fill out our contact form or give us a call, and we’ll get back to you with a detailed proposal.",
+        },
+      ],
+    },
+  },
+
+  /**
+   * ------------------------------
+   * Process
+   * ------------------------------
+   */
+  {
+    id: 7,
+    collection: "process",
+    heading: "How We Work",
+    title: "Process",
+    featuredImage: TestImage,
+    hasPage: true,
+    slug: "/process",
+    sections: ["hero", "process", "contact"],
+    addToQuery: [
       {
-        title: "Is the domain name included with the website?",
-        content:
-          "Setting up your domain is included and part of the process as well as the SSL Certificate with our hosting provider, however buying the domain name is not included with the price of the website. And something you will have to do, however, not to worry it will usually only cost you around $8-$12 a year and super easy to buy it. We will assist you in doing so and then you can leave the rest of the work to us!",
-      },
-      {
-        title: "Can you make my website mobile-friendly?",
-        content:
-          "Absolutely. 100%, With the growing number of mobile users, it’s crucial to have a website that looks and works great on all devices. All of our websites are designed to be responsive, meaning they will adapt to the screen size of the device they’re being viewed on.",
-      },
-      {
-        title: "What's your cancellation policy for the site management plan?",
-        content:
-          "Our goal is to make our clients happy and satisfied with our services. If for any reason you wish to cancel your monthly plan, just let us know.",
-      },
-      {
-        title: `How does ${siteSettings.siteTitle} handle security, and what ongoing support is provided?`,
-        content: `At ${siteSettings.siteTitle}, security is a priority for every site we build. We carefully choose trusted plugins and top-tier hosting services, known for their robust security measures, for all our clients. However, ongoing maintenance requires an extended management plan.`,
-      },
-      {
-        title: `Privacy Policies, Terms and Conditions, etc. How does ${siteSettings.siteTitle} clarify to users information about these types of privacy issues?`,
-        content:
-          "We are not legal experts and recommend consulting with a lawyer to ensure compliance with all privacy and legal regulations.",
-      },
-      {
-        title: "Can you help me with email marketing?",
-        content: `Absolutely, with ${siteSettings.siteTitle}, we can set your website up with all the tools to create an effective email marketing campaign. We can help you create email lists as well as design the user interface for people to sign up as well as provide you with a team of individuals who can manage your day-to-day email marketing campaigns.`,
-      },
-      {
-        title:
-          "I run a restaurant and I'm looking for a website that can handle reservations and online orders. Can Griffin's Web Services help with this?",
-        content: `Absolutely! At ${siteSettings.siteTitle}, we specialize in building custom websites for restaurants and various other local businesses. We can seamlessly integrate popular reservation platforms and develop a custom reservation system.`,
-      },
-      {
-        title: "Can you help me with social media?",
-        content:
-          "Yes, we can help you integrate social media tools for platforms like Facebook, Instagram, and TikTok into your website and provide a team to manage your campaigns.",
-      },
-      {
-        title: "What types of businesses have you worked with in the past?",
-        content:
-          "We have worked with a broad range of businesses across various sectors such as restaurants, local services, e-commerce, online courses, and more.",
-      },
-      {
-        title: "How does your quote process work?",
-        content:
-          "You can book a quote directly on our website. We’ll arrange a consultation, where we’ll discuss your requirements and expectations, and then provide you with a detailed quote for your project.",
+        name: "Primary",
+        parentQueryItem: null,
+        queryItemText: "title",
       },
     ],
+    description:
+      "See our streamlined approach to taking your project from concept to completion—on time and on budget.",
+    items: {
+      data: [
+        {
+          id: 1,
+          name: "Discovery & Planning",
+          description:
+            "We learn your objectives, target audience, and design preferences to map out a clear project plan.",
+          featuredImage: TestImage,
+        },
+        {
+          id: 2,
+          name: "Design & Development",
+          description:
+            "We create wireframes and mockups, then transform them into a fully functional website or digital solution.",
+          featuredImage: TestImage,
+        },
+        {
+          id: 3,
+          name: "Testing & Optimization",
+          description:
+            "We rigorously test performance, usability, and SEO to ensure top-tier quality before launch.",
+          featuredImage: TestImage,
+        },
+        {
+          id: 4,
+          name: "Launch & Support",
+          description:
+            "We deploy your new site or campaign, then provide ongoing support to keep things running smoothly.",
+          featuredImage: TestImage,
+        },
+      ],
+    },
   },
 ];
 
-// Content.js
-collections.forEach((collection) => {
-  if (collection.hasPage) {
-    // Add the main collection page
-    pages.push({
-      id: collection.collection,
-      sections: collection.sections,
-      link: collection.link,
-    });
-  }
+/**
+ * -----------------------------------------------------------------------------
+ * Homepage Override
+ * -----------------------------------------------------------------------------
+ * Here you can customize how your homepage differs from other static pages.
+ */
+const homepageOverride = {
+  title: `${siteSettings.siteTagline}`,
+  description: `${siteSettings.siteDescription}`,
+  featuredImage: TestImage,
+  sections: [
+    "hero",
+    "services",
+    "about",
+    "process",
+    "benefits",
+    "whyChooseUs",
+    "projects",
+    "testimonials",
+    "contact",
+    "faq",
+  ],
+};
 
-  // Add item-specific pages if `itemsHasPage` is true
-  if (collection.itemsHasPage && collection.items) {
-    collection.items.forEach((item) => {
-      if (item.link && item.sections) {
-        pages.push({
-          id: item.link, // Use the item's link as the page ID
-          sections: item.sections, // Use the item's specific sections
-          link: item.link, // The link for this item page
-        });
-      }
-    });
-  }
+/**
+ * -----------------------------------------------------------------------------
+ * Process Pages & Collections
+ * -----------------------------------------------------------------------------
+ */
+const pages = processHomepage(defaultPages, homepageOverride);
+const { processedCollections, processedPages } = processDynamicContent({
+  pages,
+  collections,
 });
 
+/**
+ * -----------------------------------------------------------------------------
+ * Optionally Add Relationships via RelationalUtil (example commented out)
+ * -----------------------------------------------------------------------------
+ *
+ * // import RelationalUtil from "./Utils/DynamicContent/RelationalUtil";
+ * // const relationalUtil = new RelationalUtil({ collections: processedCollections });
+ * // relationalUtil.relate("services", "/web-design", "projects", "/marketing-site-redesign");
+ * // relationalUtil.relate("projects", "/marketing-site-redesign", "testimonials", "/john-doe");
+ * // etc.
+ */
 
-// Export Content as an object combining siteSettings and collections
+/**
+ * -----------------------------------------------------------------------------
+ * Set Site Logo
+ * -----------------------------------------------------------------------------
+ */
+setLogo(siteSettings.siteLogo);
+
+/**
+ * -----------------------------------------------------------------------------
+ * Final Export
+ * -----------------------------------------------------------------------------
+ */
 const Content = {
   siteSettings,
-  collections,
-  pages,
+  collections: processedCollections,
+  pages: processedPages,
+  queries: generateQueries(processedCollections, siteSettings),
 };
 
 export default Content;

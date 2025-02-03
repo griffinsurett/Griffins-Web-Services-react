@@ -1,7 +1,7 @@
 // DarkLightSwitch.js
 import React from "react";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
-import CircleCheckbox from "../../themeComponents/CircleCheckbox/circle-checkbox";
+import CircleCheckbox from "../../Components/CircleCheckbox/circle-checkbox";
 import { useTheme } from "../ThemeContext";
 import "./dark-light-switch.css";
 

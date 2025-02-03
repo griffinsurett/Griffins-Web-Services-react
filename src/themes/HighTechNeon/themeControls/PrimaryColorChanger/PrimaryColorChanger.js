@@ -1,8 +1,8 @@
 // primary-color-changer.js
 import React, { useState, useEffect, useRef } from "react";
-import CircleCheckbox from "../../themeComponents/CircleCheckbox/circle-checkbox";
+import CircleCheckbox from "../../Components/CircleCheckbox/circle-checkbox";
 import { faDroplet } from "@fortawesome/free-solid-svg-icons";
-import { setCookie, getCookie } from "../../../../components/cookies/cookies"; 
+import { setCookie, getCookie } from "../../../../components/cookies/cookies";
 import "./primary-color-changer.css";
 
 const PrimaryColorChanger = () => {
@@ -60,7 +60,10 @@ const PrimaryColorChanger = () => {
   }, [showColorPicker]);
 
   useEffect(() => {
-    document.documentElement.style.setProperty("--darkBG-primary-color", darkPrimaryColor);
+    document.documentElement.style.setProperty(
+      "--darkBG-primary-color",
+      darkPrimaryColor
+    );
   }, [darkPrimaryColor]);
 
   return (

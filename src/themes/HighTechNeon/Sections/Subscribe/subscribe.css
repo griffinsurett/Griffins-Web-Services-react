@@ -1,0 +1,22 @@
+/* subscribe.css */
+.subscribe-form {
+    justify-content: stretch;
+    width: 100%;
+}
+
+/* #subscribeBtn {
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    margin-top: 20px;
+} */
+
+.subscribe-form button {
+    width: auto!important;
+}
+
+@media (min-width: 768px) {
+    .subscribe-form button {
+    margin-left: 10px;
+    }
+  }

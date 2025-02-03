@@ -1,4 +1,4 @@
-// src/themes/Pronto/Components/ItemsTemplate.js
+// src/themes/Pronto/ItemsTemplate.js
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -6,17 +6,8 @@ import PropTypes from "prop-types";
  * ItemsTemplate Component
  *
  * Renders a list of items using a specified ItemComponent.
- * Handles empty item arrays by displaying a default or custom message/component.
- *
- * Props:
- * - items: Array of item objects to render.
- * - ItemComponent: The component used to render each item.
- * - containerClass: Additional classes for the container wrapping all items.
- * - layout: Optional layout specification (e.g., 'grid', 'flex-col').
- * - emptyComponent: Optional component or message to display when items are empty.
- * - ...rest: Any additional props to pass to the container and ItemComponent.
+ * It first normalizes the `items` prop to always be an array so that we can safely call .map().
  */
-
 const ItemsTemplate = ({
   items,
   ItemComponent,
@@ -25,8 +16,21 @@ const ItemsTemplate = ({
   emptyComponent = null,
   ...rest
 }) => {
+  // Normalize items: if items is an array, use it;
+  // if it’s an object (or has a nested array on .data), use that; otherwise, wrap in an array.
+  let itemsArray = [];
+  if (!items) {
+    itemsArray = [];
+  } else if (Array.isArray(items)) {
+    itemsArray = items;
+  } else if (items.data && Array.isArray(items.data)) {
+    itemsArray = items.data;
+  } else if (typeof items === "object") {
+    // Wrap a single object in an array
+    itemsArray = [items];
+  }
 
-  if (items.length === 0) {
+  if (itemsArray.length === 0) {
     return emptyComponent ? (
       <div className={containerClass} {...rest} role="alert">
         {emptyComponent}
@@ -40,23 +44,18 @@ const ItemsTemplate = ({
 
   return (
     <div className={`items-template-container ${layout} ${containerClass}`} {...rest}>
-      {items.map((item, index) => (
-        <ItemComponent
-          key={index}
-          // Spread the individual item data
-          {...item}
-          // Pass down the index as a prop
-          itemIndex={index}
-          // Spread any additional props
-          {...rest}
-        />
+      {itemsArray.map((item, index) => (
+        <ItemComponent key={index} {...item} itemIndex={index} {...rest} />
       ))}
     </div>
   );
 };
 
 ItemsTemplate.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+  items: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.object),
+    PropTypes.object,
+  ]).isRequired,
   ItemComponent: PropTypes.elementType.isRequired,
   containerClass: PropTypes.string,
   layout: PropTypes.string,

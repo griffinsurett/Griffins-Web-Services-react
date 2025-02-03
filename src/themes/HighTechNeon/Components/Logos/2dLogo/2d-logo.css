@@ -1,0 +1,68 @@
+/* Logo Specific Styles */
+.logo-drop-shadow {
+  filter: var(--dropshadow1);
+  transition: filter var(--primaryTransition), box-shadow var(--primaryTransition), transform var(--primaryTransition);
+}
+
+/* .logo-drop-shadow:hover {
+  filter: var(--dropshadow2);
+  transform: scale(1.1);
+} */
+
+.complex-shadow {
+  width: 250px;
+  height: 250px; 
+  background-color: var(--primary-color); /* Base color similar to the inner color of the shadow */
+  border-radius: 50%;
+  transition: box-shadow var(--primaryTransition), background-color var(--primaryTransition);
+  box-shadow: var(--complex-box-shadow);
+}
+
+.faint-shadow {
+  width: 250px;
+  height: 250px;
+  background-color: rgba(var(--primary-color), 0.1); /* Faint background with transparency */
+  border-radius: 50%;
+  transition: box-shadow var(--primaryTransition), background-color var(--primaryTransition);
+  box-shadow: 0 0 20px 5px rgba(var(--primary-color), 0.3); /* Faint shadow with transparency */
+}
+
+.top-shadow {
+  top: 20%;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.right-shadow {
+  right: -200px;
+}
+
+.left-shadow {
+  left: -200px;
+}
+
+.center-height-shadow {
+  top: 50%;
+}
+
+/* Responsive Logo Style */
+/* .responsive-logo {
+  max-width: 100%;
+  height: auto;
+} */
+
+/* Add breakpoints for better control */
+/* @media (max-width: 768px) {
+  .responsive-logo {
+    width: 80%!important;
+    height: 80%!important;
+  }
+}
+
+@media (max-width: 480px) {
+  .responsive-logo {
+    width: 70%!important; 
+    height: 70%!important;
+  }
+} */
