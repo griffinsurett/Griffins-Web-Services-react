@@ -40,7 +40,7 @@ function Testimonials({ data }) {
         )}
         className="testimonials-boxes box-section w100 flex wrap justify-center item-align-center responsive responsive-center"
         maxColumns={2} // You can adjust this based on the desired number of columns
-        gap="20px"
+        gap="40px"
         emptyComponent={
           <p className="text-center">No testimonials available.</p>
         }
