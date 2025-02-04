@@ -21,6 +21,7 @@ const sectionComponents = {
   projects: lazy(() => import("./Sections/Projects/Projects")),
   contact: lazy(() => import("./Sections/Contact/Contact3/ContactUs")),
   faq: lazy(() => import("./Sections/FAQ/FAQ")),
+  testimonials: lazy(() => import("./Sections/Testimonials/Testimonials")),
   // ...
 };
 
@@ -75,7 +76,7 @@ const menuManager = new MenuManager(siteSettings);
         </main>
 
       </div>
-      <Footer menuManager={menuManager} siteSettings={siteSettings} />
+      {/* <Footer menuManager={menuManager} siteSettings={siteSettings} /> */}
     </ThemeProvider>
   );
 });

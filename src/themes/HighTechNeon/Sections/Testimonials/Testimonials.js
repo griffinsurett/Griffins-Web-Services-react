@@ -1,9 +1,10 @@
-// src/themes/HighTechNeon/ThemeTemplates/Testimonials/Testimonials.js
+// src/themes/HighTechNeon/Sections/Testimonials/Testimonials.js
 import React from "react";
 import Section from "../../Components/Section/Section";
 import ContentTemplate from "../../Components/ContentTemplate/ContentTemplate";
-import TestimonialCarousel from "./TestimonialBox1/TestimonialContainer";
-import { getItemData } from "../../GetItems"; // Use the helper
+import ItemsTemplate from "../../Components/ItemsTemplate/ItemsTemplate";
+import { getItemData } from "../../GetItems";
+import TestimonialBox from "./TestimonialBox1/Box/TestimonialBox"; // Reuse the testimonial box component
 import "./testimonials.css";
 
 function Testimonials({ data }) {
@@ -11,29 +12,37 @@ function Testimonials({ data }) {
     return <div>Error: Testimonials data not found</div>;
   }
 
-  // Use getItemData to ensure we have an array
+  // Normalize testimonials data (using your helper)
   const testimonials = getItemData(data);
 
   return (
-    <Section className="testimonials flex justify-center full-height column">
+    <Section className="testimonials-section flex justify-center full-height column">
       <ContentTemplate
         data={data}
-        className="testimonials-content flex item-align-center justify-between bottom-space responsive responsive-center"
+        className="testimonials-header justify-center item-align-center"
         contentWrapClass="responsive responsive-center"
-        ifButton
         heading={data.heading}
         title={data.title}
-        buttonText={data.button?.text}
-        buttonLink={data.button?.link}
-        buttonId="testimonials-header-btn"
-        buttonSecClass="responsive-center"
-        buttonBottomMobile
-      >
-        {/* No direct content here—just the button and heading */}
-      </ContentTemplate>
-
-      {/* Carousel */}
-      <TestimonialCarousel testimonials={testimonials} />
+        paragraph1={data.paragraph}
+        ifButton={true}
+        textSectionClass="w100"
+      />
+      {/* Use ItemsTemplate to render testimonial boxes */}
+      <ItemsTemplate
+        items={testimonials}
+        ItemComponent={({ quote, name, position, itemIndex }) => (
+          <TestimonialBox
+            quote={quote}
+            name={name}
+            position={position}
+            itemIndex={itemIndex}
+          />
+        )}
+        className="testimonials-boxes box-section w100 flex wrap justify-center item-align-center responsive responsive-center"
+        maxColumns={2}    // You can adjust this based on the desired number of columns
+        gap="0"
+        emptyComponent={<p className="text-center">No testimonials available.</p>}
+      />
     </Section>
   );
 }

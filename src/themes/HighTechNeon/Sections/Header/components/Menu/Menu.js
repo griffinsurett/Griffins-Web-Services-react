@@ -38,7 +38,7 @@ const menuItems = menuManager.getHierarchicalMenu("Primary") || [];
         but pass it the same 'menuManager' so that 
         if we want, it can fetch the same or a different menu 
       */}
-      <Footer className={"sticky-footer menu-footer-animate"} menuManager={menuManager} siteSettings={siteSettings} />
+      {/* <Footer className={"sticky-footer menu-footer-animate"} menuManager={menuManager} siteSettings={siteSettings} /> */}
     </div>
   );
 };

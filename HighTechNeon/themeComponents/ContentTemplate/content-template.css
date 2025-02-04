@@ -34,7 +34,7 @@
 
   .justify-between-section {
     justify-content: space-between;
-    align-items: flex-start;
+    /* align-items: flex-start; */
   }
 
   .large-screen-spacing-right {

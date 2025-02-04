@@ -40,7 +40,7 @@ const Contact3 = ({ data }) => {
             index={itemIndex}
           />
         )}
-        containerClass="contact-info box-section w100 flex wrap justify-center item-align-center responsive responsive-center"
+        className="contact-info box-section w100 flex wrap justify-center item-align-center responsive responsive-center"
         layout="flex wrap justify-center"
         emptyComponent={
           <p className="text-center">No contact information available.</p>
