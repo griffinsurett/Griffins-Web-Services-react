@@ -26,8 +26,10 @@ function Testimonials({ data }) {
         paragraph1={data.paragraph}
         ifButton={true}
         ContentHeaderClass="w100"
-      />
-      {/* Use ItemsTemplate to render testimonial boxes */}
+        buttonBottomMobile={true}
+        buttonSecClass={"justify-center"}
+        >
+              {/* Use ItemsTemplate to render testimonial boxes */}
       <ItemsTemplate
         items={testimonials}
         ItemComponent={({ quote, name, position, itemIndex }) => (
@@ -45,6 +47,7 @@ function Testimonials({ data }) {
           <p className="text-center">No testimonials available.</p>
         }
       />
+        </ContentTemplate>
     </Section>
   );
 }
