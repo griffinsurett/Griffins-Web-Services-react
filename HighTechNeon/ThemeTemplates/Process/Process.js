@@ -1,6 +1,6 @@
 // Process.js
 import React from "react";
-import ContentTemplate from "../../themeComponents/ContentTemplate/ContentTemplate"; 
+import ContentTemplate from "../../themeComponents/ContentTemplate/ContentTemplate";
 import "./process.css";
 import Section from "../../themeComponents/Section/Section";
 import ProcessContainer2 from "./ProcessBox/ProcessBox2/Container/ProcessContainer2";
@@ -40,7 +40,7 @@ function Process() {
         // className={"bottom-space justify-between-section responsive responsive-center"}
         contentWrapClass="justify-between-section responsive responsive-center"
         ifButton={true}
-        textSectionClass={"w100"}
+        ContentHeaderClass={"w100"}
         heading="How We Do It"
         title="Our Process"
         buttonText="Get Started"
@@ -49,7 +49,7 @@ function Process() {
         buttonBottomMobile={true}
         buttonSecClass={"responsive-center"}
       >
-      <ProcessContainer2 steps={steps} />
+        <ProcessContainer2 steps={steps} />
       </ContentTemplate>
     </Section>
   );

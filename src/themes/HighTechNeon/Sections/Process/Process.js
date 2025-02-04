@@ -39,7 +39,7 @@ const Process = () => {
       <ContentTemplate
         contentWrapClass="justify-between-section responsive responsive-center"
         ifButton={true}
-        textSectionClass="w100"
+        ContentHeaderClass="w100"
         heading="How We Do It"
         title="Our Process"
         buttonText="Get Started"

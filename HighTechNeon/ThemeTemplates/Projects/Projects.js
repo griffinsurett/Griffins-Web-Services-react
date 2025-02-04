@@ -14,13 +14,11 @@ const Projects = () => {
   }
 
   return (
-    <Section
-      className={"justify-center full-height column"}
-    >
+    <Section className={"justify-center full-height column"}>
       <ContentTemplate
         className="column bottom-space responsive-center justify-between-section item-align-center"
         contentWrapClass="responsive responsive-center"
-        textSectionClass={"smaller-top-space responsive-center"}
+        ContentHeaderClass={"smaller-top-space responsive-center"}
         ifButton={true}
         buttonBottom={true}
         heading={projectsContent.heading}

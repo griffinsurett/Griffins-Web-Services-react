@@ -49,7 +49,7 @@ const About = () => {
         paragraph2={aboutContent.paragraphs[1]}
         paragraph1Class={"top-paragraph p-large p-medium smaller-bottom-space"}
         paragraph2Class={"bottom-space"}
-        textSectionClass="smaller-bottom-space"
+        ContentHeaderClass="smaller-bottom-space"
         buttonText={aboutContent.button.text}
         buttonLink={aboutContent.button.link}
         buttonId="about-header-btn"

@@ -29,7 +29,7 @@ function ContactUs() {
           paragraph1={contactContent.paragraph}
           paragraph1Class="top-paragraph responsive-center"
           buttonBottom={true}
-          textSectionClass="smaller-bottom-space"
+          ContentHeaderClass="smaller-bottom-space"
         />
         <div className="contact-info box-section w100 flex wrap justify-center item-align-center responsive responsive-center">
           {contactContent.contactInfo.map((info, index) => (

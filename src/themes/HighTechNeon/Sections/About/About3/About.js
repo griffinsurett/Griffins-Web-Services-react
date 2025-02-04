@@ -42,7 +42,7 @@ const About3 = ({ data }) => {
         contentWrapClass="column bottom-space"
         paragraph1={data.paragraphs?.[0]}
         paragraph1Class="top-paragraph p-medium bottom-space"
-        textSectionClass="smaller-bottom-space"
+        ContentHeaderClass="smaller-bottom-space"
         buttonText={data.button?.text}
         buttonLink={data.button?.link}
         buttonId="about-header-btn"

@@ -13,8 +13,8 @@ const Footer = ({ className, menuManager, siteSettings }) => {
   const socialMenu = menuManager.getFlatMenu("Social Media") || [];
 
   return (
-    <footer className={`footer ${className} flex justify-center`}>
-      <div className="header-foot-container flex justify-between responsive">
+    <footer className={`footer w100 ${className}`}>
+      <div className="flex header-foot-container justify-between responsive">
           <ul className="footer-menu flex justify-between p-small">
             {footerMenuItems.map((item, index) => {
               const label = item.title;

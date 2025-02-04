@@ -1,7 +1,7 @@
 // Pricing.js
 import React from "react";
 import Section from "../../themeComponents/Section/Section";
-import ContentTemplate from "../../themeComponents/ContentTemplate/ContentTemplate"; 
+import ContentTemplate from "../../themeComponents/ContentTemplate/ContentTemplate";
 import PricingTable from "./PricingTable/PricingTable";
 import "./pricing.css"; // Ensure you have relevant styles for the section
 
@@ -45,9 +45,7 @@ const pricingData = [
 
 const Pricing = () => {
   return (
-    <Section
-      className={"pricing-section full-height column text-center"}
-    >
+    <Section className={"pricing-section full-height column text-center"}>
       <ContentTemplate
         className="pricing-header"
         contentWrapClass="justify-between-section responsive responsive-center"
@@ -55,7 +53,7 @@ const Pricing = () => {
         title="Choose a Plan"
         paragraph1="We offer flexible pricing plans for businesses of all sizes. Find the perfect plan for you."
         ifButton={false}
-        textSectionClass={"w100"}
+        ContentHeaderClass={"w100"}
       />
       {/* Pass the pricingData as a prop to PricingTable */}
       <PricingTable pricingData={pricingData} />

@@ -13,7 +13,6 @@ function ContactUs() {
   const contactContent = getCollection("contact");
   console.log(contactContent.contactInfo);
 
-
   if (!contactContent) {
     return <div>Error: Contact content not found</div>;
   }
@@ -33,7 +32,7 @@ function ContactUs() {
         paragraph1={contactContent.paragraph}
         paragraph1Class="top-paragraph responsive-center smaller-bottom-space"
         buttonBottom={true}
-        textSectionClass="smaller-bottom-space"
+        ContentHeaderClass="smaller-bottom-space"
       >
         <div className="contact-info top-space bottom-space">
           {contactContent.contactInfo?.map((info, index) => (

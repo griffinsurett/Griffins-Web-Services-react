@@ -29,7 +29,7 @@ const About = () => {
         contentWrapClass="column bottom-space"
         paragraph1={aboutContent.paragraphs[0]}
         paragraph1Class="top-paragraph p-medium bottom-space right-space left-space"
-        textSectionClass="smaller-bottom-space"
+        ContentHeaderClass="smaller-bottom-space"
         buttonText={aboutContent.button.text}
         buttonLink={aboutContent.button.link}
         buttonId="about-header-btn"

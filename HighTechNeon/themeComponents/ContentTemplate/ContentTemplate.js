@@ -25,7 +25,7 @@ const ContentTemplate = ({
   paragraph2,
   paragraph1Class,
   paragraph2Class,
-  textSectionClass,
+  ContentHeaderClass,
   ifParagraph = false,
   buttonBottom = false,
   buttonBottomMobile = false, // New prop for mobile-only bottom button
@@ -53,17 +53,19 @@ const ContentTemplate = ({
     <div className={`content-template ${className} flex column`}>
       <div className={`content-top-section flex ${contentWrapClass}`}>
         {/* Title & Heading Container */}
-        <div className={`title-heading-container column ${textSectionClass}`}>
+        <div className={`title-heading-container column ${ContentHeaderClass}`}>
           {title && (
             <div className="fade-in-down">
-              <h5 className={`content-title smaller-bottom-space ${titleClass}`}>
+              <h5
+                className={`content-title smaller-bottom-space ${titleClass}`}
+              >
                 {title}
               </h5>
             </div>
           )}
 
-          {heading && (
-            isHero ? (
+          {heading &&
+            (isHero ? (
               // Hero <h1>
               <div className="fade-in-up">
                 <h1 className={`bold ${headingClass} text-shadow-for-dark`}>
@@ -78,12 +80,13 @@ const ContentTemplate = ({
                   {heading}
                 </h2>
               </div>
-            )
-          )}
+            ))}
 
           {/* Paragraphs if not on the side */}
           {ifParagraph && !paragraphSide && (
-            <div className={`content-template-paragraphs ${paragraphClass} fade-in-down`}>
+            <div
+              className={`content-template-paragraphs ${paragraphClass} fade-in-down`}
+            >
               {paragraph1 && <p className={paragraph1Class}>{paragraph1}</p>}
               {paragraph2 && <p className={paragraph2Class}>{paragraph2}</p>}
             </div>
@@ -95,27 +98,33 @@ const ContentTemplate = ({
           <div className="side-content-container flex column justify-center">
             {/* Paragraphs if on the side */}
             {paragraphSide && ifParagraph && (
-              <div className={`content-template-paragraphs-side ${paragraphClass} fade-in-down`} style={{ transitionDelay: "300ms" }}>
+              <div
+                className={`content-template-paragraphs-side ${paragraphClass} fade-in-down`}
+                style={{ transitionDelay: "300ms" }}
+              >
                 {paragraph1 && <p className={paragraph1Class}>{paragraph1}</p>}
                 {paragraph2 && <p className={paragraph2Class}>{paragraph2}</p>}
               </div>
             )}
 
             {/* Side Button (hidden on mobile if buttonBottomMobile) */}
-            {buttonSide && ifButton && !buttonBottom && (!isMobile || !buttonBottomMobile) && (
-              <div
-                className={`${buttonSecClass} content-template-btn responsive-spacing flex item-align-center fade-in-right`}
-                style={{ transitionDelay: "400ms" }}
-              >
-                <Button
-                  text={buttonText}
-                  buttonLink={buttonLink}
-                  className={`p-small ${buttonClass}`}
-                  buttonId={buttonId}
-                  onClick={onClick}
-                />
-              </div>
-            )}
+            {buttonSide &&
+              ifButton &&
+              !buttonBottom &&
+              (!isMobile || !buttonBottomMobile) && (
+                <div
+                  className={`${buttonSecClass} content-template-btn responsive-spacing flex item-align-center fade-in-right`}
+                  style={{ transitionDelay: "400ms" }}
+                >
+                  <Button
+                    text={buttonText}
+                    buttonLink={buttonLink}
+                    className={`p-small ${buttonClass}`}
+                    buttonId={buttonId}
+                    onClick={onClick}
+                  />
+                </div>
+              )}
           </div>
         )}
       </div>
@@ -161,7 +170,7 @@ ContentTemplate.propTypes = {
   ifParagraph: PropTypes.bool,
   buttonClass: PropTypes.string,
   buttonBottom: PropTypes.bool,
-  buttonBottomMobile: PropTypes.bool, 
+  buttonBottomMobile: PropTypes.bool,
   children: PropTypes.node,
   isHero: PropTypes.bool,
   paragraphSide: PropTypes.bool,

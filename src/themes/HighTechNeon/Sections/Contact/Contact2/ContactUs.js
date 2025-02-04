@@ -29,7 +29,7 @@ function Contact2({ data }) {
           paragraph1={data.paragraph}
           paragraph1Class="top-paragraph responsive-center"
           buttonBottom={true}
-          textSectionClass="smaller-bottom-space"
+          ContentHeaderClass="smaller-bottom-space"
         />
         <div className="contact-info large-screens bottom-space">
           {data.contactInfo?.map((info, index) => (

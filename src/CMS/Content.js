@@ -80,8 +80,8 @@ const collections = [
     slug: "/about-us",
     sections: ["hero", "purpose", "whyChooseUs", "aboutInfo", "benefits"],
     redirectFrom: ["/about"],
-    description:
-      "Discover how Griffins Web Services combines creativity, technology, and marketing expertise to bring your online vision to life.",
+    excerpt: "Your Jersey Shore-based Digital Powerhouse for Website Creation, Digital Marketing, Branding, IT Consulting, and more.",
+    description: `Since 2019, the founder of ${siteSettings.siteTitle} has served as the Chief Technology Officer of i-75 CPA Review, providing expert web design, development, hosting, management, branding, and IT consulting. Through innovative strategies and tailored solutions, these efforts have helped the business grow by over 100x, establishing i-75 as a leader in its industry, and I am very much excited to do the same for your business.`,
     purpose: {
       makeObjectSection: true,
       title: "Our Purpose",
@@ -380,7 +380,7 @@ const collections = [
   {
     id: 5,
     collection: "testimonials",
-    heading: "What Our Clients Say",
+    heading: "Success Stories",
     title: "Testimonials",
     description:
       "Read feedback from our clients and learn how Griffins Web Services has helped them succeed online.",
@@ -535,8 +535,8 @@ const homepageOverride = {
     "whyChooseUs",
     "projects",
     "testimonials",
-    "contact",
     "faq",
+    "contact",
   ],
 };
 

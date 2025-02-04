@@ -28,7 +28,7 @@ function Contact1({ data }) {
         paragraph1={data.paragraph}
         paragraph1Class="top-paragraph responsive-center smaller-bottom-space"
         buttonBottom={false}
-        textSectionClass="smaller-bottom-space"
+        ContentHeaderClass="smaller-bottom-space"
       >
         <div className="contact-info top-space bottom-space">
           {data.contactInfo?.map((info, index) => (

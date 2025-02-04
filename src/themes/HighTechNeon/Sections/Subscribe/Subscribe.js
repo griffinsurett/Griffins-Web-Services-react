@@ -1,7 +1,7 @@
 // Subscribe.js
 import React from "react";
 import InputField from "../../themeComponents/Form-Fields/InputField";
-import ContentTemplate from "../../themeComponents/ContentTemplate/ContentTemplate"; 
+import ContentTemplate from "../../themeComponents/ContentTemplate/ContentTemplate";
 import Section from "../../themeComponents/Section/Section";
 import Button from "../../themeComponents/Buttons/Button";
 import "./subscribe.css";
@@ -15,7 +15,7 @@ function Subscribe() {
       <div className="w80">
         <ContentTemplate
           ifButton={false}
-          textSectionClass={"w100"}
+          ContentHeaderClass={"w100"}
           heading="Subscribe Now"
           className={"top-space bottom-space text-center justify-center"}
         />

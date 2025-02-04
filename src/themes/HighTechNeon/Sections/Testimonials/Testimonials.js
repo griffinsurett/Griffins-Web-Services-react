@@ -19,13 +19,13 @@ function Testimonials({ data }) {
     <Section className="testimonials-section flex justify-center full-height column">
       <ContentTemplate
         data={data}
-        className="testimonials-header justify-center item-align-center"
-        contentWrapClass="responsive responsive-center"
+        className="testimonials-header justify-center"
+        contentWrapClass="responsive responsive-center item-align-center"
         heading={data.heading}
         title={data.title}
         paragraph1={data.paragraph}
         ifButton={true}
-        textSectionClass="w100"
+        ContentHeaderClass="w100"
       />
       {/* Use ItemsTemplate to render testimonial boxes */}
       <ItemsTemplate
@@ -39,9 +39,11 @@ function Testimonials({ data }) {
           />
         )}
         className="testimonials-boxes box-section w100 flex wrap justify-center item-align-center responsive responsive-center"
-        maxColumns={2}    // You can adjust this based on the desired number of columns
-        gap="0"
-        emptyComponent={<p className="text-center">No testimonials available.</p>}
+        maxColumns={2} // You can adjust this based on the desired number of columns
+        gap="20px"
+        emptyComponent={
+          <p className="text-center">No testimonials available.</p>
+        }
       />
     </Section>
   );

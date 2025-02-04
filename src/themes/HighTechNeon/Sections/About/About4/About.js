@@ -45,7 +45,7 @@ const About4 = ({ data }) => {
         paragraph2={data.paragraphs?.[1]}
         paragraph1Class="top-paragraph p-large p-medium smaller-bottom-space"
         paragraph2Class="bottom-space"
-        textSectionClass="smaller-bottom-space"
+        ContentHeaderClass="smaller-bottom-space"
         buttonText={data.button?.text}
         buttonLink={data.button?.link}
         buttonId="about-header-btn"

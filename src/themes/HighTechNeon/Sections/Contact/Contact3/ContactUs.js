@@ -26,7 +26,7 @@ const Contact3 = ({ data }) => {
         paragraphClass="flex justify-center column about-paragraphs"
         paragraph1={data.paragraph}
         paragraph1Class="top-paragraph responsive-center"
-        textSectionClass="smaller-bottom-space"
+        ContentHeaderClass="smaller-bottom-space"
       />
       {/* Use ItemsTemplate to render contact info boxes */}
       <ItemsTemplate

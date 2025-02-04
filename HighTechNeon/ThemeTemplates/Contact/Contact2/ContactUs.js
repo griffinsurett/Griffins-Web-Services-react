@@ -32,7 +32,7 @@ function ContactUs() {
           paragraph1={contactContent.paragraph}
           paragraph1Class="top-paragraph responsive-center"
           buttonBottom={true}
-          textSectionClass="smaller-bottom-space"
+          ContentHeaderClass="smaller-bottom-space"
         />
         <div className="contact-info large-screens bottom-space">
           {contactContent.contactInfo.map((info, index) => (
