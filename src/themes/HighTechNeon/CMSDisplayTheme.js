@@ -13,7 +13,7 @@ import MenuManager from "./Components/MenuManager";
 
 // Lazy-load sections...
 const Hero1 = lazy(() => import("./Sections/HeroSections/Hero1/Hero"));
-const Hero2 = lazy(() => import("./Sections/HeroSections/Hero2/Hero"));
+// const Hero2 = lazy(() => import("./Sections/HeroSections/Hero2/Hero"));
 
 const sectionComponents = {
   about: lazy(() => import("./Sections/About/About1/About")),
@@ -57,7 +57,7 @@ const menuManager = new MenuManager(siteSettings);
             </Suspense>
           ) : (
             <Suspense fallback={<div>Loading Hero...</div>}>
-              <Hero2 data={{ title, heading, description }} />
+              <Hero1 data={{ title, heading, description }} />
             </Suspense>
           )}
 
