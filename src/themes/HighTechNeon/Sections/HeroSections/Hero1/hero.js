@@ -29,7 +29,7 @@ const Hero1 = ({ data }) => {
           buttonLink={data.CTALink}
           className="hero-content"
           headingClass="text-shadow-for-dark"
-          paragraphClass="p-small bottom-space"
+          paragraphClass="p-small"
           buttonClass="p-small"
           buttonSecClass="hero-btn-container smaller-top-space smaller-bottom-space flex justify-left"
           titleClass="section-title"
