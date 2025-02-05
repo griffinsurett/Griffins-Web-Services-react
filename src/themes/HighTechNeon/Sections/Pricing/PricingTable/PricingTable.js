@@ -33,7 +33,7 @@ const PricingTable = ({ pricingData }) => {
           index={itemIndex}
         />
       )}
-      containerClass="pricing-boxes flex justify-center responsive"
+      className="pricing-boxes flex justify-center responsive"
       layout="flex justify-center responsive"
       emptyComponent={
         <p className="text-center">No pricing plans available.</p>

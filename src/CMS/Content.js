@@ -78,7 +78,7 @@ const collections = [
     ],
     hasPage: true,
     slug: "/about-us",
-    sections: ["hero", "purpose", "whyChooseUs", "aboutInfo", "benefits"],
+    sections: ["purpose", "whyChooseUs", "benefits"],
     redirectFrom: ["/about"],
     excerpt: "Your Jersey Shore-based Digital Powerhouse for Website Creation, Digital Marketing, Branding, IT Consulting, and more.",
     description: `Since 2019, the founder of ${siteSettings.siteTitle} has served as the Chief Technology Officer of i-75 CPA Review, providing expert web design, development, hosting, management, branding, and IT consulting. Through innovative strategies and tailored solutions, these efforts have helped the business grow by over 100x, establishing i-75 as a leader in its industry, and I am very much excited to do the same for your business.`,
@@ -160,7 +160,7 @@ const collections = [
     hasPage: true,
     slug: "/contact-us",
     addToQuery: [{ name: "Primary", parentQueryItem: null }],
-    sections: ["hero", "contact"],
+    sections: ["contact"],
     redirectFrom: ["/contact"],
     contactInfo: [
       {
@@ -221,7 +221,7 @@ const collections = [
     slug: "/services",
     onlyParentsOnCollection: false,
     redirectFrom: ["/service"],
-    sections: ["hero", "services", "benefits", "projects", "testimonials"],
+    sections: ["services", "benefits", "projects", "testimonials"],
     addToQuery: [
       {
         name: "Primary",
@@ -236,7 +236,7 @@ const collections = [
       isHeirarchical: true,
       itemsHasPage: true,
       includeCollectionSlug: true,
-      itemSections: ["hero", "projects", "services", "testimonials", "faq"],
+      itemSections: ["projects", "services",  "process", "testimonials", "faq"],
       onlyParentItemsHasPage: false,
       description:
         "We provide customized digital services to meet your specific goals.",
@@ -254,11 +254,21 @@ const collections = [
           slug: "/web-development",
           description:
             "Custom websites and applications that engage and convert.",
-          sections: ["hero", "services", "projects", "testimonials", "faq"],
           relations: [
             { collection: "projects", value: "/marketing-site-redesign" },
             { collection: "faq", value: 2 },
           ],
+          process: {
+            makeObjectSection: true,
+            title: "Our Process",
+            heading: "How We Build Your Website",
+            items: [
+              { id: 1, name: "Discovery & Planning", description: "We learn your objectives, target audience, and design preferences to map out a clear project plan.", featuredImage: TestImage },
+              { id: 2, name: "Design & Development", description: "We create wireframes and mockups, then transform them into a fully functional website or digital solution.", featuredImage: TestImage },
+              { id: 3, name: "Testing & Optimization", description: "We rigorously test performance, usability, and SEO to ensure top-tier quality before launch.", featuredImage: TestImage },
+              { id: 4, name: "Launch & Support", description: "We deploy your new site or campaign, then provide ongoing support to keep things running smoothly.", featuredImage: TestImage },
+            ],
+          },
         },
         {
           icon: getIcon("fa", "Fill"),
@@ -267,7 +277,7 @@ const collections = [
           slug: "/web-design",
           description:
             "Modern, responsive websites that captivate your audience.",
-          sections: ["hero", "services", "projects", "testimonials", "faq"],
+          sections: ["services", "projects", "testimonials", "faq"],
           relations: [
             { collection: "projects", value: "/marketing-site-redesign" },
             { collection: "faq", value: 2 },
@@ -280,7 +290,7 @@ const collections = [
           slug: "/seo",
           description:
             "Improve your rankings and get found by more potential customers.",
-          sections: ["hero", "services", "projects", "testimonials", "faq"],
+          sections: ["services", "projects", "testimonials", "faq"],
           relations: [],
         },
         {
@@ -328,11 +338,11 @@ const collections = [
     featuredImage: TestImage,
     hasPage: true,
     slug: "/projects",
-    sections: ["hero", "projects", "services", "testimonials"],
+    sections: ["projects", "services", "testimonials"],
     addToQuery: [{ name: "Primary", parentQueryItem: "/about-us" }],
     items: {
       itemsHasPage: true,
-      itemSections: ["hero", "projects", "services", "testimonials"],
+      itemSections: ["projects", "services", "testimonials"],
       data: [
         {
           id: 1,
@@ -372,7 +382,7 @@ const collections = [
     featuredImage: TestImage,
     addToQuery: [{ name: "Primary", parentQueryItem: "/about-us" }],
     slug: "/testimonials",
-    sections: ["hero", "testimonials"],
+    sections: ["testimonials"],
     items: {
       data: [
         {
@@ -409,7 +419,7 @@ const collections = [
     featuredImage: TestImage,
     addToQuery: [{ name: "Primary", parentQueryItem: "/about-us" }],
     slug: "/faq",
-    sections: ["hero", "faq"],
+    sections: ["faq"],
     redirectFrom: ["/questions"],
     items: {
       data: [
@@ -441,63 +451,6 @@ const collections = [
       ],
     },
   },
-
-  /**
-   * ------------------------------
-   * Process
-   * ------------------------------
-   */
-  {
-    id: 7,
-    collection: "process",
-    heading: "How We Work",
-    title: "Process",
-    featuredImage: TestImage,
-    hasPage: true,
-    slug: "/process",
-    sections: ["hero", "process", "contact"],
-    addToQuery: [
-      {
-        name: "Primary",
-        parentQueryItem: null,
-        queryItemText: "title",
-      },
-    ],
-    description:
-      "See our streamlined approach to taking your project from concept to completion—on time and on budget.",
-    items: {
-      data: [
-        {
-          id: 1,
-          name: "Discovery & Planning",
-          description:
-            "We learn your objectives, target audience, and design preferences to map out a clear project plan.",
-          featuredImage: TestImage,
-        },
-        {
-          id: 2,
-          name: "Design & Development",
-          description:
-            "We create wireframes and mockups, then transform them into a fully functional website or digital solution.",
-          featuredImage: TestImage,
-        },
-        {
-          id: 3,
-          name: "Testing & Optimization",
-          description:
-            "We rigorously test performance, usability, and SEO to ensure top-tier quality before launch.",
-          featuredImage: TestImage,
-        },
-        {
-          id: 4,
-          name: "Launch & Support",
-          description:
-            "We deploy your new site or campaign, then provide ongoing support to keep things running smoothly.",
-          featuredImage: TestImage,
-        },
-      ],
-    },
-  },
 ];
 
 /**
@@ -511,10 +464,8 @@ const homepageOverride = {
   description: `${siteSettings.siteDescription}`,
   featuredImage: TestImage,
   sections: [
-    "hero",
     "services",
     "about",
-    "process",
     "benefits",
     "whyChooseUs",
     "projects",

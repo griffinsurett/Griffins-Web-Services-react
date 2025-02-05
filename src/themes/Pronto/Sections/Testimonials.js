@@ -36,7 +36,7 @@ const Testimonials = ({ data }) => {
             </div>
           )}
           // Tailwind or custom classes for styling the container of items
-          containerClass="space-y-8"
+          className="space-y-8"
           // Message/component to display when no items exist
           emptyComponent={<p>No testimonials available at this time.</p>}
         />

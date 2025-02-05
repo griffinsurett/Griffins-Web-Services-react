@@ -69,7 +69,7 @@ const About4 = ({ data }) => {
               itemIndex={itemIndex}
             />
           )}
-          containerClass="about-icon-list flex responsive justify-between item-align-start w100"
+          className="about-icon-list flex responsive justify-between item-align-start w100"
           layout="flex responsive justify-between item-align-start w100"
           emptyComponent={<p className="text-center">No items available.</p>}
         />

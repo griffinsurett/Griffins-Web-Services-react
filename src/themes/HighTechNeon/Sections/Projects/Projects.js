@@ -58,7 +58,7 @@ const Projects = ({ data }) => {
               index={itemIndex}
             />
           )}
-          containerClass="flex flex-wrap justify-center items-stretch gap-6"
+          className="flex flex-wrap justify-center items-stretch gap-6"
           layout="flex flex-wrap justify-center items-stretch gap-6"
           emptyComponent={
             <p className="text-center">No projects available at this time.</p>

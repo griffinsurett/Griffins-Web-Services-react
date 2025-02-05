@@ -17,7 +17,6 @@ const sectionComponents = {
   testimonials: React.lazy(() => import("./Sections/Testimonials")), // Updated to TestimonialsSlider
   projects: React.lazy(() => import("./Sections/Projects")),
   faq: React.lazy(() => import("./Sections/FAQ")),
-  aboutInfo: React.lazy(() => import("./Sections/About/AboutInfo")),
   purpose: React.lazy(() => import("./Sections/About/AboutPurpose")),
   process: React.lazy(() => import("./Sections/Process")),
   whyChooseUs: React.lazy(() => import("./Sections/About/WhyChooseUs")),

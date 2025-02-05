@@ -37,7 +37,7 @@ const CTASection = ({ data }) => {
               ariaLabel={`Learn more about ${title}`}
             />
           )}
-          containerClass="flex flex-col"
+          className="flex flex-col"
           layout="flex flex-col"
           emptyComponent={<p className="text-center">No call-to-action items available.</p>}
         />

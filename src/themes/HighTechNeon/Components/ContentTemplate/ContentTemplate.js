@@ -1,6 +1,7 @@
 // ContentTemplate.js
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import { useLocation } from "react-router-dom"; // Import useLocation
 import "./content-template.css";
 import Button from "../Buttons/Button";
 
@@ -10,6 +11,7 @@ const ContentTemplate = ({
   heading = data.heading,
   ifButton = false,
   buttonText = "Learn More",
+  buttonLink, // <-- Now a dedicated prop for the button link
   sectionSlug = data.slug || "",
   onClick,
   className,
@@ -34,8 +36,12 @@ const ContentTemplate = ({
   buttonSide = true,
 }) => {
   const [isMobile, setIsMobile] = useState(false);
+  const location = useLocation(); // Get the current location
 
-  console.log(data.slug);
+  // current page slug from URL
+  const currentPageSlug = location.pathname;
+  // For hero sections, always display the button; for others, hide it if sectionSlug equals the current page slug.
+  const displaySectionButton = isHero ? true : (sectionSlug && sectionSlug !== currentPageSlug);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 1024);
@@ -48,6 +54,9 @@ const ContentTemplate = ({
   const showSideContentContainer =
     paragraphSide || (buttonSide && ifButton && !buttonBottom);
 
+  // Use buttonLink prop if provided; otherwise fall back to sectionSlug
+  const finalButtonLink = buttonLink || sectionSlug;
+
   return (
     <div className={`content-template ${className} flex column`}>
       <div
@@ -57,9 +66,7 @@ const ContentTemplate = ({
         <div className={`title-heading-container column ${ContentHeaderClass}`}>
           {title && (
             <div className="fade-in-down">
-              <h5
-                className={`content-title smaller-bottom-space ${titleClass}`}
-              >
+              <h5 className={`content-title smaller-bottom-space ${titleClass}`}>
                 {title}
               </h5>
             </div>
@@ -107,9 +114,10 @@ const ContentTemplate = ({
               </div>
             )}
 
-            {/* Side Button (hidden on mobile if buttonBottomMobile) */}
+            {/* Side Button: render only if displaySectionButton is true */}
             {buttonSide &&
               ifButton &&
+              displaySectionButton &&
               !buttonBottom &&
               (!isMobile || !buttonBottomMobile) && (
                 <div
@@ -118,7 +126,7 @@ const ContentTemplate = ({
                 >
                   <Button
                     text={buttonText}
-                    buttonLink={sectionSlug}
+                    buttonLink={finalButtonLink}
                     className={`p-small ${buttonClass}`}
                     buttonId={buttonId}
                     onClick={onClick}
@@ -132,21 +140,23 @@ const ContentTemplate = ({
       {/* Children Content */}
       {children && <div className="content-template-children">{children}</div>}
 
-      {/* Bottom Button - mobile only if buttonBottomMobile */}
-      {(buttonBottom || (buttonBottomMobile && isMobile)) && ifButton && (
-        <div
-          className={`content-template-btn-bottom flex top-space ${buttonSecClass} fade-in-up`}
-          style={{ transitionDelay: "400ms" }}
-        >
-          <Button
-            text={buttonText}
-            buttonLink={sectionSlug}
-            className={`p-small ${buttonClass}`}
-            buttonId={buttonId}
-            onClick={onClick}
-          />
-        </div>
-      )}
+      {/* Bottom Button - mobile only if buttonBottomMobile; also only if displaySectionButton */}
+      {(buttonBottom || (buttonBottomMobile && isMobile)) &&
+        ifButton &&
+        displaySectionButton && (
+          <div
+            className={`content-template-btn-bottom flex top-space ${buttonSecClass} fade-in-up`}
+            style={{ transitionDelay: "400ms" }}
+          >
+            <Button
+              text={buttonText}
+              buttonLink={finalButtonLink}
+              className={`p-small ${buttonClass}`}
+              buttonId={buttonId}
+              onClick={onClick}
+            />
+          </div>
+        )}
     </div>
   );
 };
@@ -156,7 +166,7 @@ ContentTemplate.propTypes = {
   heading: PropTypes.string.isRequired,
   ifButton: PropTypes.bool,
   buttonText: PropTypes.string,
-  buttonLink: PropTypes.string,
+  buttonLink: PropTypes.string, // Now explicitly defined as a prop
   onClick: PropTypes.func,
   className: PropTypes.string,
   buttonId: PropTypes.string,

@@ -60,7 +60,7 @@ const About2 = ({ data }) => {
                 itemIndex={itemIndex}
               />
             )}
-            containerClass="about-icon-list flex flex-wrap justify-center gap-20"
+            className="about-icon-list flex flex-wrap justify-center gap-20"
             layout="flex flex-wrap justify-center gap-20"
             emptyComponent={<p className="text-center">No items available.</p>}
           />

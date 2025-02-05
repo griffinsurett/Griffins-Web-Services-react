@@ -15,24 +15,24 @@ const Hero2 = ({ data }) => {
       id="hero-section"
       className="flex item-align-center responsive hero-height section-gap"
     >
-          {/* Use ContentTemplate for the hero section content */}
-          <ContentTemplate
-                 isHero
-                 ifParagraph
-                 contentWrapClass="column"
-                 title={data.title}
-                 heading={data.heading}
-                 paragraph1={data.description}
-                 ifButton={false}
-                 buttonText="Get Started"
-                 buttonLink="#"
-                 className="hero-content"
-                 headingClass="text-shadow-for-dark"
-                 paragraphClass="p-small bottom-space"
-                 buttonClass="p-small"
-                 buttonSecClass="hero-btn-container smaller-top-space smaller-bottom-space flex justify-left"
-                 titleClass="section-title"
-               />
+      {/* Use ContentTemplate for the hero section content */}
+      <ContentTemplate
+        isHero={true}
+        ifParagraph
+        contentWrapClass="column"
+        title={data.title}
+        heading={data.heading}
+        paragraph1={data.description}
+        ifButton={false}
+        buttonText="Get Started"
+        buttonLink="#"
+        className="hero-content flex column justify-center item-align-center half-height w70"
+        headingClass="text-shadow-for-dark"
+        paragraphClass="p-small bottom-space"
+        buttonClass="p-small"
+        buttonSecClass="hero-btn-container smaller-top-space smaller-bottom-space flex justify-left"
+        titleClass="section-title"
+      />
     </section>
   );
 };

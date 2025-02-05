@@ -40,7 +40,7 @@ const Process = ({ data }) => {
               index={itemIndex}
             />
           )}
-          containerClass="process-boxes box-section top-space bottom-space flex responsive column"
+          className="process-boxes box-section top-space bottom-space flex responsive column"
           layout="flex responsive column"
           emptyComponent={
             <p className="text-center">No process steps available.</p>

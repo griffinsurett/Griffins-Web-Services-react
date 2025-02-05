@@ -1,22 +1,46 @@
 // Button.js
-import React from 'react';
-import './button.css';
-import IntersectionObserverComponent from '../../ScrollAnimations';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./button.css";
 
-const Button = ({ type, text, onClick, className, buttonId, buttonLink }) => {
-    const buttonElement = (        
-        <button type={type} className={`styled-button button-text dynamic-border-effect hover-scale ${className}`} id={buttonId} onClick={onClick}>
-            {text}
-        </button>
-    );
+const Button = ({
+  type,
+  text,
+  onClick,
+  className,
+  buttonId,
+  buttonLink,
+}) => {
+  const buttonElement = (
+    <button
+      type={type}
+      className={`styled-button button-text dynamic-border-effect hover-scale ${className}`}
+      id={buttonId}
+      onClick={onClick}
+    >
+      {text}
+    </button>
+  );
 
-    return buttonLink ? (
-        <a href={buttonLink}>
-            {buttonElement}
+  if (buttonLink) {
+    // If the link starts with "/", assume it’s internal and use <Link>
+    if (buttonLink.startsWith("/")) {
+      return (
+        <Link to={buttonLink} onClick={onClick}>
+          {buttonElement}
+        </Link>
+      );
+    } 
+    else {
+      // Otherwise, use a normal <a> element
+      return (
+        <a href={buttonLink} onClick={onClick}>
+          {buttonElement}
         </a>
-    ) : (
-        buttonElement
-    );
+      );
+    }
+  }
+  return buttonElement;
 };
 
 export default Button;

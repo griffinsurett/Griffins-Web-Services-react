@@ -25,8 +25,8 @@ const Hero1 = ({ data }) => {
           paragraph1={data.siteDescription}
           ifButton
           buttonBottom
-          buttonText="Get Started"
-          buttonLink="#"
+          buttonText={data.CTAButton}
+          buttonLink={data.CTALink}
           className="hero-content"
           headingClass="text-shadow-for-dark"
           paragraphClass="p-small bottom-space"

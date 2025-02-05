@@ -35,7 +35,7 @@ const FAQ = ({ data }) => {
               onClick={() => toggleFAQ(itemIndex)}
             />
           )}
-          containerClass="flex flex-col"
+          className="flex flex-col"
           emptyComponent={<p>No FAQs available at this time.</p>}
         />
       </ContentTemplate>

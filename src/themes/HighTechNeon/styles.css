@@ -504,6 +504,10 @@ a {
   min-height: var(--section-height);
 }
 
+.half-height {
+  min-height: 50vh;
+}
+
 .fluid-container {
   width: 100%;
 }

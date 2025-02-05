@@ -26,7 +26,7 @@ const AboutPurpose = ({ data }) => {
               titleClass="text-xl"
             />
           )}
-          containerClass="flex flex-col space-y-6"
+          className="flex flex-col space-y-6"
           layout="flex flex-col"
         />
       </ContentTemplate>

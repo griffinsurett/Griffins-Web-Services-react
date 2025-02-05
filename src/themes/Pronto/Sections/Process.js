@@ -28,7 +28,7 @@ const ProcessSection = ({ data }) => {
               buttonClass="mt-2"
             />
           )}
-          containerClass="flex flex-col space-y-6"
+          className="flex flex-col space-y-6"
           layout="flex flex-col"
           emptyComponent={<p className="text-center">No process steps available.</p>}
         />

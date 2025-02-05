@@ -1,6 +1,7 @@
 // MenuItem.js
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import ListBulletLogo from "../ListBulletImage/ListBulletLogo";
 import "./menu-item.css";
 
@@ -23,19 +24,15 @@ const MenuItem = ({
     try {
       element = href ? document.querySelector(href) : null;
     } catch (error) {
-      // If the href is not a valid selector (e.g. "/process"), an error will be thrown.
       element = null;
     }
-  
-    // If a valid element exists, perform smooth scrolling
     if (element) {
       e.preventDefault();
       element.scrollIntoView({ behavior: "smooth", block: "start" });
       if (toggleMenu) toggleMenu();
     }
-    // Otherwise, let the click event proceed naturally to trigger route navigation
   };
-  
+
   const hoverClass = hover ? "menu-item-hover" : "";
 
   return (
@@ -47,9 +44,10 @@ const MenuItem = ({
       <div className="menu-item-content flex item-align-center">
         {(logoOnlyOnHover ? hovered : true) && <ListBulletLogo size={logoSize} />}
         {href ? (
-          <a href={href} className="menu-link" onClick={handleClick}>
+          // Use <Link> for internal navigation
+          <Link to={href} className="menu-link" onClick={handleClick}>
             <LabelElement className={labelClass}>{label}</LabelElement>
-          </a>
+          </Link>
         ) : (
           <LabelElement className={`${labelClass} menu-text`}>{label}</LabelElement>
         )}

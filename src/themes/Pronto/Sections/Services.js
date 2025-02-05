@@ -27,7 +27,7 @@ const Services = ({ data }) => {
               slug={slug}
             />
           )}
-          containerClass="flex flex-col"
+          className="flex flex-col"
           layout="flex flex-col"
         />
       </ContentTemplate>

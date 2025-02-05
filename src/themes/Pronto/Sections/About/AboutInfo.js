@@ -26,7 +26,7 @@ const AboutInfo = ({ data }) => {
               titleClass="text-xl font-semibold"
             />
           )}
-          containerClass="flex flex-col"
+          className="flex flex-col"
           layout="flex flex-col"
         />
       </ContentTemplate>

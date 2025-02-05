@@ -52,6 +52,13 @@ export const getPageStructure = (pageId) => {
 
   const content = page.content || item?.content || "";
 
+  // NEW: Compute the heading from available properties
+const heading =
+item?.heading ||
+collection?.heading ||
+page.heading ||
+"";
+
   let sections = [];
 
   const objectSectionsMap = {};
@@ -149,19 +156,19 @@ export const getPageStructure = (pageId) => {
   } else if (isItemPage && collection && item) {
     // ITEM-LEVEL PAGE
     const crossRels = aggregateCrossRelations([item]);
-
+  
     sections = page.sections.map((sectionKey) => {
       let sectionData;
-
-      if (
+  
+      // NEW: If the item itself has an object for this section key, use that.
+      if (typeof item[sectionKey] === "object" && item[sectionKey] !== null) {
+        sectionData = item[sectionKey];
+      } else if (
         sectionKey === collection.collection &&
         collection.items?.isHeirarchical
       ) {
         if (hierarchyUtil.isParent(item)) {
-          const children = hierarchyUtil.getChildren(
-            collection.collection,
-            item.slug
-          );
+          const children = hierarchyUtil.getChildren(collection.collection, item.slug);
           sectionData = {
             title: collection.title,
             heading: collection.heading, // Retain heading if exists
@@ -172,14 +179,10 @@ export const getPageStructure = (pageId) => {
         } else {
           const parentSlug = item.parentItem;
           if (parentSlug) {
-            const siblings = hierarchyUtil.getSiblings(
-              collection.collection,
-              parentSlug,
-              item.slug
-            );
+            const siblings = hierarchyUtil.getSiblings(collection.collection, parentSlug, item.slug);
             sectionData = {
               title: collection.title || collection.heading,
-              heading: collection.heading, // Retain heading if exists
+              heading: collection.heading,
               items: siblings,
               slug: collection.slug,
               hasPage: collection.hasPage,
@@ -199,10 +202,8 @@ export const getPageStructure = (pageId) => {
             acc[relationKey] = item[relationKey] || [];
             return acc;
           }, {});
-
-        const candidates = collection.items.data.filter(
-          (i) => i.slug !== item.slug
-        );
+  
+        const candidates = collection.items.data.filter((i) => i.slug !== item.slug);
         const scoredCandidates = candidates.map((candidate) => {
           let score = 0;
           Object.keys(currentRelations).forEach((relationKey) => {
@@ -214,15 +215,15 @@ export const getPageStructure = (pageId) => {
           });
           return { ...candidate, score };
         });
-
+  
         const relatedItems = scoredCandidates
           .filter((c) => c.score > 0)
           .sort((a, b) => b.score - a.score);
-
+  
         if (relatedItems.length > 0) {
           sectionData = {
             title: collection.title || collection.heading,
-            heading: collection.heading || "", // Retain heading if exists
+            heading: collection.heading || "",
             items: relatedItems,
             slug: collection.slug,
             hasPage: collection.hasPage,
@@ -243,25 +244,24 @@ export const getPageStructure = (pageId) => {
           heading: objectSectionsMap[sectionKey].heading || "",
         };
       } else if (crossRels[sectionKey]) {
-        // If the sectionKey matches a related collection
         const relatedCollection = getCollection(sectionKey);
         sectionData = {
           title: relatedCollection?.title || sectionKey,
           heading: relatedCollection?.heading || "",
-          items: crossRels[sectionKey],
+          items: crossRels[sectionKey] || [],
           slug: relatedCollection?.slug || "",
           hasPage: relatedCollection?.hasPage || false,
         };
       } else {
         sectionData = getCollection(sectionKey, pageId) || null;
       }
-
+  
       // Ensure sectionData has both title and heading
       if (sectionData) {
         sectionData.title = sectionData.title || "";
         sectionData.heading = sectionData.heading || "";
       }
-
+  
       return { key: sectionKey, data: sectionData };
     });
   } else {
@@ -299,7 +299,7 @@ export const getPageStructure = (pageId) => {
     });
   }
 
-  const pageStructure = { title, description, content, sections, featuredImage };
+  const pageStructure = { title, heading, description, content, sections, featuredImage };
 
   return pageStructure;
 };
