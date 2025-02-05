@@ -1,7 +1,7 @@
 // 3dLogo.js
 import React from "react";
 import "./3d-logo.css";
-import { useTheme } from "../../../themeControls/ThemeContext"; // Import the ThemeContext
+import { useTheme } from "../../../Controls/ThemeContext"; // Import the ThemeContext
 
 const light3dLogo = `${process.env.PUBLIC_URL}/mylogo3d.png`;
 const dark3dLogo = `${process.env.PUBLIC_URL}/mylogo3d-black.png`;

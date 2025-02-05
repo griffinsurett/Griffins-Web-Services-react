@@ -90,10 +90,12 @@ const collections = [
       items: [
         {
           title: "Mission",
+          icon: getIcon("fa", "Bullseye"),
           description: "Create impactful online experiences for every client.",
         },
         {
           title: "Vision",
+          icon: getIcon("fa", "Eye"),
           description: "Become the go-to partner for all things digital.",
         },
       ],
@@ -138,24 +140,6 @@ const collections = [
           title: "Dedicated Support",
           icon: getIcon("fa", "Headset"),
           description: "We’re here to answer questions and provide assistance.",
-        },
-      ],
-    },
-    aboutInfo: {
-      makeObjectSection: true,
-      title: "About Griffins Web Services in Detail",
-      heading: "Who We Are",
-      items: [
-        {
-          title: "Our Background",
-          heading: "Founded by passionate marketers and developers...",
-          description:
-            "Griffins Web Services emerged in 2020 to provide clients with cutting-edge digital solutions and unparalleled customer care.",
-        },
-        {
-          title: "What We Do",
-          description:
-            "From full-stack development to SEO, we provide end-to-end services that help you thrive online.",
         },
       ],
     },
@@ -277,7 +261,7 @@ const collections = [
           ],
         },
         {
-          icon: getIcon("fa", "LaptopCode"),
+          icon: getIcon("fa", "Fill"),
           title: "Web Design",
           heading: "Web Design Services",
           slug: "/web-design",
@@ -300,7 +284,7 @@ const collections = [
           relations: [],
         },
         {
-          icon: getIcon("fa", "ChartLine"),
+          icon: getIcon("fa", "SquarePollVertical"),
           title: "Digital Marketing",
           slug: "/digital-marketing",
           parentItem: "/web-design",

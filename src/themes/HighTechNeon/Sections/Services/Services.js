@@ -5,7 +5,6 @@ import ContentTemplate from "../../Components/ContentTemplate/ContentTemplate";
 import Section from "../../Components/Section/Section";
 import ItemsTemplate from "../../Components/ItemsTemplate/ItemsTemplate";
 import { getItemData } from "../../GetItems";
-import Box from "../../Components/Box/Box";
 import ServiceBox from "./ServiceBox/ServiceBox";
 
 const Services = ({ data }) => {

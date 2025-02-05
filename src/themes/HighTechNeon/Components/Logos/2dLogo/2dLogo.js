@@ -1,7 +1,7 @@
 // 2dLogo.js
 import React from "react";
 import "./2d-logo.css";
-import { useTheme } from "../../../themeControls/ThemeContext"; // Import the ThemeContext
+import { useTheme } from "../../../Controls/ThemeContext"; // Import the ThemeContext
 
 const light2dLogo = `${process.env.PUBLIC_URL}/mylogo2d-white.png`;
 const dark2dLogo = `${process.env.PUBLIC_URL}/myLogo2d-black.png`;

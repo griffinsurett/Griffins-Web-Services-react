@@ -1,47 +1,26 @@
 // src/themes/HighTechNeon/ThemeTemplates/Process/Process.js
 import React from "react";
-import ContentTemplate from "../../Components/ContentTemplate/ContentTemplate";
-import "./process.css";
 import Section from "../../Components/Section/Section";
+import ContentTemplate from "../../Components/ContentTemplate/ContentTemplate";
 import ItemsTemplate from "../../Components/ItemsTemplate/ItemsTemplate";
-// Import one of your ProcessBox components – here we use ProcessBox2 as an example.
 import ProcessBox2 from "./ProcessBox/ProcessBox2/Box/ProcessBox2";
+import { getItemData } from "../../GetItems";
+import "./process.css";
 
-const Process = () => {
-  const steps = [
-    {
-      stepNumber: 1,
-      title: "Plan",
-      description: "Define your goals and strategy.",
-    },
-    {
-      stepNumber: 2,
-      title: "Design",
-      description: "Create the visual and user experience.",
-    },
-    {
-      stepNumber: 3,
-      title: "Develop",
-      description: "Build and implement the solution.",
-    },
-    {
-      stepNumber: 4,
-      title: "Launch",
-      description: "Deploy and go live with your product.",
-    },
-  ];
+const Process = ({ data }) => {
+  // Retrieve the process steps from the CMS data.
+  // This will extract the array located at data.items.data.
+  const items = getItemData(data);
 
   return (
-    <Section
-      className="flex justify-center full-height column top-space bottom-space"
-      shadowClass="right-shadow bottom"
-    >
+    <Section className="flex justify-center full-height column top-space bottom-space">
       <ContentTemplate
+        data={data}
         contentWrapClass="justify-between-section responsive responsive-center"
         ifButton={true}
         ContentHeaderClass="w100"
-        heading="How We Do It"
-        title="Our Process"
+        heading={data.heading}
+        title={data.title}
         buttonText="Get Started"
         buttonLink="#"
         buttonId="process-header-btn"
@@ -50,11 +29,13 @@ const Process = () => {
       >
         {/* Use ItemsTemplate to render each process step */}
         <ItemsTemplate
-          items={steps}
-          ItemComponent={({ stepNumber, title, description, itemIndex }) => (
+          items={items}
+          maxColumns={1}
+          ItemComponent={({ id, name, description, featuredImage, itemIndex }) => (
             <ProcessBox2
-              stepNumber={stepNumber}
-              title={title}
+              // Derive step number from index since CMS provides "name" as title.
+              stepNumber={itemIndex + 1}
+              title={name}
               description={description}
               index={itemIndex}
             />

@@ -5,14 +5,18 @@ import { getPageStructure } from "./Utils/DynamicContent/GetPageStructure";
 import { getSiteSettings } from "./Utils/GetContent/GetSettings";
 import useMeta from "./Utils/SEO/UseMeta"; // Import the custom hook
 import Content from "./Content";
+// Import setLogo so that we can update the favicon on route changes
+import { setLogo } from "./Utils/SEO/SetLogo";
 
 // Import the ThemeProvider from your theme controls
-import { ThemeProvider } from "../themes/HighTechNeon/themeControls/ThemeContext";
+import { ThemeProvider } from "../themes/HighTechNeon/Controls/ThemeContext";
 
 const CMSContext = createContext(null);
 
 // Lazy load the HighTechNeon theme
-const HighTechNeon = React.lazy(() => import("../themes/HighTechNeon/CMSDisplayTheme"));
+const HighTechNeon = React.lazy(() =>
+  import("../themes/HighTechNeon/CMSDisplayTheme")
+);
 
 export const CMSProvider = ({ children }) => {
   const location = useLocation();
@@ -40,12 +44,15 @@ export const CMSProvider = ({ children }) => {
     ],
     siteTitle: cmsData.siteSettings?.siteTitle || "",
     author: cmsData.siteSettings?.businessOwner || "",
-    image: cmsData.pageStructure?.featuredImage || cmsData.siteSettings?.siteLogo || null,
+    image:
+      cmsData.pageStructure?.featuredImage ||
+      cmsData.siteSettings?.siteLogo ||
+      null,
     url: window.location.href,
   });
 
+  // Load CMS data based on the current pageId and location
   useEffect(() => {
-    // Function to load CMS data
     const loadCMSData = () => {
       const pageStructure = getPageStructure(pageId);
       const siteSettings = { ...getSiteSettings(), queries: Content.queries };
@@ -56,38 +63,38 @@ export const CMSProvider = ({ children }) => {
         siteSettings,
       });
 
-      // If it's the initial load, mark it as complete
       if (isInitialLoad) {
         setIsInitialLoad(false);
       }
     };
 
     if (isInitialLoad) {
-      // Only set loading to true during the initial load
       setCmsData((prev) => ({ ...prev, loading: true }));
       loadCMSData();
     } else {
-      // For client-side navigations, do not set loading to true
       loadCMSData();
     }
   }, [location, pageId, isInitialLoad]);
 
+  // New Effect: Update the favicon on changes to siteSettings or pageId
+  useEffect(() => {
+    if (cmsData.siteSettings && cmsData.siteSettings.siteLogo) {
+      setLogo(cmsData.siteSettings.siteLogo);
+    }
+  }, [cmsData.siteSettings, pageId]);
+
   // Combine everything we want to expose to the rest of the app
   const contextValue = {
-    ...cmsData,             // loading, pageStructure, siteSettings
-    pageId,                 // current page
-    setPageId,              // function to switch page
+    ...cmsData, // loading, pageStructure, siteSettings
+    pageId, // current page
+    setPageId, // function to switch page
     ThemeComponent: HighTechNeon, // the chosen theme component (lazy loaded)
-    isInitialLoad,         // expose isInitialLoad
+    isInitialLoad, // expose isInitialLoad
   };
 
-  // Wrap the children with the ThemeProvider so that all components inside
-  // (e.g. the logo that calls useTheme) will have access to the theme context.
   return (
     <CMSContext.Provider value={contextValue}>
-      <ThemeProvider>
-        {children}
-      </ThemeProvider>
+      <ThemeProvider>{children}</ThemeProvider>
     </CMSContext.Provider>
   );
 };
