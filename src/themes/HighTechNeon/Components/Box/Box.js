@@ -1,6 +1,7 @@
 // Box.js
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import "./box.css";
 
 const Box = ({
@@ -14,16 +15,21 @@ const Box = ({
     ? "box-with-link dynamic-hover-border-effect hover-scale"
     : "box-no-link";
 
-
   if (link) {
+    // Determine if the link is internal (starts with "/")
+    const isInternal = link.startsWith("/");
+    const LinkComponent = isInternal ? Link : "a";
+    // Use 'to' if internal, or 'href' if external
+    const linkProps = isInternal ? { to: link } : { href: link };
+
     return (
       <div className={`box-wrapper flex wrap ${inViewClass}`}>
-        <a
-          href={link}
+        <LinkComponent
+          {...linkProps}
           className={`box ${boxClass} ${className} flex item-align-center justify-center grow`}
         >
           {children}
-        </a>
+        </LinkComponent>
       </div>
     );
   }
@@ -41,9 +47,10 @@ Box.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
   link: PropTypes.string,
-  delayIn: PropTypes.number,
   inViewClass: PropTypes.string,
   outViewClass: PropTypes.string,
+  // The following props can be used if needed by a parent component
+  delayIn: PropTypes.number,
   staggeredAnimation: PropTypes.bool,
   index: PropTypes.number,
   delayBase: PropTypes.number,

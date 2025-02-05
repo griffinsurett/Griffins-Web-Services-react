@@ -5,6 +5,7 @@ import ThemeControls from "../../Controls/ThemeControls";
 import Hamburger from "./components/hamburger/Hamburger";
 import Logo from "../../Components/Logos/3dLogo/3dLogo";
 import Menu from "./components/Menu/Menu";
+import { Link } from "react-router-dom";
 
 const Header = ({ menuManager, siteSettings }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,14 +25,14 @@ const Header = ({ menuManager, siteSettings }) => {
         <div className="header-foot-container header-container flex justify-between item-align-center">
           {/* Left: Logo */}
           <div className="nav-left logo fif-container flex justify-center item-align-center fade-in">
-            <a href="/">
+            <Link to="/">
               <Logo
                 ContainerClassName="flex justify-center item-align-center logo hover-scale"
                 width="45px"
                 classname="responsive-logo"
                 everdarkLogo={false}
               />
-            </a>
+            </Link>
           </div>
 
           {/* Middle: Theme Controls */}
