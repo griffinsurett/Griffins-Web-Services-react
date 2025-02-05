@@ -2,7 +2,7 @@
 import React, { memo, lazy, Suspense } from "react";
 import { useCMSContext } from "../../CMS/CMSContext";
 import Header from "./Sections/Header/Header";
-import Preloader from "./Controls/Preloader/Preloader";
+import Preloader from "./Components/Preloader/Preloader";
 import "./styles.css";
 import "./animations.css";
 import { ThemeProvider } from "./Controls/ThemeContext";
@@ -56,11 +56,11 @@ const CMSDisplayTheme = memo(() => {
       <div className="flex column item-align-center">
         <main className="flex-grow content container" role="main">
           {pageId === "home" ? (
-            <Suspense fallback={<div>Loading Hero...</div>}>
+            <Suspense fallback={<Preloader />}>
               <Hero1 data={siteSettings} />
             </Suspense>
           ) : (
-            <Suspense fallback={<div>Loading Hero...</div>}>
+            <Suspense fallback={<Preloader />}>
               <Hero2 data={{ title, heading, description }} />
             </Suspense>
           )}
@@ -70,7 +70,7 @@ const CMSDisplayTheme = memo(() => {
             .map(({ key, data }) => {
               const SectionComponent = sectionComponents[key];
               return SectionComponent ? (
-                <Suspense key={key} fallback={<div>Loading {key}...</div>}>
+                <Suspense key={key} fallback={<Preloader />}>
                   <SectionComponent data={data} />
                 </Suspense>
               ) : (

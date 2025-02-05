@@ -339,7 +339,7 @@ const collections = [
     hasPage: true,
     slug: "/projects",
     sections: ["projects", "services", "testimonials"],
-    addToQuery: [{ name: "Primary", parentQueryItem: "/about-us" }],
+    addToQuery: [{ name: "Primary" }],
     items: {
       itemsHasPage: true,
       itemSections: ["projects", "services", "testimonials"],
@@ -380,7 +380,7 @@ const collections = [
       "Read feedback from our clients and learn how Griffins Web Services has helped them succeed online.",
     hasPage: true,
     featuredImage: TestImage,
-    addToQuery: [{ name: "Primary", parentQueryItem: "/about-us" }],
+    addToQuery: [{ name: "Primary" }],
     slug: "/testimonials",
     sections: ["testimonials"],
     items: {
