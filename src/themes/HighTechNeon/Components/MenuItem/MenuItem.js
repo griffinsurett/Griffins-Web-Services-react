@@ -20,6 +20,7 @@ const MenuItem = ({
   const [hovered, setHovered] = useState(false);
 
   const handleClick = (e) => {
+    // Optionally scroll if an element matching the href selector exists
     let element = null;
     try {
       element = href ? document.querySelector(href) : null;
@@ -29,7 +30,10 @@ const MenuItem = ({
     if (element) {
       e.preventDefault();
       element.scrollIntoView({ behavior: "smooth", block: "start" });
-      if (toggleMenu) toggleMenu();
+    }
+    // Always call toggleMenu so the menu closes on click
+    if (toggleMenu) {
+      toggleMenu();
     }
   };
 
@@ -44,7 +48,7 @@ const MenuItem = ({
       <div className="menu-item-content flex item-align-center">
         {(logoOnlyOnHover ? hovered : true) && <ListBulletLogo size={logoSize} />}
         {href ? (
-          // Use <Link> for internal navigation
+          // Use Link for internal navigation; toggleMenu is called on click.
           <Link to={href} className="menu-link" onClick={handleClick}>
             <LabelElement className={labelClass}>{label}</LabelElement>
           </Link>
