@@ -21,7 +21,7 @@ const Hero2 = ({ data }) => {
   return (
     <section
       id="hero-section"
-      className="flex item-align-center responsive hero-height section-gap"
+      className="flex item-align-center responsive hero-height justify-between"
     >
       <ContentTemplate
         isHero

@@ -47,7 +47,7 @@ function Contact1({ data }) {
         </div>
       </ContentTemplate>
 
-      <form className="contact-form top-space bottom-space w50">
+      <form className="contact-form top-space bottom-space w50" netlify>
         <div className="form-group column">
           <div className="form-group">
             <div className="name-fields flex justify-between">
