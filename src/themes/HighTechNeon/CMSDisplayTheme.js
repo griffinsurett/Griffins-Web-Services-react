@@ -12,8 +12,8 @@ import { ThemeProvider } from "./Controls/ThemeContext";
 import MenuManager from "./Components/MenuManager";
 
 // Lazy-load sections...
-const Hero1 = lazy(() => import("./Sections/HeroSections/Hero1/Hero"));
-const Hero2 = lazy(() => import("./Sections/HeroSections/Hero2/Hero"));
+const Hero1 = lazy(() => import("./Sections/HeroSection/Hero1/Hero"));
+const Hero2 = lazy(() => import("./Sections/HeroSection/Hero2/Hero"));
 
 const sectionComponents = {
   about: lazy(() => import("./Sections/About/About1/About")),
