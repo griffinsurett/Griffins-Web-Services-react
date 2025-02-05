@@ -1,37 +1,38 @@
-// Hero1.js
+// src/themes/HighTechNeon/Sections/HeroSections/Hero2/Hero.js
 import React from "react";
 import "./hero.css";
 import ContentTemplate from "../../../Components/ContentTemplate/ContentTemplate";
 
 const Hero2 = ({ data }) => {
-  console.log(data);
-  // If you want to do a fallback if data isn't provided:
   if (!data) {
-    return <div>Error: No site data found for Hero1</div>;
+    return <div>Error: No hero data found</div>;
   }
+
+  // You can now access BOTH siteSettings stuff AND page-specific stuff on `data`
+  const { 
+    siteTitle,       // e.g. from siteSettings
+    siteDescription, // e.g. from siteSettings
+    // possibly other fields from siteSettings…
+    pageTitle,       // from pageStructure.title
+    pageHeading,     // from pageStructure.heading
+    pageDescription  // from pageStructure.description
+  } = data;
 
   return (
     <section
       id="hero-section"
       className="flex item-align-center responsive hero-height section-gap"
     >
-      {/* Use ContentTemplate for the hero section content */}
       <ContentTemplate
-        isHero={true}
+        isHero
         ifParagraph
         contentWrapClass="column"
-        title={data.title}
-        heading={data.heading}
-        paragraph1={data.description}
+        // Maybe you want to show siteTitle in small text, pageTitle in a bigger headline, etc.
+        title={siteTitle}    
+        heading={pageHeading}
+        paragraph1={pageDescription}
         ifButton={false}
-        buttonText="Get Started"
-        buttonLink="#"
-        className="hero-content flex column justify-center item-align-center half-height w70"
-        headingClass="text-shadow-for-dark"
-        paragraphClass="p-small bottom-space"
-        buttonClass="p-small"
-        buttonSecClass="hero-btn-container smaller-top-space smaller-bottom-space flex justify-left"
-        titleClass="section-title"
+        // rest of your props
       />
     </section>
   );

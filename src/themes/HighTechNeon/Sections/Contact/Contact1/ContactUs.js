@@ -23,6 +23,7 @@ function Contact1({ data }) {
         contentWrapClass="column"
         ifButton={false}
         ifParagraph={true}
+        title={data.title}
         heading={data.heading}
         paragraphClass="flex justify-center column about-paragraphs"
         paragraph1={data.paragraph}
@@ -46,7 +47,7 @@ function Contact1({ data }) {
         </div>
       </ContentTemplate>
 
-      {/* <form className="contact-form top-space bottom-space">
+      <form className="contact-form top-space bottom-space w50">
         <div className="form-group column">
           <div className="form-group">
             <div className="name-fields flex justify-between">
@@ -91,7 +92,7 @@ function Contact1({ data }) {
           text={data.button?.text}
           className="p-large self-right"
         />
-      </form> */}
+      </form>
     </Section>
   );
 }

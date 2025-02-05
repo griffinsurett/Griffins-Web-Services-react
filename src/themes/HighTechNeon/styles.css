@@ -476,6 +476,10 @@ a {
   text-align: center;
 }
 
+.text-stretch {
+  text-align: stretch;
+}
+
 .text-left {
   text-align: left; /* Align text left */
 }

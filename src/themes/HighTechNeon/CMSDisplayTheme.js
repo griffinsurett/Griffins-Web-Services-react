@@ -23,7 +23,7 @@ const sectionComponents = {
   process: lazy(() => import("./Sections/Process/Process")),
   services: lazy(() => import("./Sections/Services/Services")),
   projects: lazy(() => import("./Sections/Projects/Projects")),
-  contact: lazy(() => import("./Sections/Contact/Contact3/ContactUs")),
+  contact: lazy(() => import("./Sections/Contact/Contact1/ContactUs")),
   faq: lazy(() => import("./Sections/FAQ/FAQ")),
   testimonials: lazy(() => import("./Sections/Testimonials/Testimonials")),
   // ...
@@ -56,15 +56,31 @@ const CMSDisplayTheme = memo(() => {
       <Header menuManager={menuManager} siteSettings={siteSettings} />
       <div className="flex column item-align-center">
         <main className="flex-grow content container" role="main">
-          {pageId === "home" ? (
-            <Suspense fallback={<Preloader />}>
-              <Hero1 data={siteSettings} />
-            </Suspense>
-          ) : (
-            <Suspense fallback={<Preloader />}>
-              <Hero2 data={{ title, heading, description }} />
-            </Suspense>
-          )}
+        {
+  pageId === "home" ? (
+    <Suspense fallback={<Preloader />}>
+      <Hero1 
+        data={{
+          ...siteSettings,          // Spread in all siteSettings
+          pageTitle: title,         // from pageStructure.title
+          pageHeading: heading,     // from pageStructure.heading
+          pageDescription: description,
+        }}
+      />
+    </Suspense>
+  ) : (
+    <Suspense fallback={<Preloader />}>
+      <Hero2 
+        data={{
+          ...siteSettings,
+          pageTitle: title,         
+          pageHeading: heading,     
+          pageDescription: description,
+        }}
+      />
+    </Suspense>
+  )
+}
 
           {sections
             .filter(({ key }) => key !== "hero")

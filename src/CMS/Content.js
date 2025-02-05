@@ -202,6 +202,15 @@ const collections = [
         icon: getIcon("fab", "Instagram"),
       },
     ],
+    formFields: [
+      { name: "firstName", placeholder: "First Name" },
+      { name: "lastName", placeholder: "Last Name" },
+      { name: "email", placeholder: "Email" },
+      { name: "phone", placeholder: "Phone Number" },
+      { name: "subject", placeholder: "Subject" },
+      { name: "message", placeholder: "Message" },
+    ],
+    button: { text: "Submit", link: "#" },
   },
 
   /**

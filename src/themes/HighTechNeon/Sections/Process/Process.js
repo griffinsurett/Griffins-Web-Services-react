@@ -8,8 +8,12 @@ import { getItemData } from "../../GetItems";
 import "./process.css";
 
 const Process = ({ data }) => {
-  // Retrieve the process steps from the CMS data.
-  // This will extract the array located at data.items.data.
+  // If data is null, return null (or a fallback UI)
+  if (!data) {
+    console.warn("Process component received no data.");
+    return null;
+  }
+
   const items = getItemData(data);
 
   return (
@@ -19,7 +23,7 @@ const Process = ({ data }) => {
         contentWrapClass="justify-between-section responsive responsive-center"
         ifButton={true}
         ContentHeaderClass="w100"
-        heading={data.heading}
+        heading={data.heading} // This is now safe because data is not null.
         title={data.title}
         buttonText="Get Started"
         buttonLink="#"
@@ -27,13 +31,11 @@ const Process = ({ data }) => {
         buttonBottomMobile={true}
         buttonSecClass="responsive-center"
       >
-        {/* Use ItemsTemplate to render each process step */}
         <ItemsTemplate
           items={items}
           maxColumns={1}
           ItemComponent={({ id, name, description, featuredImage, itemIndex }) => (
             <ProcessBox2
-              // Derive step number from index since CMS provides "name" as title.
               stepNumber={itemIndex + 1}
               title={name}
               description={description}
@@ -42,9 +44,7 @@ const Process = ({ data }) => {
           )}
           className="process-boxes box-section top-space bottom-space flex responsive column"
           layout="flex responsive column"
-          emptyComponent={
-            <p className="text-center">No process steps available.</p>
-          }
+          emptyComponent={<p className="text-center">No process steps available.</p>}
         />
       </ContentTemplate>
     </Section>
@@ -52,3 +52,4 @@ const Process = ({ data }) => {
 };
 
 export default Process;
+

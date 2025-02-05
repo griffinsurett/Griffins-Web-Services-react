@@ -27,7 +27,7 @@ const Footer = ({ className, menuManager, siteSettings }) => {
                   label={title}
                   href={href}
                   index={itemIndex}
-                  className="footer-menu-item p-small"
+                  className="footer-menu-item p-xSmall"
                   logoOnlyOnHover={true}
                 />
               );
