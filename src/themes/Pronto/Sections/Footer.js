@@ -2,7 +2,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PropTypes from "prop-types";
-import Icon from "../../HighTechNeon/Components/Icon/Icon";
 
 /**
  * Footer Component
@@ -53,7 +52,7 @@ const Footer = ({ menuManager, siteSettings, isSticky }) => {
                 aria-label={item.title} // Assuming item.title is the platform name
                 className="hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 rounded"
               >
-                <Icon icon={item.icon} size="lg" aria-hidden="true" />
+                <FontAwesomeIcon icon={item.icon} size="lg" aria-hidden="true" />
               </a>
             </li>
           ))}

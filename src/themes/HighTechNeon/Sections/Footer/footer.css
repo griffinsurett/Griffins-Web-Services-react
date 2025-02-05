@@ -2,6 +2,7 @@
 .footer {
   /* position: relative; Default positioning */
   z-index: 9000; /* Ensure it's above content */
+  padding: 15px;
 }
 
 .sticky-footer {
@@ -19,18 +20,15 @@
   gap: 20px;
 }
 
+.footer-menu-list {
+  margin: 0;
+  padding: 0;
+}
+
 .footer-menu a {
   color: var(--maintext-color);
   text-decoration: none;
   transition: var(--transition);
-}
-
-/* .footer-menu a:hover {
-  text-decoration: underline;
-} */
-
-#footer-copyright {
-  /* color: var(--transparentFade-bg2); */
 }
 
 .social-icons {

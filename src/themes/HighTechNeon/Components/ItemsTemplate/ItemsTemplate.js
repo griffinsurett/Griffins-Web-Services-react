@@ -10,6 +10,7 @@ const ItemsTemplate = ({
   emptyComponent = null,
   maxColumns = 3,   // already added for columns
   gap = "20px",     // new gap prop with a default value of 20px
+  allowWrap = true, // NEW: by default items will wrap
   ...rest
 }) => {
   // Step 1: Normalize the items to an array
@@ -37,20 +38,25 @@ const ItemsTemplate = ({
     );
   }
 
-  // Step 3: Render each item within a wrapper that sets the column class.
-  // We also add an inline style to the container to set the gap.
+  // Step 3: Render each item within a wrapper.
+  // If allowWrap is true, add the "wrap" class and use the "colmax{maxColumns}" class.
+  // Otherwise, do not add wrapping and prevent flex shrinking.
   return (
-    <div
-      className={`items-template-container flex wrap ${className}`}
+    <ul
+      className={`items-template-container ${allowWrap ? "wrap" : ""} ${className}`}
       style={{ gap }}  // The gap is applied here
       {...rest}
     >
       {itemsArray.map((item, index) => (
-        <div key={index} className={`colmax${maxColumns}`}>
+        <div
+          key={index}
+          className={allowWrap ? `colmax${maxColumns}` : ""}
+          style={!allowWrap ? { flex: "none" } : {}}
+        >
           <ItemComponent {...item} itemIndex={index} />
         </div>
       ))}
-    </div>
+    </ul>
   );
 };
 
@@ -64,6 +70,7 @@ ItemsTemplate.propTypes = {
   emptyComponent: PropTypes.node,
   maxColumns: PropTypes.oneOf([1, 2, 3, 4]),
   gap: PropTypes.string, // The gap between individual items (e.g., "20px", "1rem", etc.)
+  allowWrap: PropTypes.bool, // When false, items will not wrap (useful for fixed-row layouts)
 };
 
 export default ItemsTemplate;

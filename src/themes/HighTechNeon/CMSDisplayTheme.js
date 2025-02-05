@@ -2,6 +2,7 @@
 import React, { memo, lazy, Suspense } from "react";
 import { useCMSContext } from "../../CMS/CMSContext";
 import Header from "./Sections/Header/Header";
+import Footer from "./Sections/Footer/Footer";
 import Preloader from "./Components/Preloader/Preloader";
 import "./styles.css";
 import "./animations.css";
@@ -79,7 +80,7 @@ const CMSDisplayTheme = memo(() => {
             })}
         </main>
       </div>
-      {/* <Footer menuManager={menuManager} siteSettings={siteSettings} /> */}
+      <Footer menuManager={menuManager} siteSettings={siteSettings} />
     </ThemeProvider>
   );
 });
