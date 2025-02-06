@@ -1,0 +1,23 @@
+/* src/themes/HighTechNeon/Components/ErrorPage/errorPage.css */
+.error-page {
+    background-color: var(--background-color);
+    padding: var(--primary-padding);
+    min-height: 100vh;
+  }
+  
+  .error-content h1.error-code {
+    font-size: 6rem;
+    margin-bottom: var(--smaller-padding);
+    text-shadow: var(--text-shadow);
+  }
+  
+  .error-content h2.error-title {
+    font-size: 2rem;
+    margin-bottom: var(--smaller-padding);
+  }
+  
+  .error-content p.error-message {
+    font-size: var(--font-size-p);
+    line-height: var(--line-height-paragraph);
+  }
+  

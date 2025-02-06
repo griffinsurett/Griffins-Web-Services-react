@@ -6,7 +6,7 @@ import { setLogo } from "./Utils/SEO/SetLogo";
 import { generateQueries } from "./Queries"; // Import menu generation logic
 import { getIcon } from "./Utils/Icons/IconImporter";
 
-const Logo = `${process.env.PUBLIC_URL}/gwservices-logo.png`; 
+const Logo = `${process.env.PUBLIC_URL}/mylogo3d.png`; 
 const TestImage = `${process.env.PUBLIC_URL}/gwservices-default-image.png`;
 
 /**
