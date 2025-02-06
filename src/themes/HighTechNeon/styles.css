@@ -512,6 +512,10 @@ a {
   min-height: 50vh;
 }
 
+.quarter-height {
+  min-height: 25vh;
+}
+
 .fluid-container {
   width: 100%;
 }

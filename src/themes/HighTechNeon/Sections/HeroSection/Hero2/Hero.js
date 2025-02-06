@@ -21,7 +21,7 @@ const Hero2 = ({ data }) => {
   return (
     <section
       id="hero-section"
-      className="flex item-align-center responsive hero-height justify-between"
+      className="flex item-align-center responsive quarter-height larger-top-space justify-between"
     >
       <ContentTemplate
         isHero
@@ -29,7 +29,7 @@ const Hero2 = ({ data }) => {
         contentWrapClass="column"
         // Maybe you want to show siteTitle in small text, pageTitle in a bigger headline, etc.
         title={siteTitle}    
-        heading={pageHeading}
+        heading={pageTitle}
         paragraph1={pageDescription}
         ifButton={false}
         // rest of your props
