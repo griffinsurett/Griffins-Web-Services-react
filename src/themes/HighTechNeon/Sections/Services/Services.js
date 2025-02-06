@@ -42,7 +42,8 @@ const Services = ({ data }) => {
             />
           )}
           className="services-boxes flex wrap justify-center responsive"
-          maxColumns={2}
+          // If items length is divisible by 3, show 3 columns; else show 2.
+          maxColumns={(items?.length || 0) % 3 === 0 ? 3 : 2}
           emptyComponent={<p className="text-center">No services available.</p>}
         />
       </ContentTemplate>
