@@ -117,6 +117,19 @@ const collections = [
           description:
             "We tailor solutions to your unique goals, audience, and budget.",
         },
+        {
+          title: "Industry Expertise",
+          icon: getIcon("fa", "Lightbulb"),
+          description:
+            "Our team stays on top of evolving industry trends to deliver cutting-edge solutions.",
+        },
+        {
+          title: "Collaborative Process",
+          icon: getIcon("fa", "Users"),
+          description:
+            "We partner with you every step of the way to ensure alignment with your vision and goals.",
+        }
+        
       ],
     },
     keywords: [
@@ -475,7 +488,6 @@ const homepageOverride = {
   sections: [
     "services",
     "about",
-    "benefits",
     "whyChooseUs",
     "projects",
     "testimonials",

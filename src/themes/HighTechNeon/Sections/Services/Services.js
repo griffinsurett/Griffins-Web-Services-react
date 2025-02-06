@@ -42,6 +42,7 @@ const Services = ({ data }) => {
             />
           )}
           className="services-boxes flex wrap justify-center responsive"
+          maxColumns={2}
           emptyComponent={<p className="text-center">No services available.</p>}
         />
       </ContentTemplate>
