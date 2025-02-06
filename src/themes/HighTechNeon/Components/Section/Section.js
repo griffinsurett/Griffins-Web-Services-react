@@ -7,18 +7,12 @@ const Section = ({
   className = "",
   inViewClass = "fade-in",
   outViewClass = "fade-out",
-  threshold = 0.1,
-  rootMargin = "0px",
-  delayIn = 0,
-  delayOut = 0,
-  staggeredAnimation = false,
   index = 0,
-  delayBase = 100,
   ...otherProps
 }) => {
   return (
     <section
-      className={`section-element section-padding full-height ${className} ${inViewClass}`}
+      className={`section-element section-padding ${className} ${inViewClass}`}
       {...otherProps}
     >
       {children}

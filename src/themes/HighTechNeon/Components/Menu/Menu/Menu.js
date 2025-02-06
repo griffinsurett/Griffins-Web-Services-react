@@ -1,8 +1,8 @@
 // Menu.js
 import React from "react";
 import "./menu.css";
-import MenuItem from "../../../../Components/MenuItem/MenuItem";
-import Footer from "../../../Footer/Footer";
+import MenuItem from "../../MenuItem/MenuItem";
+import Footer from "../../../Sections/Footer/Footer";
 
 const Menu = ({ isOpen, toggleMenu, siteSettings, menuManager }) => {
 

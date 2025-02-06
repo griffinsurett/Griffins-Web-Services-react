@@ -1,40 +1,75 @@
-// src/themes/HighTechNeon/Sections/HeroSections/Hero2/Hero.js
+// src/themes/HighTechNeon/Sections/HeroSection/Hero2/Hero.js
 import React from "react";
-import "./hero.css";
+import Section from "../../../Components/Section/Section";
 import ContentTemplate from "../../../Components/ContentTemplate/ContentTemplate";
+import "../../../styled-circle.css"; // Reuse the same circle styles as in About1 if desired
 
 const Hero2 = ({ data }) => {
   if (!data) {
     return <div>Error: No hero data found</div>;
   }
 
-  // You can now access BOTH siteSettings stuff AND page-specific stuff on `data`
-  const { 
-    siteTitle,       // e.g. from siteSettings
-    siteDescription, // e.g. from siteSettings
-    // possibly other fields from siteSettings…
-    pageTitle,       // from pageStructure.title
-    pageHeading,     // from pageStructure.heading
-    pageDescription  // from pageStructure.description
-  } = data;
+  // Optionally, you can use additional fields from data:
+  // For example, you might use siteTitle for a smaller text and pageHeading (or pageTitle) for the main heading.
+  const { siteTitle, pageTitle, pageHeading } = data;
+
+  console.log("Hero2 data: ", data);  
+
+  // Get the two paragraphs from data.content array (if available)
+  const paragraph1 =
+    Array.isArray(data.content) && data.content.length > 0
+      ? data.content[0]
+      : "";
+  const paragraph2 =
+    Array.isArray(data.content) && data.content.length > 1
+      ? data.content[1]
+      : "";
 
   return (
-    <section
-      id="hero-section"
-      className="flex item-align-center responsive quarter-height larger-top-space justify-between"
+    <Section
+      id="hero2"
+      className="
+        hero2
+        flex item-align-center justify-center
+        full-height
+        column
+        responsive
+        responsive-center
+        responsive-spacing
+      "
     >
       <ContentTemplate
-        isHero
-        ifParagraph
-        contentWrapClass="column"
-        // Maybe you want to show siteTitle in small text, pageTitle in a bigger headline, etc.
-        title={siteTitle}    
-        heading={pageTitle}
-        paragraph1={pageDescription}
+        data={data}
+        isHero={true}
+        ifParagraph={true}
         ifButton={false}
-        // rest of your props
+        title={siteTitle || ""}
+        heading={pageTitle || ""}
+        contentWrapClass="column"
+        paragraphClass="flex justify-center column about-paragraphs responsive-center"
+        paragraph1={paragraph1}
+        paragraph1Class="
+          top-paragraph
+          p-xLarge
+          font-weight-regular
+          bottom-space
+          text-left
+          half-column
+          self-left
+        "
+        paragraph2={paragraph2}
+        paragraph2Class="
+          bottom-paragraph
+          text-left
+          half-column
+          self-right
+          negative-top
+          responsive-center
+          bottom-space
+        "
+        ContentHeaderClass="w50"
       />
-    </section>
+    </Section>
   );
 };
 

@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from "react";
 import "./header.css";
 import ThemeControls from "../../Controls/ThemeControls";
-import Hamburger from "./components/hamburger/Hamburger";
+import Hamburger from "../../Components/Menu/hamburger/Hamburger";
 import Logo from "../../Components/Logos/3dLogo/3dLogo";
-import Menu from "./components/Menu/Menu";
+import Menu from "../../Components/Menu/Menu/Menu";
 import { Link } from "react-router-dom";
 
 const Header = ({ menuManager, siteSettings }) => {

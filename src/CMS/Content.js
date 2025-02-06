@@ -80,7 +80,7 @@ const collections = [
     slug: "/about-us",
     sections: ["purpose", "whyChooseUs", "benefits"],
     redirectFrom: ["/about"],
-    excerpt: "Your Jersey Shore-based Digital Powerhouse for Website Creation, Digital Marketing, Branding, IT Consulting, and more.",
+    content: "Your Jersey Shore-based Digital Powerhouse for Website Creation, Digital Marketing, Branding, IT Consulting, and more.",
     description: `Since 2019, the founder of ${siteSettings.siteTitle} has served as the Chief Technology Officer of i-75 CPA Review, providing expert web design, development, hosting, management, branding, and IT consulting. Through innovative strategies and tailored solutions, these efforts have helped the business grow by over 100x, establishing i-75 as a leader in its industry, and I am very much excited to do the same for your business.`,
     purpose: {
       makeObjectSection: true,
@@ -258,7 +258,7 @@ const collections = [
       isHeirarchical: true,
       itemsHasPage: true,
       includeCollectionSlug: true,
-      itemSections: ["projects", "services",  "process", "testimonials", "faq"],
+      itemSections: ["hero", "projects", "services",  "process", "testimonials", "faq"],
       onlyParentItemsHasPage: false,
       description:
         "We provide customized digital services to meet your specific goals.",
@@ -276,6 +276,10 @@ const collections = [
           slug: "/web-development",
           description:
             "Custom websites and applications that engage and convert.",
+          content: [
+            "Elevate your online presence with powerful, user-centric web development solutions tailored to meet your unique goals.",
+            "Our Web Development services focus on creating custom websites and applications that both engage and convert. We begin by understanding your brand objectives, target audience, and desired functionality to craft a blueprint for success. From there, our team utilizes cutting-edge technologies and best practices to build fast, secure, and scalable solutions. Whether you need an e-commerce platform, a complex web app, or a simple brochure site, we prioritize seamless user experiences and robust performance. The result is an online presence that not only looks impressive but also drives real business impact."
+          ],
           relations: [
             { collection: "projects", value: "/marketing-site-redesign" },
             { collection: "faq", value: 2 },
@@ -285,10 +289,34 @@ const collections = [
             title: "Our Process",
             heading: "How We Build Your Website",
             items: [
-              { id: 1, name: "Discovery & Planning", description: "We learn your objectives, target audience, and design preferences to map out a clear project plan.", featuredImage: TestImage },
-              { id: 2, name: "Design & Development", description: "We create wireframes and mockups, then transform them into a fully functional website or digital solution.", featuredImage: TestImage },
-              { id: 3, name: "Testing & Optimization", description: "We rigorously test performance, usability, and SEO to ensure top-tier quality before launch.", featuredImage: TestImage },
-              { id: 4, name: "Launch & Support", description: "We deploy your new site or campaign, then provide ongoing support to keep things running smoothly.", featuredImage: TestImage },
+              {
+                id: 1,
+                name: "Discovery & Planning",
+                description:
+                  "We learn your objectives, target audience, and design preferences to map out a clear project plan.",
+                featuredImage: TestImage,
+              },
+              {
+                id: 2,
+                name: "Design & Development",
+                description:
+                  "We create wireframes and mockups, then transform them into a fully functional website or digital solution.",
+                featuredImage: TestImage,
+              },
+              {
+                id: 3,
+                name: "Testing & Optimization",
+                description:
+                  "We rigorously test performance, usability, and SEO to ensure top-tier quality before launch.",
+                featuredImage: TestImage,
+              },
+              {
+                id: 4,
+                name: "Launch & Support",
+                description:
+                  "We deploy your new site or campaign, then provide ongoing support to keep things running smoothly.",
+                featuredImage: TestImage,
+              },
             ],
           },
         },
@@ -299,7 +327,10 @@ const collections = [
           slug: "/web-design",
           description:
             "Modern, responsive websites that captivate your audience.",
-          sections: ["services", "projects", "testimonials", "faq"],
+          content: [
+            "Make a memorable first impression with eye-catching web designs that convey professionalism and authenticity.",
+            "Our Web Design services revolve around building modern, responsive, and visually captivating digital experiences that resonate with your target audience. From conceptual wireframes to refined layouts, each design element is meticulously crafted to align with your brand identity and aesthetic goals. By focusing on user-friendly navigation, intuitive interfaces, and adaptive responsiveness, we ensure your site looks just as stunning on mobile devices as it does on desktops. Beyond aesthetics, our designs are strategically engineered to optimize user flow, boost engagement, and encourage conversions—turning casual visitors into loyal customers."
+          ],
           relations: [
             { collection: "projects", value: "/marketing-site-redesign" },
             { collection: "faq", value: 2 },
@@ -312,7 +343,10 @@ const collections = [
           slug: "/seo",
           description:
             "Improve your rankings and get found by more potential customers.",
-          sections: ["services", "projects", "testimonials", "faq"],
+          content: [
+            "Reach more potential customers by optimizing your site for search engines and driving organic growth.",
+            "Our Search Engine Optimization services go beyond keyword stuffing and link building to offer a holistic approach that boosts your online visibility. We begin by performing thorough site audits and analyzing competitor strategies to identify opportunities for improvement. Then, we refine on-page elements—like meta tags, site structure, and content quality—and develop a robust off-page strategy that encourages high-value backlinks. Throughout the process, we monitor performance metrics, making data-driven adjustments to ensure consistent gains. Ultimately, our goal is to secure higher rankings, attract more traffic, and convert searchers into long-term customers."
+          ],
           relations: [],
         },
         {
@@ -322,6 +356,10 @@ const collections = [
           parentItem: "/web-design",
           description:
             "Drive targeted traffic and conversions through strategic online campaigns.",
+          content: [
+            "Drive targeted traffic to your online channels through strategic digital marketing campaigns that deliver measurable results.",
+            "Our Digital Marketing services encompass everything you need to expand your brand’s reach and sharpen your competitive edge. From paid advertising and social media marketing to content creation and influencer partnerships, we custom-tailor campaigns to align with your brand voice and target audience. We utilize in-depth market research, performance analytics, and iterative testing to fine-tune each campaign, making sure your marketing spend is effective and efficient. By striking the perfect balance between creativity and data-driven insights, we help you capture new leads, nurture existing customer relationships, and ultimately fuel sustained growth for your business."
+          ],
         },
         {
           icon: getIcon("fa", "Envelope"),
@@ -331,6 +369,10 @@ const collections = [
           parentItem: "/web-design",
           description:
             "Engage with your audience through personalized email campaigns.",
+          content: [
+            "Nurture customer relationships and drive sales with personalized, data-driven email marketing strategies.",
+            "Our Email Marketing services provide a powerful way to stay connected with your audience while driving conversions. We take a personalized approach by segmenting your subscriber base and creating tailored messages that resonate with each group’s interests, pain points, and behaviors. Beyond the content itself, we optimize send times, subject lines, and layouts to boost open rates and click-throughs. By closely monitoring results and refining campaigns, we ensure that each email not only reaches inboxes but prompts meaningful engagement. Ultimately, effective email marketing can bolster brand loyalty, increase repeat purchases, and keep you top of mind with your subscribers."
+          ],
         },
         {
           icon: getIcon("fa", "Cloud"),
@@ -340,6 +382,10 @@ const collections = [
           parentItem: "/seo",
           description:
             "Keep your site secure, fast, and up to date with our reliable hosting solutions.",
+          content: [
+            "Secure and optimize your online infrastructure with dependable hosting and maintenance that keeps your site performing at its best.",
+            "Our Hosting & Maintenance services are designed to offer peace of mind by ensuring your website remains fast, secure, and up to date. We handle everything from server optimization and regular backups to software updates and ongoing security checks. By proactively monitoring uptime and performance, we can swiftly address any issues before they affect your visitors. This comprehensive approach not only shields your online presence from vulnerabilities but also maintains the integrity and functionality of your site. With consistent, reliable hosting and maintenance, you can focus on growing your business while we take care of the technical details."
+          ],
         },
       ],
     },
@@ -364,7 +410,7 @@ const collections = [
     addToQuery: [{ name: "Primary" }],
     items: {
       itemsHasPage: true,
-      itemSections: ["projects", "services", "testimonials"],
+      itemSections: ["hero", "projects", "services", "testimonials"],
       data: [
         {
           id: 1,
@@ -486,6 +532,7 @@ const homepageOverride = {
   description: `${siteSettings.siteDescription}`,
   featuredImage: TestImage,
   sections: [
+    "hero",
     "services",
     "about",
     "whyChooseUs",

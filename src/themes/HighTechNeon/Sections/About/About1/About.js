@@ -26,7 +26,7 @@ const About1 = ({ data }) => {
         title={data.title}
         contentWrapClass="column"
         paragraphClass="flex justify-center column about-paragraphs responsive-center"
-        paragraph1={data.excerpt}
+        paragraph1={data.content}
         paragraph1Class="top-paragraph p-xLarge font-weight-regular bottom-space text-left half-column self-left"
         paragraph2={data.description}
         paragraph2Class="bottom-paragraph text-left half-column self-right negative-top responsive-center bottom-space"
