@@ -12,6 +12,9 @@ import { ThemeProvider } from "./Controls/ThemeContext";
 // Import MenuManager
 import MenuManager from "./Components/MenuManager";
 
+// Import the MenuProvider from the separate file
+import { MenuProvider } from "./Components/Menu/MenuContext";
+
 // Lazy-load hero sections
 const Hero1 = lazy(() => import("./Sections/HeroSection/Hero1/Hero")); // Homepage hero
 const Hero2 = lazy(() => import("./Sections/HeroSection/Hero2/Hero")); // Internal pages hero
@@ -44,7 +47,7 @@ const CMSDisplayTheme = memo(() => {
   const menuManager = new MenuManager(siteSettings);
 
   const { title, description, heading, content, sections } = pageStructure;
-  const isHomepage = (pageId === "home");
+  const isHomepage = pageId === "home";
 
   const heroData = {
     ...siteSettings,
@@ -58,7 +61,7 @@ const CMSDisplayTheme = memo(() => {
   const finalSections = sections.filter((s) => s.key !== "hero");
 
   return (
-    <>
+    <MenuProvider>
       <Header menuManager={menuManager} siteSettings={siteSettings} />
       <div className="flex column item-align-center">
         <main className="flex-grow content container" role="main">
@@ -86,11 +89,11 @@ const CMSDisplayTheme = memo(() => {
         </main>
       </div>
       <Footer menuManager={menuManager} siteSettings={siteSettings} />
-    </>
+    </MenuProvider>
   );
 });
 
-// Attach the ThemeProvider as a static property
+// Attach the ThemeProvider as a static property if needed
 CMSDisplayTheme.ThemeProvider = ThemeProvider;
 
 export default CMSDisplayTheme;

@@ -1,31 +1,23 @@
 // src/themes/HighTechNeon/Sections/Header/Header.js
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./header.css";
 import ThemeControls from "../../Controls/ThemeControls";
 import Hamburger from "../../Components/Menu/hamburger/Hamburger";
 import Logo from "../../Components/Logos/3dLogo/3dLogo";
 import Menu from "../../Components/Menu/Menu/Menu";
 import { Link } from "react-router-dom";
+import { useMenu } from "../../Components/Menu/MenuContext";  // Updated import
 
 const Header = ({ menuManager, siteSettings }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
-
-  useEffect(() => {
-    document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [isMenuOpen]);
+  const { isMenuOpen, toggleMenu, closeMenu } = useMenu();
 
   return (
     <>
       <header className="header fade-in-down">
         <div className="header-foot-container header-container flex justify-between item-align-center">
-          {/* Left: Logo */}
+          {/* Left: Logo – clicking it closes the menu */}
           <div className="nav-left logo fif-container flex justify-center item-align-center fade-in">
-            <Link to="/">
+            <Link to="/" onClick={closeMenu}>
               <Logo
                 ContainerClassName="flex justify-center item-align-center logo hover-scale"
                 width="45px"
@@ -45,10 +37,7 @@ const Header = ({ menuManager, siteSettings }) => {
         </div>
       </header>
 
-      {/* 
-        1) Pass menuManager + isOpen/toggleMenu to our <Menu> so it can 
-           fetch "Primary" from the CMS. 
-      */}
+      {/* Pass the global state to the Menu */}
       <Menu
         isOpen={isMenuOpen}
         toggleMenu={toggleMenu}
