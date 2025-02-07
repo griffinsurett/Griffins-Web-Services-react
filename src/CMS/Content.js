@@ -78,7 +78,7 @@ const collections = [
     ],
     hasPage: true,
     slug: "/about-us",
-    sections: ["purpose", "whyChooseUs", "benefits"],
+    sections: ["about", "purpose", "whyChooseUs", "benefits"],
     redirectFrom: ["/about"],
     content: "Your Jersey Shore-based Digital Powerhouse for Website Creation, Digital Marketing, Branding, IT Consulting, and more.",
     description: `Since 2019, the founder of ${siteSettings.siteTitle} has served as the Chief Technology Officer of i-75 CPA Review, providing expert web design, development, hosting, management, branding, and IT consulting. Through innovative strategies and tailored solutions, these efforts have helped the business grow by over 100x, establishing i-75 as a leader in its industry, and I am very much excited to do the same for your business.`,
@@ -463,75 +463,96 @@ const collections = [
     },
   },
 
-  /**
-   * ------------------------------
-   * Projects (Portfolio)
-   * ------------------------------
-   */
-  {
-    id: 4,
-    collection: "projects",
-    heading: "Our Portfolio",
-    title: "Projects",
-    description:
-      "Check out a few of our recent projects and discover how we’ve helped businesses transform their online presence.",
-    featuredImage: TestImage,
-    hasPage: true,
-    slug: "/projects",
-    sections: ["projects", "services", "testimonials"],
-    addToQuery: [{ name: "Primary" }],
-    items: {
-      itemsHasPage: true,
-      itemSections: ["hero", "projects", "services", "testimonials"],
-      data: [
-        {
-          id: 1,
-          title: "i-75 CPA Review",
-          description:
-            "Developed multiple e-commerce sites with landing pages, branding, and digital marketing solutions.",
-          featuredImage: TestImage,
-          link: "https://i75cpareview.com/",
-          image: "https://picsum.photos/200/300",
-        },
-        {
-          id: 2,
-          title: "Faria's Demolition",
-          description:
+/**
+ * ------------------------------
+ * Projects (Portfolio)
+ * ------------------------------
+ */
+{
+  id: 4,
+  collection: "projects",
+  heading: "Our Portfolio",
+  title: "Projects",
+  description:
+    "Check out a few of our recent projects and discover how we’ve helped businesses transform their online presence.",
+  featuredImage: TestImage,
+  hasPage: true,
+  slug: "/projects",
+  sections: ["projects", "services", "testimonials"],
+  addToQuery: [{ name: "Primary" }],
+  items: {
+    itemsHasPage: true,
+    itemSections: ["hero", "services", "testimonials", "projects"],
+    data: [
+      {
+        id: 1,
+        title: "i-75 CPA Review",
+        description:
+          "Developed multiple e-commerce sites with landing pages, branding, and digital marketing solutions.",
+        featuredImage: TestImage,
+        link: "https://i75cpareview.com/",
+        image: "https://picsum.photos/200/300",
+        content: [
+          "For i-75 CPA Review, we built a robust e-commerce platform featuring responsive landing pages, intuitive navigation, and a design that reinforces trust in financial education.",
+          "We also implemented targeted branding and digital marketing strategies that boosted the company’s online presence and conversions."
+        ],
+      },
+      {
+        id: 2,
+        title: "Faria's Demolition",
+        description:
           "Created a comprehensive website showcasing demolition services, including project galleries and contact forms.",
-          featuredImage: TestImage,
-          link: "https://fariasdemolition.com/",
-          image: "https://picsum.photos/200/300",
-        },
-        {
-          id: 3,
-          title: "Koi Roofing and Solar",
-          description:
+        featuredImage: TestImage,
+        link: "https://fariasdemolition.com/",
+        image: "https://picsum.photos/200/300",
+        content: [
+          "For Faria's Demolition, we developed a website that effectively showcased their services through engaging galleries and clear service information.",
+          "The site was optimized for user experience and conversion, ensuring that prospective clients can easily request estimates or contact the company."
+        ],
+      },
+      {
+        id: 3,
+        title: "Koi Roofing and Solar",
+        description:
           "Designed a clean, informative site to promote solar solutions, emphasizing brand trust and environmental impact.",
-          featuredImage: TestImage,
-          link: "https://koisolarofficial.com/",
-          image: "https://picsum.photos/200/300",
-        },
-        {
-          id: 4,
-          title: "Certified Bag Chasers",
-          description:
+        featuredImage: TestImage,
+        link: "https://koisolarofficial.com/",
+        image: "https://picsum.photos/200/300",
+        content: [
+          "For Koi Roofing and Solar, we crafted a modern, mobile-friendly website that highlighted their solar and roofing services with a focus on transparency and sustainability.",
+          "Our approach combined clean design with strong call-to-action elements and SEO best practices to drive quality traffic."
+        ],
+      },
+      {
+        id: 4,
+        title: "Certified Bag Chasers",
+        description:
           "Created a personal brand website for a best-selling author and course creator, featuring courses, testimonials, and community-building resources.",
-          featuredImage: TestImage,
-          link: "https://certifiedbagchasers.com/",
-          image: "https://picsum.photos/200/300",
-        },
-        {
-          id: 5,
-          title: "Koi Crest Marketing",
-          description:
+        featuredImage: TestImage,
+        link: "https://certifiedbagchasers.com/",
+        image: "https://picsum.photos/200/300",
+        content: [
+          "For Certified Bag Chasers, we designed a personal branding site that effectively showcased the client’s courses, testimonials, and community insights.",
+          "The project combined engaging visuals with user-centric navigation to create an experience that resonates with both existing and prospective customers."
+        ],
+      },
+      {
+        id: 5,
+        title: "Koi Crest Marketing",
+        description:
           "Built a digital marketing agency website with case studies and service offerings, highlighting client success stories.",
-          featuredImage: TestImage,
-          link: "https://koicrest.com/",
-          image: "https://picsum.photos/200/300",
-        },
-      ],
-    },
+        featuredImage: TestImage,
+        link: "https://koicrest.com/",
+        image: "https://picsum.photos/200/300",
+        content: [
+          "For Koi Crest Marketing, we developed a website that not only highlighted their service offerings but also showcased detailed case studies and client testimonials.",
+          "Our work included creating a strong visual identity and integrating lead-generation tools to help drive new business."
+        ],
+      },
+    ],
   },
+},
+
 
   /**
    * ------------------------------
