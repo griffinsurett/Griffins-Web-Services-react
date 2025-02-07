@@ -16,7 +16,7 @@ const Projects = ({ data }) => {
   const items = getItemData(data);
 
   return (
-    <Section className="justify-center full-height column">
+    <Section className="justify-center full-height column section-element">
       <ContentTemplate
         data={data}
         className="column bottom-space responsive-center justify-between"

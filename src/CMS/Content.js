@@ -21,8 +21,8 @@ const siteSettings = {
     "At Griffins Web Services, we create stunning websites and provide top-notch digital marketing solutions to help your business flourish online.",
   siteLogo: Logo,
   siteCompany: "Griffins Web Services",
-  businessOwner: "Jane Griffin",
-  ownerDateOfBirth: "1990-01-01",
+  businessOwner: "Griffin Surett",
+  ownerDateOfBirth: "2000-02-03",
   BusinessName: "Griffins Web Services LLC",
   CTAButton: "Start Project",
   CTALink: "/contact-us",
@@ -243,7 +243,7 @@ const collections = [
     slug: "/services",
     onlyParentsOnCollection: false,
     redirectFrom: ["/service"],
-    sections: ["services", "benefits", "projects", "testimonials"],
+    sections: ["services", "projects", "testimonials", "about", "faq"],
     addToQuery: [
       {
         name: "Primary",
@@ -258,7 +258,7 @@ const collections = [
       isHeirarchical: true,
       itemsHasPage: true,
       includeCollectionSlug: true,
-      itemSections: ["hero", "projects", "services",  "process", "testimonials", "faq"],
+      itemSections: ["hero", "projects", "services", "process", "testimonials", "faq"],
       onlyParentItemsHasPage: false,
       description:
         "We provide customized digital services to meet your specific goals.",
@@ -279,10 +279,6 @@ const collections = [
           content: [
             "Elevate your online presence with powerful, user-centric web development solutions tailored to meet your unique goals.",
             "Our Web Development services focus on creating custom websites and applications that both engage and convert. We begin by understanding your brand objectives, target audience, and desired functionality to craft a blueprint for success. From there, our team utilizes cutting-edge technologies and best practices to build fast, secure, and scalable solutions. Whether you need an e-commerce platform, a complex web app, or a simple brochure site, we prioritize seamless user experiences and robust performance. The result is an online presence that not only looks impressive but also drives real business impact."
-          ],
-          relations: [
-            { collection: "projects", value: "/marketing-site-redesign" },
-            { collection: "faq", value: 2 },
           ],
           process: {
             makeObjectSection: true,
@@ -331,10 +327,6 @@ const collections = [
             "Make a memorable first impression with eye-catching web designs that convey professionalism and authenticity.",
             "Our Web Design services revolve around building modern, responsive, and visually captivating digital experiences that resonate with your target audience. From conceptual wireframes to refined layouts, each design element is meticulously crafted to align with your brand identity and aesthetic goals. By focusing on user-friendly navigation, intuitive interfaces, and adaptive responsiveness, we ensure your site looks just as stunning on mobile devices as it does on desktops. Beyond aesthetics, our designs are strategically engineered to optimize user flow, boost engagement, and encourage conversions—turning casual visitors into loyal customers."
           ],
-          relations: [
-            { collection: "projects", value: "/marketing-site-redesign" },
-            { collection: "faq", value: 2 },
-          ],
         },
         {
           icon: getIcon("fa", "Search"),
@@ -347,7 +339,6 @@ const collections = [
             "Reach more potential customers by optimizing your site for search engines and driving organic growth.",
             "Our Search Engine Optimization services go beyond keyword stuffing and link building to offer a holistic approach that boosts your online visibility. We begin by performing thorough site audits and analyzing competitor strategies to identify opportunities for improvement. Then, we refine on-page elements—like meta tags, site structure, and content quality—and develop a robust off-page strategy that encourages high-value backlinks. Throughout the process, we monitor performance metrics, making data-driven adjustments to ensure consistent gains. Ultimately, our goal is to secure higher rankings, attract more traffic, and convert searchers into long-term customers."
           ],
-          relations: [],
         },
         {
           icon: getIcon("fa", "SquarePollVertical"),
@@ -390,6 +381,87 @@ const collections = [
       ],
     },
   },
+  /**
+   * ------------------------------
+   * Companies (Our Clients)
+   * ------------------------------
+   */
+  {
+    id: 7,
+    collection: "companies",
+    heading: "Companies We Work With",
+    title: "Our Partners",
+    featuredImage: TestImage,
+    hasPage: false, // This collection does not have a dedicated page
+    // Optional: You can define a slug even if hasPage is false; it will simply not generate a page.
+    slug: "/companies",
+    items: {
+      itemsHasPage: false, // The items will not generate individual pages
+      includeCollectionSlug: false, // No need to include the collection slug for items
+      data: [
+        {
+          id: 1,
+          title: "i-75 CPA Review",
+          description: "Trusted partner in financial education and consulting.",
+         relations: [
+          {
+            collection: "projects",
+            value: 1,
+          },
+          {
+            collection: "testimonials",
+            value: 2,
+          }
+         ]
+        },
+        {
+          id: 2,
+          title: "Faria's Demolition",
+          description: "Quality demolition services for commercial and residential projects.",
+          relations: [
+            {
+              collection: "projects",
+              value: 2,
+            },
+            {
+              collection: "testimonials",
+              value: 1,
+            }
+          ]
+        },
+        {
+          id: 3,
+          title: "Certified Bag Chasers",
+          description: "Personal branding for the modern entrepreneur.",
+          relations: [
+            {
+              collection: "projects",
+              value: 4,
+            },
+            {
+              collection: "testimonials",
+              value: 3,
+            }
+          ]
+        },
+        {
+          id: 4,
+          title: "Koi Roofing and Solar",
+          description: "Innovative roofing and solar solutions.",
+          relations: [
+            {
+              collection: "projects",
+              value: 3,
+            },
+            {
+              collection: "testimonials",
+              value: 4,
+            }
+          ]
+        },
+      ],
+    },
+  },
 
   /**
    * ------------------------------
@@ -414,21 +486,48 @@ const collections = [
       data: [
         {
           id: 1,
-          title: "Corporate Marketing Site Redesign",
+          title: "i-75 CPA Review",
           description:
-            "Revamped an existing corporate website to boost conversions and brand credibility.",
-          slug: "/marketing-site-redesign",
+            "Developed multiple e-commerce sites with landing pages, branding, and digital marketing solutions.",
           featuredImage: TestImage,
-          relations: [{ collection: "testimonials", value: 1 }],
+          link: "https://i75cpareview.com/",
+          image: "https://picsum.photos/200/300",
         },
         {
           id: 2,
-          title: "Ecommerce Startup Launch",
+          title: "Faria's Demolition",
           description:
-            "Built a fully responsive ecommerce store for a new startup, integrating a secure payment gateway.",
-          slug: "/ecommerce-startup-launch",
+          "Created a comprehensive website showcasing demolition services, including project galleries and contact forms.",
           featuredImage: TestImage,
-          relations: [{ collection: "testimonials", value: 1 }],
+          link: "https://fariasdemolition.com/",
+          image: "https://picsum.photos/200/300",
+        },
+        {
+          id: 3,
+          title: "Koi Roofing and Solar",
+          description:
+          "Designed a clean, informative site to promote solar solutions, emphasizing brand trust and environmental impact.",
+          featuredImage: TestImage,
+          link: "https://koisolarofficial.com/",
+          image: "https://picsum.photos/200/300",
+        },
+        {
+          id: 4,
+          title: "Certified Bag Chasers",
+          description:
+          "Created a personal brand website for a best-selling author and course creator, featuring courses, testimonials, and community-building resources.",
+          featuredImage: TestImage,
+          link: "https://certifiedbagchasers.com/",
+          image: "https://picsum.photos/200/300",
+        },
+        {
+          id: 5,
+          title: "Koi Crest Marketing",
+          description:
+          "Built a digital marketing agency website with case studies and service offerings, highlighting client success stories.",
+          featuredImage: TestImage,
+          link: "https://koicrest.com/",
+          image: "https://picsum.photos/200/300",
         },
       ],
     },
@@ -454,18 +553,40 @@ const collections = [
     items: {
       data: [
         {
-          name: "John Doe",
+          name: "Kenn Faria",
           quote:
-            "Our new website looks fantastic, and our traffic has nearly doubled. Griffins Web Services is the real deal!",
-          position: "Marketing Manager, TechCorp",
-          featuredImage: TestImage,
+            "Working with this team brought our vision to life! The website captures our services perfectly and has brought in a steady stream of clients.",
+          position: "Owner, Faria's Demolition",
         },
         {
-          name: "Sarah Lee",
+          name: "Anthony Gonzales",
           quote:
-            "They helped me launch my ecommerce store quickly and efficiently. Couldn’t be happier with the results!",
-          position: "Founder, FreshFashion",
-          featuredImage: TestImage,
+            "Highly recommend! Griffin was professional and efficient with a great website that has helped us grow our business exponentially.",
+          position: "Owner, Pronto Junk Removal",
+        },
+        {
+          name: "Darius Clark",
+          quote:
+            "From branding to the e-commerce platform, everything was done with precision and creativity. Griffin has been able to 5x business and I’m beyond satisfied with the results.",
+          position: "CEO of i-75 CPA Review",
+        },
+        {
+          name: "Arold Norelus",
+          quote:
+            "Griffin truly captured my brand’s essence. The website has been a game-changer for my courses and community engagement.",
+          position: "Best-Selling Author",
+        },
+        {
+          name: "Tarun Kumar",
+          quote:
+            "Professional, skilled, and efficient! Our new site is not only beautiful but effectively showcases our client success stories.",
+          position: "Owner, Koi Crest Marketing",
+        },
+        {
+          name: "Richard Faria",
+          quote:
+            "An excellent experience from start to finish. The site has helped position us as a leader in our industry.",
+          position: "Owner, Koi Crest Marketing",
         },
       ],
     },
@@ -487,37 +608,58 @@ const collections = [
     featuredImage: TestImage,
     addToQuery: [{ name: "Primary", parentQueryItem: "/about-us" }],
     slug: "/faq",
-    sections: ["faq"],
+    sections: "faq",
     redirectFrom: ["/questions"],
-    items: {
-      data: [
-        {
-          title: "What services do you offer?",
-          description:
-            "We cover every aspect of digital marketing and web development—from design and SEO to hosting and maintenance.",
-        },
-        {
-          title: "How long have you been operating?",
-          description:
-            "Griffins Web Services has been supporting clients with quality digital solutions since 2020.",
-        },
-        {
-          title: "Do you work with small businesses and startups?",
-          description:
-            "Absolutely! We tailor solutions for businesses of all sizes and stages, ensuring the best fit for your budget and goals.",
-        },
-        {
-          title: "Are your websites mobile-friendly?",
-          description:
-            "Yes. All our websites are fully responsive and tested across multiple devices for a seamless user experience.",
-        },
-        {
-          title: "How can I request a quote?",
-          description:
-            "Simply fill out our contact form or give us a call, and we’ll get back to you with a detailed proposal.",
-        },
-      ],
-    },
+    items: [
+      {
+        title: "Is the domain name included with the website?",
+        content:
+          "Setting up your domain is included and part of the process as well as the SSL Certificate with our hosting provider, however buying the domain name is not included with the price of the website. And something you will have to do, however, not to worry it will usually only cost you around $8-$12 a year and super easy to buy it. We will assist you in doing so and then you can leave the rest of the work to us!",
+      },
+      {
+        title: "Can you make my website mobile-friendly?",
+        content:
+          "Absolutely. 100%, With the growing number of mobile users, it’s crucial to have a website that looks and works great on all devices. All of our websites are designed to be responsive, meaning they will adapt to the screen size of the device they’re being viewed on.",
+      },
+      {
+        title: "What's your cancellation policy for the site management plan?",
+        content:
+          "Our goal is to make our clients happy and satisfied with our services. If for any reason you wish to cancel your monthly plan, just let us know.",
+      },
+      {
+        title: `How does ${siteSettings.siteTitle} handle security, and what ongoing support is provided?`,
+        content: `At ${siteSettings.siteTitle}, security is a priority for every site we build. We carefully choose trusted plugins and top-tier hosting services, known for their robust security measures, for all our clients. However, ongoing maintenance requires an extended management plan.`,
+      },
+      {
+        title: `Privacy Policies, Terms and Conditions, etc. How does ${siteSettings.siteTitle} clarify to users information about these types of privacy issues?`,
+        content:
+          "We are not legal experts and recommend consulting with a lawyer to ensure compliance with all privacy and legal regulations.",
+      },
+      {
+        title: "Can you help me with email marketing?",
+        content: `Absolutely, with ${siteSettings.siteTitle}, we can set your website up with all the tools to create an effective email marketing campaign. We can help you create email lists as well as design the user interface for people to sign up as well as provide you with a team of individuals who can manage your day-to-day email marketing campaigns.`,
+      },
+      {
+        title:
+          "I run a restaurant and I'm looking for a website that can handle reservations and online orders. Can Griffin's Web Services help with this?",
+        content: `Absolutely! At ${siteSettings.siteTitle}, we specialize in building custom websites for restaurants and various other local businesses. We can seamlessly integrate popular reservation platforms and develop a custom reservation system.`,
+      },
+      {
+        title: "Can you help me with social media?",
+        content:
+          "Yes, we can help you integrate social media tools for platforms like Facebook, Instagram, and TikTok into your website and provide a team to manage your campaigns.",
+      },
+      {
+        title: "What types of businesses have you worked with in the past?",
+        content:
+          "We have worked with a broad range of businesses across various sectors such as restaurants, local services, e-commerce, online courses, and more.",
+      },
+      {
+        title: "How does your quote process work?",
+        content:
+          "You can book a quote directly on our website. We’ll arrange a consultation, where we’ll discuss your requirements and expectations, and then provide you with a detailed quote for your project.",
+      },
+    ],
   },
 ];
 

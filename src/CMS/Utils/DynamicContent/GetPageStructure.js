@@ -188,7 +188,7 @@ page.heading ||
               hasPage: collection.hasPage,
             };
           } else {
-            sectionData = { title: "No Related Items", heading: "", items: [] };
+            sectionData = { title: "", heading: "", items: [] };
           }
         }
       } else if (
@@ -229,7 +229,7 @@ page.heading ||
             hasPage: collection.hasPage,
           };
         } else {
-          sectionData = { title: "No Related Items", heading: "", items: [] };
+          sectionData = { title: "", heading: "", items: [] };
         }
       } else if (sectionKey in collection) {
         sectionData = {

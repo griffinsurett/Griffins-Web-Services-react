@@ -5,14 +5,12 @@ import "./section.css";
 const Section = ({
   children,
   className = "",
-  inViewClass = "fade-in",
-  outViewClass = "fade-out",
   index = 0,
   ...otherProps
 }) => {
   return (
     <section
-      className={`section-element section-padding ${className} ${inViewClass}`}
+      className={`section-element section-padding fade-in fade-out ${className}`}
       {...otherProps}
     >
       {children}
