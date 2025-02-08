@@ -78,7 +78,7 @@
 
   .justify-between-section {
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
   }
 
   /* .content-template-btn-bottom {
@@ -104,6 +104,6 @@
 
   .justify-between-section {
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
   }
 }

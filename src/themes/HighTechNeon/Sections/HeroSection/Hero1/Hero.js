@@ -16,7 +16,7 @@ const Hero1 = ({ data }) => {
       id="hero-section"
       className="flex item-align-center responsive hero-height section-gap"
     >
-      <div className="hero-left text-left">
+      <div className="hero-left text-left w50">
         <ContentTemplate
           isHero
           ifParagraph
@@ -28,11 +28,11 @@ const Hero1 = ({ data }) => {
           buttonBottom
           buttonText={data.CTAButton}
           buttonLink={data.CTALink}
-          className="hero-content responsive-center"
+          className="hero-content"
           headingClass="text-shadow-for-dark"
           paragraphClass="p-small"
           buttonClass="p-small"
-          buttonSecClass="hero-btn-container smaller-top-space smaller-bottom-space flex justify-left responsive-center"
+          buttonSecClass="hero-btn-container smaller-top-space smaller-bottom-space flex justify-left"
           titleClass="section-title"
         />
       </div>

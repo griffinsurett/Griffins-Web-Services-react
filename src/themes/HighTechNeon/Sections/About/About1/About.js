@@ -27,16 +27,16 @@ const About1 = ({ data }) => {
         contentWrapClass="column"
         paragraphClass="flex justify-center column about-paragraphs responsive-left"
         paragraph1={data.content}
-        paragraph1Class="top-paragraph p-xLarge font-weight-regular bottom-space text-left half-column self-left"
+        paragraph1Class="top-paragraph p-xLarge font-weight-regular text-left half-column self-left"
         paragraph2={data.description}
-        paragraph2Class="bottom-paragraph text-left half-column self-right negative-top responsive-left bottom-space"
+        paragraph2Class="bottom-paragraph text-left half-column self-right negative-top responsive-left"
         ContentHeaderClass="w50"
         buttonText={data.button?.text}
         buttonLink={data.button?.link}
         buttonId="about-header-btn"
         buttonClass="self-right"
         buttonBottom={true}
-        buttonSecClass="half-column self-right responsive-left top-space"
+        buttonSecClass="half-column self-right responsive-left"
         isHero={false}
       />
     </Section>
