@@ -23,8 +23,8 @@
   --font-family-header: 'Lastica', sans-serif;
 
 /* Font Sizes */
---font-size-h1: clamp(1.7rem, 4.5vw, 3rem); /* Adjusted for better sizing on small screens */
---font-size-h2: clamp(2rem, 3.5vw, 3rem); /* Adjusted for better sizing on small screens */
+--font-size-h1: clamp(1.8rem, 4.5vw, 3rem); /* Adjusted for better sizing on small screens */
+--font-size-h2: clamp(1.8rem, 3.5vw, 3rem); /* Adjusted for better sizing on small screens */
 --font-size-h3: clamp(1rem, 1vw, 1.5rem); /* Example for H3 */
 --font-size-h4: clamp(1.5rem, 3vw, 1.7rem); /* Increase the minimum size for mobile */
 --font-size-h5: clamp(0.9rem, 2vw, 1.2rem); /* Example for H5 */
