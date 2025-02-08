@@ -16,6 +16,7 @@ const Services = ({ data }) => {
       <ContentTemplate
         data={data}
         className="services-content top-space"
+        ContentHeaderClass={"responsive-center"}
         title={data.title}
         heading={data.heading}
         paragraph1={data.paragraphs?.[0]}

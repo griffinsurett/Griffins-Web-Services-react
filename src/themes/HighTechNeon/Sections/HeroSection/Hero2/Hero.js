@@ -29,7 +29,7 @@ const Hero2 = ({ data }) => {
     <Section
       id="hero2"
       className="
-        hero2
+        text-left
         flex item-align-center justify-center
         full-height
         column
@@ -46,6 +46,8 @@ const Hero2 = ({ data }) => {
         title={siteTitle || ""}
         heading={pageTitle || ""}
         contentWrapClass="column"
+        headingClass={"responsive-left"}
+        titleClass={"responsive-left"}
         paragraphClass="flex justify-center column about-paragraphs responsive-center"
         paragraph1={paragraph1}
         paragraph1Class="
@@ -63,8 +65,8 @@ const Hero2 = ({ data }) => {
           text-left
           half-column
           self-right
+          responsive-left
           negative-top
-          responsive-center
           bottom-space
         "
         ContentHeaderClass="w50"

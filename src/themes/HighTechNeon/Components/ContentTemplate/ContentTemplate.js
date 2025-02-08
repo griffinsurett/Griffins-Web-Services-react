@@ -65,28 +65,22 @@ const ContentTemplate = ({
         {/* Title & Heading Container */}
         <div className={`title-heading-container column ${ContentHeaderClass}`}>
           {title && (
-            <div className="fade-in-down">
-              <h5 className={`content-title smaller-bottom-space ${titleClass}`}>
+              <h5 className={`fade-in-down content-title smaller-bottom-space ${titleClass}`}>
                 {title}
               </h5>
-            </div>
           )}
 
           {heading &&
             (isHero ? (
               // Hero <h1>
-              <div className="fade-in-up">
-                <h1 className={`bold ${headingClass} text-shadow-for-dark`}>
+                <h1 className={`fade-in-up bold ${headingClass} text-shadow-for-dark`}>
                   {heading}
                 </h1>
-              </div>
             ) : (
               // Normal <h2>
-              <div className="fade-in-up">
-                <h2 className={`bold ${headingClass} text-shadow-for-dark`}>
+                <h2 className={`fade-in-up bold ${headingClass} text-shadow-for-dark`}>
                   {heading}
                 </h2>
-              </div>
             ))}
 
           {/* Paragraphs if not on the side */}
