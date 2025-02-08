@@ -80,6 +80,10 @@
     .subject-message textarea {
         margin-bottom: var(--form-spacing); /* Vertical spacing between subject and message */
     }
+
+    .contact-icon {
+        margin-bottom: 20px;
+    }
 }
 
 @media (min-width: 768px) {

@@ -4,7 +4,7 @@
 }
 
 .process-box h3 {
-    font-size: calc(var(--font-size-h3) * 1.5);
+    font-size: calc(var(--font-size-h3) * 1.2);
     text-align: right;
 }
 

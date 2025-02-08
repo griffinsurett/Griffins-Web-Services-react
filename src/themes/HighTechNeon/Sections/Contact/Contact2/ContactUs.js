@@ -5,7 +5,7 @@ import TextareaField from "../../../Components/Form-Fields/TextareaField";
 import Button from "../../../Components/Buttons/Button";
 import ContentTemplate from "../../../Components/ContentTemplate/ContentTemplate";
 import Section from "../../../Components/Section/Section";
-import IconListItem from "../../../Components/ListItem/ListItem";
+import ListItem from "../../../Components/ListItem/ListItem";
 import "./contact-us.css";
 
 function Contact2({ data }) {
@@ -32,13 +32,14 @@ function Contact2({ data }) {
         />
         <div className="contact-info large-screens bottom-space">
           {data.contactInfo?.map((info, index) => (
-            <IconListItem
+            <ListItem
               key={index}
               hasIcon={true}
               icon={info.icon}
               title={info.label}
               description={info.value}
               href={info.href}
+              iconClass="contact-icon"
               className="contact-info-item flex responsive responsive-center item-align-center"
             />
           ))}

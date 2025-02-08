@@ -3,7 +3,7 @@ import React from "react";
 import Section from "../../Components/Section/Section";
 import ContentTemplate from "../../Components/ContentTemplate/ContentTemplate";
 import ItemsTemplate from "../../Components/ItemsTemplate/ItemsTemplate";
-import ProcessBox2 from "./ProcessBox/ProcessBox2/Box/ProcessBox2";
+import ProcessBox2 from "./ProcessBox/ProcessBox";
 import { getItemData } from "../../GetItems";
 import "./process.css";
 
@@ -17,7 +17,7 @@ const Process = ({ data }) => {
   const items = getItemData(data);
 
   return (
-    <Section className="flex justify-center full-height column top-space bottom-space">
+    <Section className="flex justify-center full-height column top-space bottom-space box-section">
       <ContentTemplate
         data={data}
         contentWrapClass="justify-between-section responsive responsive-center"

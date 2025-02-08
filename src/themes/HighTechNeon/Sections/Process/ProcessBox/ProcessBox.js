@@ -1,9 +1,9 @@
 // ProcessBox2.js
 import React from "react";
 import PropTypes from "prop-types";
-import Box from "../../../../../Components/Box/Box"; // Adjust the path as necessary
-import "./process-box2.css"; // Assuming you have some CSS for styling
-import Logo from "../../../../../Components/Logos/2dLogo/2dLogo";
+import Box from "../../../Components/Box/Box"; // Adjust the path as necessary
+import "./process-box.css"; // Assuming you have some CSS for styling
+import Logo from "../../../Components/Logos/2dLogo/2dLogo";
 
 const ProcessBox = ({ stepNumber, title, description }) => {
   return (

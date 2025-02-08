@@ -252,7 +252,7 @@ const collections = [
       isHeirarchical: true,
       itemsHasPage: true,
       includeCollectionSlug: true,
-      itemSections: ["hero", "projects", "services", "process", "testimonials", "faq"],
+      itemSections: ["hero",  "process", "projects", "services", "testimonials", "faq"],
       onlyParentItemsHasPage: false,
       description:
         "We provide customized digital services to meet your specific goals.",

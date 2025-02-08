@@ -23,15 +23,23 @@ const ListItem = ({
   isColumnMobile = false,
   isRowMobile = false,
   IconTop = false,
+  // NEW: Additional class names for the icon
+  iconClass = "",
 }) => {
+  // Layout classes
   const layoutClass = IconTop ? "column text-left" : "item-align-center";
-  const iconClass = IconTop
-    ? "styled-icon dynamic-border-effect hover-scale larger-bottom-space"
-    : "styled-icon dynamic-border-effect hover-scale smaller-right-space";
+
+  // Combine base icon classes with user-provided `iconClass`
+  const derivedIconClass = IconTop
+    ? `styled-icon dynamic-border-effect hover-scale larger-bottom-space ${iconClass}`
+    : `styled-icon dynamic-border-effect hover-scale smaller-right-space ${iconClass}`;
+
+  // Content container class
   const contentClass = IconTop
     ? "flex column item-align-center"
     : "flex column smaller-left-space";
 
+  // Overall listItem class
   const listItemClasses = `${className} list-item flex ${layoutClass} ${
     isColumnMobile && !isRowMobile ? "responsive responsive-center" : ""
   } ${isRowMobile ? "responsive-row left-on-desktop" : ""}`;
@@ -39,7 +47,7 @@ const ListItem = ({
   const itemContent = (
     <div className={`${listItemClasses} fade-in`}>
       {hasIcon && icon && (
-        <Icon icon={icon} size="sm" className={iconClass} iconPadding={iconPadding} />
+        <Icon icon={icon} size="sm" className={derivedIconClass} iconPadding={iconPadding} />
       )}
       <div className={contentClass}>
         <TitleTag className={`small-top-space-desktop ${titleClasses}`}>{title}</TitleTag>
@@ -57,13 +65,17 @@ const ListItem = ({
     );
   }
 
-  // Otherwise, if the item indicates it has a page, render a button below the item content
+  // Otherwise, if the item indicates it has a page, render a button below the content
   return (
     <div className="list-item-wrapper">
       {itemContent}
       {hasPage && slug && (
         <div className="mt-2">
-          <Button to={slug} className={buttonClass} ariaLabel={ariaLabel || `See details about ${title}`}>
+          <Button
+            to={slug}
+            className={buttonClass}
+            ariaLabel={ariaLabel || `See details about ${title}`}
+          >
             {linkText}
           </Button>
         </div>
@@ -90,6 +102,8 @@ ListItem.propTypes = {
   isColumnMobile: PropTypes.bool,
   isRowMobile: PropTypes.bool,
   IconTop: PropTypes.bool,
+  // NEW: Additional icon class
+  iconClass: PropTypes.string,
 };
 
 export default ListItem;
