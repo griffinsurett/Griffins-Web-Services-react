@@ -16,7 +16,7 @@ const About1 = ({ data }) => {
   return (
     <Section
       id="about"
-      className="about flex item-align-center justify-center full-height column responsive responsive-center responsive-spacing"
+      className="about flex item-align-center justify-center full-height column responsive responsive-spacing"
     >
       <ContentTemplate
         data={data}
@@ -25,18 +25,18 @@ const About1 = ({ data }) => {
         heading={data.heading}
         title={data.title}
         contentWrapClass="column"
-        paragraphClass="flex justify-center column about-paragraphs responsive-center"
+        paragraphClass="flex justify-center column about-paragraphs responsive-left"
         paragraph1={data.content}
         paragraph1Class="top-paragraph p-xLarge font-weight-regular bottom-space text-left half-column self-left"
         paragraph2={data.description}
-        paragraph2Class="bottom-paragraph text-left half-column self-right negative-top responsive-center bottom-space"
+        paragraph2Class="bottom-paragraph text-left half-column self-right negative-top responsive-left bottom-space"
         ContentHeaderClass="w50"
         buttonText={data.button?.text}
         buttonLink={data.button?.link}
         buttonId="about-header-btn"
         buttonClass="self-right"
         buttonBottom={true}
-        buttonSecClass="half-column self-right responsive-center top-space"
+        buttonSecClass="half-column self-right responsive-left top-space"
         isHero={false}
       />
     </Section>

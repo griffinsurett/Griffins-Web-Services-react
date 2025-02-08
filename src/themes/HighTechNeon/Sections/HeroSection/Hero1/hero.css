@@ -42,7 +42,7 @@
 #hero-section {
     height: calc(var(--hero-height)*2);
     justify-content: space-evenly;
-    /* align-items: flex-start; */
+    align-items: center;
 }
 
 .hero-left p {

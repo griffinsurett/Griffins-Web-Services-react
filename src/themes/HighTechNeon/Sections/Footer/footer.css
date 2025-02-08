@@ -3,6 +3,7 @@
   /* position: relative; Default positioning */
   z-index: 9000; /* Ensure it's above content */
   padding: 15px;
+  width: 100%;
 }
 
 .sticky-footer {

@@ -14,7 +14,7 @@ const Hero1 = ({ data }) => {
   return (
     <Section
       id="hero-section"
-      className="flex item-align-center responsive hero-height section-gap"
+      className="flex item-align-center responsive responsive hero-height section-gap"
     >
       <div className="hero-left text-left">
         <ContentTemplate

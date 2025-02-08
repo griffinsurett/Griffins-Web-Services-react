@@ -14,7 +14,7 @@ const Footer = ({ className, menuManager, siteSettings }) => {
   const socialMenu = menuManager.getFlatMenu("Social Media") || [];
 
   return (
-    <footer className={`footer flex justify-center w100 ${className}`}>
+    <footer className={`footer flex justify-center ${className}`}>
       <div className="flex justify-between item-align-center header-foot-container responsive w90">
         {/* Left: Footer Menu using ItemsTemplate with MenuItem */}
         <ItemsTemplate

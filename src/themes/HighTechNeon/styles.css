@@ -724,6 +724,7 @@ a {
 
   .self-right {
     align-self: center;
+    text-align: left;
   }
   
   .self-left {
