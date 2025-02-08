@@ -252,93 +252,60 @@ const collections = [
       isHeirarchical: true,
       itemsHasPage: true,
       includeCollectionSlug: true,
-      itemSections: ["hero",  "process", "projects", "services", "testimonials", "faq"],
+      itemSections: ["hero", "process", "projects", "services", "testimonials", "faq"],
       onlyParentItemsHasPage: false,
       description:
         "We provide customized digital services to meet your specific goals.",
       keywords: [
-        "web design services",
+        "web design and development",
         "digital marketing solutions",
-        "SEO experts",
-        "online branding",
+        "AI and automation",
+        "technology consulting",
+        "digital product development",
       ],
       data: [
         {
           icon: getIcon("fa", "LaptopCode"),
-          title: "Web Development",
-          heading: "Web Development Services",
-          slug: "/web-development",
+          title: "Web Design & Development",
+          heading: "Web Design & Development Services",
+          slug: "/web-design-development",
           description:
-            "Custom websites and applications that engage and convert.",
+            "Modern, responsive, high-performing websites and applications tailored to your needs.",
           content: [
-            "Elevate your online presence with powerful, user-centric web development solutions tailored to meet your unique goals.",
-            "Our Web Development services focus on creating custom websites and applications that both engage and convert. We begin by understanding your brand objectives, target audience, and desired functionality to craft a blueprint for success. From there, our team utilizes cutting-edge technologies and best practices to build fast, secure, and scalable solutions. Whether you need an e-commerce platform, a complex web app, or a simple brochure site, we prioritize seamless user experiences and robust performance. The result is an online presence that not only looks impressive but also drives real business impact."
-          ],
-          process: {
-            makeObjectSection: true,
-            title: "Our Process",
-            heading: "How We Build Your Website",
-            items: [
-              {
-                id: 1,
-                name: "Discovery & Planning",
-                description:
-                  "We learn your objectives, target audience, and design preferences to map out a clear project plan.",
-                featuredImage: TestImage,
-              },
-              {
-                id: 2,
-                name: "Design & Development",
-                description:
-                  "We create wireframes and mockups, then transform them into a fully functional website or digital solution.",
-                featuredImage: TestImage,
-              },
-              {
-                id: 3,
-                name: "Testing & Optimization",
-                description:
-                  "We rigorously test performance, usability, and SEO to ensure top-tier quality before launch.",
-                featuredImage: TestImage,
-              },
-              {
-                id: 4,
-                name: "Launch & Support",
-                description:
-                  "We deploy your new site or campaign, then provide ongoing support to keep things running smoothly.",
-                featuredImage: TestImage,
-              },
-            ],
-          },
-        },
-        {
-          icon: getIcon("fa", "Fill"),
-          title: "Web Design",
-          heading: "Web Design Services",
-          slug: "/web-design",
-          description:
-            "Modern, responsive websites that captivate your audience.",
-          content: [
-            "Make a memorable first impression with eye-catching web designs that convey professionalism and authenticity.",
-            "Our Web Design services revolve around building modern, responsive, and visually captivating digital experiences that resonate with your target audience. From conceptual wireframes to refined layouts, each design element is meticulously crafted to align with your brand identity and aesthetic goals. By focusing on user-friendly navigation, intuitive interfaces, and adaptive responsiveness, we ensure your site looks just as stunning on mobile devices as it does on desktops. Beyond aesthetics, our designs are strategically engineered to optimize user flow, boost engagement, and encourage conversions—turning casual visitors into loyal customers."
+            "Create a stunning, high-performing online presence with our Web Design & Development services.",
+            "We offer a comprehensive approach to building websites that are both visually captivating and technically robust. Our process begins with understanding your brand identity, target audience, and functional requirements. We then design intuitive, responsive layouts that enhance user experience while incorporating modern design principles. Once the design is finalized, we develop custom, scalable, and high-performance web solutions using the latest technologies.",
+            "Whether you need a corporate site, an e-commerce platform, or a complex web application, we prioritize usability, speed, security, and seamless functionality. From wireframes to full-stack development, we ensure your website not only looks great but also delivers measurable business impact."
           ],
         },
         {
-          icon: getIcon("fa", "Search"),
-          title: "SEO",
-          heading: "Search Engine Optimization",
-          slug: "/seo",
+          icon: getIcon("fa", "Cloud"),
+          title: "Hosting & Maintenance",
+          heading: "Hosting & Maintenance Services",
+          slug: "/hosting-maintenance",
+          parentItem: "/ai-automation",
           description:
-            "Improve your rankings and get found by more potential customers.",
+            "Keep your site secure, fast, and up to date with our reliable hosting solutions.",
           content: [
-            "Reach more potential customers by optimizing your site for search engines and driving organic growth.",
-            "Our Search Engine Optimization services go beyond keyword stuffing and link building to offer a holistic approach that boosts your online visibility. We begin by performing thorough site audits and analyzing competitor strategies to identify opportunities for improvement. Then, we refine on-page elements—like meta tags, site structure, and content quality—and develop a robust off-page strategy that encourages high-value backlinks. Throughout the process, we monitor performance metrics, making data-driven adjustments to ensure consistent gains. Ultimately, our goal is to secure higher rankings, attract more traffic, and convert searchers into long-term customers."
+            "Secure and optimize your online infrastructure with dependable hosting and maintenance that keeps your site performing at its best.",
+            "Our Hosting & Maintenance services are designed to offer peace of mind by ensuring your website remains fast, secure, and up to date. We handle everything from server optimization and regular backups to software updates and ongoing security checks. By proactively monitoring uptime and performance, we can swiftly address any issues before they affect your visitors. This comprehensive approach not only shields your online presence from vulnerabilities but also maintains the integrity and functionality of your site. With consistent, reliable hosting and maintenance, you can focus on growing your business while we take care of the technical details."
           ],
         },
         {
-          icon: getIcon("fa", "SquarePollVertical"),
+          icon: getIcon("fa", "Robot"),
+          title: "AI & Automation",
+          heading: "AI & Automation Solutions",
+          slug: "/ai-automation",
+          description:
+            "Streamline operations and enhance efficiency with AI-driven automation.",
+          content: [
+            "Harness the power of artificial intelligence and automation to optimize workflows, reduce costs, and improve efficiency.",
+            "Our AI & Automation solutions help businesses integrate machine learning and intelligent automation into their operations. From AI-powered chatbots and customer service automation to process optimization and predictive analytics, we implement cutting-edge technologies to streamline workflows and enhance productivity. Our team works closely with you to understand your business objectives, identify automation opportunities, and deploy AI solutions that drive measurable results. Whether you're looking to enhance customer interactions, optimize repetitive tasks, or gain insights through data-driven decision-making, we empower you to stay ahead of the curve in a digital-first world."
+          ],
+        },
+        {
+          icon: getIcon("fa", "ChartLine"),
           title: "Digital Marketing",
           slug: "/digital-marketing",
-          parentItem: "/web-design",
           description:
             "Drive targeted traffic and conversions through strategic online campaigns.",
           content: [
@@ -347,34 +314,75 @@ const collections = [
           ],
         },
         {
-          icon: getIcon("fa", "Envelope"),
-          title: "Email Marketing",
-          heading: "Email Marketing Services",
-          slug: "/email-marketing",
-          parentItem: "/web-design",
+          icon: getIcon("fa", "Laptop"),
+          title: "Technology Consulting",
+          heading: "Technology Consulting Services",
+          slug: "/technology-consulting",
           description:
-            "Engage with your audience through personalized email campaigns.",
+            "Expert technology guidance to help your business scale and innovate.",
           content: [
-            "Nurture customer relationships and drive sales with personalized, data-driven email marketing strategies.",
-            "Our Email Marketing services provide a powerful way to stay connected with your audience while driving conversions. We take a personalized approach by segmenting your subscriber base and creating tailored messages that resonate with each group’s interests, pain points, and behaviors. Beyond the content itself, we optimize send times, subject lines, and layouts to boost open rates and click-throughs. By closely monitoring results and refining campaigns, we ensure that each email not only reaches inboxes but prompts meaningful engagement. Ultimately, effective email marketing can bolster brand loyalty, increase repeat purchases, and keep you top of mind with your subscribers."
+            "Gain strategic insights and expert guidance on implementing technology solutions that align with your business goals.",
+            "Our Technology Consulting services provide businesses with the expertise needed to navigate the ever-changing digital landscape. Whether you're planning a digital transformation, optimizing IT infrastructure, or exploring new technologies, we offer actionable recommendations to help you maximize efficiency and drive growth. Our consultants specialize in cloud computing, cybersecurity, software development strategies, and IT architecture, ensuring that your tech stack supports your long-term objectives. By leveraging industry best practices and emerging trends, we empower businesses to make informed technology decisions that deliver lasting impact."
           ],
         },
         {
-          icon: getIcon("fa", "Cloud"),
-          title: "Hosting & Maintenance",
-          heading: "Hosting & Maintenance Services",
-          slug: "/hosting-maintenance",
-          parentItem: "/seo",
-          description:
-            "Keep your site secure, fast, and up to date with our reliable hosting solutions.",
+          icon: getIcon("fa", "Headphones"),
+          title: "Digital Product Development",
+          heading: "Digital Product Development Services",
+          slug: "/digital-product-development",
+          description: "Build, launch, and monetize digital products with ease. (Audiobooks, Courses, Music, etc.)",
           content: [
-            "Secure and optimize your online infrastructure with dependable hosting and maintenance that keeps your site performing at its best.",
-            "Our Hosting & Maintenance services are designed to offer peace of mind by ensuring your website remains fast, secure, and up to date. We handle everything from server optimization and regular backups to software updates and ongoing security checks. By proactively monitoring uptime and performance, we can swiftly address any issues before they affect your visitors. This comprehensive approach not only shields your online presence from vulnerabilities but also maintains the integrity and functionality of your site. With consistent, reliable hosting and maintenance, you can focus on growing your business while we take care of the technical details."
+            "Monetize your expertise and creativity with our Digital Product Development services.",
+            "We help creators turn their content into engaging and scalable digital products. Whether you want to launch an online course, convert a book into an audiobook, or distribute music on major platforms, we provide end-to-end support. From content structuring and production to platform setup and marketing, we ensure your digital product reaches the right audience and generates revenue.",
+            "With our expertise in digital ecosystems, we streamline the process, allowing you to focus on what you do best—creating great content."
           ],
-        },
+          process: {
+            makeObjectSection: true,
+            title: "Our Process",
+            heading: "How We Develop Your Digital Product",
+            items: [
+              {
+                id: 1,
+                name: "Concept & Planning",
+                description:
+                  "We collaborate to define your product's goals, audience, and content strategy.",
+                featuredImage: TestImage,
+              },
+              {
+                id: 2,
+                name: "Content Production",
+                description:
+                  "We create, format, and refine your content—whether it's audio, video, or structured learning material.",
+                featuredImage: TestImage,
+              },
+              {
+                id: 3,
+                name: "Platform Integration",
+                description:
+                  "We set up distribution on platforms like Udemy, Audible, Spotify, or custom sites.",
+                featuredImage: TestImage,
+              },
+              {
+                id: 4,
+                name: "Optimization & Marketing",
+                description:
+                  "We fine-tune SEO, metadata, and promotional strategies to maximize visibility and sales.",
+                featuredImage: TestImage,
+              },
+              {
+                id: 5,
+                name: "Launch & Monetization",
+                description:
+                  "We ensure a successful launch and provide ongoing support to optimize performance.",
+                featuredImage: TestImage,
+              },
+            ],
+          },
+        },        
       ],
     },
-  },
+  },  
+  
   /**
    * ------------------------------
    * Companies (Our Clients)
