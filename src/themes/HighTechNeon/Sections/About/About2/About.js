@@ -19,7 +19,6 @@ const About2 = ({ data }) => {
     <Section
       id="about"
       className="about flex item-align-center justify-center full-height column responsive responsive-center responsive-spacing margin-center"
-      shadowClass="left-shadow bottom"
     >
       <ContentTemplate
         data={data}

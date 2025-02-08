@@ -118,12 +118,6 @@ const collections = [
             "We tailor solutions to your unique goals, audience, and budget.",
         },
         {
-          title: "Industry Expertise",
-          icon: getIcon("fa", "Lightbulb"),
-          description:
-            "Our team stays on top of evolving industry trends to deliver cutting-edge solutions.",
-        },
-        {
           title: "Collaborative Process",
           icon: getIcon("fa", "Users"),
           description:

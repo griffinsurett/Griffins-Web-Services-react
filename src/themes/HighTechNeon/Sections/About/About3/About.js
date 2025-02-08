@@ -17,7 +17,6 @@ const About3 = ({ data }) => {
     <Section
       id="about"
       className="about flex item-align-start justify-between-section full-height responsive responsive-center responsive-spacing margin-center box-gap"
-      shadowClass="left-shadow bottom"
     >
       <div
         className="about-right flex column justify-center item-align-center sticky-section w30 fade-in"

@@ -3,6 +3,7 @@ import React from "react";
 import "./hero.css";
 import ContentTemplate from "../../../Components/ContentTemplate/ContentTemplate";
 import Logo from "../../../Components/Logos/3dLogo/3dLogo";
+import Section from "../../../Components/Section/Section";
 
 const Hero1 = ({ data }) => {
   // If you want to do a fallback if data isn't provided:
@@ -11,11 +12,11 @@ const Hero1 = ({ data }) => {
   }
 
   return (
-    <section
+    <Section
       id="hero-section"
       className="flex item-align-center responsive hero-height section-gap"
     >
-      <div className="hero-left w50 text-left">
+      <div className="hero-left text-left">
         <ContentTemplate
           isHero
           ifParagraph
@@ -47,7 +48,7 @@ const Hero1 = ({ data }) => {
           />
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

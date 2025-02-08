@@ -10,7 +10,6 @@ function Subscribe() {
   return (
     <Section
       className={"flex justify-center item-align-center full-height column"}
-      shadowClass={"right-shadow bottom"}
     >
       <div className="w80">
         <ContentTemplate

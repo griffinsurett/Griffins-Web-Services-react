@@ -14,7 +14,6 @@ const Contact3 = ({ data }) => {
   return (
     <Section
       className="flex justify-center full-height responsive column"
-      shadowClass="left-shadow bottom"
     >
       <ContentTemplate
         className="contact-header column responsive-center"

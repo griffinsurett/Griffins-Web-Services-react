@@ -16,7 +16,6 @@ function Contact1({ data }) {
   return (
     <Section
       className="flex justify-center item-align-start full-height responsive responsive-center"
-      shadowClass="left-shadow bottom"
     >
       <ContentTemplate
         className="contact-sec-header column responsive-center sticky-section"
