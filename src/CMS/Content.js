@@ -282,7 +282,6 @@ const collections = [
           title: "Hosting & Maintenance",
           heading: "Hosting & Maintenance Services",
           slug: "/hosting-maintenance",
-          parentItem: "/ai-automation",
           description:
             "Keep your site secure, fast, and up to date with our reliable hosting solutions.",
           content: [
@@ -498,6 +497,32 @@ const collections = [
           "For i-75 CPA Review, we built a robust e-commerce platform featuring responsive landing pages, intuitive navigation, and a design that reinforces trust in financial education.",
           "We also implemented targeted branding and digital marketing strategies that boosted the company’s online presence and conversions."
         ],
+        relations: [
+          {
+            collection: "services",
+            value: "web-design-development",
+          },
+          {
+            collection: "services",
+            value: "digital-marketing",
+          },
+          {
+            collection: "services",
+            value: "technology-consulting",
+          },
+          {
+            collection: "services",
+            value: "digital-product-development",
+          },
+          {
+            collection: "services",
+            value: "ai-automation",
+          },
+          {
+            collection: "services",
+            value: "hosting-maintenance",
+          },
+         ]
       },
       {
         id: 2,
@@ -511,6 +536,20 @@ const collections = [
           "For Faria's Demolition, we developed a website that effectively showcased their services through engaging galleries and clear service information.",
           "The site was optimized for user experience and conversion, ensuring that prospective clients can easily request estimates or contact the company."
         ],
+        relations: [
+          {
+            collection: "services",
+            value: "web-design-development",
+          },
+          {
+            collection: "services",
+            value: "technology-consulting",
+          },
+          {
+            collection: "services",
+            value: "hosting-maintenance",
+          },
+         ]
       },
       {
         id: 3,
@@ -524,6 +563,20 @@ const collections = [
           "For Koi Roofing and Solar, we crafted a modern, mobile-friendly website that highlighted their solar and roofing services with a focus on transparency and sustainability.",
           "Our approach combined clean design with strong call-to-action elements and SEO best practices to drive quality traffic."
         ],
+        relations: [
+          {
+            collection: "services",
+            value: "web-design-development",
+          },
+          {
+            collection: "services",
+            value: "technology-consulting",
+          },
+          {
+            collection: "services",
+            value: "hosting-maintenance",
+          },
+         ]
       },
       {
         id: 4,
@@ -537,6 +590,25 @@ const collections = [
           "For Certified Bag Chasers, we designed a personal branding site that effectively showcased the client’s courses, testimonials, and community insights.",
           "The project combined engaging visuals with user-centric navigation to create an experience that resonates with both existing and prospective customers."
         ],
+        relations: [
+          {
+            collection: "services",
+            value: "web-design-development",
+          },
+          {
+            collection: "services",
+            value: "technology-consulting",
+          },
+          {
+            collection: "services",
+            value: "digital-product-development",
+          },
+          {
+            collection: "services",
+            value: "hosting-maintenance",
+          },
+         ]
+
       },
       {
         id: 5,
@@ -638,50 +710,166 @@ const collections = [
         title: "Is the domain name included with the website?",
         content:
           "Setting up your domain is included and part of the process as well as the SSL Certificate with our hosting provider, however buying the domain name is not included with the price of the website. And something you will have to do, however, not to worry it will usually only cost you around $8-$12 a year and super easy to buy it. We will assist you in doing so and then you can leave the rest of the work to us!",
-      },
+          relations: [
+            {
+              collection: "services",
+              value: "web-design-development",
+            },
+           ]
+        },
       {
         title: "Can you make my website mobile-friendly?",
         content:
           "Absolutely. 100%, With the growing number of mobile users, it’s crucial to have a website that looks and works great on all devices. All of our websites are designed to be responsive, meaning they will adapt to the screen size of the device they’re being viewed on.",
-      },
+          relations: [
+            {
+              collection: "services",
+              value: "web-design-development",
+            },
+           ]
+        },
       {
         title: "What's your cancellation policy for the site management plan?",
         content:
           "Our goal is to make our clients happy and satisfied with our services. If for any reason you wish to cancel your monthly plan, just let us know.",
-      },
+          relations: [
+            {
+              collection: "services",
+              value: "hosting-maintenance",
+            },
+           ]
+        },
       {
         title: `How does ${siteSettings.siteTitle} handle security, and what ongoing support is provided?`,
         content: `At ${siteSettings.siteTitle}, security is a priority for every site we build. We carefully choose trusted plugins and top-tier hosting services, known for their robust security measures, for all our clients. However, ongoing maintenance requires an extended management plan.`,
+        relations: [
+          {
+            collection: "services",
+            value: "hosting-maintenance",
+          },
+         ]
       },
       {
         title: `Privacy Policies, Terms and Conditions, etc. How does ${siteSettings.siteTitle} clarify to users information about these types of privacy issues?`,
         content:
           "We are not legal experts and recommend consulting with a lawyer to ensure compliance with all privacy and legal regulations.",
-      },
+          relations: [
+            {
+              collection: "services",
+              value: "web-design-development",
+            },
+            {
+              collection: "services",
+              value: "digital-marketing",
+            },
+            {
+              collection: "services",
+              value: "digital-product-development",
+            },
+            {
+              collection: "services",
+              value: "hosting-maintenance",
+            },
+           ]
+        },
       {
         title: "Can you help me with email marketing?",
         content: `Absolutely, with ${siteSettings.siteTitle}, we can set your website up with all the tools to create an effective email marketing campaign. We can help you create email lists as well as design the user interface for people to sign up as well as provide you with a team of individuals who can manage your day-to-day email marketing campaigns.`,
+        relations: [
+          {
+            collection: "services",
+            value: "digital-marketing",
+          },
+         ]
       },
       {
         title:
           "I run a restaurant and I'm looking for a website that can handle reservations and online orders. Can Griffin's Web Services help with this?",
         content: `Absolutely! At ${siteSettings.siteTitle}, we specialize in building custom websites for restaurants and various other local businesses. We can seamlessly integrate popular reservation platforms and develop a custom reservation system.`,
+        relations: [
+          {
+            collection: "services",
+            value: "web-design-development",
+          },
+          {
+            collection: "services",
+            value: "digital-product-development",
+          },
+         ]
       },
       {
         title: "Can you help me with social media?",
         content:
           "Yes, we can help you integrate social media tools for platforms like Facebook, Instagram, and TikTok into your website and provide a team to manage your campaigns.",
-      },
+        relations: [
+          {
+            collection: "services",
+            value: "digital-marketing",
+          },
+        ],
+        },
       {
         title: "What types of businesses have you worked with in the past?",
         content:
           "We have worked with a broad range of businesses across various sectors such as restaurants, local services, e-commerce, online courses, and more.",
-      },
+          relations: [
+            {
+              collection: "services",
+              value: "web-design-development",
+            },
+            {
+              collection: "services",
+              value: "digital-marketing",
+            },
+            {
+              collection: "services",
+              value: "technology-consulting",
+            },
+            {
+              collection: "services",
+              value: "digital-product-development",
+            },
+            {
+              collection: "services",
+              value: "ai-automation",
+            },
+            {
+              collection: "services",
+              value: "hosting-maintenance",
+            },
+           ]
+        },
       {
         title: "How does your quote process work?",
         content:
           "You can book a quote directly on our website. We’ll arrange a consultation, where we’ll discuss your requirements and expectations, and then provide you with a detailed quote for your project.",
-      },
+          relations: [
+            {
+              collection: "services",
+              value: "web-design-development",
+            },
+            {
+              collection: "services",
+              value: "digital-marketing",
+            },
+            {
+              collection: "services",
+              value: "technology-consulting",
+            },
+            {
+              collection: "services",
+              value: "digital-product-development",
+            },
+            {
+              collection: "services",
+              value: "ai-automation",
+            },
+            {
+              collection: "services",
+              value: "hosting-maintenance",
+            },
+           ]
+        },
     ],
   },
 ];
