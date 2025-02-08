@@ -46,7 +46,7 @@
 }
 
 .hero-left p {
-    margin-top: var(--primary-padding);
+    /* margin-top: var(--primary-padding); */
 }
 }
 

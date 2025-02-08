@@ -60,7 +60,7 @@ const ContentTemplate = ({
   return (
     <div className={`content-template ${className} flex column`}>
       <div
-        className={`content-top-section flex justify-between-section bottom-space ${contentWrapClass}`}
+        className={`content-top-section flex justify-between-section smaller-bottom-space ${contentWrapClass}`}
       >
         {/* Title & Heading Container */}
         <div className={`title-heading-container column ${ContentHeaderClass}`}>

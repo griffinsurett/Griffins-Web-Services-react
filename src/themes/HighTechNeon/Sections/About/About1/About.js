@@ -24,7 +24,7 @@ const About1 = ({ data }) => {
         ifParagraph={true}
         heading={data.heading}
         title={data.title}
-        contentWrapClass="column"
+        contentWrapClass="column item-align-center"
         paragraphClass="flex justify-center column about-paragraphs responsive-left"
         paragraph1={data.content}
         paragraph1Class="top-paragraph p-xLarge font-weight-regular text-left half-column self-left"
