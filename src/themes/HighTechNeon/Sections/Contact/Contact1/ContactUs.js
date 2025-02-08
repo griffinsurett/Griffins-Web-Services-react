@@ -89,7 +89,7 @@ function Contact1({ data }) {
         <Button
           type="submit"
           text={data.button?.text}
-          className="p-large self-right"
+          className="p-large"
         />
       </form>
     </Section>

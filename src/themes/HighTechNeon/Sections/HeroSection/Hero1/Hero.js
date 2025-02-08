@@ -14,7 +14,7 @@ const Hero1 = ({ data }) => {
   return (
     <Section
       id="hero-section"
-      className="flex item-align-center responsive responsive hero-height section-gap"
+      className="flex item-align-center responsive hero-height section-gap"
     >
       <div className="hero-left text-left">
         <ContentTemplate
@@ -28,11 +28,11 @@ const Hero1 = ({ data }) => {
           buttonBottom
           buttonText={data.CTAButton}
           buttonLink={data.CTALink}
-          className="hero-content"
+          className="hero-content responsive-center"
           headingClass="text-shadow-for-dark"
           paragraphClass="p-small"
           buttonClass="p-small"
-          buttonSecClass="hero-btn-container smaller-top-space smaller-bottom-space flex justify-left"
+          buttonSecClass="hero-btn-container smaller-top-space smaller-bottom-space flex justify-left responsive-center"
           titleClass="section-title"
         />
       </div>

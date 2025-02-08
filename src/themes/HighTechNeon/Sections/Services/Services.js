@@ -19,6 +19,7 @@ const Services = ({ data }) => {
         title={data.title}
         heading={data.heading}
         paragraph1={data.paragraphs?.[0]}
+        titleClass={"responsive-center"}
         ifButton={true}
         buttonBottomMobile={true}
         buttonSecClass={"justify-center"}
@@ -41,8 +42,7 @@ const Services = ({ data }) => {
               index={itemIndex}
             />
           )}
-          className="services-boxes flex wrap justify-center responsive"
-          // If items length is divisible by 3, show 3 columns; else show 2.
+          className="services-boxes flex wrap justify-center responsive box-section"
           maxColumns={(items?.length || 0) % 3 === 0 ? 3 : 2}
           emptyComponent={<p className="text-center">No services available.</p>}
         />

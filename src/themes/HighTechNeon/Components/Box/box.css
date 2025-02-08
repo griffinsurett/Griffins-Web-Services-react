@@ -18,6 +18,7 @@
   background: var(--boxGradient);
   overflow: hidden; /* Prevent content from overflowing */
   min-height: 320px;
+  /* width: 100%; */
   /* border: var(--borderBeforeHover); */
 }
 
