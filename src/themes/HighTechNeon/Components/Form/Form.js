@@ -1,6 +1,6 @@
 // src/themes/HighTechNeon/Sections/Contact/Contact1/Form.js
 import React from "react";
-import Button from "../../../Components/Buttons/Button";
+import Button from "../Buttons/Button";
 import "./form.css"; // Use the same styles
 
 /**
@@ -23,7 +23,11 @@ const Form = ({
       {/* Render whatever fields (children) are passed in from Contact1 */}
       {children}
       {/* Add the submit button at the end of the form */}
-      <Button type="submit" text={buttonText} className={`${buttonClass} p-large`} />
+      <Button
+        type="submit"
+        text={buttonText}
+        className={`${buttonClass} p-large`}
+      />
     </form>
   );
 };

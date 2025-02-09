@@ -3,7 +3,7 @@ import React from "react";
 import IconListItem from "../../../Components/ListItem/ListItem";
 import ContentTemplate from "../../../Components/ContentTemplate/ContentTemplate";
 import Section from "../../../Components/Section/Section";
-import Form from "./Form"; 
+import Form from "../../../Components/Form/Form";
 import InputField from "../../../Components/Inputs/InputField";
 import TextareaField from "../../../Components/Inputs/TextareaField";
 import "./contact-us.css"; // For contact-info styling
@@ -51,7 +51,7 @@ function Contact1({ data }) {
         method="POST"
         action="https://formspree.io/f/mjkgojyo"
         autoComplete="on"
-        buttonText={data.button?.text} 
+        buttonText={data.button?.text}
         buttonClass=""
       >
         {/* The field layout (same slices) */}
@@ -95,7 +95,6 @@ function Contact1({ data }) {
             ))}
           </div>
         </div>
-
       </Form>
     </Section>
   );
