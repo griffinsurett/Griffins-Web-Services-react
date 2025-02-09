@@ -254,6 +254,7 @@ const collections = [
       includeCollectionSlug: true,
       itemSections: [
         "hero",
+        "pricing",
         "process",
         "projects",
         "services",
@@ -283,6 +284,102 @@ const collections = [
             "We offer a comprehensive approach to building websites that are both visually captivating and technically robust. Our process begins with understanding your brand identity, target audience, and functional requirements. We then design intuitive, responsive layouts that enhance user experience while incorporating modern design principles. Once the design is finalized, we develop custom, scalable, and high-performance web solutions using the latest technologies.",
             "Whether you need a corporate site, an e-commerce platform, or a complex web application, we prioritize usability, speed, security, and seamless functionality. From wireframes to full-stack development, we ensure your website not only looks great but also delivers measurable business impact.",
           ],
+          process: {
+            makeObjectSection: true,
+            title: "Our Process",
+            heading: "How We Build Your Website",
+            items: [
+              {
+                id: 1,
+                name: "Discovery & Planning",
+                description:
+                  "We collaborate to define your goals, audience, and brand identity.",
+              },
+              {
+                id: 2,
+                name: "Design & Development",
+                description:
+                  "We create wireframes, mockups, and develop your site using the latest technologies.",
+              },
+              {
+                id: 3,
+                name: "Testing & Optimization",
+                description:
+                  "We test for performance, responsiveness, and user experience.",
+              },
+              {
+                id: 4,
+                name: "Launch & Maintenance",
+                description:
+                  "We launch your site and provide ongoing support and updates.",
+              },
+            ],
+          },
+          pricing: [
+            {
+              title: "Basic Website",
+              description:
+                "A simple, professional website to establish your online presence.",
+              price: "$500",
+              paymentType: "one-time",
+              bulletPoints: [
+                "Up to 5 pages",
+                "Responsive design",
+                "Basic SEO setup",
+                "Contact form",
+              ],
+              buttonText: "Get Started",
+              buttonLink: "/contact-us",
+              isFeatured: false,
+            },
+            {
+              title: "Business Website",
+              description:
+                "A comprehensive website with advanced features to grow your business.",
+              price: "$1000",
+              paymentType: "one-time",
+              bulletPoints: [
+                "Up to 10 pages",
+                "Custom design",
+                "SEO optimization",
+                "Contact form",
+              ],
+              buttonText: "Get Started",
+              buttonLink: "/contact-us",
+              isFeatured: true,
+            },
+            {
+              title: "E-Commerce Site",
+              description:
+                "A fully functional online store to sell your products and services.",
+              price: "$1500",
+              paymentType: "one-time",
+              bulletPoints: [
+                "Unlimited products",
+                "Custom design",
+                "Payment gateways",
+                "SEO optimization",
+              ],
+              buttonText: "Get Started",
+              buttonLink: "/contact-us",
+              isFeatured: true,
+            },
+            {
+              title: "Custom Web App",
+              description:
+                "A tailored web application to meet your unique business needs.",
+              price: "$Custom",
+              bulletPoints: [
+                "Custom features",
+                "Scalable architecture",
+                "API integrations",
+                "Maintenance plan",
+              ],
+              buttonText: "Get Started",
+              buttonLink: "/contact-us",
+              isFeatured: false,
+            },
+          ]
         },
         {
           icon: getIcon("fa", "Cloud"),
