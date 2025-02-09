@@ -1,9 +1,8 @@
 /* pricing-box.css */
 .pricing-box {
-    margin: 20px;
-    padding: 20px;
     border-radius: var(--border-radius);
     transition: var(--primaryTransition); 
+    flex-grow: 1;
   }
   
   .pricing-box:hover {
