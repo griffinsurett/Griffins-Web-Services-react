@@ -1,4 +1,4 @@
-// Utils/DynamicContent/GetPageStructure.js
+// src/CMS/Utils/DynamicContent/GetPageStructure.js
 import Content from "../../Content";
 import { getCollection } from "../GetContent/GetCollection";
 import RelationalUtil from "../Relationships/RelationsUtil";
@@ -7,11 +7,6 @@ import HierarchyUtil from "../Relationships/HierarchyUtil";
 const relationalUtil = new RelationalUtil(Content);
 const hierarchyUtil = new HierarchyUtil(Content);
 
-/**
- * Constructs the page structure based on the pageId.
- * @param {string} pageId
- * @returns {object|null}
- */
 export const getPageStructure = (pageId) => {
   const page = Content.pages.find((p) => p.id === pageId);
 
@@ -53,11 +48,11 @@ export const getPageStructure = (pageId) => {
   const content = page.content || item?.content || "";
 
   // NEW: Compute the heading from available properties
-const heading =
-item?.heading ||
-collection?.heading ||
-page.heading ||
-"";
+  const heading =
+    item?.heading ||
+    collection?.heading ||
+    page.heading ||
+    "";
 
   let sections = [];
 
@@ -105,7 +100,6 @@ page.heading ||
   };
 
   if (isCollectionPage && !isItemPage && collection) {
-    // COLLECTION-LEVEL PAGE
     if (
       collection.items?.isHeirarchical &&
       collection.onlyParentsOnCollection
@@ -128,15 +122,13 @@ page.heading ||
             items: crossRels[sectionKey] || [],
           };
         }
-
         return { key: sectionKey, data: sectionData };
       });
     } else {
-      // NON-HIERARCHICAL
+      // NON-Hierarchical branch
       const crossRels = aggregateCrossRelations(collection.items?.data);
       sections = page.sections.map((sectionKey) => {
         let sectionData;
-
         if (sectionKey === collection.collection) {
           sectionData = collection;
         } else if (sectionKey in collection) {
@@ -149,7 +141,39 @@ page.heading ||
             items: crossRels[sectionKey] || [],
           };
         }
-
+      // NEW: For the services collection root page, if the section is "testimonials"
+       if (collection.collection === "services" && sectionKey === "testimonials") {
+         // Get the companies collection from CMS
+         const companies = Content.collections.filter(c => c.collection === "companies");
+         let aggregatedTestimonials = [];
+         companies.forEach((company) => {
+           if (company.items && Array.isArray(company.items.data)) {
+             company.items.data.forEach((companyItem) => {
+               if (companyItem.relations && Array.isArray(companyItem.relations)) {
+                 companyItem.relations.forEach((rel) => {
+                   if (rel.collection === "testimonials") {
+                     // Find the testimonial entity using the relational util
+                     const testimonialEntity = relationalUtil.findEntityByIdentifier("testimonials", rel.value);
+                     if (testimonialEntity) {
+                       aggregatedTestimonials.push(testimonialEntity);
+                    }
+                   }
+                 });
+               }
+             });
+           }
+         });
+         // Merge with any directly aggregated testimonials
+         const directTestimonials = sectionData.items || [];
+         const mergedTestimonials = [
+           ...directTestimonials,
+           ...aggregatedTestimonials
+         ];
+         // Deduplicate by slug
+         sectionData.items = [
+           ...new Map(mergedTestimonials.map(i => [i.slug, i])).values()
+         ];
+       }
         return { key: sectionKey, data: sectionData };
       });
     }
@@ -160,7 +184,6 @@ page.heading ||
     sections = page.sections.map((sectionKey) => {
       let sectionData;
   
-      // NEW: If the item itself has an object for this section key, use that.
       if (typeof item[sectionKey] === "object" && item[sectionKey] !== null) {
         sectionData = item[sectionKey];
       } else if (
@@ -171,7 +194,7 @@ page.heading ||
           const children = hierarchyUtil.getChildren(collection.collection, item.slug);
           sectionData = {
             title: collection.title,
-            heading: collection.heading, // Retain heading if exists
+            heading: collection.heading,
             items: children,
             slug: collection.slug,
             hasPage: collection.hasPage,
@@ -195,7 +218,6 @@ page.heading ||
         sectionKey === collection.collection &&
         !collection.items?.isHeirarchical
       ) {
-        // NON-HIERARCHICAL ITEM PAGE LOGIC
         const currentRelations = Object.keys(item)
           .filter((key) => key.startsWith("relatedTo"))
           .reduce((acc, relationKey) => {
@@ -256,7 +278,6 @@ page.heading ||
         sectionData = getCollection(sectionKey, pageId) || null;
       }
   
-      // Ensure sectionData has both title and heading
       if (sectionData) {
         sectionData.title = sectionData.title || "";
         sectionData.heading = sectionData.heading || "";
@@ -265,11 +286,10 @@ page.heading ||
       return { key: sectionKey, data: sectionData };
     });
   } else {
-    // STATIC OR HOMEPAGE
     sections = page.sections.map((sectionKey) => {
       let sectionData;
       const targetCollection = getCollection(sectionKey);
-
+  
       if (
         targetCollection?.items?.isHeirarchical &&
         targetCollection.onlyParentsOnCollection
@@ -294,12 +314,18 @@ page.heading ||
           heading: targetCollection?.heading || "",
         };
       }
-
+  
       return { key: sectionKey, data: sectionData };
     });
   }
-
+  
   const pageStructure = { title, heading, description, content, sections, featuredImage };
-
+  
   return pageStructure;
 };
+
+
+
+
+
+

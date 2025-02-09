@@ -6,7 +6,7 @@ import { setLogo } from "./Utils/SEO/SetLogo";
 import { generateQueries } from "./Queries"; // Import menu generation logic
 import { getIcon } from "./Utils/Icons/IconImporter";
 
-const Logo = `${process.env.PUBLIC_URL}/mylogo3d.png`; 
+const Logo = `${process.env.PUBLIC_URL}/mylogo3d.png`;
 const TestImage = `${process.env.PUBLIC_URL}/meoncomp.jpg`;
 
 /**
@@ -80,7 +80,8 @@ const collections = [
     slug: "/about-us",
     sections: ["about", "purpose", "whyChooseUs", "benefits"],
     redirectFrom: ["/about"],
-    content: "Your Jersey Shore-based Digital Powerhouse for Website Creation, Digital Marketing, Branding, IT Consulting, and more.",
+    content:
+      "Your Jersey Shore-based Digital Powerhouse for Website Creation, Digital Marketing, Branding, IT Consulting, and more.",
     description: `Since 2019, the founder of ${siteSettings.siteTitle} has served as the Chief Technology Officer of i-75 CPA Review, providing expert web design, development, hosting, management, branding, and IT consulting. Through innovative strategies and tailored solutions, these efforts have helped the business grow by over 100x, establishing i-75 as a leader in its industry, and I am very much excited to do the same for your business.`,
     purpose: {
       makeObjectSection: true,
@@ -122,8 +123,7 @@ const collections = [
           icon: getIcon("fa", "Users"),
           description:
             "We partner with you every step of the way to ensure alignment with your vision and goals.",
-        }
-        
+        },
       ],
     },
     keywords: [
@@ -252,7 +252,14 @@ const collections = [
       isHeirarchical: true,
       itemsHasPage: true,
       includeCollectionSlug: true,
-      itemSections: ["hero", "process", "projects", "services", "testimonials", "faq"],
+      itemSections: [
+        "hero",
+        "process",
+        "projects",
+        "services",
+        "testimonials",
+        "faq",
+      ],
       onlyParentItemsHasPage: false,
       description:
         "We provide customized digital services to meet your specific goals.",
@@ -274,7 +281,7 @@ const collections = [
           content: [
             "Create a stunning, high-performing online presence with our Web Design & Development services.",
             "We offer a comprehensive approach to building websites that are both visually captivating and technically robust. Our process begins with understanding your brand identity, target audience, and functional requirements. We then design intuitive, responsive layouts that enhance user experience while incorporating modern design principles. Once the design is finalized, we develop custom, scalable, and high-performance web solutions using the latest technologies.",
-            "Whether you need a corporate site, an e-commerce platform, or a complex web application, we prioritize usability, speed, security, and seamless functionality. From wireframes to full-stack development, we ensure your website not only looks great but also delivers measurable business impact."
+            "Whether you need a corporate site, an e-commerce platform, or a complex web application, we prioritize usability, speed, security, and seamless functionality. From wireframes to full-stack development, we ensure your website not only looks great but also delivers measurable business impact.",
           ],
         },
         {
@@ -286,7 +293,7 @@ const collections = [
             "Keep your site secure, fast, and up to date with our reliable hosting solutions.",
           content: [
             "Secure and optimize your online infrastructure with dependable hosting and maintenance that keeps your site performing at its best.",
-            "Our Hosting & Maintenance services are designed to offer peace of mind by ensuring your website remains fast, secure, and up to date. We handle everything from server optimization and regular backups to software updates and ongoing security checks. By proactively monitoring uptime and performance, we can swiftly address any issues before they affect your visitors. This comprehensive approach not only shields your online presence from vulnerabilities but also maintains the integrity and functionality of your site. With consistent, reliable hosting and maintenance, you can focus on growing your business while we take care of the technical details."
+            "Our Hosting & Maintenance services are designed to offer peace of mind by ensuring your website remains fast, secure, and up to date. We handle everything from server optimization and regular backups to software updates and ongoing security checks. By proactively monitoring uptime and performance, we can swiftly address any issues before they affect your visitors. This comprehensive approach not only shields your online presence from vulnerabilities but also maintains the integrity and functionality of your site. With consistent, reliable hosting and maintenance, you can focus on growing your business while we take care of the technical details.",
           ],
         },
         {
@@ -298,7 +305,7 @@ const collections = [
             "Streamline operations and enhance efficiency with AI-driven automation.",
           content: [
             "Harness the power of artificial intelligence and automation to optimize workflows, reduce costs, and improve efficiency.",
-            "Our AI & Automation solutions help businesses integrate machine learning and intelligent automation into their operations. From AI-powered chatbots and customer service automation to process optimization and predictive analytics, we implement cutting-edge technologies to streamline workflows and enhance productivity. Our team works closely with you to understand your business objectives, identify automation opportunities, and deploy AI solutions that drive measurable results. Whether you're looking to enhance customer interactions, optimize repetitive tasks, or gain insights through data-driven decision-making, we empower you to stay ahead of the curve in a digital-first world."
+            "Our AI & Automation solutions help businesses integrate machine learning and intelligent automation into their operations. From AI-powered chatbots and customer service automation to process optimization and predictive analytics, we implement cutting-edge technologies to streamline workflows and enhance productivity. Our team works closely with you to understand your business objectives, identify automation opportunities, and deploy AI solutions that drive measurable results. Whether you're looking to enhance customer interactions, optimize repetitive tasks, or gain insights through data-driven decision-making, we empower you to stay ahead of the curve in a digital-first world.",
           ],
         },
         {
@@ -309,7 +316,7 @@ const collections = [
             "Drive targeted traffic and conversions through strategic online campaigns.",
           content: [
             "Drive targeted traffic to your online channels through strategic digital marketing campaigns that deliver measurable results.",
-            "Our Digital Marketing services encompass everything you need to expand your brand’s reach and sharpen your competitive edge. From paid advertising and social media marketing to content creation and influencer partnerships, we custom-tailor campaigns to align with your brand voice and target audience. We utilize in-depth market research, performance analytics, and iterative testing to fine-tune each campaign, making sure your marketing spend is effective and efficient. By striking the perfect balance between creativity and data-driven insights, we help you capture new leads, nurture existing customer relationships, and ultimately fuel sustained growth for your business."
+            "Our Digital Marketing services encompass everything you need to expand your brand’s reach and sharpen your competitive edge. From paid advertising and social media marketing to content creation and influencer partnerships, we custom-tailor campaigns to align with your brand voice and target audience. We utilize in-depth market research, performance analytics, and iterative testing to fine-tune each campaign, making sure your marketing spend is effective and efficient. By striking the perfect balance between creativity and data-driven insights, we help you capture new leads, nurture existing customer relationships, and ultimately fuel sustained growth for your business.",
           ],
         },
         {
@@ -321,7 +328,7 @@ const collections = [
             "Expert technology guidance to help your business scale and innovate.",
           content: [
             "Gain strategic insights and expert guidance on implementing technology solutions that align with your business goals.",
-            "Our Technology Consulting services provide businesses with the expertise needed to navigate the ever-changing digital landscape. Whether you're planning a digital transformation, optimizing IT infrastructure, or exploring new technologies, we offer actionable recommendations to help you maximize efficiency and drive growth. Our consultants specialize in cloud computing, cybersecurity, software development strategies, and IT architecture, ensuring that your tech stack supports your long-term objectives. By leveraging industry best practices and emerging trends, we empower businesses to make informed technology decisions that deliver lasting impact."
+            "Our Technology Consulting services provide businesses with the expertise needed to navigate the ever-changing digital landscape. Whether you're planning a digital transformation, optimizing IT infrastructure, or exploring new technologies, we offer actionable recommendations to help you maximize efficiency and drive growth. Our consultants specialize in cloud computing, cybersecurity, software development strategies, and IT architecture, ensuring that your tech stack supports your long-term objectives. By leveraging industry best practices and emerging trends, we empower businesses to make informed technology decisions that deliver lasting impact.",
           ],
         },
         {
@@ -329,11 +336,12 @@ const collections = [
           title: "Digital Product Development",
           heading: "Digital Product Development Services",
           slug: "/digital-product-development",
-          description: "Build, launch, and monetize digital products with ease. (Audiobooks, Courses, Music, etc.)",
+          description:
+            "Build, launch, and monetize digital products with ease. (Audiobooks, Courses, Music, etc.)",
           content: [
             "Monetize your expertise and creativity with our Digital Product Development services.",
             "We help creators turn their content into engaging and scalable digital products. Whether you want to launch an online course, convert a book into an audiobook, or distribute music on major platforms, we provide end-to-end support. From content structuring and production to platform setup and marketing, we ensure your digital product reaches the right audience and generates revenue.",
-            "With our expertise in digital ecosystems, we streamline the process, allowing you to focus on what you do best—creating great content."
+            "With our expertise in digital ecosystems, we streamline the process, allowing you to focus on what you do best—creating great content.",
           ],
           process: {
             makeObjectSection: true,
@@ -377,11 +385,11 @@ const collections = [
               },
             ],
           },
-        },        
+        },
       ],
     },
-  },  
-  
+  },
+
   /**
    * ------------------------------
    * Companies (Our Clients)
@@ -404,21 +412,22 @@ const collections = [
           id: 1,
           title: "i-75 CPA Review",
           description: "Trusted partner in financial education and consulting.",
-         relations: [
-          {
-            collection: "projects",
-            value: 1,
-          },
-          {
-            collection: "testimonials",
-            value: 2,
-          }
-         ]
+          relations: [
+            {
+              collection: "projects",
+              value: 1,
+            },
+            {
+              collection: "testimonials",
+              value: 2,
+            },
+          ],
         },
         {
           id: 2,
           title: "Faria's Demolition",
-          description: "Quality demolition services for commercial and residential projects.",
+          description:
+            "Quality demolition services for commercial and residential projects.",
           relations: [
             {
               collection: "projects",
@@ -427,8 +436,8 @@ const collections = [
             {
               collection: "testimonials",
               value: 1,
-            }
-          ]
+            },
+          ],
         },
         {
           id: 3,
@@ -442,8 +451,8 @@ const collections = [
             {
               collection: "testimonials",
               value: 3,
-            }
-          ]
+            },
+          ],
         },
         {
           id: 4,
@@ -457,176 +466,174 @@ const collections = [
             {
               collection: "testimonials",
               value: 4,
-            }
-          ]
+            },
+          ],
         },
       ],
     },
   },
 
-/**
- * ------------------------------
- * Projects (Portfolio)
- * ------------------------------
- */
-{
-  id: 4,
-  collection: "projects",
-  heading: "Our Portfolio",
-  title: "Projects",
-  description:
-    "Check out a few of our recent projects and discover how we’ve helped businesses transform their online presence.",
-  featuredImage: TestImage,
-  hasPage: true,
-  slug: "/projects",
-  sections: ["projects", "services", "testimonials"],
-  addToQuery: [{ name: "Primary" }],
-  items: {
-    itemsHasPage: true,
-    itemSections: ["hero", "services", "testimonials", "projects"],
-    data: [
-      {
-        id: 1,
-        title: "i-75 CPA Review",
-        description:
-          "Developed multiple e-commerce sites with landing pages, branding, and digital marketing solutions.",
-        featuredImage: TestImage,
-        link: "https://i75cpareview.com/",
-        image: "https://picsum.photos/200/300",
-        content: [
-          "For i-75 CPA Review, we built a robust e-commerce platform featuring responsive landing pages, intuitive navigation, and a design that reinforces trust in financial education.",
-          "We also implemented targeted branding and digital marketing strategies that boosted the company’s online presence and conversions."
-        ],
-        relations: [
-          {
-            collection: "services",
-            value: "web-design-development",
-          },
-          {
-            collection: "services",
-            value: "digital-marketing",
-          },
-          {
-            collection: "services",
-            value: "technology-consulting",
-          },
-          {
-            collection: "services",
-            value: "digital-product-development",
-          },
-          {
-            collection: "services",
-            value: "ai-automation",
-          },
-          {
-            collection: "services",
-            value: "hosting-maintenance",
-          },
-         ]
-      },
-      {
-        id: 2,
-        title: "Faria's Demolition",
-        description:
-          "Created a comprehensive website showcasing demolition services, including project galleries and contact forms.",
-        featuredImage: TestImage,
-        link: "https://fariasdemolition.com/",
-        image: "https://picsum.photos/200/300",
-        content: [
-          "For Faria's Demolition, we developed a website that effectively showcased their services through engaging galleries and clear service information.",
-          "The site was optimized for user experience and conversion, ensuring that prospective clients can easily request estimates or contact the company."
-        ],
-        relations: [
-          {
-            collection: "services",
-            value: "web-design-development",
-          },
-          {
-            collection: "services",
-            value: "technology-consulting",
-          },
-          {
-            collection: "services",
-            value: "hosting-maintenance",
-          },
-         ]
-      },
-      {
-        id: 3,
-        title: "Koi Roofing and Solar",
-        description:
-          "Designed a clean, informative site to promote solar solutions, emphasizing brand trust and environmental impact.",
-        featuredImage: TestImage,
-        link: "https://koisolarofficial.com/",
-        image: "https://picsum.photos/200/300",
-        content: [
-          "For Koi Roofing and Solar, we crafted a modern, mobile-friendly website that highlighted their solar and roofing services with a focus on transparency and sustainability.",
-          "Our approach combined clean design with strong call-to-action elements and SEO best practices to drive quality traffic."
-        ],
-        relations: [
-          {
-            collection: "services",
-            value: "web-design-development",
-          },
-          {
-            collection: "services",
-            value: "technology-consulting",
-          },
-          {
-            collection: "services",
-            value: "hosting-maintenance",
-          },
-         ]
-      },
-      {
-        id: 4,
-        title: "Certified Bag Chasers",
-        description:
-          "Created a personal brand website for a best-selling author and course creator, featuring courses, testimonials, and community-building resources.",
-        featuredImage: TestImage,
-        link: "https://certifiedbagchasers.com/",
-        image: "https://picsum.photos/200/300",
-        content: [
-          "For Certified Bag Chasers, we designed a personal branding site that effectively showcased the client’s courses, testimonials, and community insights.",
-          "The project combined engaging visuals with user-centric navigation to create an experience that resonates with both existing and prospective customers."
-        ],
-        relations: [
-          {
-            collection: "services",
-            value: "web-design-development",
-          },
-          {
-            collection: "services",
-            value: "technology-consulting",
-          },
-          {
-            collection: "services",
-            value: "digital-product-development",
-          },
-          {
-            collection: "services",
-            value: "hosting-maintenance",
-          },
-         ]
-
-      },
-      {
-        id: 5,
-        title: "Koi Crest Marketing",
-        description:
-          "Built a digital marketing agency website with case studies and service offerings, highlighting client success stories.",
-        featuredImage: TestImage,
-        link: "https://koicrest.com/",
-        image: "https://picsum.photos/200/300",
-        content: [
-          "For Koi Crest Marketing, we developed a website that not only highlighted their service offerings but also showcased detailed case studies and client testimonials.",
-          "Our work included creating a strong visual identity and integrating lead-generation tools to help drive new business."
-        ],
-      },
-    ],
+  /**
+   * ------------------------------
+   * Projects (Portfolio)
+   * ------------------------------
+   */
+  {
+    id: 4,
+    collection: "projects",
+    heading: "Our Portfolio",
+    title: "Projects",
+    description:
+      "Check out a few of our recent projects and discover how we’ve helped businesses transform their online presence.",
+    featuredImage: TestImage,
+    hasPage: true,
+    slug: "/projects",
+    sections: ["projects", "services", "testimonials"],
+    addToQuery: [{ name: "Primary" }],
+    items: {
+      itemsHasPage: true,
+      itemSections: ["hero", "services", "testimonials", "projects"],
+      data: [
+        {
+          id: 1,
+          title: "i-75 CPA Review",
+          description:
+            "Developed multiple e-commerce sites with landing pages, branding, and digital marketing solutions.",
+          featuredImage: TestImage,
+          link: "https://i75cpareview.com/",
+          image: "https://picsum.photos/200/300",
+          content: [
+            "For i-75 CPA Review, we built a robust e-commerce platform featuring responsive landing pages, intuitive navigation, and a design that reinforces trust in financial education.",
+            "We also implemented targeted branding and digital marketing strategies that boosted the company’s online presence and conversions.",
+          ],
+          relations: [
+            {
+              collection: "services",
+              value: "web-design-development",
+            },
+            {
+              collection: "services",
+              value: "digital-marketing",
+            },
+            {
+              collection: "services",
+              value: "technology-consulting",
+            },
+            {
+              collection: "services",
+              value: "digital-product-development",
+            },
+            {
+              collection: "services",
+              value: "ai-automation",
+            },
+            {
+              collection: "services",
+              value: "hosting-maintenance",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Faria's Demolition",
+          description:
+            "Created a comprehensive website showcasing demolition services, including project galleries and contact forms.",
+          featuredImage: TestImage,
+          link: "https://fariasdemolition.com/",
+          image: "https://picsum.photos/200/300",
+          content: [
+            "For Faria's Demolition, we developed a website that effectively showcased their services through engaging galleries and clear service information.",
+            "The site was optimized for user experience and conversion, ensuring that prospective clients can easily request estimates or contact the company.",
+          ],
+          relations: [
+            {
+              collection: "services",
+              value: "web-design-development",
+            },
+            {
+              collection: "services",
+              value: "technology-consulting",
+            },
+            {
+              collection: "services",
+              value: "hosting-maintenance",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Koi Roofing and Solar",
+          description:
+            "Designed a clean, informative site to promote solar solutions, emphasizing brand trust and environmental impact.",
+          featuredImage: TestImage,
+          link: "https://koisolarofficial.com/",
+          image: "https://picsum.photos/200/300",
+          content: [
+            "For Koi Roofing and Solar, we crafted a modern, mobile-friendly website that highlighted their solar and roofing services with a focus on transparency and sustainability.",
+            "Our approach combined clean design with strong call-to-action elements and SEO best practices to drive quality traffic.",
+          ],
+          relations: [
+            {
+              collection: "services",
+              value: "web-design-development",
+            },
+            {
+              collection: "services",
+              value: "technology-consulting",
+            },
+            {
+              collection: "services",
+              value: "hosting-maintenance",
+            },
+          ],
+        },
+        {
+          id: 4,
+          title: "Certified Bag Chasers",
+          description:
+            "Created a personal brand website for a best-selling author and course creator, featuring courses, testimonials, and community-building resources.",
+          featuredImage: TestImage,
+          link: "https://certifiedbagchasers.com/",
+          image: "https://picsum.photos/200/300",
+          content: [
+            "For Certified Bag Chasers, we designed a personal branding site that effectively showcased the client’s courses, testimonials, and community insights.",
+            "The project combined engaging visuals with user-centric navigation to create an experience that resonates with both existing and prospective customers.",
+          ],
+          relations: [
+            {
+              collection: "services",
+              value: "web-design-development",
+            },
+            {
+              collection: "services",
+              value: "technology-consulting",
+            },
+            {
+              collection: "services",
+              value: "digital-product-development",
+            },
+            {
+              collection: "services",
+              value: "hosting-maintenance",
+            },
+          ],
+        },
+        {
+          id: 5,
+          title: "Koi Crest Marketing",
+          description:
+            "Built a digital marketing agency website with case studies and service offerings, highlighting client success stories.",
+          featuredImage: TestImage,
+          link: "https://koicrest.com/",
+          image: "https://picsum.photos/200/300",
+          content: [
+            "For Koi Crest Marketing, we developed a website that not only highlighted their service offerings but also showcased detailed case studies and client testimonials.",
+            "Our work included creating a strong visual identity and integrating lead-generation tools to help drive new business.",
+          ],
+        },
+      ],
+    },
   },
-},
-
 
   /**
    * ------------------------------
@@ -705,40 +712,42 @@ const collections = [
     slug: "/faq",
     sections: "faq",
     redirectFrom: ["/questions"],
-    items: [
+    items: {
+      itemsHasPage: false, 
+      data: [
       {
         title: "Is the domain name included with the website?",
         content:
           "Setting up your domain is included and part of the process as well as the SSL Certificate with our hosting provider, however buying the domain name is not included with the price of the website. And something you will have to do, however, not to worry it will usually only cost you around $8-$12 a year and super easy to buy it. We will assist you in doing so and then you can leave the rest of the work to us!",
-          relations: [
-            {
-              collection: "services",
-              value: "web-design-development",
-            },
-           ]
-        },
+        relations: [
+          {
+            collection: "services",
+            value: "web-design-development",
+          },
+        ],
+      },
       {
         title: "Can you make my website mobile-friendly?",
         content:
           "Absolutely. 100%, With the growing number of mobile users, it’s crucial to have a website that looks and works great on all devices. All of our websites are designed to be responsive, meaning they will adapt to the screen size of the device they’re being viewed on.",
-          relations: [
-            {
-              collection: "services",
-              value: "web-design-development",
-            },
-           ]
-        },
+        relations: [
+          {
+            collection: "services",
+            value: "web-design-development",
+          },
+        ],
+      },
       {
         title: "What's your cancellation policy for the site management plan?",
         content:
           "Our goal is to make our clients happy and satisfied with our services. If for any reason you wish to cancel your monthly plan, just let us know.",
-          relations: [
-            {
-              collection: "services",
-              value: "hosting-maintenance",
-            },
-           ]
-        },
+        relations: [
+          {
+            collection: "services",
+            value: "hosting-maintenance",
+          },
+        ],
+      },
       {
         title: `How does ${siteSettings.siteTitle} handle security, and what ongoing support is provided?`,
         content: `At ${siteSettings.siteTitle}, security is a priority for every site we build. We carefully choose trusted plugins and top-tier hosting services, known for their robust security measures, for all our clients. However, ongoing maintenance requires an extended management plan.`,
@@ -747,31 +756,31 @@ const collections = [
             collection: "services",
             value: "hosting-maintenance",
           },
-         ]
+        ],
       },
       {
         title: `Privacy Policies, Terms and Conditions, etc. How does ${siteSettings.siteTitle} clarify to users information about these types of privacy issues?`,
         content:
           "We are not legal experts and recommend consulting with a lawyer to ensure compliance with all privacy and legal regulations.",
-          relations: [
-            {
-              collection: "services",
-              value: "web-design-development",
-            },
-            {
-              collection: "services",
-              value: "digital-marketing",
-            },
-            {
-              collection: "services",
-              value: "digital-product-development",
-            },
-            {
-              collection: "services",
-              value: "hosting-maintenance",
-            },
-           ]
-        },
+        relations: [
+          {
+            collection: "services",
+            value: "web-design-development",
+          },
+          {
+            collection: "services",
+            value: "digital-marketing",
+          },
+          {
+            collection: "services",
+            value: "digital-product-development",
+          },
+          {
+            collection: "services",
+            value: "hosting-maintenance",
+          },
+        ],
+      },
       {
         title: "Can you help me with email marketing?",
         content: `Absolutely, with ${siteSettings.siteTitle}, we can set your website up with all the tools to create an effective email marketing campaign. We can help you create email lists as well as design the user interface for people to sign up as well as provide you with a team of individuals who can manage your day-to-day email marketing campaigns.`,
@@ -780,7 +789,7 @@ const collections = [
             collection: "services",
             value: "digital-marketing",
           },
-         ]
+        ],
       },
       {
         title:
@@ -795,7 +804,7 @@ const collections = [
             collection: "services",
             value: "digital-product-development",
           },
-         ]
+        ],
       },
       {
         title: "Can you help me with social media?",
@@ -807,70 +816,71 @@ const collections = [
             value: "digital-marketing",
           },
         ],
-        },
+      },
       {
         title: "What types of businesses have you worked with in the past?",
         content:
           "We have worked with a broad range of businesses across various sectors such as restaurants, local services, e-commerce, online courses, and more.",
-          relations: [
-            {
-              collection: "services",
-              value: "web-design-development",
-            },
-            {
-              collection: "services",
-              value: "digital-marketing",
-            },
-            {
-              collection: "services",
-              value: "technology-consulting",
-            },
-            {
-              collection: "services",
-              value: "digital-product-development",
-            },
-            {
-              collection: "services",
-              value: "ai-automation",
-            },
-            {
-              collection: "services",
-              value: "hosting-maintenance",
-            },
-           ]
-        },
+        relations: [
+          {
+            collection: "services",
+            value: "web-design-development",
+          },
+          {
+            collection: "services",
+            value: "digital-marketing",
+          },
+          {
+            collection: "services",
+            value: "technology-consulting",
+          },
+          {
+            collection: "services",
+            value: "digital-product-development",
+          },
+          {
+            collection: "services",
+            value: "ai-automation",
+          },
+          {
+            collection: "services",
+            value: "hosting-maintenance",
+          },
+        ],
+      },
       {
         title: "How does your quote process work?",
         content:
           "You can book a quote directly on our website. We’ll arrange a consultation, where we’ll discuss your requirements and expectations, and then provide you with a detailed quote for your project.",
-          relations: [
-            {
-              collection: "services",
-              value: "web-design-development",
-            },
-            {
-              collection: "services",
-              value: "digital-marketing",
-            },
-            {
-              collection: "services",
-              value: "technology-consulting",
-            },
-            {
-              collection: "services",
-              value: "digital-product-development",
-            },
-            {
-              collection: "services",
-              value: "ai-automation",
-            },
-            {
-              collection: "services",
-              value: "hosting-maintenance",
-            },
-           ]
-        },
+        relations: [
+          {
+            collection: "services",
+            value: "web-design-development",
+          },
+          {
+            collection: "services",
+            value: "digital-marketing",
+          },
+          {
+            collection: "services",
+            value: "technology-consulting",
+          },
+          {
+            collection: "services",
+            value: "digital-product-development",
+          },
+          {
+            collection: "services",
+            value: "ai-automation",
+          },
+          {
+            collection: "services",
+            value: "hosting-maintenance",
+          },
+        ],
+      },
     ],
+  }
   },
 ];
 
