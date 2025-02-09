@@ -46,7 +46,7 @@ function Contact1({ data }) {
         </div>
       </ContentTemplate>
 
-      <form className="contact-form top-space bottom-space w50" method="POST" action={process.env.REACT_APP_FORMSPREE_URL}>
+      <form className="contact-form top-space bottom-space w50" method="POST" action={"https://formspree.io/f/mjkgojyo"}>
         <div className="form-group column">
           <div className="form-group">
             <div className="name-fields flex justify-between">
