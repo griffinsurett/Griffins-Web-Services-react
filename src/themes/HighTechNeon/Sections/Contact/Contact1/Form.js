@@ -1,7 +1,7 @@
 // src/themes/HighTechNeon/Sections/Contact/Contact1/Form.js
 import React from "react";
 import Button from "../../../Components/Buttons/Button";
-import "./contact-us.css"; // Use the same styles
+import "./form.css"; // Use the same styles
 
 /**
  * Form: a reusable <form> wrapper that includes:

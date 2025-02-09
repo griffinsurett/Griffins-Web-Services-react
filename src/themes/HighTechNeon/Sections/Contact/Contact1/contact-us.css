@@ -1,9 +1,4 @@
 /* contact-us.css */
-.contact-form {
-    /* background-color: var(--transparentFade-bg2); */
-   width: 100%;;
-}
-
 .form-group {
     display: flex;
     flex-wrap: wrap; /* Allow items to wrap */
