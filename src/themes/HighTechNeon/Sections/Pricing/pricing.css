@@ -1,0 +1,11 @@
+/* src/themes/HighTechNeon/Sections/Pricing/pricing.css */
+
+.pricing-boxes {
+    /* If you're already using flex, just add align-items: stretch */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;   /* or space-between, etc. */
+    align-items: stretch;      /* Ensures all children match in height */
+    gap: 20px;                 /* Keep a consistent gap */
+  }
+  

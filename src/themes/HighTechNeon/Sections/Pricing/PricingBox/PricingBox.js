@@ -6,9 +6,10 @@ import PropTypes from "prop-types";
 import "./pricing-box.css";
 import MenuItem from "../../../Components/MenuItem/MenuItem"; // Use MenuItem
 
-const PricingBox = ({ plan, href, logoOnlyOnHover }) => {
+const PricingBox = ({ index, plan, href, logoOnlyOnHover }) => {
   return (
     <Box
+    index={index}
       href={href}
       className={`pricing-box flex column justify-center item-align-center ${
         plan.isFeatured ? "featured-plan" : ""

@@ -1,54 +1,57 @@
-/* pricing-box.css */
+/* src/themes/HighTechNeon/Sections/Pricing/PricingBox/pricing-box.css */
+
 .pricing-box {
-    border-radius: var(--border-radius);
-    transition: var(--primaryTransition); 
-    flex-grow: 1;
-  }
-  
-  .pricing-box:hover {
-    box-shadow: var(--boxShadow1); /* Apply hover effect with shadow */
-  }
-  
-  .pricing-title {
-    margin-bottom: var(--primary-padding);
-  }
-  
-  .pricing-description {
-    margin-bottom: var(--primary-padding);
-  }
-  
-  .pricing-price {
-    font-size: var(--font-size-h1); /* Use larger font for the price */
-    margin-bottom: var(--primary-padding);
-  }
-  
-  .price-amount {
-    font-weight: var(--font-weight-bold);
-  }
-  
-  .payment-type {
-    font-size: var(--font-size-p);
-    margin-left: 5px;
-  }
-  
-  .pricing-features {
-    list-style-type: none;
-    padding: 0;
-    margin-bottom: var(--primary-padding);
-  }
-  
-  .feature-item {
-    font-size: var(--font-size-p-small);
-    margin-bottom: 10px;
-  }
+  border-radius: var(--border-radius);
+  transition: var(--primaryTransition);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* optional if you want the content spaced out */
+}
 
-  .feature-item img {
-    margin-right: 5px;
-  }
+.pricing-title {
+  margin-bottom: var(--primary-padding);
+}
 
-  .featured-plan {
-    transform: scale(1.1);
-  }
+.pricing-description {
+  margin-bottom: var(--primary-padding);
+}
 
-  .pricing-button {
-  }
+.pricing-price {
+  font-size: var(--font-size-h1);
+  margin-bottom: var(--primary-padding);
+  display: flex;
+  align-items: baseline; /* optional, keeps price and payment-type aligned nicely */
+}
+
+.price-amount {
+  font-weight: var(--font-weight-bold);
+}
+
+.payment-type {
+  font-size: var(--font-size-p);
+  margin-left: 5px;
+}
+
+.pricing-features {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: var(--primary-padding);
+}
+
+.feature-item {
+  font-size: var(--font-size-p-small);
+  margin-bottom: 10px;
+}
+
+.feature-item img {
+  margin-right: 5px;
+}
+
+.featured-plan {
+  transform: scale(1.05); /* highlight the featured plan */
+}
+
+.pricing-button-container {
+  margin-top: auto; /* helps ensure the button is pinned near the bottom if you want spacing */
+}

@@ -54,7 +54,6 @@ const Pricing = ({ data }) => {
           />
         )}
         className="pricing-boxes flex justify-center responsive"
-        layout="flex justify-center responsive"
         emptyComponent={
           <p className="text-center">No pricing plans available.</p>
         }
