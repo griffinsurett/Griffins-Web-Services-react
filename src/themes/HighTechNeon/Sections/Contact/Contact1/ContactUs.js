@@ -1,12 +1,13 @@
-// Contact1 - ContactUs
+// src/themes/HighTechNeon/Sections/Contact/Contact1/ContactUs.js
 import React from "react";
-import InputField from "../../../Components/Form-Fields/InputField";
-import TextareaField from "../../../Components/Form-Fields/TextareaField";
-import Button from "../../../Components/Buttons/Button";
+import IconListItem from "../../../Components/ListItem/ListItem";
 import ContentTemplate from "../../../Components/ContentTemplate/ContentTemplate";
 import Section from "../../../Components/Section/Section";
-import IconListItem from "../../../Components/ListItem/ListItem";
-import "./contact-us.css";
+import Form from "./Form"; 
+import InputField from "../../../Components/Inputs/InputField";
+import TextareaField from "../../../Components/Inputs/TextareaField";
+import "./contact-us.css"; // For contact-info styling
+// We no longer import Button here for submission—it's handled in Form.js
 
 function Contact1({ data }) {
   if (!data) {
@@ -14,9 +15,8 @@ function Contact1({ data }) {
   }
 
   return (
-    <Section
-      className="flex justify-center item-align-start full-height responsive responsive-center"
-    >
+    <Section className="flex justify-center item-align-start full-height responsive responsive-center">
+      {/* Contact header & info */}
       <ContentTemplate
         className="contact-sec-header column responsive-center sticky-section"
         contentWrapClass="column"
@@ -46,7 +46,15 @@ function Contact1({ data }) {
         </div>
       </ContentTemplate>
 
-      <form className="contact-form top-space bottom-space w50" method="POST" action={"https://formspree.io/f/mjkgojyo"}>
+      {/* Our Form (method, action, etc.) plus fields as children */}
+      <Form
+        method="POST"
+        action="https://formspree.io/f/mjkgojyo"
+        autoComplete="on"
+        buttonText={data.button?.text} 
+        buttonClass=""
+      >
+        {/* The field layout (same slices) */}
         <div className="form-group column">
           <div className="form-group">
             <div className="name-fields flex justify-between">
@@ -68,6 +76,7 @@ function Contact1({ data }) {
               ))}
             </div>
           </div>
+
           <div className="form-group subject-message">
             {data.formFields?.slice(4, 5).map((field, idx) => (
               <InputField
@@ -86,12 +95,8 @@ function Contact1({ data }) {
             ))}
           </div>
         </div>
-        <Button
-          type="submit"
-          text={data.button?.text}
-          className="p-large"
-        />
-      </form>
+
+      </Form>
     </Section>
   );
 }

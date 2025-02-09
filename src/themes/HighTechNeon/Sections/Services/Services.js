@@ -6,6 +6,7 @@ import Section from "../../Components/Section/Section";
 import ItemsTemplate from "../../Components/ItemsTemplate/ItemsTemplate";
 import { getItemData } from "../../GetItems";
 import ServiceBox from "./ServiceBox/ServiceBox";
+import { ColumnEquation } from "../../ColumnEquation";
 
 const Services = ({ data }) => {
   // Safely extract the array of items
@@ -44,7 +45,7 @@ const Services = ({ data }) => {
             />
           )}
           className="services-boxes flex wrap justify-center responsive box-section"
-          maxColumns={(items?.length || 0) % 3 === 0 ? 3 : 2}
+          maxColumns={ColumnEquation(items)}
           emptyComponent={<p className="text-center">No services available.</p>}
         />
       </ContentTemplate>

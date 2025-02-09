@@ -6,6 +6,7 @@ import ItemsTemplate from "../../Components/ItemsTemplate/ItemsTemplate";
 import { getItemData } from "../../GetItems";
 // Import your custom ProjectItem component:
 import ProjectItem from "./ProjectItems/ProjectItem2";
+import { ColumnEquation } from "../../ColumnEquation";
 
 const Projects = ({ data }) => {
   if (!data) {
@@ -59,6 +60,7 @@ const Projects = ({ data }) => {
             />
           )}
           className="flex flex-wrap justify-center items-stretch gap-6"
+          maxColumns={ColumnEquation(items)}
           layout="flex flex-wrap justify-center items-stretch gap-6"
           emptyComponent={
             <p className="text-center">No projects available at this time.</p>

@@ -1,7 +1,7 @@
 // Contact2.js
 import React from "react";
-import InputField from "../../../Components/Form-Fields/InputField";
-import TextareaField from "../../../Components/Form-Fields/TextareaField";
+import InputField from "../../../Components/Inputs/InputField";
+import TextareaField from "../../../Components/Inputs/TextareaField";
 import Button from "../../../Components/Buttons/Button";
 import ContentTemplate from "../../../Components/ContentTemplate/ContentTemplate";
 import Section from "../../../Components/Section/Section";
