@@ -1,5 +1,4 @@
 // src/themes/HighTechNeon/CMSDisplayTheme.js
-
 import React, { memo, lazy, Suspense } from "react";
 import { useCMSContext } from "../../CMS/CMSContext";
 import Header from "./Sections/Header/Header";
@@ -9,20 +8,17 @@ import ErrorPage from "./Components/Error/Error";
 import "./styles.css";
 import "./animations.css";
 
-// Import the ThemeProvider from your theme controls
+// Theme provider
 import { ThemeProvider } from "./Controls/ThemeContext";
 
-// Import MenuManager
+// Menu manager & context
 import MenuManager from "./Components/MenuManager";
-
-// Import the MenuProvider from the separate file
 import { MenuProvider } from "./Components/Menu/MenuContext";
 
-// --- Lazy-load hero sections ---
-const Hero1 = lazy(() => import("./Sections/HeroSection/Hero1/Hero")); // Homepage hero
-const Hero2 = lazy(() => import("./Sections/HeroSection/Hero2/Hero")); // Internal pages hero
+// --- New: import the consolidated HeroDisplay
+import HeroDisplay from "./Sections/HeroSection/HeroDisplay";
 
-// --- Lazy-load other sections ---
+// --- Lazy-load other non-hero sections ---
 const sectionComponents = {
   about:        lazy(() => import("./Sections/About/About1/About")),
   whyChooseUs:  lazy(() => import("./Sections/Services/Services")),
@@ -35,6 +31,7 @@ const sectionComponents = {
   faq:          lazy(() => import("./Sections/FAQ/FAQ")),
   testimonials: lazy(() => import("./Sections/Testimonials/Testimonials")),
   pricing:      lazy(() => import("./Sections/Pricing/Pricing")),
+  cta:          lazy(() => import("./Sections/CTA/CTA")),
 };
 
 const CMSDisplayTheme = memo(() => {
@@ -45,14 +42,13 @@ const CMSDisplayTheme = memo(() => {
     return <Preloader />;
   }
 
-  // If no page structure at all, just show a minimal error
+  // If no page structure, show minimal error
   if (!pageStructure) {
     return <div>Error: No page structure found.</div>;
   }
 
-  // If the user is at /error (pageId === "error"), display our ErrorPage
+  // If user is at /error, show error page
   if (pageId === "error") {
-    // We’ll still show Header & Footer for consistent site styling
     const menuManager = new MenuManager(siteSettings);
     return (
       <MenuProvider>
@@ -81,9 +77,9 @@ const CMSDisplayTheme = memo(() => {
     content: content,
   };
 
-  // Check if this page’s sections array includes a "hero"
+  // Check if the page’s sections array includes "hero"
   const hasHero = sections.some((s) => s.key === "hero");
-  // Exclude hero from the final sections (we'll handle it separately)
+  // Exclude hero from final sections
   const finalSections = sections.filter((s) => s.key !== "hero");
 
   return (
@@ -91,16 +87,12 @@ const CMSDisplayTheme = memo(() => {
       <Header menuManager={menuManager} siteSettings={siteSettings} />
       <div className="flex column item-align-center">
         <main className="flex-grow content container" role="main">
-          {hasHero &&
-            (isHomepage ? (
-              <Suspense fallback={<Preloader />}>
-                <Hero1 data={heroData} />
-              </Suspense>
-            ) : (
-              <Suspense fallback={<Preloader />}>
-                <Hero2 data={heroData} />
-              </Suspense>
-            ))}
+          {hasHero && (
+            <HeroDisplay
+              isHomepage={isHomepage}
+              heroData={heroData}
+            />
+          )}
 
           {/* Render each remaining section by key */}
           {finalSections.map(({ key, data }) => {
@@ -121,7 +113,7 @@ const CMSDisplayTheme = memo(() => {
   );
 });
 
-// Attach the ThemeProvider as a static property if needed
+// Attach the ThemeProvider if needed
 CMSDisplayTheme.ThemeProvider = ThemeProvider;
 
 export default CMSDisplayTheme;

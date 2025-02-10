@@ -8,6 +8,7 @@ import { getIcon } from "./Utils/Icons/IconImporter";
 
 const Logo = `${process.env.PUBLIC_URL}/mylogo3d.png`;
 const TestImage = `${process.env.PUBLIC_URL}/meoncomp.jpg`;
+const pricingLink = "https://calendly.com/griffinswebservices/30min";
 
 /**
  * -----------------------------------------------------------------------------
@@ -209,6 +210,13 @@ const collections = [
         icon: getIcon("fab", "Instagram"),
       },
     ],
+     form: {
+    method: "POST",
+    action: "https://formspree.io/f/mjkgojyo",
+    button: {
+      text: "Submit",
+      class: "p-large" // or any styling class
+    },
     formFields: [
       { component: "input", name: "firstName", placeholder: "First Name" },
       { component: "input", name: "lastName", placeholder: "Last Name" },
@@ -216,8 +224,8 @@ const collections = [
       { component: "input", name: "phone", placeholder: "Phone Number" },
       { component: "input", name: "subject", placeholder: "Subject" },
       { component: "textarea", name: "message", placeholder: "Message" },
-    ],
-    button: { text: "Submit", link: "#" },
+    ]
+  },
   },
 
   /**
@@ -254,12 +262,12 @@ const collections = [
       includeCollectionSlug: true,
       itemSections: [
         "hero",
-        "pricing",
+        // "pricing",
         "process",
         "projects",
-        "services",
         "testimonials",
         "faq",
+        "cta",
       ],
       onlyParentItemsHasPage: false,
       description:
@@ -315,6 +323,12 @@ const collections = [
               },
             ],
           },
+          cta: {
+            heading: "Ready to take your website to the next level?",
+            description: "Schedule a free 30-minute consultation to discuss your project.",
+            buttonText: "Schedule a Call",
+            buttonLink: "https://calendly.com/griffinswebservices/30min",
+          },
           pricing: [
             {
               title: "Basic Website",
@@ -329,7 +343,7 @@ const collections = [
                 "Contact form",
               ],
               buttonText: "Get Started",
-              buttonLink: "/contact-us",
+              buttonLink: pricingLink,
               isFeatured: false,
             },
             {
@@ -345,7 +359,7 @@ const collections = [
                 "Contact form",
               ],
               buttonText: "Get Started",
-              buttonLink: "/contact-us",
+              buttonLink: pricingLink,
               isFeatured: true,
             },
             {
@@ -361,14 +375,14 @@ const collections = [
                 "SEO optimization",
               ],
               buttonText: "Get Started",
-              buttonLink: "/contact-us",
+              buttonLink: pricingLink,
               isFeatured: true,
             },
             {
               title: "Custom Web App",
               description:
                 "A tailored web application to meet your unique business needs.",
-              price: "$Custom",
+              price: "Custom",
               bulletPoints: [
                 "Custom features",
                 "Scalable architecture",
@@ -376,10 +390,10 @@ const collections = [
                 "Maintenance plan",
               ],
               buttonText: "Get Started",
-              buttonLink: "/contact-us",
+              buttonLink: pricingLink,
               isFeatured: false,
             },
-          ]
+          ],     
         },
         {
           icon: getIcon("fa", "Cloud"),
@@ -986,6 +1000,7 @@ const homepageOverride = {
     "projects",
     "testimonials",
     "faq",
+    "cta",
     "contact",
   ],
 };

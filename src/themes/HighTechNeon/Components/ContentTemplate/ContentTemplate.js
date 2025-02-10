@@ -34,6 +34,7 @@ const ContentTemplate = ({
   isHero = false,
   paragraphSide = true,
   buttonSide = true,
+  id,
 }) => {
   const [isMobile, setIsMobile] = useState(false);
   const location = useLocation(); // Get the current location
@@ -58,7 +59,7 @@ const ContentTemplate = ({
   const finalButtonLink = buttonLink || sectionSlug;
 
   return (
-    <div className={`content-template ${className} flex column`}>
+    <div className={`content-template ${className} flex column`} id={id}>
       <div
         className={`content-top-section flex justify-between-section smaller-bottom-space ${contentWrapClass}`}
       >

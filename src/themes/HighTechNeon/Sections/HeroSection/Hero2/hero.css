@@ -1,2 +1,36 @@
+@media (min-width: 768px) {
+    .hero2-content {
+        width: 50%;
+    } 
+    
+    .form-content {
+        width: 40%;
+    }
 
+    .top-paragraph {
+        padding-bottom: 10px;
+    }
+}
 
+@media (max-width: 768px) {
+    .hero2-heading {
+        padding-bottom: 10px;
+    }
+
+    .hero2-content {
+        width: 100%;
+        padding-bottom: 30px;
+    }  
+
+    .form-content {
+        width: 100%;
+    }
+
+    .quote-form {
+        width: 100%;
+    }
+
+    .top-paragraph {
+        padding-bottom: 20px;
+    }
+}

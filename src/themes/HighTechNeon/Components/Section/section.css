@@ -11,6 +11,10 @@
         padding: var(--section-padding);
     }
 
+    .section-margin {
+        margin: var(--section-padding);
+    }
+
 .section-innerdiv {
     /* padding: 40px; */
 }

@@ -7,12 +7,14 @@ import Form from "../../../Components/Form/Form";
 import InputField from "../../../Components/Inputs/InputField";
 import TextareaField from "../../../Components/Inputs/TextareaField";
 import "./contact-us.css"; // For contact-info styling
-// We no longer import Button here for submission—it's handled in Form.js
 
 function Contact1({ data }) {
   if (!data) {
     return <div>Error: Contact data not found</div>;
   }
+
+  // If data.form is missing, we can fallback to some defaults
+  const formConfig = data.form || {};
 
   return (
     <Section className="flex justify-center item-align-start full-height responsive responsive-center">
@@ -48,17 +50,17 @@ function Contact1({ data }) {
 
       {/* Our Form (method, action, etc.) plus fields as children */}
       <Form
-        method="POST"
-        action="https://formspree.io/f/mjkgojyo"
+        method={formConfig.method || "POST"}
+        action={formConfig.action || "#"}
         autoComplete="on"
-        buttonText={data.button?.text}
-        buttonClass=""
+        buttonText={formConfig.button?.text || "Submit"}
+        buttonClass={formConfig.button?.class || ""}
       >
         {/* The field layout (same slices) */}
         <div className="form-group column">
           <div className="form-group">
             <div className="name-fields flex justify-between">
-              {data.formFields?.slice(0, 2).map((field, idx) => (
+              {formConfig.formFields?.slice(0, 2).map((field, idx) => (
                 <InputField
                   key={idx}
                   name={field.name}
@@ -67,7 +69,7 @@ function Contact1({ data }) {
               ))}
             </div>
             <div className="contact-fields flex justify-between">
-              {data.formFields?.slice(2, 4).map((field, idx) => (
+              {formConfig.formFields?.slice(2, 4).map((field, idx) => (
                 <InputField
                   key={idx}
                   name={field.name}
@@ -78,14 +80,14 @@ function Contact1({ data }) {
           </div>
 
           <div className="form-group subject-message">
-            {data.formFields?.slice(4, 5).map((field, idx) => (
+            {formConfig.formFields?.slice(4, 5).map((field, idx) => (
               <InputField
                 key={idx}
                 name={field.name}
                 placeholder={field.placeholder}
               />
             ))}
-            {data.formFields?.slice(5, 6).map((field, idx) => (
+            {formConfig.formFields?.slice(5, 6).map((field, idx) => (
               <TextareaField
                 key={idx}
                 name={field.name}
