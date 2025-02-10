@@ -264,6 +264,7 @@ const collections = [
         "hero",
         // "pricing",
         "process",
+        "platforms",
         "projects",
         "testimonials",
         "faq",
@@ -393,7 +394,7 @@ const collections = [
               buttonLink: pricingLink,
               isFeatured: false,
             },
-          ],     
+          ],   
         },
         {
           icon: getIcon("fa", "Cloud"),
@@ -980,6 +981,270 @@ const collections = [
     ],
   }
   },
+
+  /**
+   * ------------------------------
+   * Platforms
+   * ------------------------------
+   */
+  {
+    id: 8,
+    collection: "platforms",
+    heading: "Platforms We Support",
+    title: "Platforms",
+    featuredImage: TestImage,
+    hasPage: false,
+    slug: "/platforms",
+    items: {
+      itemsHasPage: false,
+      includeCollectionSlug: false,
+      data: [
+        {
+          title: "HTML",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "The backbone for webpage structure.",
+          relations: [
+            { collection: "services", value: "web-design-development" },
+          ],
+        },
+        {
+          title: "CSS",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Styling with modern layouts & animations.",
+          relations: [
+            { collection: "services", value: "web-design-development" },
+          ],
+        },
+        {
+          title: "JavaScript",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Core scripting for interactive apps.",
+          relations: [
+            { collection: "services", value: "web-design-development" },
+          ],
+        },
+        {
+          title: "React",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "A powerful library for dynamic UIs.",
+          relations: [
+            { collection: "services", value: "web-design-development" },
+          ],
+        },
+        {
+          title: "Node.js",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Scalable back-end JavaScript runtime.",
+          relations: [
+            { collection: "services", value: "web-design-development" },
+            { collection: "services", value: "technology-consulting" },
+            // Optionally also link to "ai-automation" if desired:
+            // { collection: "services", value: "ai-automation" },
+          ],
+        },
+        {
+          title: "MongoDb",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Flexible NoSQL databases.",
+          relations: [
+            { collection: "services", value: "technology-consulting" },
+          ],
+        },
+        {
+          title: "SQL",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Relational database management system.",
+          relations: [
+            { collection: "services", value: "technology-consulting" },
+          ],
+        },
+        {
+          title: "WordPress",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Popular CMS for content management.",
+          relations: [
+            { collection: "services", value: "web-design-development" },
+            { collection: "services", value: "hosting-maintenance" },
+            { collection: "services", value: "digital-product-development" },
+          ],
+        },
+        {
+          title: "Shopify",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "E-commerce platform for online stores.",
+          relations: [
+            { collection: "services", value: "web-design-development" },
+            { collection: "services", value: "hosting-maintenance" },
+          ],
+        },
+        {
+          title: "Node.js",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Scalable back-end JavaScript runtime.",
+          relations: [
+            { collection: "services", value: "web-design-development" },
+            { collection: "services", value: "technology-consulting" },
+          ],
+        },
+        {
+          title: "Bootstrap",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Front-end framework for responsive design.",
+          relations: [
+            { collection: "services", value: "web-design-development" },
+          ],
+        },
+        {
+          title: "Figma",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Collaborative design tool for UI/UX.",
+          relations: [
+            { collection: "services", value: "web-design-development" },
+          ],
+        },
+        {
+          title: "Framer",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Interactive prototyping for web & mobile.",
+          relations: [
+            { collection: "services", value: "web-design-development" },
+            { collection: "services", value: "digital-product-development" },
+          ],
+        },
+        {
+          title: "Next.js",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "React framework for server-rendered apps.",
+          relations: [
+            { collection: "services", value: "web-design-development" },
+          ],
+        },
+        {
+          title: "Gatsby",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Static site generator for modern web development.",
+          relations: [
+            { collection: "services", value: "web-design-development" },
+          ],
+        },
+        {
+          title: "Astro",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Modern web development with less JavaScript.",
+          relations: [
+            { collection: "services", value: "web-design-development" },
+          ],
+        },
+        {
+          title: "Tailwind CSS",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Utility-first CSS framework for rapid development.",
+          relations: [
+            { collection: "services", value: "web-design-development" },
+          ],
+        },
+        {
+          title: "Adobe Photoshop",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Professional image editing software.",
+          relations: [
+            { collection: "services", value: "web-design-development" },
+            { collection: "services", value: "digital-product-development" },
+          ],
+        },
+        {
+          title: "Adobe Illustrator",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Vector graphics editor for logos and illustrations.",
+          relations: [
+            { collection: "services", value: "web-design-development" },
+            { collection: "services", value: "digital-product-development" },
+          ],
+        },
+        {
+          title: "Canva",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Online design tool for social media graphics.",
+          relations: [
+            { collection: "services", value: "digital-marketing" },
+          ],
+        },
+        {
+          title: "Mailchimp",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Email marketing platform for campaigns.",
+          relations: [
+            { collection: "services", value: "digital-marketing" },
+          ],
+        },
+        {
+          title: "Google Analytics",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Web analytics service for tracking site performance.",
+          relations: [
+            { collection: "services", value: "digital-marketing" },
+          ],
+        },
+        {
+          title: "Facebook Ads",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Advertising platform for targeted campaigns.",
+          relations: [
+            { collection: "services", value: "digital-marketing" },
+          ],
+        },
+        {
+          title: "Teachable",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Online course platform for creators.",
+          relations: [
+            { collection: "services", value: "digital-product-development" },
+          ],
+        },
+        {
+          title: "Thinkific",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Course creation platform for educators.",
+          relations: [
+            { collection: "services", value: "digital-product-development" },
+          ],
+        },
+        {
+          title: "Udemy",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Global marketplace for online courses.",
+          relations: [
+            { collection: "services", value: "digital-product-development" },
+          ],
+        },
+        {
+          title: "Spotify",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Music streaming service for artists and listeners.",
+          relations: [
+            { collection: "services", value: "digital-product-development" },
+          ],
+        },
+        {
+          title: "Audible",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Audiobook platform for authors and listeners.",
+          relations: [
+            { collection: "services", value: "digital-product-development" },
+          ],
+        },
+        {
+          title: "Distrokid",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Music distribution platform for independent artists.",
+          relations: [
+            { collection: "services", value: "digital-product-development" },
+          ],
+        },
+      ],
+    },
+  },  
+  
 ];
 
 /**

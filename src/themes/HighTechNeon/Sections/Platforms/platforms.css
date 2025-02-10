@@ -1,0 +1,17 @@
+.platforms-section {
+    padding: var(--primary-padding) 0;
+  }
+  
+  .platforms-list {
+    gap: 20px;
+  }
+  
+  .platform-icon {
+    margin: 40px;
+  }
+
+  @media (max-width: 768px) {
+    .platforms-list {
+      justify-content: center;
+    }
+  }

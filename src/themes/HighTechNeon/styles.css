@@ -717,7 +717,8 @@ a {
   }
 
   .container {
-    width: calc(var(--container-width) + 10%)
+    width: calc(var(--container-width) + 10%);
+    overflow-x: hidden;
   }
 
   .self-right {

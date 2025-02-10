@@ -1,3 +1,5 @@
-/* .process-boxes {
-    gap: 20px;
-} */
+@media (max-width: 768px) {
+.process-title {
+    align-items: center;
+}
+}

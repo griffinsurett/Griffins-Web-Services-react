@@ -32,6 +32,7 @@ const sectionComponents = {
   testimonials: lazy(() => import("./Sections/Testimonials/Testimonials")),
   pricing:      lazy(() => import("./Sections/Pricing/Pricing")),
   cta:          lazy(() => import("./Sections/CTA/CTA")),
+  platforms:    lazy(() => import("./Sections/Platforms/Platforms")),
 };
 
 const CMSDisplayTheme = memo(() => {

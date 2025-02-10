@@ -35,3 +35,9 @@
 .social-icons {
   list-style: none;
 }
+
+@media (max-width: 768px) {
+.social-icons {
+  padding-top: 20px;
+}
+}
