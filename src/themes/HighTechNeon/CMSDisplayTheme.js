@@ -15,7 +15,7 @@ import { ThemeProvider } from "./Controls/ThemeContext";
 import MenuManager from "./Components/MenuManager";
 import { MenuProvider } from "./Components/Menu/MenuContext";
 
-// --- New: import the consolidated HeroDisplay
+// --- Import the consolidated HeroDisplay
 import HeroDisplay from "./Sections/HeroSection/HeroDisplay";
 
 // --- Lazy-load other non-hero sections ---
@@ -67,6 +67,9 @@ const CMSDisplayTheme = memo(() => {
   const menuManager = new MenuManager(siteSettings);
   const { title, description, heading, content, sections } = pageStructure;
   const isHomepage = pageId === "home";
+  // If the current page is under the services collection (its slug starts with "/services")
+  // but is not the services collection itself, we consider it a service item.
+  const isServiceItem = pageId.startsWith("/services") && pageId !== "/services";
 
   // Prepare hero data
   const heroData = {
@@ -90,6 +93,7 @@ const CMSDisplayTheme = memo(() => {
           {hasHero && (
             <HeroDisplay
               isHomepage={isHomepage}
+              isServiceItem={isServiceItem}
               heroData={heroData}
             />
           )}
