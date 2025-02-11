@@ -13,7 +13,7 @@ const ServiceBox = ({ icon, title, description, link, index }) => {
     >
       <Icon
         icon={icon}
-        size="lg"
+        size="1.5em"
         className="styled-icon dynamic-border-effect hover-scale"
       />
       <h3 className="top-space smaller-bottom-space">{title}</h3>

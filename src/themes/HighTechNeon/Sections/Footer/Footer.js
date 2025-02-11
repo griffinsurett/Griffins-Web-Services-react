@@ -61,7 +61,7 @@ const Footer = ({ className, menuManager, siteSettings }) => {
                 {icon && (
                   <Icon
                     icon={icon}
-                    size="lg"
+                    size="1em"
                     className=""
                     iconPadding="5"
                   />

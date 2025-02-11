@@ -47,7 +47,7 @@ const ListItem = ({
   const itemContent = (
     <div className={`${listItemClasses} fade-in`}>
       {hasIcon && icon && (
-        <Icon icon={icon} size="sm" className={derivedIconClass} iconPadding={iconPadding} />
+        <Icon icon={icon} size="1em" className={derivedIconClass} iconPadding={iconPadding} />
       )}
       <div className={contentClass}>
         <TitleTag className={`small-top-space-desktop ${titleClasses}`}>{title}</TitleTag>

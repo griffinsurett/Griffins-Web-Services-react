@@ -32,7 +32,7 @@ const Platforms = ({ data }) => {
         <ItemsTemplate
           items={platforms}
           ItemComponent={({ icon, title, link, itemIndex }) => (
-            <Icon icon={icon} className="platform-icon styled-icon dynamic-border-effect" tooltipText={title}  />
+            <Icon icon={icon} size="2em" className="platform-icon styled-icon dynamic-border-effect" tooltipText={title}  />
           )}
           allowWrap={false}
           className="platforms-list flex wrap top-space"

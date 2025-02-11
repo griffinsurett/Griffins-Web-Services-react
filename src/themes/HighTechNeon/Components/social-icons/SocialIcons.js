@@ -26,7 +26,7 @@ const SocialIcons = () => {
           >
             <Icon
               icon={socialMedia.icon} // Use icon from the socialMedia array
-              size="lg" // Adjust size if needed
+              size="1em" // Adjust size if needed
               className="" // No additional class for styling
             />
           </a>
