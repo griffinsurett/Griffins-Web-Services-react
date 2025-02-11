@@ -50,10 +50,6 @@
 }
 }
 
-.hero-left h1 {
-    padding-top: 10px;
-}
-
 @media (min-width: 768px) {
     .hero-left p {
         margin-top: 1pc;
