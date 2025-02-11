@@ -77,7 +77,7 @@
 
 @media (max-width: 495px) {
     #hero-section {
-        height: calc(var(--hero-height)*1.6);
+        height: var(--hero-height);
     }
 }
 

@@ -1106,7 +1106,7 @@ const collections = [
         },
         {
           title: "Heroku",
-          icon: getIcon("fa", "LaptopCode"),
+          icon: getIcon("fab", "salesforce"),
           description: "Cloud platform for deploying apps.",
           relations: [
             { collection: "services", value: "hosting-maintenance" },
@@ -1114,7 +1114,7 @@ const collections = [
         },
         {
           title: "AWS",
-          icon: getIcon("fa", "LaptopCode"),
+          icon: getIcon("fab", "aws"),
           description: "Amazon Web Services for cloud computing.",
           relations: [
             { collection: "services", value: "hosting-maintenance" },
