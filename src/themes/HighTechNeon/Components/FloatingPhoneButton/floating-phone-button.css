@@ -1,0 +1,9 @@
+/* src/themes/HighTechNeon/Components/FloatingPhoneButton/floatingPhoneButton.css */
+
+.floating-phone-button {
+    position: fixed;
+    bottom: 60px;          
+    right: 30px;           
+    z-index: 9999; 
+  }
+  

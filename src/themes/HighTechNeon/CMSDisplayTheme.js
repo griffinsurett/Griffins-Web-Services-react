@@ -5,6 +5,7 @@ import Header from "./Sections/Header/Header";
 import Footer from "./Sections/Footer/Footer";
 import Preloader from "./Components/Preloader/Preloader";
 import ErrorPage from "./Components/Error/Error"; 
+import FloatingPhoneButton from "./Components/FloatingPhoneButton/FloatingPhoneButton";
 import "./styles.css";
 import "./animations.css";
 
@@ -119,6 +120,7 @@ const CMSDisplayTheme = memo(() => {
         </main>
       </div>
       <Footer menuManager={menuManager} siteSettings={siteSettings} />
+      <FloatingPhoneButton />
     </MenuProvider>
   );
 });

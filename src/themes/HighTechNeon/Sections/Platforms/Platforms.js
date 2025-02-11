@@ -37,6 +37,7 @@ const Platforms = ({ data }) => {
           allowWrap={false}
           className="platforms-list flex wrap top-space"
           emptyComponent={<p>No platforms available</p>}
+          gap="80px"
         />
       </ContentTemplate>
     </Section>

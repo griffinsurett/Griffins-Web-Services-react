@@ -20,12 +20,14 @@
     top: 0;
     z-index: 2000;
   }
+
+  .header .logo {
+    transform: rotate(45deg);
+  }
   
   .header-container {
     height: var(--header-height);
     margin: auto;
   }
 
-
-  
  

@@ -1054,7 +1054,7 @@ const collections = [
       },
       {
         title: "Node.js",
-        icon: getIcon("si", "NodeDotJs"),
+        icon: getIcon("si", "React"),
         description: "Scalable back-end JavaScript runtime.",
         relations: [
           { collection: "services", value: "web-design-development" },
@@ -1108,7 +1108,7 @@ const collections = [
       },
       {
         title: "Bluehost",
-        icon: getIcon("io", "Kinsta"),
+        icon: getIcon("si", "Kinsta"),
         description: "Web hosting services for websites.",
         relations: [{ collection: "services", value: "hosting-maintenance" }],
       },
@@ -1212,10 +1212,19 @@ const collections = [
         ],
       },
       {
+        title: "Adobe Premiere Pro",
+        icon: getIcon("si", "Adobepremierepro"),
+        description: "Professional image editing software.",
+        relations: [
+          { collection: "services", value: "digital-marketing" },
+          { collection: "services", value: "digital-product-development" },
+        ],
+      },
+      {
         title: "Canva",
         icon: getIcon("si", "Canva"),
         description: "Online design tool for social media graphics.",
-        relations: [{ collection: "services", value: "digital-marketing" }],
+        relations: [{ collection: "services", value: "digital-marketing" }, { collection: "services", value: "digital-product-development" },        ],
       },
       {
         title: "Mailchimp",
@@ -1249,13 +1258,13 @@ const collections = [
       },
       {
         title: "Teachable",
-        icon: getIcon("si", "Teachable"),
+        icon: getIcon("si", "Facebook"),
         description: "Online course platform for creators.",
         relations: [{ collection: "services", value: "digital-product-development" }],
       },
       {
         title: "Thinkific",
-        icon: getIcon("si", "Thinkific"),
+        icon: getIcon("si", "Facebook"),
         description: "Course creation platform for educators.",
         relations: [{ collection: "services", value: "digital-product-development" }],
       },

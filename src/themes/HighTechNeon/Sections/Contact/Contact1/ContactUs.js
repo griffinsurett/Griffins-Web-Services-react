@@ -3,9 +3,6 @@ import React from "react";
 import IconListItem from "../../../Components/ListItem/ListItem";
 import ContentTemplate from "../../../Components/ContentTemplate/ContentTemplate";
 import Section from "../../../Components/Section/Section";
-import Form from "../../../Components/Form/Form";
-import InputField from "../../../Components/Inputs/InputField";
-import TextareaField from "../../../Components/Inputs/TextareaField";
 import "./contact-us.css"; // For contact-info styling
 import ContactForm from "../../../Components/Form/ContactForm/ContactForm";
 
@@ -13,9 +10,6 @@ function Contact1({ data }) {
   if (!data) {
     return <div>Error: Contact data not found</div>;
   }
-
-  // If data.form is missing, we can fallback to some defaults
-  const formConfig = data.form || {};
 
   return (
     <Section className="flex justify-center item-align-start full-height responsive responsive-center">
