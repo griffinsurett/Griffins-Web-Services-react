@@ -27,12 +27,12 @@ const Platforms = ({ data }) => {
         title={data.title}
         paragraph1={data.paragraph}
         className={"platforms-content"}
-        ContentHeaderClass="w100"
+        ContentHeaderClass="w100 bottom-space"
       >
         <ItemsTemplate
           items={platforms}
           ItemComponent={({ icon, title, link, itemIndex }) => (
-            <Icon icon={icon} className="platform-icon styled-icon dynamic-border-effect hover-scale" />
+            <Icon icon={icon} size="2x" className="platform-icon styled-icon dynamic-border-effect" tooltipText={title}  />
           )}
           allowWrap={false}
           className="platforms-list flex wrap top-space"

@@ -4,7 +4,10 @@ import { useLocation } from "react-router-dom"; // Import useLocation
 import Section from "../../../Components/Section/Section";
 import ContentTemplate from "../../../Components/ContentTemplate/ContentTemplate";
 import "./hero.css";
+import "../../Contact/Contact1/contact-us.css"
 import Form from "../../../Components/Form/Form";
+import InputField from "../../../Components/Inputs/InputField";
+import TextareaField from "../../../Components/Inputs/TextareaField";
 
 const Hero2 = ({ data }) => {
   const location = useLocation(); // Get the current route
@@ -59,17 +62,17 @@ const Hero2 = ({ data }) => {
           buttonClass={""}
         >
           {/* Invisible field to send the current page route */}
-          <input type="hidden" name="pageUrl" value={location.pathname} />
+          <InputField type="hidden" name="pageUrl" value={location.pathname} />
 
           <div className="quote-form-fields">
             <div className="name-fields flex justify-between">
-              <input
+              <InputField
                 type="text"
                 name="firstName"
                 placeholder="First Name"
                 className="p-large dynamic-focus-border-effect fade-in"
               />
-              <input
+              <InputField
                 type="text"
                 name="lastName"
                 placeholder="Last Name"
@@ -77,13 +80,13 @@ const Hero2 = ({ data }) => {
               />
             </div>
             <div className="contact-fields flex justify-between">
-              <input
+              <InputField
                 type="email"
                 name="email"
                 placeholder="Email"
                 className="p-large dynamic-focus-border-effect fade-in"
               />
-              <input
+              <InputField
                 type="tel"
                 name="phone"
                 placeholder="Phone Number"
@@ -91,13 +94,13 @@ const Hero2 = ({ data }) => {
               />
             </div>
             <div className="form-group subject-message flex column">
-              <input
+              <InputField
                 type="text"
                 name="subject"
                 placeholder="Subject"
                 className="p-large dynamic-focus-border-effect fade-in"
               />
-              <textarea
+              <TextareaField
                 name="message"
                 placeholder="Message"
                 className="p-large dynamic-focus-border-effect fade-in"

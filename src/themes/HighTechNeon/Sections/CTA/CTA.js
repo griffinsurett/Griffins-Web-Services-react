@@ -1,16 +1,18 @@
+// src/themes/HighTechNeon/Sections/CTA/CTA.js
 import React from "react";
 import Section from "../../Components/Section/Section";
 import ContentTemplate from "../../Components/ContentTemplate/ContentTemplate";
 import "./cta.css";
 
 const CTA = ({ data, siteSettings }) => {
-  // Fallbacks if the item doesn't have a CTA object
-  const heading     = data?.heading     || siteSettings?.siteTitle;
-  const description = data?.description || siteSettings?.siteTagline;
-  const buttonText  = data?.buttonText  || siteSettings?.CTAButton;
-  // We still pass the same anchor reference so that, for browsers supporting CSS scroll-behavior,
-  // clicking the link will work. But we add an onClick handler for extra control.
-  const buttonLink  = "#nonhomehero";
+  // Look for a nested 'cta' object; if not present, use data directly.
+  const ctaData = data?.cta || data;
+
+  // Use values from the CTA object if available, otherwise fallback to site settings.
+  const heading     = ctaData?.heading     || siteSettings?.siteTitle;
+  const description = ctaData?.description || siteSettings?.siteTagline;
+  const buttonText  = ctaData?.buttonText  || siteSettings?.CTAButton;
+  const buttonLink  = "#nonhomehero"  || siteSettings?.CTALink || "#nonhomehero";
 
   // onClick handler that scrolls smoothly to the element with id "nonhomehero"
   const handleCTAButtonClick = (e) => {
@@ -29,9 +31,9 @@ const CTA = ({ data, siteSettings }) => {
         ifButton={true}
         buttonText={buttonText}
         buttonLink={buttonLink}
-        onClick={handleCTAButtonClick}  // Pass the onClick handler
+        onClick={handleCTAButtonClick} // Pass the onClick handler
         buttonBottom={true}
-        isHero={true} 
+        isHero={true}
         className="cta-content text-center"
         titleClass=""
         headingClass={"text-shadow-for-dark"}

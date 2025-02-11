@@ -99,7 +99,8 @@ const CMSDisplayTheme = memo(() => {
             />
           )}
 
-          {/* Render each remaining section by key */}
+          {/* Render each remaining section by key.
+              For the "cta" section, pass siteSettings as well */}
           {finalSections.map(({ key, data }) => {
             const SectionComponent = sectionComponents[key];
             if (!SectionComponent) {
@@ -107,7 +108,11 @@ const CMSDisplayTheme = memo(() => {
             }
             return (
               <Suspense key={key} fallback={<Preloader />}>
-                <SectionComponent data={data} />
+                {key === "cta" ? (
+                  <SectionComponent data={data} siteSettings={siteSettings} />
+                ) : (
+                  <SectionComponent data={data} />
+                )}
               </Suspense>
             );
           })}

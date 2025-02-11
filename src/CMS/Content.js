@@ -328,7 +328,6 @@ const collections = [
             heading: "Ready to take your website to the next level?",
             description: "Schedule a free 30-minute consultation to discuss your project.",
             buttonText: "Schedule a Call",
-            buttonLink: "https://calendly.com/griffinswebservices/30min",
           },
           pricing: [
             {
@@ -403,7 +402,13 @@ const collections = [
           slug: "/hosting-maintenance",
           description:
             "Keep your site secure, fast, and up to date with our reliable hosting solutions.",
-          content: [
+            cta: {
+              heading: "Secure & Reliable Hosting",
+              description:
+                "Experience uninterrupted performance with our hosting and maintenance services.",
+              buttonText: "Learn More",
+            },
+            content: [
             "Secure and optimize your online infrastructure with dependable hosting and maintenance that keeps your site performing at its best.",
             "Our Hosting & Maintenance services are designed to offer peace of mind by ensuring your website remains fast, secure, and up to date. We handle everything from server optimization and regular backups to software updates and ongoing security checks. By proactively monitoring uptime and performance, we can swiftly address any issues before they affect your visitors. This comprehensive approach not only shields your online presence from vulnerabilities but also maintains the integrity and functionality of your site. With consistent, reliable hosting and maintenance, you can focus on growing your business while we take care of the technical details.",
           ],
@@ -419,6 +424,12 @@ const collections = [
             "Harness the power of artificial intelligence and automation to optimize workflows, reduce costs, and improve efficiency.",
             "Our AI & Automation solutions help businesses integrate machine learning and intelligent automation into their operations. From AI-powered chatbots and customer service automation to process optimization and predictive analytics, we implement cutting-edge technologies to streamline workflows and enhance productivity. Our team works closely with you to understand your business objectives, identify automation opportunities, and deploy AI solutions that drive measurable results. Whether you're looking to enhance customer interactions, optimize repetitive tasks, or gain insights through data-driven decision-making, we empower you to stay ahead of the curve in a digital-first world.",
           ],
+          cta: {
+            heading: "Automate Your Business",
+            description:
+              "Leverage cutting-edge AI solutions to boost efficiency and drive innovation.",
+            buttonText: "Get Started",
+          }
         },
         {
           icon: getIcon("fa", "ChartLine"),
@@ -430,6 +441,12 @@ const collections = [
             "Drive targeted traffic to your online channels through strategic digital marketing campaigns that deliver measurable results.",
             "Our Digital Marketing services encompass everything you need to expand your brand’s reach and sharpen your competitive edge. From paid advertising and social media marketing to content creation and influencer partnerships, we custom-tailor campaigns to align with your brand voice and target audience. We utilize in-depth market research, performance analytics, and iterative testing to fine-tune each campaign, making sure your marketing spend is effective and efficient. By striking the perfect balance between creativity and data-driven insights, we help you capture new leads, nurture existing customer relationships, and ultimately fuel sustained growth for your business.",
           ],
+          cta: {
+            heading: "Innovate with Expert Guidance",
+            description:
+              "Partner with us for tailored technology consulting solutions that align with your business goals.",
+            buttonText: "Learn More",
+        },
         },
         {
           icon: getIcon("fa", "Laptop"),
@@ -442,6 +459,12 @@ const collections = [
             "Gain strategic insights and expert guidance on implementing technology solutions that align with your business goals.",
             "Our Technology Consulting services provide businesses with the expertise needed to navigate the ever-changing digital landscape. Whether you're planning a digital transformation, optimizing IT infrastructure, or exploring new technologies, we offer actionable recommendations to help you maximize efficiency and drive growth. Our consultants specialize in cloud computing, cybersecurity, software development strategies, and IT architecture, ensuring that your tech stack supports your long-term objectives. By leveraging industry best practices and emerging trends, we empower businesses to make informed technology decisions that deliver lasting impact.",
           ],
+          cta: {
+            heading: "Innovate with Expert Guidance",
+            description:
+              "Partner with us for tailored technology consulting solutions that align with your business goals.",
+            buttonText: "Learn More",
+},
         },
         {
           icon: getIcon("fa", "Headphones"),
@@ -496,6 +519,12 @@ const collections = [
                 featuredImage: TestImage,
               },
             ],
+          },
+          cta: {
+            heading: "Launch Your Digital Product",
+            description:
+              "Transform your content into a scalable digital product that resonates with your audience.",
+            buttonText: "Get Started",
           },
         },
       ],
@@ -990,8 +1019,8 @@ const collections = [
   {
     id: 8,
     collection: "platforms",
-    heading: "Platforms We Support",
-    title: "Platforms",
+    heading: "3rd Party Platforms, Frameworks, and Languages We Use.",
+    title: "Our Platforms",
     featuredImage: TestImage,
     hasPage: false,
     slug: "/platforms",
@@ -1025,7 +1054,7 @@ const collections = [
         },
         {
           title: "React",
-          icon: getIcon("fa", "LaptopCode"),
+          icon: getIcon("fab", "LaptopCode"),
           description: "A powerful library for dynamic UIs.",
           relations: [
             { collection: "services", value: "web-design-development" },
@@ -1047,7 +1076,7 @@ const collections = [
           icon: getIcon("fa", "LaptopCode"),
           description: "Flexible NoSQL databases.",
           relations: [
-            { collection: "services", value: "technology-consulting" },
+            { collection: "services", value: "web-design-development" },
           ],
         },
         {
@@ -1055,7 +1084,7 @@ const collections = [
           icon: getIcon("fa", "LaptopCode"),
           description: "Relational database management system.",
           relations: [
-            { collection: "services", value: "technology-consulting" },
+            { collection: "services", value: "web-design-development" },
           ],
         },
         {
@@ -1064,19 +1093,74 @@ const collections = [
           description: "Popular CMS for content management.",
           relations: [
             { collection: "services", value: "web-design-development" },
-            { collection: "services", value: "hosting-maintenance" },
             { collection: "services", value: "digital-product-development" },
           ],
         },
         {
-          title: "Shopify",
+          title: "Netlify",
           icon: getIcon("fa", "LaptopCode"),
+          description: "Static web hosting and automation.",
+          relations: [
+            { collection: "services", value: "hosting-maintenance" },
+          ],
+        },
+        {
+          title: "Heroku",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Cloud platform for deploying apps.",
+          relations: [
+            { collection: "services", value: "hosting-maintenance" },
+          ],
+        },
+        {
+          title: "AWS",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Amazon Web Services for cloud computing.",
+          relations: [
+            { collection: "services", value: "hosting-maintenance" },
+          ],
+        },
+        {
+          title: "Kinsta",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Managed WordPress and Static hosting.",
+          relations: [
+            { collection: "services", value: "hosting-maintenance" },
+          ],
+        },
+        {
+          title: "Bluehost",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Web hosting services for websites.",
+          relations: [
+            { collection: "services", value: "hosting-maintenance" },
+          ],
+        },
+        {
+          title: "Siteground",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Web hosting services for websites.",
+          relations: [
+            { collection: "services", value: "hosting-maintenance" },
+          ],
+        },
+        {
+          title: "Hostinger",
+          icon: getIcon("fa", "LaptopCode"),
+          description: "Web hosting services for websites.",
+          relations: [
+            { collection: "services", value: "hosting-maintenance" },
+          ],
+        },
+        { 
+          title: "Shopify", 
+          icon: getIcon("fab", "Shopify"), 
           description: "E-commerce platform for online stores.",
           relations: [
             { collection: "services", value: "web-design-development" },
             { collection: "services", value: "hosting-maintenance" },
           ],
-        },
+        },        
         {
           title: "Node.js",
           icon: getIcon("fa", "LaptopCode"),
@@ -1086,42 +1170,44 @@ const collections = [
             { collection: "services", value: "technology-consulting" },
           ],
         },
-        {
-          title: "Bootstrap",
-          icon: getIcon("fa", "LaptopCode"),
+        { 
+          title: "Bootstrap", 
+          icon: getIcon("fab", "Bootstrap"), 
           description: "Front-end framework for responsive design.",
-          relations: [
-            { collection: "services", value: "web-design-development" },
-          ],
-        },
-        {
-          title: "Figma",
-          icon: getIcon("fa", "LaptopCode"),
+          relations: [{ collection: "services", value: "web-design-development" }],
+        },        
+        { 
+          title: "Figma", 
+          icon: getIcon("fab", "Figma"), 
           description: "Collaborative design tool for UI/UX.",
-          relations: [
-            { collection: "services", value: "web-design-development" },
-          ],
+          relations: [{ collection: "services", value: "web-design-development" }],
         },
-        {
-          title: "Framer",
-          icon: getIcon("fa", "LaptopCode"),
+        { 
+          title: "Framer", 
+          icon: getIcon("fab", "Framer"), 
           description: "Interactive prototyping for web & mobile.",
           relations: [
             { collection: "services", value: "web-design-development" },
             { collection: "services", value: "digital-product-development" },
           ],
+        },        
+        { 
+          title: "Next.js", 
+          icon: getIcon("fab", "React"), // Fallback: using the React icon
+          description: "React framework for server-rendered apps.",
+          relations: [{ collection: "services", value: "web-design-development" }],
         },
         {
-          title: "Next.js",
-          icon: getIcon("fa", "LaptopCode"),
-          description: "React framework for server-rendered apps.",
+          title: "Vite",
+          icon: getIcon("fab", "React"), // Fallback: using the React icon
+          description: "Next-generation front-end build tool.",
           relations: [
             { collection: "services", value: "web-design-development" },
           ],
         },
         {
           title: "Gatsby",
-          icon: getIcon("fa", "LaptopCode"),
+          icon: getIcon("fab", "React"), // Fallback: using the React icon
           description: "Static site generator for modern web development.",
           relations: [
             { collection: "services", value: "web-design-development" },
@@ -1129,7 +1215,7 @@ const collections = [
         },
         {
           title: "Astro",
-          icon: getIcon("fa", "LaptopCode"),
+          icon: getIcon("fab", "React"), // Fallback: using the React icon
           description: "Modern web development with less JavaScript.",
           relations: [
             { collection: "services", value: "web-design-development" },
@@ -1148,7 +1234,7 @@ const collections = [
           icon: getIcon("fa", "LaptopCode"),
           description: "Professional image editing software.",
           relations: [
-            { collection: "services", value: "web-design-development" },
+            { collection: "services", value: "digital-marketing" },
             { collection: "services", value: "digital-product-development" },
           ],
         },
@@ -1157,7 +1243,7 @@ const collections = [
           icon: getIcon("fa", "LaptopCode"),
           description: "Vector graphics editor for logos and illustrations.",
           relations: [
-            { collection: "services", value: "web-design-development" },
+            { collection: "services", value: "digital-marketing" },
             { collection: "services", value: "digital-product-development" },
           ],
         },
@@ -1266,7 +1352,6 @@ const homepageOverride = {
     "testimonials",
     "faq",
     "cta",
-    "contact",
   ],
 };
 
