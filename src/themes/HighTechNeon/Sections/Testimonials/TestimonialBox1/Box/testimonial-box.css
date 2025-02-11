@@ -25,10 +25,5 @@
   .position {
     /* font-style: italic; */
     color: var(--maintext-color);
+    margin-top: 5px;
   }
-
-  /* @media (max-width: 1024px) {
-    .testimonial-box {
-      min-height: 400px;
-    }
-  } */

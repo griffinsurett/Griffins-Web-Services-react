@@ -9,9 +9,9 @@ const TestimonialBox = ({ quote, name, position }) => {
   return (
     <Box className="testimonial-box flex column">
       <p className="quote p-small">"{quote}"</p>
-      <div className="flex column item-align-start top-space">
+      <div className="flex column item-align-center top-space text-center">
         <h5>{name}</h5>
-      <p className="position">{position}</p>
+      <p className="position p-xSmall">{position}</p>
       </div>
     </Box>
   );
