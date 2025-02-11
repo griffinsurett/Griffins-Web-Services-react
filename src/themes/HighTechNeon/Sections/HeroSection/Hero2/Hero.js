@@ -8,6 +8,7 @@ import "../../Contact/Contact1/contact-us.css"
 import Form from "../../../Components/Form/Form";
 import InputField from "../../../Components/Inputs/InputField";
 import TextareaField from "../../../Components/Inputs/TextareaField";
+import ContactForm from "../../../Components/Form/ContactForm/ContactForm";
 
 const Hero2 = ({ data }) => {
   const location = useLocation(); // Get the current route
@@ -54,60 +55,7 @@ const Hero2 = ({ data }) => {
 
       {/* Right column: Inline Quote Form */}
       <div className="form-content flex justify-center item-align-center sticky-section">
-        <Form
-          method="POST"
-          action="https://formspree.io/f/myzkpadl"
-          autoComplete="on"
-          className="quote-form p-large"
-          buttonClass={""}
-        >
-          {/* Invisible field to send the current page route */}
-          <InputField type="hidden" name="pageUrl" value={location.pathname} />
-
-          <div className="quote-form-fields">
-            <div className="name-fields flex justify-between">
-              <InputField
-                type="text"
-                name="firstName"
-                placeholder="First Name"
-                className="p-large dynamic-focus-border-effect fade-in"
-              />
-              <InputField
-                type="text"
-                name="lastName"
-                placeholder="Last Name"
-                className="p-large dynamic-focus-border-effect fade-in"
-              />
-            </div>
-            <div className="contact-fields flex justify-between">
-              <InputField
-                type="email"
-                name="email"
-                placeholder="Email"
-                className="p-large dynamic-focus-border-effect fade-in"
-              />
-              <InputField
-                type="tel"
-                name="phone"
-                placeholder="Phone Number"
-                className="p-large dynamic-focus-border-effect fade-in"
-              />
-            </div>
-            <div className="form-group subject-message flex column">
-              <InputField
-                type="text"
-                name="subject"
-                placeholder="Subject"
-                className="p-large dynamic-focus-border-effect fade-in"
-              />
-              <TextareaField
-                name="message"
-                placeholder="Message"
-                className="p-large dynamic-focus-border-effect fade-in"
-              />
-            </div>
-          </div>
-        </Form>
+        <ContactForm/>
       </div>
     </Section>
   );

@@ -7,6 +7,7 @@ import Form from "../../../Components/Form/Form";
 import InputField from "../../../Components/Inputs/InputField";
 import TextareaField from "../../../Components/Inputs/TextareaField";
 import "./contact-us.css"; // For contact-info styling
+import ContactForm from "../../../Components/Form/ContactForm/ContactForm";
 
 function Contact1({ data }) {
   if (!data) {
@@ -48,56 +49,7 @@ function Contact1({ data }) {
         </div>
       </ContentTemplate>
 
-      {/* Our Form (method, action, etc.) plus fields as children */}
-      <Form
-        method={formConfig.method || "POST"}
-        action={formConfig.action || "#"}
-        autoComplete="on"
-        buttonText={formConfig.button?.text || "Submit"}
-        buttonClass={formConfig.button?.class || ""}
-      >
-        {/* The field layout (same slices) */}
-        <div className="form-group column">
-          <div className="form-group">
-            <div className="name-fields flex justify-between">
-              {formConfig.formFields?.slice(0, 2).map((field, idx) => (
-                <InputField
-                  key={idx}
-                  name={field.name}
-                  placeholder={field.placeholder}
-                />
-              ))}
-            </div>
-            <div className="contact-fields flex justify-between">
-              {formConfig.formFields?.slice(2, 4).map((field, idx) => (
-                <InputField
-                  key={idx}
-                  name={field.name}
-                  placeholder={field.placeholder}
-                />
-              ))}
-            </div>
-          </div>
-
-          <div className="form-group subject-message">
-            {formConfig.formFields?.slice(4, 5).map((field, idx) => (
-              <InputField
-                key={idx}
-                name={field.name}
-                placeholder={field.placeholder}
-              />
-            ))}
-            {formConfig.formFields?.slice(5, 6).map((field, idx) => (
-              <TextareaField
-                key={idx}
-                name={field.name}
-                placeholder={field.placeholder}
-                className="textarea-field"
-              />
-            ))}
-          </div>
-        </div>
-      </Form>
+      <ContactForm/>
     </Section>
   );
 }
