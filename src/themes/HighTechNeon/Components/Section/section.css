@@ -1,20 +1,28 @@
 /* section.css */
 :root {
     --section-padding: 10em 0;
-    }
-
-    section {
-        position: relative;
-    }
-
-    .section-padding {
-        padding: var(--section-padding);
-    }
-
-    .section-margin {
-        margin: var(--section-padding);
-    }
-
-.section-innerdiv {
+  }
+  
+  section {
+    position: relative;
+  }
+  
+  .section-padding {
+    padding: var(--section-padding);
+  }
+  
+  .section-margin {
+    margin: var(--section-padding);
+  }
+  
+  .section-innerdiv {
     /* padding: 40px; */
-}
+  }
+  
+  /* On mobile screens, update the section padding to 6em 0 */
+  @media (max-width: 768px) {
+    :root {
+      --section-padding: 6em 0;
+    }
+  }
+  
