@@ -7,11 +7,12 @@ import Box from "../../../../Components/Box/Box";
 
 const TestimonialBox = ({ quote, name, position }) => {
   return (
-    <Box className="testimonial-box flex column justify-left item-align-center">
+    <Box className="testimonial-box flex column">
       <p className="quote p-small">"{quote}"</p>
-      <p className="name">
-      {name}, <span className="position">{position}</span>
-      </p>
+      <div className="flex column item-align-start top-space">
+        <h5>{name}</h5>
+      <p className="position">{position}</p>
+      </div>
     </Box>
   );
 };

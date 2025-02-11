@@ -17,7 +17,7 @@ const pricingLink = "https://calendly.com/griffinswebservices/30min";
  */
 const siteSettings = {
   siteTitle: "Griffins Web Services",
-  siteTagline: "Empowering Your Digital Presence",
+  siteTagline: "Websites and All Things Digital",
   siteDescription:
     "At Griffins Web Services, we create stunning websites and provide top-notch digital marketing solutions to help your business flourish online.",
   siteLogo: Logo,

@@ -59,7 +59,7 @@ const Projects = ({ data }) => {
               index={itemIndex}
             />
           )}
-          className="flex flex-wrap justify-center items-stretch gap-6"
+          className="flex flex-wrap justify-center items-stretch gap-6 top-space"
           maxColumns={ColumnEquation(items)}
           layout="flex flex-wrap justify-center items-stretch gap-6"
           emptyComponent={
