@@ -50,11 +50,9 @@
 }
 }
 
-@media (min-width: 768px) {
-    .hero-left-container h1 {
-        padding: 5px 0;
-    }
 
+
+@media (min-width: 768px) {
     .hero-left p {
         margin-top: 1pc;
     }
@@ -78,6 +76,7 @@
 @media (max-width: 495px) {
     #hero-section {
         height: var(--hero-height);
+
     }
 }
 

@@ -29,7 +29,7 @@ const Hero1 = ({ data }) => {
           buttonText={data.CTAButton}
           buttonLink={data.CTALink}
           className="hero-content"
-          headingClass="text-shadow-for-dark"
+          headingClass="text-shadow-for-dark hero-heading"
           paragraphClass="p-small"
           buttonClass="p-small"
           buttonSecClass="hero-btn-container smaller-top-space smaller-bottom-space flex justify-left"
