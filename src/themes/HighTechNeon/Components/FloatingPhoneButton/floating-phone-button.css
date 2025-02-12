@@ -2,7 +2,7 @@
     position: fixed;
     bottom: 60px;          
     right: 30px;           
-    z-index: 9999; 
+    z-index: 999; 
     transition: opacity 1.5s ease; 
   }
   

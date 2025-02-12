@@ -24,7 +24,7 @@ const FloatingPhoneButton = () => {
 
   // 4) Render an anchor with our <Icon> component
   return (
-    <a className="floating-phone-button styled-icon dynamic-border-effect" href={telLink} aria-label="Call us">
+    <a className="floating-phone-button styled-icon dynamic-border-effect dynamic-hover-border-effect" href={telLink} aria-label="Call us">
       {/* Use the phone icon from the CMS */}
       {phoneEntry.icon && (
         <Icon icon={phoneEntry.icon} />

@@ -628,7 +628,7 @@ const collections = [
     addToQuery: [{ name: "Primary" }],
     items: {
       itemsHasPage: true,
-      itemSections: ["hero", "services", "testimonials", "cta"],
+      itemSections: ["hero", "services", "testimonials", "platforms","cta"],
       data: [
         {
           id: 1,
@@ -667,7 +667,68 @@ const collections = [
               collection: "services",
               value: "hosting-maintenance",
             },
+            {
+              collection: "platforms",
+              value: "html",
+            },
+            {
+              collection: "platforms",
+              value: "css",
+            },
+            {
+              collection: "platforms",
+              value: "javascript",
+            },
+            {
+              collection: "platforms",
+              value: "wordpress",
+            },
+            {
+              collection: "platforms",
+              value: "sql",
+            },
+            {
+              collection: "platforms",
+              value: "adobephotoshop",
+            },
+            {
+              collection: "platforms",
+              value: "adobeillustrator",
+            },
+            {
+              collection: "platforms",
+              value: "adobepremierepro",
+            },
+            {
+              collection: "platforms",
+              value: "canva",
+            },
+            {
+              collection: "platforms",
+              value: "mailchimp",
+            },
+            {
+              collection: "platforms",
+              value: "googleanalytics",
+            },
+            {
+              collection: "platforms",
+              value: "facebookads",
+            },
+            {
+              collection: "platforms",
+              value: "thinkific",
+            },
+            {
+              collection: "platforms",
+              value: "kinsta",
+            },
           ],
+          cta: {
+            heading: "Ready to take your website to the next level?",
+            description: "Schedule a free 30-minute consultation to discuss your project.",
+            buttonText: "Schedule a Call",
+          },
         },
         {
           id: 2,
@@ -694,7 +755,48 @@ const collections = [
               collection: "services",
               value: "hosting-maintenance",
             },
+            {
+              collection: "platforms",
+              value: "html",
+            },
+            {
+              collection: "platforms",
+              value: "css",
+            },
+            {
+              collection: "platforms",
+              value: "javascript",
+            },
+            {
+              collection: "platforms",
+              value: "wordpress",
+            },
+            {
+              collection: "platforms",
+              value: "sql",
+            },
+            {
+              collection: "platforms",
+              value: "adobephotoshop",
+            },
+            {
+              collection: "platforms",
+              value: "adobeillustrator",
+            },
+            {
+              collection: "platforms",
+              value: "canva",
+            },
+            {
+              collection: "platforms",
+              value: "kinsta",
+            },
           ],
+          cta: {
+            heading: "Ready to take your website to the next level?",
+            description: "Schedule a free 30-minute consultation to discuss your project.",
+            buttonText: "Schedule a Call",
+          },
         },
         {
           id: 3,
@@ -721,7 +823,48 @@ const collections = [
               collection: "services",
               value: "hosting-maintenance",
             },
+            {
+              collection: "platforms",
+              value: "html",
+            },
+            {
+              collection: "platforms",
+              value: "css",
+            },
+            {
+              collection: "platforms",
+              value: "javascript",
+            },
+            {
+              collection: "platforms",
+              value: "wordpress",
+            },
+            {
+              collection: "platforms",
+              value: "sql",
+            },
+            {
+              collection: "platforms",
+              value: "adobephotoshop",
+            },
+            {
+              collection: "platforms",
+              value: "adobeillustrator",
+            },
+            {
+              collection: "platforms",
+              value: "canva",
+            },
+            {
+              collection: "platforms",
+              value: "kinsta",
+            },
           ],
+          cta: {
+            heading: "Ready to take your website to the next level?",
+            description: "Schedule a free 30-minute consultation to discuss your project.",
+            buttonText: "Schedule a Call",
+          },
         },
         {
           id: 4,
@@ -752,7 +895,48 @@ const collections = [
               collection: "services",
               value: "hosting-maintenance",
             },
+            {
+              collection: "platforms",
+              value: "html",
+            },
+            {
+              collection: "platforms",
+              value: "css",
+            },
+            {
+              collection: "platforms",
+              value: "javascript",
+            },
+            {
+              collection: "platforms",
+              value: "wordpress",
+            },
+            {
+              collection: "platforms",
+              value: "sql",
+            },
+            {
+              collection: "platforms",
+              value: "adobephotoshop",
+            },
+            {
+              collection: "platforms",
+              value: "adobeillustrator",
+            },
+            {
+              collection: "platforms",
+              value: "canva",
+            },
+            {
+              collection: "platforms",
+              value: "kinsta",
+            },
           ],
+          cta: {
+            heading: "Ready to take your website to the next level?",
+            description: "Schedule a free 30-minute consultation to discuss your project.",
+            buttonText: "Schedule a Call",
+          },
         },
       ],
     },
@@ -1025,30 +1209,35 @@ const collections = [
     data: [
       {
         title: "HTML",
+        slug: "/html",
         icon: getIcon("si", "Html5"),
         description: "The backbone for webpage structure.",
         relations: [{ collection: "services", value: "web-design-development" }],
       },
       {
         title: "CSS",
+        slug: "/css",
         icon: getIcon("si", "Css3"),
         description: "Styling with modern layouts & animations.",
         relations: [{ collection: "services", value: "web-design-development" }],
       },
       {
         title: "JavaScript",
+        slug: "/javascript",
         icon: getIcon("si", "Javascript"),
         description: "Core scripting for interactive apps.",
         relations: [{ collection: "services", value: "web-design-development" }],
       },
       {
         title: "React",
+        slug: "/react",
         icon: getIcon("si", "React"),
         description: "A powerful library for dynamic UIs.",
         relations: [{ collection: "services", value: "web-design-development" }],
       },
       {
         title: "Node.js",
+        slug: "/nodejs",
         icon: getIcon("si", "React"),
         description: "Scalable back-end JavaScript runtime.",
         relations: [
@@ -1058,18 +1247,21 @@ const collections = [
       },
       {
         title: "MongoDb",
+        slug: "/mongodb",
         icon: getIcon("si", "Mongodb"),
         description: "Flexible NoSQL databases.",
         relations: [{ collection: "services", value: "web-design-development" }],
       },
       {
         title: "SQL",
+        slug: "/sql",
         icon: getIcon("si", "Mysql"),
         description: "Relational database management system.",
         relations: [{ collection: "services", value: "web-design-development" }],
       },
       {
         title: "WordPress",
+        slug: "/wordpress",
         icon: getIcon("si", "Wordpress"),
         description: "Popular CMS for content management.",
         relations: [
@@ -1079,48 +1271,56 @@ const collections = [
       },
       {
         title: "Netlify",
+        slug: "/netlify",
         icon: getIcon("si", "Netlify"),
         description: "Static web hosting and automation.",
         relations: [{ collection: "services", value: "hosting-maintenance" }],
       },
       {
         title: "Heroku",
+        slug: "/heroku",
         icon: getIcon("si", "Heroku"),
         description: "Cloud platform for deploying apps.",
         relations: [{ collection: "services", value: "hosting-maintenance" }],
       },
       {
         title: "AWS",
+        slug: "/aws",
         icon: getIcon("si", "Amazon"),
         description: "Amazon Web Services for cloud computing.",
         relations: [{ collection: "services", value: "hosting-maintenance" }],
       },
       {
         title: "Kinsta",
+        slug: "/kinsta",
         icon: getIcon("si", "Kinsta"),
         description: "Managed WordPress and static hosting.",
         relations: [{ collection: "services", value: "hosting-maintenance" }],
       },
       {
         title: "Bluehost",
+        slug: "/bluehost",
         icon: getIcon("si", "Kinsta"),
         description: "Web hosting services for websites.",
         relations: [{ collection: "services", value: "hosting-maintenance" }],
       },
       {
         title: "Siteground",
+        slug: "/siteground",
         icon: getIcon("si", "Kinsta"),
         description: "Web hosting services for websites.",
         relations: [{ collection: "services", value: "hosting-maintenance" }],
       },
       {
         title: "Hostinger",
+        slug: "/hostinger",
         icon: getIcon("si", "Hostinger"),
         description: "Web hosting services for websites.",
         relations: [{ collection: "services", value: "hosting-maintenance" }],
       },
       {
         title: "Shopify",
+        slug: "/shopify",
         icon: getIcon("si", "Shopify"),
         description: "E-commerce platform for online stores.",
         relations: [
@@ -1130,6 +1330,7 @@ const collections = [
       },
       {
         title: "Node.js",
+        slug: "/nodejs",
         icon: getIcon("si", "NodeDotJs"),
         description: "Scalable back-end JavaScript runtime.",
         relations: [
@@ -1139,18 +1340,21 @@ const collections = [
       },
       {
         title: "Bootstrap",
+        slug: "/bootstrap",
         icon: getIcon("si", "Bootstrap"),
         description: "Front-end framework for responsive design.",
         relations: [{ collection: "services", value: "web-design-development" }],
       },
       {
         title: "Figma",
+        slug: "/figma",
         icon: getIcon("si", "Figma"),
         description: "Collaborative design tool for UI/UX.",
         relations: [{ collection: "services", value: "web-design-development" }],
       },
       {
         title: "Framer",
+        slug: "/framer",
         icon: getIcon("si", "Framer"),
         description: "Interactive prototyping for web & mobile.",
         relations: [
@@ -1160,36 +1364,42 @@ const collections = [
       },
       {
         title: "Next.js",
+        slug: "/nextjs",
         icon: getIcon("si", "Nextdotjs"),
         description: "React framework for server-rendered apps.",
         relations: [{ collection: "services", value: "web-design-development" }],
       },
       {
         title: "Vite",
+        slug: "/vite",
         icon: getIcon("si", "Vite"),
         description: "Next-generation front-end build tool.",
         relations: [{ collection: "services", value: "web-design-development" }],
       },
       {
         title: "Gatsby",
+        slug: "/gatsby",
         icon: getIcon("si", "Gatsby"),
         description: "Static site generator for modern web development.",
         relations: [{ collection: "services", value: "web-design-development" }],
       },
       {
         title: "Astro",
+        slug: "/astro",
         icon: getIcon("si", "Astro"),
         description: "Modern web development with less JavaScript.",
         relations: [{ collection: "services", value: "web-design-development" }],
       },
       {
         title: "Tailwind CSS",
+        slug: "/tailwindcss",
         icon: getIcon("si", "Tailwindcss"),
         description: "Utility-first CSS framework for rapid development.",
         relations: [{ collection: "services", value: "web-design-development" }],
       },     
       {
         title: "Adobe Photoshop",
+        slug: "/adobephotoshop",
         icon: getIcon("si", "Adobephotoshop"),
         description: "Professional image editing software.",
         relations: [
@@ -1199,6 +1409,7 @@ const collections = [
       },
       {
         title: "Adobe Illustrator",
+        slug: "/adobeillustrator",
         icon: getIcon("si", "Adobeillustrator"),
         description: "Vector graphics editor for logos and illustrations.",
         relations: [
@@ -1208,6 +1419,7 @@ const collections = [
       },
       {
         title: "Adobe Premiere Pro",
+        slug: "/adobepremierepro",
         icon: getIcon("si", "Adobepremierepro"),
         description: "Professional image editing software.",
         relations: [
@@ -1217,72 +1429,84 @@ const collections = [
       },
       {
         title: "Canva",
+        slug: "/canva",
         icon: getIcon("si", "Canva"),
         description: "Online design tool for social media graphics.",
         relations: [{ collection: "services", value: "digital-marketing" }, { collection: "services", value: "digital-product-development" },        ],
       },
       {
         title: "Mailchimp",
+        slug: "/mailchimp",
         icon: getIcon("si", "Mailchimp"),
         description: "Email marketing platform for campaigns.",
         relations: [{ collection: "services", value: "digital-marketing" }],
       },
       {
         title: "HubSpot",
+        slug: "/hubspot",
         icon: getIcon("si", "Hubspot"),
         description: "All‑in‑one marketing, sales, and service platform for growing your business.",
         relations: [{ collection: "services", value: "digital-marketing" }],
       },
       {
         title: "GoHighLevel",
+        slug: "/gohighlevel",
         icon: getIcon("fa", "Bullhorn"),
         description: "A comprehensive marketing automation platform designed for agencies and small businesses.",
         relations: [{ collection: "services", value: "digital-marketing" }],
       },
       {
         title: "Google Analytics",
+        slug: "/googleanalytics",
         icon: getIcon("si", "Googleanalytics"),
         description: "Web analytics service for tracking site performance.",
         relations: [{ collection: "services", value: "digital-marketing" }],
       },
       {
         title: "Facebook Ads",
+        slug: "/facebookads",
         icon: getIcon("si", "Facebook"),
         description: "Advertising platform for targeted campaigns.",
         relations: [{ collection: "services", value: "digital-marketing" }],
       },
       {
         title: "Teachable",
+        slug: "/teachable",
         icon: getIcon("si", "Facebook"),
         description: "Online course platform for creators.",
         relations: [{ collection: "services", value: "digital-product-development" }],
       },
       {
         title: "Thinkific",
+        slug: "/thinkific",
         icon: getIcon("si", "Facebook"),
         description: "Course creation platform for educators.",
         relations: [{ collection: "services", value: "digital-product-development" }],
       },
       {
         title: "Udemy",
+        slug: "/udemy",
         icon: getIcon("si", "Udemy"),
         description: "Global marketplace for online courses.",
         relations: [{ collection: "services", value: "digital-product-development" }],
       },
       {
         title: "Spotify",
+        slug: "/spotify",
         icon: getIcon("si", "Spotify"),
         description: "Music streaming service for artists and listeners.",
         relations: [{ collection: "services", value: "digital-product-development" }],
       },
       {
         title: "Audible",
+        slug: "/audible",
         icon: getIcon("si", "Audible"),
         description: "Audiobook platform for authors and listeners.",
         relations: [{ collection: "services", value: "digital-product-development" }],
       },
       {
         title: "Distrokid",
+        slug: "/distrokid",
         icon: getIcon("si", "Distrokid"),
         description: "Music distribution platform for independent artists.",
         relations: [{ collection: "services", value: "digital-product-development" }],
