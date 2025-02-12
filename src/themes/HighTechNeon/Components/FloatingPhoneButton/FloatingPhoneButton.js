@@ -1,3 +1,4 @@
+// FloatingPhoneButton.js
 import React from "react";
 import { getCollection } from "../../../../CMS/Utils/GetContent/GetCollection";
 import Icon from "../Icon/Icon";
@@ -9,7 +10,7 @@ const FloatingPhoneButton = () => {
   if (!contactCollection?.contactInfo) {
     return null;
   }
-
+  
   // 2) Find the phone entry (labeled "Phone")
   const phoneEntry = contactCollection.contactInfo.find(
     info => info.label?.toLowerCase() === "phone"
@@ -26,7 +27,7 @@ const FloatingPhoneButton = () => {
     <a className="floating-phone-button styled-icon dynamic-border-effect" href={telLink} aria-label="Call us">
       {/* Use the phone icon from the CMS */}
       {phoneEntry.icon && (
-        <Icon icon={phoneEntry.icon} size="2.5em" />
+        <Icon icon={phoneEntry.icon} />
       )}
     </a>
   );
