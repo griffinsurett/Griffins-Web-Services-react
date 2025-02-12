@@ -29,7 +29,7 @@ const ProjectHero = ({ data }) => {
   return (
     <Section
       id="hero2"
-      className="project-hero flex justify-between-section item-align-start full-height responsive responsive-center responsive-spacing"
+      className="project-hero flex justify-between-section item-align-start full-height responsive-center responsive-spacing"
     >
       {/* Left column: The usual content template */}
       <ContentTemplate
