@@ -23,7 +23,7 @@ function FAQ({ data }) {
         title={data.title}
         titleClass={"text-center"}
         headingClass={"flex text-center justify-center"}
-        paragraph1={data.paragraph}
+        paragraph1={data.description}
         paragraphClass="p-large text-center"
       />
 

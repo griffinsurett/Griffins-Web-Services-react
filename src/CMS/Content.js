@@ -1150,7 +1150,7 @@ const collections = [
       data: [
       {
         title: "Is the domain name included with the website?",
-        content:
+        description:
           "Setting up your domain is included and part of the process as well as the SSL Certificate with our hosting provider, however buying the domain name is not included with the price of the website. And something you will have to do, however, not to worry it will usually only cost you around $8-$12 a year and super easy to buy it. We will assist you in doing so and then you can leave the rest of the work to us!",
         relations: [
           {
@@ -1161,7 +1161,7 @@ const collections = [
       },
       {
         title: "Can you make my website mobile-friendly?",
-        content:
+        description:
           "Absolutely. 100%, With the growing number of mobile users, it’s crucial to have a website that looks and works great on all devices. All of our websites are designed to be responsive, meaning they will adapt to the screen size of the device they’re being viewed on.",
         relations: [
           {
@@ -1172,7 +1172,7 @@ const collections = [
       },
       {
         title: "What's your cancellation policy for the site management plan?",
-        content:
+        description:
           "Our goal is to make our clients happy and satisfied with our services. If for any reason you wish to cancel your monthly plan, just let us know.",
         relations: [
           {
@@ -1183,7 +1183,7 @@ const collections = [
       },
       {
         title: `How does ${siteSettings.siteTitle} handle security, and what ongoing support is provided?`,
-        content: `At ${siteSettings.siteTitle}, security is a priority for every site we build. We carefully choose trusted plugins and top-tier hosting services, known for their robust security measures, for all our clients. However, ongoing maintenance requires an extended management plan.`,
+        description: `At ${siteSettings.siteTitle}, security is a priority for every site we build. We carefully choose trusted plugins and top-tier hosting services, known for their robust security measures, for all our clients. However, ongoing maintenance requires an extended management plan.`,
         relations: [
           {
             collection: "services",
@@ -1193,7 +1193,7 @@ const collections = [
       },
       {
         title: `Privacy Policies, Terms and Conditions, etc. How does ${siteSettings.siteTitle} clarify to users information about these types of privacy issues?`,
-        content:
+        description:
           "We are not legal experts and recommend consulting with a lawyer to ensure compliance with all privacy and legal regulations.",
         relations: [
           {
@@ -1216,7 +1216,7 @@ const collections = [
       },
       {
         title: "Can you help me with email marketing?",
-        content: `Absolutely, with ${siteSettings.siteTitle}, we can set your website up with all the tools to create an effective email marketing campaign. We can help you create email lists as well as design the user interface for people to sign up as well as provide you with a team of individuals who can manage your day-to-day email marketing campaigns.`,
+        description: `Absolutely, with ${siteSettings.siteTitle}, we can set your website up with all the tools to create an effective email marketing campaign. We can help you create email lists as well as design the user interface for people to sign up as well as provide you with a team of individuals who can manage your day-to-day email marketing campaigns.`,
         relations: [
           {
             collection: "services",
@@ -1227,7 +1227,7 @@ const collections = [
       {
         title:
           "I run a restaurant and I'm looking for a website that can handle reservations and online orders. Can Griffin's Web Services help with this?",
-        content: `Absolutely! At ${siteSettings.siteTitle}, we specialize in building custom websites for restaurants and various other local businesses. We can seamlessly integrate popular reservation platforms and develop a custom reservation system.`,
+          description: `Absolutely! At ${siteSettings.siteTitle}, we specialize in building custom websites for restaurants and various other local businesses. We can seamlessly integrate popular reservation platforms and develop a custom reservation system.`,
         relations: [
           {
             collection: "services",
@@ -1241,7 +1241,7 @@ const collections = [
       },
       {
         title: "Can you help me with social media?",
-        content:
+        description:
           "Yes, we can help you integrate social media tools for platforms like Facebook, Instagram, and TikTok into your website and provide a team to manage your campaigns.",
         relations: [
           {
@@ -1252,7 +1252,7 @@ const collections = [
       },
       {
         title: "What types of businesses have you worked with in the past?",
-        content:
+        description:
           "We have worked with a broad range of businesses across various sectors such as restaurants, local services, e-commerce, online courses, and more.",
         relations: [
           {
@@ -1283,7 +1283,7 @@ const collections = [
       },
       {
         title: "How does your quote process work?",
-        content:
+        description:
           "You can book a quote directly on our website. We’ll arrange a consultation, where we’ll discuss your requirements and expectations, and then provide you with a detailed quote for your project.",
         relations: [
           {
