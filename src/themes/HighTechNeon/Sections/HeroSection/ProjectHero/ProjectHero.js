@@ -1,48 +1,61 @@
 // src/themes/HighTechNeon/Sections/HeroSection/ProjectHero/ProjectHero.js
 import React from "react";
+import { useLocation } from "react-router-dom"; // Import useLocation
 import Section from "../../../Components/Section/Section";
 import ContentTemplate from "../../../Components/ContentTemplate/ContentTemplate";
 import "./project-hero.css";
+import "../../Contact/Contact1/contact-us.css";
 
 const ProjectHero = ({ data }) => {
+  const location = useLocation(); // Get the current route
+
   if (!data) {
-    return <div>Error: No project data found for the hero.</div>;
+    return <div>Error: No hero data found</div>;
   }
 
-  console.log("ProjectHero data: ", data);
+  // Destructure the featuredImage from data:
+  const { featuredImage } = data;
 
-  // Assume the project item includes a featured image URL
-  const featuredImage = data.featuredImage; // adjust property name if needed
+  // Get two paragraphs from data.content (if available)
+  const paragraph1 =
+    Array.isArray(data.content) && data.content.length > 0
+      ? data.content[0]
+      : "";
+  const paragraph2 =
+    Array.isArray(data.content) && data.content.length > 1
+      ? data.content[1]
+      : "";
 
   return (
     <Section
-      id="project-hero"
-      className="project-hero-section flex item-align-center responsive hero-height section-gap"
+      id="hero2"
+      className="hero2-section flex justify-between-section item-align-start full-height responsive responsive-center responsive-spacing"
     >
-      {/* Left: Content template */}
-      <div className="project-hero-left w50">
-        <ContentTemplate
-          isHero
-          ifParagraph
-          contentWrapClass="column"
-          title={data.projectTitle || data.siteTitle}
-          heading={data.projectSubtitle || data.siteTagline}
-          paragraph1={data.projectDescription || data.siteDescription}
-          ifButton
-          buttonBottom
-          buttonText={data.CTAButton}
-          buttonLink={data.CTALink}
-          className="project-hero-content"
-          headingClass="text-shadow-for-dark project-hero-heading"
-          paragraphClass="p-small"
-          buttonClass="p-small"
-          buttonSecClass="project-hero-btn-container smaller-top-space smaller-bottom-space flex justify-left"
-          titleClass="section-title"
-        />
-      </div>
+      {/* Left column: The usual content template */}
+      <ContentTemplate
+        data={data}
+        isHero={true}
+        ifParagraph={true}
+        ifButton={true}
+        buttonText={"View Site"}
+        buttonLink={data.link}
+        className={"hero2-content w50"}
+        id={"nonhomehero"}
+        title={data.siteTitle || ""}
+        heading={data.pageTitle || ""}
+        contentWrapClass="column"
+        headingClass="hero2-heading responsive-left"
+        titleClass="responsive-left"
+        paragraphClass="flex justify-center column responsive-center"
+        paragraph1={paragraph1}
+        paragraph1Class="top-paragraph p-xLarge font-weight-regular text-left self-left"
+        paragraph2={paragraph2}
+        paragraph2Class="bottom-paragraph text-left negative-top smaller-top-space smaller-bottom-space responsive-left"
+        buttonSecClass={"top-space"}
+      />
 
       {/* Right: Featured Image */}
-      <div className="project-hero-right w50 flex justify-center item-align-center">
+      <div className="project-hero-right w50 flex justify-center item-align-center sticky-section">
         {featuredImage ? (
           <img
             src={featuredImage}

@@ -1,0 +1,16 @@
+/* src/themes/HighTechNeon/Sections/Gallery/gallery.css */
+.gallery-section {
+    padding: var(--primary-padding) 0;
+  }
+  
+  .gallery-header {
+    margin-bottom: var(--primary-padding);
+  }
+  
+  .gallery-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  

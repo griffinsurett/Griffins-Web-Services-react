@@ -2,32 +2,37 @@
 import React, { lazy, Suspense } from "react";
 import Preloader from "../../Components/Preloader/Preloader";
 
-// Lazy-load your hero components
-const Hero1 = lazy(() => import("./Hero1/Hero")); // Homepage hero
-const Hero2 = lazy(() => import("./Hero2/Hero")); // Service item hero
-const Hero3 = lazy(() => import("./Hero3/Hero")); // Default hero for all other pages
+// Lazy-load your hero components:
+const Hero1 = lazy(() => import("./Hero1/Hero"));       // Homepage hero
+const Hero2 = lazy(() => import("./Hero2/Hero"));           // Service item hero
+const Hero3 = lazy(() => import("./Hero3/Hero"));           // Default hero for other pages
+const ProjectHero = lazy(() => import("./ProjectHero/ProjectHero")); // Project item hero
 
 /**
  * HeroDisplay:
- * - If isHomepage is true, displays Hero1.
- * - Else if isServiceItem is true, displays Hero2.
- * - Otherwise, displays Hero3.
+ * Renders the appropriate hero component based on the consolidated page type.
  *
- * @param {boolean} isHomepage - True when on the homepage.
- * @param {boolean} isServiceItem - True when on a service item page.
- * @param {object} heroData - Data object with siteTitle, pageTitle, description, etc.
+ * @param {object} props - Contains pageType and heroData.
+ * @param {string} props.pageType - One of: "home", "serviceItem", "projectItem", or "static".
+ * @param {object} props.heroData - Data for the hero.
  */
-const HeroDisplay = ({ isHomepage, isServiceItem, heroData }) => {
-  if (isHomepage) {
+const HeroDisplay = ({ pageType, heroData }) => {
+  if (pageType === "home") {
     return (
       <Suspense fallback={<Preloader />}>
         <Hero1 data={heroData} />
       </Suspense>
     );
-  } else if (isServiceItem) {
+  } else if (pageType === "serviceItem") {
     return (
       <Suspense fallback={<Preloader />}>
         <Hero2 data={heroData} />
+      </Suspense>
+    );
+  } else if (pageType === "projectItem") {
+    return (
+      <Suspense fallback={<Preloader />}>
+        <ProjectHero data={heroData} />
       </Suspense>
     );
   } else {

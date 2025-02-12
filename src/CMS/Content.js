@@ -628,7 +628,7 @@ const collections = [
     addToQuery: [{ name: "Primary" }],
     items: {
       itemsHasPage: true,
-      itemSections: ["hero",  "platforms", "services", "testimonials", "cta"],
+      itemSections: ["hero", "gallery", "platforms", "services", "testimonials", "cta"],
       data: [
         {
           id: 1,
@@ -642,6 +642,50 @@ const collections = [
             "For i-75 CPA Review, we built a robust e-commerce platform featuring responsive landing pages, intuitive navigation, and a design that reinforces trust in financial education.",
             "We also implemented targeted branding and digital marketing strategies that boosted the company’s online presence and conversions.",
           ],
+          gallery: {
+            title: "gallery",
+            heading: "See what makes this project special",
+            makeObjectSection: true,
+              items: [
+                {
+                  title: "i-75 logo",
+                  media: `${process.env.PUBLIC_URL}/i-75 logo small.png`,
+                },
+                {
+                  title: "i-75 Website mockup",
+                  media: `${process.env.PUBLIC_URL}/i75CPAmockup.png`,
+                },
+                {
+                  title: "i-75 CMA Thumbnail",
+                  media: `${process.env.PUBLIC_URL}/youtube-thumbnail-maker-for-an-abstract-vlog-933.png`,
+                },
+                {
+                  title: "i-75 March Madness Special",
+                  media: `${process.env.PUBLIC_URL}/facebook-post-generator-featuring-a-hiking-boot-graphic-2243b.png`,
+                },
+                {
+                  title: "i-75 Skinny Bundle Art",
+                  media: `${process.env.PUBLIC_URL}/facebook-post-generator-featuring-a-hiking-boot-graphic-2243b (2).png`,
+                },
+                {
+                  title: "i-75 Any 2 Parts",
+                  media: `${process.env.PUBLIC_URL}/facebook-post-generator-featuring-a-hiking-boot-graphic-2243b2.png`,
+                },
+                {
+                  title: "i-75 4 Parts",
+                  media: `${process.env.PUBLIC_URL}/facebook-post-generator-featuring-a-hiking-boot-graphic-2243b (1).png`,
+                },
+                {
+                  title: "i-75 Score Release Special",
+                  media: `${process.env.PUBLIC_URL}/All 6 Parts (3).png`,
+                },
+                {
+                  title: "i-75 Score Release Special",
+                  media: `${process.env.PUBLIC_URL}/instagram-story-creator-featuring-a-graffiti-crown-pattern-for-a-musician-s-new-album-ad-1946h 2.png`,
+                },
+              ],
+              
+          },
           relations: [
             {
               collection: "services",
@@ -742,6 +786,25 @@ const collections = [
             "For Faria's Demolition, we developed a website that effectively showcased their services through engaging galleries and clear service information.",
             "The site was optimized for user experience and conversion, ensuring that prospective clients can easily request estimates or contact the company.",
           ],
+          gallery: {
+            title: "gallery",
+            heading: "See what makes this project special",
+            makeObjectSection: true,
+            items: [
+              {
+                title: "Faria's Demolition Desktop",
+                media: `${process.env.PUBLIC_URL}/FariasDesktop.png`,
+              },
+              {
+                title: "Faria's Demolition Mobile",
+                media: `${process.env.PUBLIC_URL}/fariasmobile.png`,
+              },
+              {
+                title: "Faria's Truck",
+                media: `${process.env.PUBLIC_URL}/front-of-truck.jpg`,
+              }
+            ]
+          },
           relations: [
             {
               collection: "services",
@@ -810,6 +873,46 @@ const collections = [
             "For Koi Roofing and Solar, we crafted a modern, mobile-friendly website that highlighted their solar and roofing services with a focus on transparency and sustainability.",
             "Our approach combined clean design with strong call-to-action elements and SEO best practices to drive quality traffic.",
           ],
+          gallery: {
+            title: "gallery",
+            heading: "See what makes this project special",
+            makeObjectSection: true,
+            items: [
+              {
+                title: "Koi Solar Mobile",
+                media: `${process.env.PUBLIC_URL}/Koisolarroofmobile.png`,
+              },
+              {
+                title: "Koi Solar Logo",
+                media: `${process.env.PUBLIC_URL}/Koisolarroof.png`,
+              },
+              {
+                title: "Koi Solar Sun Icon",
+                media: `${process.env.PUBLIC_URL}/sun.webp`,
+              },
+              {
+                title: "Koi Solar Plug Icon",
+                media: `${process.env.PUBLIC_URL}/plug.webp`,
+              },
+       
+              {
+                title: "Koi Solar Sun Panel Icon",
+                media: `${process.env.PUBLIC_URL}/sunpanel.webp`,
+              },
+              {
+                title: "Koi Solar House Icon",
+                media: `${process.env.PUBLIC_URL}/House.webp`,
+              },
+              {
+                title: "Koi Solar Person Panel Icon",
+                media: `${process.env.PUBLIC_URL}/person-panel.webp`,
+              },
+              {
+                title: "Koi Solar Tools Icon",
+                media: `${process.env.PUBLIC_URL}/toolskoi.webp`,
+              },
+            ],
+          },
           relations: [
             {
               collection: "services",
@@ -932,6 +1035,29 @@ const collections = [
               value: "kinsta",
             },
           ],
+          gallery: {
+            title: "gallery",
+            heading: "See what makes this project special",
+            makeObjectSection: true,
+            items: [
+              {
+                title: "Certified Bag Chasers Desktop Site",
+                media: `${process.env.PUBLIC_URL}/certifiedbagchasdesktop.png`,
+              },
+              {
+                title: "Certified Bag Chasers Mobile Site",
+                media: `${process.env.PUBLIC_URL}/certifiedbagchasphone.png`,
+              },
+              {
+                title: "Arold AI Voice",
+                media: `${process.env.PUBLIC_URL}/aroldvoice.png`,
+              },
+              {
+                title: "Certified Bag Chasers Middle of Site",
+                media: `${process.env.PUBLIC_URL}/middleofsite.png`,
+              }
+            ]
+          },
           cta: {
             heading: "Ready to take your website to the next level?",
             description: "Schedule a free 30-minute consultation to discuss your project.",

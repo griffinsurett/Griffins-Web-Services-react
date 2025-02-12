@@ -34,6 +34,16 @@ const sectionComponents = {
   pricing:      lazy(() => import("./Sections/Pricing/Pricing")),
   cta:          lazy(() => import("./Sections/CTA/CTA")),
   platforms:    lazy(() => import("./Sections/Platforms/Platforms")),
+  gallery:     lazy(() => import("./Sections/Gallery/Gallery")),
+};
+
+// Helper function to determine the page type based on pageId
+const getPageType = (pageId) => {
+  if (pageId === "home") return "home";
+  if (pageId === "error") return "error";
+  if (pageId.startsWith("/services") && pageId !== "/services") return "serviceItem";
+  if (pageId.startsWith("/projects") && pageId !== "/projects") return "projectItem";
+  return "static";
 };
 
 const CMSDisplayTheme = memo(() => {
@@ -67,11 +77,9 @@ const CMSDisplayTheme = memo(() => {
 
   // Otherwise, normal page logic
   const menuManager = new MenuManager(siteSettings);
-  const { title, description, heading, content, sections } = pageStructure;
-  const isHomepage = pageId === "home";
-  // If the current page is under the services collection (its slug starts with "/services")
-  // but is not the services collection itself, we consider it a service item.
-  const isServiceItem = pageId.startsWith("/services") && pageId !== "/services";
+  const { title, description, heading, content, sections, featuredImage, } = pageStructure;
+  const pageType = getPageType(pageId); // Consolidated page type
+  const isHomepage = pageType === "home";
 
   // Prepare hero data
   const heroData = {
@@ -79,6 +87,7 @@ const CMSDisplayTheme = memo(() => {
     pageTitle: title,
     pageHeading: heading,
     pageDescription: description,
+    featuredImage: featuredImage,
     content: content,
   };
 
@@ -93,11 +102,8 @@ const CMSDisplayTheme = memo(() => {
       <div className="flex column item-align-center">
         <main className="flex-grow content container" role="main">
           {hasHero && (
-            <HeroDisplay
-              isHomepage={isHomepage}
-              isServiceItem={isServiceItem}
-              heroData={heroData}
-            />
+            // Pass the consolidated pageType to HeroDisplay
+            <HeroDisplay pageType={pageType} heroData={heroData} />
           )}
 
           {/* Render each remaining section by key.

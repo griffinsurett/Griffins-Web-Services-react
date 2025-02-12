@@ -1,0 +1,22 @@
+/* src/themes/HighTechNeon/Sections/Gallery/gallery-item.css */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .gallery-image,
+  .gallery-video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .gallery-caption {
+    text-align: center;
+    margin-top: 10px;
+    font-size: var(--font-size-p-small);
+    color: var(--maintext-color);
+  }
+  
