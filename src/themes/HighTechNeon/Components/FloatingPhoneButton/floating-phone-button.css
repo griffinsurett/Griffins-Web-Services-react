@@ -1,7 +1,7 @@
 .floating-phone-button {
     position: fixed;
     bottom: 60px;          
-    right: 20px;           
+    right: 30px;           
     z-index: 9999; 
     transition: opacity 1.5s ease; 
   }
@@ -14,8 +14,8 @@
   
   @media (min-width: 1024px) {
     .floating-phone-button .icon {
-      font-size: 1.8em;
-      right: 30px;           
+      font-size: 2.2em;
+      /* right: 30px;            */
     }
   }
   

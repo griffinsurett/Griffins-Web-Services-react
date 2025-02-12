@@ -1,58 +1,85 @@
 /* project-item2.css */
 
 .project-item {
-    position: relative;
+  position: relative;
 }
-  
-  .project-link {
-    position: relative;
-    display: block;
-    overflow: hidden; /* Ensure the image doesn't overflow out of the container */
-    transition: all 0.3s ease; /* Smooth transition */
-    border-radius: calc(var(--border-radius)/ 2); 
-  }
-  
-  .project-link:hover {
-    /* Hover effect to scale the background image */
-    transform: scale(1.05); /* Slight scaling effect */
-  }
-  
-  .project-content {
-    width: 100%;
-    height: 100%;
-    padding: var(--primary-padding);
-  }
-  
-  .project-content h5,
-  .project-content p {
-    margin: 0;
-  }
-  
-  .project-item-icon {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-  }
 
-  .project-item-icon .arrow {
-    margin-left: 10px;
-    transition: transform 0.3s ease; /* Smooth scaling of the arrow */
+/* The clickable link containing the background image */
+.project-link {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  border-radius: calc(var(--border-radius) / 2);
+  cursor: pointer;
+}
+
+/* Scale the background slightly on hover */
+.project-link:hover {
+  transform: scale(1.05);
+}
+
+/* The black overlay */
+.project-overlay {
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1; /* sits above the background but below the content */
+}
+
+/* Fade in the overlay on hover */
+.project-link:hover .project-overlay {
+  opacity: 1;
+}
+
+/* Your project text container - placed above overlay */
+.project-content {
+  position: relative; /* to stack above .project-overlay */
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: var(--primary-padding);
+}
+
+.project-content h5,
+.project-content p {
+  margin: 0;
+  color: #fff; /* or var(--maintext-color), up to you */
+}
+
+/* Icon in bottom-right corner */
+.project-item-icon {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2; /* ensure above overlay */
+}
+
+.project-item-icon .arrow {
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.arrow,
+.project-item-icon:hover {
+  animation: shakeRight 1s ease-in-out infinite;
+}
+
+/* By default these on-hover elements are hidden */
+.project-item-onhover {
+  display: none;
+}
+
+/* Show them once hovered */
+.project-link:hover .project-item-onhover {
+  display: block;
+}
+
+/* Responsive: single column on small screens */
+@media (max-width: 768px) {
+  .project-item {
+    flex: 1 1 100%;
   }
-  
-  .arrow, .project-item-icon:hover {
-    animation: shakeRight 1s ease-in-out infinite; /* Apply shake animation on hover */
-  }
-  
-  .project-item-onhover {
-    display: none; /* Hidden by default */
-  }
-  
-  .project-link:hover .project-item-onhover {
-    display: block; /* Show on hover */
-  }
-  
-  @media (max-width: 768px) {
-    .project-item {
-      flex: 1 1 100%; /* Single column layout for small screens */
-    }
-  }
+}

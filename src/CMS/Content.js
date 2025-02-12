@@ -628,16 +628,16 @@ const collections = [
     addToQuery: [{ name: "Primary" }],
     items: {
       itemsHasPage: true,
-      itemSections: ["hero", "services", "testimonials", "projects"],
+      itemSections: ["hero", "services", "testimonials", "cta"],
       data: [
         {
           id: 1,
           title: "i-75 CPA Review",
           description:
             "Developed multiple e-commerce sites with landing pages, branding, and digital marketing solutions.",
-          featuredImage: TestImage,
+          featuredImage: `${process.env.PUBLIC_URL}/i75CPAmockup.png`,
           link: "https://i75cpareview.com/",
-          image: "https://picsum.photos/200/300",
+          image: `${process.env.PUBLIC_URL}/i75CPAmockup.png`,
           content: [
             "For i-75 CPA Review, we built a robust e-commerce platform featuring responsive landing pages, intuitive navigation, and a design that reinforces trust in financial education.",
             "We also implemented targeted branding and digital marketing strategies that boosted the company’s online presence and conversions.",
@@ -674,9 +674,9 @@ const collections = [
           title: "Faria's Demolition",
           description:
             "Created a comprehensive website showcasing demolition services, including project galleries and contact forms.",
-          featuredImage: TestImage,
+          featuredImage: `${process.env.PUBLIC_URL}/fariassiteproject.jpg`,
           link: "https://fariasdemolition.com/",
-          image: "https://picsum.photos/200/300",
+          image: `${process.env.PUBLIC_URL}/fariassiteproject.jpg`,
           content: [
             "For Faria's Demolition, we developed a website that effectively showcased their services through engaging galleries and clear service information.",
             "The site was optimized for user experience and conversion, ensuring that prospective clients can easily request estimates or contact the company.",
@@ -701,9 +701,9 @@ const collections = [
           title: "Koi Roofing and Solar",
           description:
             "Designed a clean, informative site to promote solar solutions, emphasizing brand trust and environmental impact.",
-          featuredImage: TestImage,
+          featuredImage: `${process.env.PUBLIC_URL}/Koisolarmockup.png`,
           link: "https://koisolarofficial.com/",
-          image: "https://picsum.photos/200/300",
+          image: `${process.env.PUBLIC_URL}/Koisolarmockup.png`,
           content: [
             "For Koi Roofing and Solar, we crafted a modern, mobile-friendly website that highlighted their solar and roofing services with a focus on transparency and sustainability.",
             "Our approach combined clean design with strong call-to-action elements and SEO best practices to drive quality traffic.",
@@ -728,9 +728,9 @@ const collections = [
           title: "Certified Bag Chasers",
           description:
             "Created a personal brand website for a best-selling author and course creator, featuring courses, testimonials, and community-building resources.",
-          featuredImage: TestImage,
-          link: "https://certifiedbagchasers.com/",
-          image: "https://picsum.photos/200/300",
+          featuredImage: `${process.env.PUBLIC_URL}/CertifiedBagChasers.png`,
+          link: "https://certifiedbagchasers.com",
+          image: `${process.env.PUBLIC_URL}/CertifiedBagChasers.png`,
           content: [
             "For Certified Bag Chasers, we designed a personal branding site that effectively showcased the client’s courses, testimonials, and community insights.",
             "The project combined engaging visuals with user-centric navigation to create an experience that resonates with both existing and prospective customers.",
