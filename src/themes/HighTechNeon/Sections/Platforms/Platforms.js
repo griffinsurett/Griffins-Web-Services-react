@@ -27,7 +27,7 @@ const Platforms = ({ data }) => {
         title={data.title}
         paragraph1={data.paragraph}
         className={"platforms-content"}
-        ContentHeaderClass="w100 bottom-space"
+        ContentHeaderClass="platforms-header bottom-space"
       >
         <ItemsTemplate
           items={platforms}
