@@ -1,7 +1,7 @@
 .floating-phone-button {
     position: fixed;
     bottom: 60px;          
-    right: 30px;           
+    right: 20px;           
     z-index: 9999; 
     transition: opacity 1.5s ease; 
   }
@@ -9,12 +9,13 @@
   /* By default, the icon size is set via CSS. 
      (Your Icon component should render a child with class "icon" for these rules to apply.) */
   .floating-phone-button .icon {
-    font-size: 1em; 
+    font-size: .7em; 
   }
   
   @media (min-width: 1024px) {
     .floating-phone-button .icon {
       font-size: 1.8em;
+      right: 30px;           
     }
   }
   

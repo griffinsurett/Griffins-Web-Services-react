@@ -195,13 +195,8 @@ const collections = [
         icon: getIcon("fa", "Facebook"),
       },
       {
-        platform: "X",
-        href: "https://twitter.com/griffinswebservices",
-        icon: getIcon("fa", "XTwitter"),
-      },
-      {
         platform: "LinkedIn",
-        href: "https://linkedin.com/company/griffins-web-services",
+        href: "https://linkedin.com/in/griffin-surett",
         icon: getIcon("fa", "Linkedin"),
       },
       {
