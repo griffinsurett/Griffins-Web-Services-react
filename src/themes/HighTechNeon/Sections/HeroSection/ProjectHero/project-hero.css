@@ -1,0 +1,23 @@
+/* project-hero.css */
+.project-hero-section {
+    height: var(--hero-height);
+  }
+  
+  .project-hero-left {
+    padding: 20px;
+  }
+  
+  .project-hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .project-featured-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+  }
+  

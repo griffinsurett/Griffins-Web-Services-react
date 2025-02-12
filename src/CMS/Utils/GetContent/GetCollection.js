@@ -26,14 +26,16 @@ export const getCollection = (slug, pageId = null) => {
 
   // If filtering for a specific page, return only items that are related
   if (pageId && collection.items && Array.isArray(collection.items.data)) {
+    const normalizedPageId = pageId.toLowerCase();
     const relatedItems = collection.items.data.filter((item) => {
-      return (
-        item.relatedToServices?.includes(pageId) ||
-        item.relatedToProjects?.includes(pageId) ||
-        item.relatedToTestimonials?.includes(pageId)
-      );
+      return Object.keys(item)
+        .filter((key) => key.startsWith("relatedTo"))
+        .some((key) =>
+          Array.isArray(item[key]) &&
+          item[key].some(val => val.toLowerCase() === normalizedPageId)
+        );
     });
-
+  
     return {
       ...collection,
       items: {

@@ -628,7 +628,7 @@ const collections = [
     addToQuery: [{ name: "Primary" }],
     items: {
       itemsHasPage: true,
-      itemSections: ["hero", "services", "testimonials", "platforms","cta"],
+      itemSections: ["hero",  "platforms", "services", "testimonials", "cta"],
       data: [
         {
           id: 1,
@@ -1200,9 +1200,9 @@ const collections = [
   collection: "platforms",
   heading: "3rd Party Platforms, Frameworks, and Languages We Use.",
   title: "Our Platforms",
+  slug: "/platforms",
   featuredImage: TestImage,
   hasPage: false,
-  slug: "/platforms",
   items: {
     itemsHasPage: false,
     includeCollectionSlug: false,
@@ -1513,7 +1513,7 @@ const collections = [
       },
     ],
   },
-}
+},
   
 ];
 

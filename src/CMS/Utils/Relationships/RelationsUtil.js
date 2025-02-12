@@ -82,7 +82,7 @@ export class RelationalUtil {
       console.error(`Collection '${collectionName}' not found.`);
       return null;
     }
-
+  
     const items = collection.items?.data || collection.items || [];
     if (!Array.isArray(items)) {
       console.error(`Collection '${collectionName}' has no 'items.data' array.`);
@@ -104,13 +104,14 @@ export class RelationalUtil {
 
     // 2) If string => match by slug
     if (typeof identifier === "string") {
-      const cleanedSlug = identifier.replace(/^\//, ""); // remove leading slash
-      const found = items.find(
-        (item) =>
-          item.slug === identifier ||
-          item.slug === `/${cleanedSlug}` ||
-          item.slug.endsWith(`/${cleanedSlug}`)
-      );
+      const normalizedIdentifier = identifier.replace(/^\//, "").toLowerCase();
+      const found = items.find((item) => {
+        const normalizedItemSlug = item.slug.replace(/^\//, "").toLowerCase();
+        return (
+          normalizedItemSlug === normalizedIdentifier ||
+          normalizedItemSlug.endsWith(`/${normalizedIdentifier}`)
+        );
+      });
       if (!found) {
         console.error(
           `No item found in '${collectionName}' for slug/partial slug = '${identifier}'`
@@ -136,55 +137,52 @@ export class RelationalUtil {
    * You can keep or remove it, but typically it helps unify
    * relations from "relatedToX" keys across items.
    */
-  inferIndirectRelationships() {
-    const collections = this.content.collections;
+ // src/CMS/Utils/Relationships/RelationsUtil.js
+inferIndirectRelationships() {
+  const collections = this.content.collections;
 
-    collections.forEach((sourceCollection) => {
-      const items = sourceCollection.items?.data || sourceCollection.items;
-      if (!Array.isArray(items)) return;
+  collections.forEach((sourceCollection) => {
+    // Get the items array (supports both item-level pages or a plain items array)
+    const items = sourceCollection.items?.data || sourceCollection.items;
+    if (!Array.isArray(items)) return;
 
-      items.forEach((entity) => {
-        Object.keys(entity).forEach((relationKey) => {
-          if (relationKey.startsWith("relatedTo")) {
-            const targetCollectionName = relationKey
-              .replace("relatedTo", "")
-              .toLowerCase();
+    items.forEach((entity) => {
+      Object.keys(entity).forEach((relationKey) => {
+        if (relationKey.startsWith("relatedTo")) {
+          // For each direct relationship (e.g. relatedToPlatforms)
+          const directTarget = relationKey.replace("relatedTo", "").toLowerCase();
+          const relatedSlugs = entity[relationKey] || [];
 
-            const relatedSlugs = entity[relationKey] || [];
+          relatedSlugs.forEach((identifier) => {
+            const relatedEntity = this.findEntityByIdentifier(directTarget, identifier);
+            if (!relatedEntity) return;
 
-            relatedSlugs.forEach((identifier) => {
-              // Use findEntityByIdentifier
-              const relatedEntity = this.findEntityByIdentifier(
-                targetCollectionName,
-                identifier
-              );
-              if (relatedEntity) {
-                // That relatedEntity might have "relatedToXYZ" keys
-                Object.keys(relatedEntity).forEach((relatedRelationKey) => {
-                  if (relatedRelationKey.startsWith("relatedTo")) {
-                    const indirectTarget = relatedRelationKey
-                      .replace("relatedTo", "")
-                      .toLowerCase();
-
-                    const indirectSlugs = relatedEntity[relatedRelationKey] || [];
-                    const indirectRelationKey = `relatedTo${this.capitalize(indirectTarget)}`;
-
-                    entity[indirectRelationKey] = entity[indirectRelationKey] || [];
-                    // Add any missing slugs
-                    indirectSlugs.forEach((indirectSlug) => {
-                      if (!entity[indirectRelationKey].includes(indirectSlug)) {
-                        entity[indirectRelationKey].push(indirectSlug);
-                      }
-                    });
+            // Now, for each relationship declared on the related entity…
+            Object.keys(relatedEntity).forEach((relatedRelationKey) => {
+              if (relatedRelationKey.startsWith("relatedTo")) {
+                const indirectTarget = relatedRelationKey.replace("relatedTo", "").toLowerCase();
+                // Determine the key name in the source entity for indirect relationships:
+                const directKey = `relatedTo${this.capitalize(indirectTarget)}`;
+                // If the entity already has a direct relationship for this collection, skip adding indirect ones.
+                if (entity[directKey] && entity[directKey].length > 0) {
+                  return;
+                }
+                const indirectSlugs = relatedEntity[relatedRelationKey] || [];
+                // Initialize (or re-use) the array on entity for indirect relationships
+                entity[directKey] = entity[directKey] || [];
+                indirectSlugs.forEach((indirectSlug) => {
+                  if (!entity[directKey].includes(indirectSlug)) {
+                    entity[directKey].push(indirectSlug);
                   }
                 });
               }
             });
-          }
-        });
+          });
+        }
       });
     });
-  }
+  });
+}
 
   /**
    * Simple helper for capitalizing, e.g., "projects" -> "Projects".
