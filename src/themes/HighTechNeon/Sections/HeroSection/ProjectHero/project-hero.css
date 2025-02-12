@@ -21,3 +21,18 @@
     border-radius: var(--border-radius);
   }
   
+  @media (min-width: 1024px) {
+  .project-hero {
+    width: 50%;
+  }
+
+  .project-hero-right {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-hero {
+    flex-direction: column-reverse;
+  }
+}

@@ -29,7 +29,7 @@ const ProjectHero = ({ data }) => {
   return (
     <Section
       id="hero2"
-      className="hero2-section flex justify-between-section item-align-start full-height responsive responsive-center responsive-spacing"
+      className="project-hero flex justify-between-section item-align-start full-height responsive responsive-center responsive-spacing"
     >
       {/* Left column: The usual content template */}
       <ContentTemplate
@@ -39,7 +39,7 @@ const ProjectHero = ({ data }) => {
         ifButton={true}
         buttonText={"View Site"}
         buttonLink={data.link}
-        className={"hero2-content w50"}
+        className={"project-hero-content"}
         id={"nonhomehero"}
         title={data.siteTitle || ""}
         heading={data.pageTitle || ""}
@@ -55,7 +55,7 @@ const ProjectHero = ({ data }) => {
       />
 
       {/* Right: Featured Image */}
-      <div className="project-hero-right w50 flex justify-center item-align-center sticky-section">
+      <div className="project-hero-right flex justify-center item-align-center sticky-section">
         {featuredImage ? (
           <img
             src={featuredImage}
