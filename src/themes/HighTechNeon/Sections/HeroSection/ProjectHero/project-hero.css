@@ -1,38 +1,39 @@
 /* project-hero.css */
 .project-hero-section {
-    height: var(--hero-height);
-  }
-  
-  .project-hero-left {
-    padding: 20px;
-  }
-  
-  .project-hero-right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .project-featured-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: var(--border-radius);
-  }
-  
-  @media (min-width: 1024px) {
-  .project-hero {
-    width: 50%;
-  }
+  height: var(--hero-height);
+}
 
-  .project-hero-right {
-    width: 50%;
-  }
+.project-hero-left {
+  padding: 20px;
+}
+
+.project-hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.project-featured-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+@media (min-width: 1024px) {
+.project-hero-content {
+  width: 45%;
+}
+
+.project-hero-right {
+  width: 45%;
+}
 }
 
 @media (max-width: 1024px) {
-  .project-hero {
-    flex-direction: column-reverse;
-  }
+.project-hero {
+  flex-direction: column-reverse;
+}
 }

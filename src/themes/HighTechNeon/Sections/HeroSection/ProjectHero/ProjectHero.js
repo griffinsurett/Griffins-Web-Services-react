@@ -55,7 +55,7 @@ const ProjectHero = ({ data }) => {
       />
 
       {/* Right: Featured Image */}
-      <div className="project-hero-right flex justify-center item-align-center sticky-section">
+      <div className="project-hero-right w50 flex justify-center item-align-center sticky-section">
         {featuredImage ? (
           <img
             src={featuredImage}
