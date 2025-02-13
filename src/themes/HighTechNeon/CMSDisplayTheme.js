@@ -9,17 +9,12 @@ import FloatingPhoneButton from "./Components/FloatingPhoneButton/FloatingPhoneB
 import "./styles.css";
 import "./animations.css";
 
-// Theme provider
 import { ThemeProvider } from "./Controls/ThemeContext";
-
-// Menu manager & context
 import MenuManager from "./Components/MenuManager";
 import { MenuProvider } from "./Components/Menu/MenuContext";
-
-// --- Import the consolidated HeroDisplay
 import HeroDisplay from "./Sections/HeroSection/HeroDisplay";
 
-// --- Lazy-load other non-hero sections ---
+// Lazy import
 const sectionComponents = {
   about:        lazy(() => import("./Sections/About/About1/About")),
   whyChooseUs:  lazy(() => import("./Sections/Services/Services")),
@@ -34,10 +29,9 @@ const sectionComponents = {
   pricing:      lazy(() => import("./Sections/Pricing/Pricing")),
   cta:          lazy(() => import("./Sections/CTA/CTA")),
   platforms:    lazy(() => import("./Sections/Platforms/Platforms")),
-  gallery:     lazy(() => import("./Sections/Gallery/Gallery")),
+  gallery:      lazy(() => import("./Sections/Gallery/Gallery")),
 };
 
-// Helper function to determine the page type based on pageId
 const getPageType = (pageId) => {
   if (pageId === "home") return "home";
   if (pageId === "error") return "error";
@@ -49,17 +43,17 @@ const getPageType = (pageId) => {
 const CMSDisplayTheme = memo(() => {
   const { loading, pageStructure, siteSettings, pageId, isInitialLoad } = useCMSContext();
 
-  // Show a preloader if this is the very first load
+  // Only show preloader on the very first load
   if (loading && isInitialLoad) {
     return <Preloader />;
   }
 
-  // If no page structure, show minimal error
+  // If no page structure
   if (!pageStructure) {
     return <div>Error: No page structure found.</div>;
   }
 
-  // If user is at /error, show error page
+  // If /error
   if (pageId === "error") {
     const menuManager = new MenuManager(siteSettings);
     return (
@@ -75,10 +69,10 @@ const CMSDisplayTheme = memo(() => {
     );
   }
 
-  // Otherwise, normal page logic
+  // Normal page logic
   const menuManager = new MenuManager(siteSettings);
-  const { title, description, heading, content, sections, featuredImage, } = pageStructure;
-  const pageType = getPageType(pageId); // Consolidated page type
+  const { title, description, heading, content, sections, featuredImage } = pageStructure;
+  const pageType = getPageType(pageId);
   const isHomepage = pageType === "home";
 
   // Prepare hero data
@@ -91,9 +85,7 @@ const CMSDisplayTheme = memo(() => {
     content: content,
   };
 
-  // Check if the page’s sections array includes "hero"
   const hasHero = sections.some((s) => s.key === "hero");
-  // Exclude hero from final sections
   const finalSections = sections.filter((s) => s.key !== "hero");
 
   return (
@@ -102,19 +94,16 @@ const CMSDisplayTheme = memo(() => {
       <div className="flex column item-align-center">
         <main className="flex-grow content container" role="main">
           {hasHero && (
-            // Pass the consolidated pageType to HeroDisplay
             <HeroDisplay pageType={pageType} heroData={heroData} />
           )}
 
-          {/* Render each remaining section by key.
-              For the "cta" section, pass siteSettings as well */}
           {finalSections.map(({ key, data }) => {
             const SectionComponent = sectionComponents[key];
             if (!SectionComponent) {
               return <p key={key}>No component found for section: {key}</p>;
             }
             return (
-              <Suspense key={key} fallback={<Preloader />}>
+              <Suspense key={key} fallback={null}>
                 {key === "cta" ? (
                   <SectionComponent data={data} siteSettings={siteSettings} />
                 ) : (
@@ -131,7 +120,5 @@ const CMSDisplayTheme = memo(() => {
   );
 });
 
-// Attach the ThemeProvider if needed
 CMSDisplayTheme.ThemeProvider = ThemeProvider;
-
 export default CMSDisplayTheme;
