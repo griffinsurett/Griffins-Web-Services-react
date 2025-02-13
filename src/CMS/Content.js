@@ -1064,6 +1064,156 @@ const collections = [
             buttonText: "Schedule a Call",
           },
         },
+        // {
+        //   id: 5,
+        //   title: "Pioneer Gear",
+        //   description:
+        //     "Created a personal brand website for a best-selling author and course creator, featuring courses, testimonials, and community-building resources.",
+        //   featuredImage: `${process.env.PUBLIC_URL}/pioneermockup.png`,
+        //   image: `${process.env.PUBLIC_URL}/pioneermockup.png`,
+        //   content: [
+        //     "For Certified Bag Chasers, we designed a personal branding site that effectively showcased the client’s courses, testimonials, and community insights.",
+        //     "The project combined engaging visuals with user-centric navigation to create an experience that resonates with both existing and prospective customers.",
+        //   ],
+        //   relations: [
+        //     {
+        //       collection: "services",
+        //       value: "web-design-development",
+        //     },
+        //     {
+        //       collection: "services",
+        //       value: "technology-consulting",
+        //     },
+        //     {
+        //       collection: "services",
+        //       value: "digital-product-development",
+        //     },
+            
+        //     {
+        //       collection: "platforms",
+        //       value: "shopify",
+        //     },
+        //     {
+        //       collection: "platforms",
+        //       value: "adobephotoshop",
+        //     },
+        //     {
+        //       collection: "platforms",
+        //       value: "adobeillustrator",
+        //     },
+        //     {
+        //       collection: "platforms",
+        //       value: "canva",
+        //     },
+        //     {
+        //       collection: "platforms",
+        //       value: "figma",
+        //     },
+        //   ],
+        //   gallery: {
+        //     title: "gallery",
+        //     heading: "See what makes this project special",
+        //     makeObjectSection: true,
+        //     items: [
+        //       {
+        //         title: "Certified Bag Chasers Desktop Site",
+        //         media: `${process.env.PUBLIC_URL}/certifiedbagchasdesktop.png`,
+        //       },
+        //       {
+        //         title: "Certified Bag Chasers Mobile Site",
+        //         media: `${process.env.PUBLIC_URL}/certifiedbagchasphone.png`,
+        //       },
+        //       {
+        //         title: "Arold AI Voice",
+        //         media: `${process.env.PUBLIC_URL}/aroldvoice.png`,
+        //       },
+        //       {
+        //         title: "Certified Bag Chasers Middle of Site",
+        //         media: `${process.env.PUBLIC_URL}/middleofsite.png`,
+        //       }
+        //     ]
+        //   },
+        //   cta: {
+        //     heading: "Ready to take your website to the next level?",
+        //     description: "Schedule a free 30-minute consultation to discuss your project.",
+        //     buttonText: "Schedule a Call",
+        //   },
+        // },
+        // {
+        //   id: 6,
+        //   title: "Brookdale Business Club",
+        //   description:
+        //     "Created a personal brand website for a best-selling author and course creator, featuring courses, testimonials, and community-building resources.",
+        //   featuredImage: `${process.env.PUBLIC_URL}/pioneermockup.png`,
+        //   image: `${process.env.PUBLIC_URL}/pioneermockup.png`,
+        //   content: [
+        //     "For Certified Bag Chasers, we designed a personal branding site that effectively showcased the client’s courses, testimonials, and community insights.",
+        //     "The project combined engaging visuals with user-centric navigation to create an experience that resonates with both existing and prospective customers.",
+        //   ],
+        //   relations: [
+        //     {
+        //       collection: "services",
+        //       value: "web-design-development",
+        //     },
+        //     {
+        //       collection: "services",
+        //       value: "technology-consulting",
+        //     },
+        //     {
+        //       collection: "services",
+        //       value: "digital-product-development",
+        //     },
+            
+        //     {
+        //       collection: "platforms",
+        //       value: "shopify",
+        //     },
+        //     {
+        //       collection: "platforms",
+        //       value: "adobephotoshop",
+        //     },
+        //     {
+        //       collection: "platforms",
+        //       value: "adobeillustrator",
+        //     },
+        //     {
+        //       collection: "platforms",
+        //       value: "canva",
+        //     },
+        //     {
+        //       collection: "platforms",
+        //       value: "figma",
+        //     },
+        //   ],
+        //   gallery: {
+        //     title: "gallery",
+        //     heading: "See what makes this project special",
+        //     makeObjectSection: true,
+        //     items: [
+        //       {
+        //         title: "Certified Bag Chasers Desktop Site",
+        //         media: `${process.env.PUBLIC_URL}/certifiedbagchasdesktop.png`,
+        //       },
+        //       {
+        //         title: "Certified Bag Chasers Mobile Site",
+        //         media: `${process.env.PUBLIC_URL}/certifiedbagchasphone.png`,
+        //       },
+        //       {
+        //         title: "Arold AI Voice",
+        //         media: `${process.env.PUBLIC_URL}/aroldvoice.png`,
+        //       },
+        //       {
+        //         title: "Certified Bag Chasers Middle of Site",
+        //         media: `${process.env.PUBLIC_URL}/middleofsite.png`,
+        //       }
+        //     ]
+        //   },
+        //   cta: {
+        //     heading: "Ready to take your website to the next level?",
+        //     description: "Schedule a free 30-minute consultation to discuss your project.",
+        //     buttonText: "Schedule a Call",
+        //   },
+        // },
       ],
     },
   },

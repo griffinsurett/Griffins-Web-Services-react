@@ -1,12 +1,11 @@
 /* contact-us.css */
 .form-group {
     display: flex;
-    flex-wrap: wrap; /* Allow items to wrap */
-    width: 100%; /* Ensure the container takes the full width */
+    flex-wrap: wrap; /* Allow items to wrap */    
 }
 
 .name-fields, .contact-fields, .subject-message {
-    width: -webkit-fill-available; /* Take up the full width */
+    width: 100%; /* Take up the full width */
 } 
 
 .subject-message {
@@ -16,14 +15,15 @@
 
 .subject-message input,
 .subject-message textarea {
-    width: -webkit-fill-available; /* Take up the full width */
+    width: 100%; /* Take up the full width */
     flex-grow: 1;
 }
 
 /* Add horizontal spacing between input fields */
 .name-fields input,
 .contact-fields input {
-    margin-right: var(--form-spacing); 
+    margin-right: var(--form-spacing);
+    width: 48%;
 }
 
 .name-fields input:last-child,
