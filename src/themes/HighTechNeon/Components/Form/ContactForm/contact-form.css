@@ -4,13 +4,19 @@
     flex-wrap: wrap; /* Allow items to wrap */    
 }
 
+input {
+    flex-grow: 1;
+}
+
 .name-fields, .contact-fields, .subject-message {
-    width: 100%; /* Take up the full width */
+    width: 100%;
+    display: flex;
+
 } 
 
 .subject-message {
-    display: flex;
     flex-direction: column; /* Stack subject and message vertically */
+    width: 100%;
 }
 
 .subject-message input,
@@ -23,7 +29,10 @@
 .name-fields input,
 .contact-fields input {
     margin-right: var(--form-spacing);
-    width: 48%;
+}
+
+.name-fields, .contact-fields {
+    width: 100%;
 }
 
 .name-fields input:last-child,
