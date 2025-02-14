@@ -21,8 +21,9 @@ function FAQ({ data }) {
         ifParagraph={true}
         heading={data.heading}
         title={data.title}
+        contentWrapClass="smaller-top-space responsive responsive-center"
         titleClass={"text-center"}
-        headingClass={"flex text-center justify-center"}
+        headingClass={"flex text-center justify-center column"}
         paragraph1={data.description}
         paragraphClass="p-large text-center"
       />

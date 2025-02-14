@@ -107,6 +107,7 @@
   --lightBG-boxShadow1: ; */
   --lightBG-textShadow1: none;
   --darkBG-textShadow1: 0 0 2.5px var(--primary-color), 0 0 5px var(--primary-color), 0 0 10px var(--primary-color), 0 0 20px var(--primary-color), 0 0 30px ;
+  --darkBG-textShadow2: 0 0 1.25px var(--primary-color), 0 0 2.5px var(--primary-color), 0 0 5px var(--primary-color);
   --darkBG-dynamicIconBorder: var(--buttonandIconborderStyle) var(--primary-color);
   --lightBG-dynamicIconBorder: var(--buttonandIconborderStyle) var(--secondary-bg);
   --darkBG-dynamicBorderBoxShadow: var(--boxShadow1);

@@ -13,7 +13,6 @@ export const ThemeProvider = ({ children }) => {
     if (savedMode) {
       return savedMode === "light";
     }
-
     // No explicit preference: default to dark mode
     return false;
   });
@@ -42,6 +41,7 @@ export const ThemeProvider = ({ children }) => {
       .trim();
     setThemeColorMetaTag(computedBgColor);
 
+    // For dark mode, use a different text-shadow variable on mobile (<768px)
     const themeVariables = lightMode
       ? {
           "--primary-color": "var(--lightBG-primary-color)",
@@ -77,7 +77,10 @@ export const ThemeProvider = ({ children }) => {
           "--transparentFade-bg": "var(--darkBG-transparentFade-bg)",
           "--transparentFade-bg1": "var(--darkBG-transparentFade-bg1)",
           "--transparentFade-bg2": "var(--darkBG-transparentFade-bg2)",
-          "--text-shadow": "var(--darkBG-textShadow1)",
+          // Use textShadow2 on mobile (window.innerWidth < 768), otherwise textShadow1
+          "--text-shadow": window.innerWidth < 768
+            ? "var(--darkBG-textShadow2)"
+            : "var(--darkBG-textShadow1)",
           "--boxShadow": "0 0 2px var(--primary-color), 0 0 2px var(--primary-color) inset, 0 0 8px var(--primary-color), 0 0 8px var(--primary-color) inset, 0 0 15px var(--primary-color), 0 0 10px var(--primary-color) inset, 0 0 20px var(--primary-color)",
           "--boxShadow1": "0 0 1px var(--primary-color), 0 0 1px var(--primary-color) inset, 0 0 4px var(--primary-color), 0 0 4px var(--primary-color) inset, 0 0 7.5px var(--primary-color), 0 0 5px var(--primary-color) inset, 0 0 10px var(--primary-color)",
           "--boxShadow2": "0 0 .5px var(--primary-color), 0 0 .5px var(--primary-color) inset, 0 0 2px var(--primary-color), 0 0 2px var(--primary-color) inset, 0 0 3.75px var(--primary-color), 0 0 2.5px var(--primary-color) inset, 0 0 5px var(--primary-color)",
