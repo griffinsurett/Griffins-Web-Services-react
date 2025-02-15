@@ -14,7 +14,7 @@ const ContactForm = () => {
       action="https://formspree.io/f/mjkgojyo"  // <-- Replace with your actual form endpoint
       autoComplete="on"
       buttonText="Submit"
-      className="static-contact-form"
+      className="contact-form"
     >
     <InputField type="hidden" name="pageUrl" value={location.pathname} />
       <div className="form-group">

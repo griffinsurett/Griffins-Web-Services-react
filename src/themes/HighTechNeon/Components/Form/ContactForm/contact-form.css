@@ -64,6 +64,10 @@ input {
         padding: 30px 0;
     }
 
+    .contact-form {
+        width: 100%;
+    }
+
     .contact-form button {
         width: -webkit-fill-available;
     }
