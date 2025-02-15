@@ -1,5 +1,6 @@
-@media (max-width: 768px) {
+@media (max-width: 1366px) {
 .process-title {
     align-items: center;
+    text-align: center;
 }
 }

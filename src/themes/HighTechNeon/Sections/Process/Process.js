@@ -20,7 +20,7 @@ const Process = ({ data }) => {
     <Section className="flex justify-center full-height column top-space bottom-space">
       <ContentTemplate
         data={data}
-        contentWrapClass="process-title justify-between-section responsive responsive-center"
+        contentWrapClass="process-title justify-between-section responsive"
         ifButton={true}
         ContentHeaderClass="w100"
         heading={data.heading} // This is now safe because data is not null.
