@@ -17,7 +17,7 @@ const Process = ({ data }) => {
   const items = getItemData(data);
 
   return (
-    <Section className="flex justify-center full-height column top-space bottom-space box-section">
+    <Section className="flex justify-center full-height column top-space bottom-space">
       <ContentTemplate
         data={data}
         contentWrapClass="process-title justify-between-section responsive responsive-center"
