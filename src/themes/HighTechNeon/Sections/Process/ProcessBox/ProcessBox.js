@@ -16,7 +16,7 @@ const ProcessBox = ({ stepNumber, title, description }) => {
       <h4 className="flex justify-center item-align-center w10 text-shadow-for-dark">
         {`0${stepNumber}.`}
       </h4>
-      <h3 className="w40 smaller-top-space responsive-center">{title}</h3>
+      <h3 className="w40 responsive-center">{title}</h3>
       <Logo
         ContainerClassName="flex justify-center item-align-center logo w20"
         width="50px" // Width is set, and height will be 90% of this
