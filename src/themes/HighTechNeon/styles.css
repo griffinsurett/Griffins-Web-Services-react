@@ -27,7 +27,7 @@
   /* Font Sizes */
   --font-size-h1: clamp(
     1.8rem,
-    4.5vw,
+    4vw,
     3rem
   ); /* Adjusted for better sizing on small screens */
   --font-size-h2: clamp(
