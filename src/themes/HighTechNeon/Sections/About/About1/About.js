@@ -30,7 +30,6 @@ const About1 = ({ data }) => {
         paragraph1Class="top-paragraph p-xLarge font-weight-regular text-left half-column self-left"
         paragraph2={data.description}
         paragraph2Class="bottom-paragraph text-left half-column self-right negative-top responsive-left"
-        ContentHeaderClass="w50"
         buttonText={data.button?.text}
         buttonLink={data.button?.link}
         buttonId="about-header-btn"
