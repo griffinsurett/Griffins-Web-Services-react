@@ -14,9 +14,9 @@ const Hero1 = ({ data }) => {
   return (
     <Section
       id="hero-section"
-      className="flex item-align-center responsive hero-height section-gap"
+      className="flex responsive hero-height section-gap"
     >
-      <div className="hero-left text-left w50">
+      <div className="hero-left text-left">
         <ContentTemplate
           isHero
           ifParagraph
@@ -37,7 +37,7 @@ const Hero1 = ({ data }) => {
         />
       </div>
 
-      <div className="hero-right w40 flex column justify-center item-align-center fade-in">
+      <div className="hero-right flex column justify-center item-align-center fade-in">
         <div className="fade-in" style={{ transitionDelay: "1000ms" }}>
           <Logo
             ContainerClassName="flex justify-center item-align-center logo logo-drop-shadow-big sticky-section"
