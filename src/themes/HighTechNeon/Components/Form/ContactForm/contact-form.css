@@ -59,7 +59,7 @@ input {
 }
 
 /* Mobile-specific styles */
-@media (max-width: 1250px) {
+@media (max-width: 1366px) {
     .contact-form {
         padding: 30px 0;
     }
@@ -86,7 +86,7 @@ input {
     }
 }
 
-@media (min-width: 1250px) {
+@media (min-width: 1366px) {
     .subject-message input,
     .subject-message textarea {
         margin-bottom: var(--form-spacing); /* Vertical spacing between subject and message */
