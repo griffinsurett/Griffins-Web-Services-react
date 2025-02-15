@@ -805,6 +805,7 @@ a {
 
   .container {
     width: calc(var(--container-width) + 10%);
+    padding: 0 5px;
     overflow-x: hidden;
   }
 
