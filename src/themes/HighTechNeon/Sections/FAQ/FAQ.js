@@ -24,7 +24,7 @@ function FAQ({ data }) {
         contentWrapClass="smaller-top-space responsive responsive-center"
         titleClass={"text-center"}
         headingClass={"flex text-center justify-center column"}
-        paragraph1={data.description}
+        // paragraph1={data.description}
         paragraphClass="p-large text-center"
       />
 
