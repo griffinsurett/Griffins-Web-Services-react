@@ -41,10 +41,10 @@ const getPageType = (pageId) => {
 };
 
 const CMSDisplayTheme = memo(() => {
-  const { loading, pageStructure, siteSettings, pageId, isInitialLoad } = useCMSContext();
+  const { loading, pageStructure, siteSettings, pageId } = useCMSContext();
 
-  // Only show preloader on the very first load
-  if (loading && isInitialLoad) {
+  // Show preloader on every load instance
+  if (loading) {
     return <Preloader />;
   }
 
@@ -103,7 +103,7 @@ const CMSDisplayTheme = memo(() => {
               return <p key={key}>No component found for section: {key}</p>;
             }
             return (
-              <Suspense key={key} fallback={null}>
+              <Suspense key={key} fallback={<Preloader />}>
                 {key === "cta" ? (
                   <SectionComponent data={data} siteSettings={siteSettings} />
                 ) : (
