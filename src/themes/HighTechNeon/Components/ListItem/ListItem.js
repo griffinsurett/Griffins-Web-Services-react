@@ -70,7 +70,7 @@ const ListItem = ({
     <div className="list-item-wrapper">
       {itemContent}
       {hasPage && slug && (
-        <div className="mt-2">
+        <div>
           <Button
             to={slug}
             className={buttonClass}
