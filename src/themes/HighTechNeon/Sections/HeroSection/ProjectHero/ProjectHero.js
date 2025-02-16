@@ -36,7 +36,7 @@ const ProjectHero = ({ data }) => {
         data={data}
         isHero={true}
         ifParagraph={true}
-        ifButton={true}
+        ifButton={false}
         buttonText={"View Site"}
         buttonLink={data.link}
         className={"project-hero-content"}

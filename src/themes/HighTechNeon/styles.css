@@ -825,7 +825,7 @@ a {
   .morethan-half-container,
   .lessthan-half-container,
   .half-column {
-    width: var(--container-width);
+    width: 100%;
   }
 
   .small-logo img {

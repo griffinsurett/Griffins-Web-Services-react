@@ -25,6 +25,7 @@ const About1 = ({ data }) => {
         heading={data.heading}
         title={data.title}
         contentWrapClass="column item-align-center"
+        headingClass={"about-heading"}
         paragraphClass="flex justify-center column about-paragraphs responsive-left"
         paragraph1={data.content}
         paragraph1Class="top-paragraph p-xLarge font-weight-regular text-left half-column self-left"
