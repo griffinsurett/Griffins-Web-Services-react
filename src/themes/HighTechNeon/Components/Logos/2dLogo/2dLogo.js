@@ -4,7 +4,7 @@ import "./2d-logo.css";
 import { useTheme } from "../../../Controls/ThemeContext"; // Import the ThemeContext
 
 const light2dLogo = `${process.env.PUBLIC_URL}/mylogo2d-white.png`;
-const dark2dLogo = `${process.env.PUBLIC_URL}/myLogo2d-black.png`;
+const dark2dLogo = `${process.env.PUBLIC_URL}/myLogo2d-blac.png`;
 
 const Logo = ({
   width,
