@@ -10,7 +10,7 @@ export const ThemeProvider = ({ children }) => {
   // Read theme from cookies (default to dark)
   const [isLightMode, setIsLightMode] = useState(() => {
     const savedMode = getCookie("theme");
-    return savedMode ? savedMode === "light" : false;
+    return savedMode ? savedMode === "light" : true;
   });
 
   // State to track if viewport is mobile (<768px)
